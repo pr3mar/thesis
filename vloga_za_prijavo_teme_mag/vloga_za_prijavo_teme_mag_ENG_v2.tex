@@ -113,7 +113,30 @@ Project Management Information Systems (\textit{PMIS}) provide different forms o
 %Guideline (delete from the final version):
 %Prepare an overview of the related work that is directly related to your problem. Describe the main highlights of each related work in a few sentences. Point out pros and drawbacks. Reference the works listed in the References section. The related work should be focused and approximately half of A4 page long.
 
-~\cite{RAYMOND2008213}
+The order of the following articles is very important, it explains the flow of the story:
+
+\begin{enumerate}
+	\item \cite{CANIELS2012162}: why we need PMIS  (Project Management Information Systems), how do we benefit from it. We can use it to motivate the usage of PMIS
+
+	\item \cite{RAYMOND2008213}: An old overview of PMIS. It is often cited. This is related just so we can identify what kinds of PMIS there are and what we are going to work with.
+
+	\item \cite{SERRADOR20151040}: a quantitative analysis of whether or not agile works. Why we are sticking with agile and how we can exploit it the most.
+
+	\item \cite{Toole2006APM}: has a good point about setting priorities and the causality of the actions. What actions we take and how they affect the final outcome
+
+	\item \cite{tavares2019risk}: This has a good point as well, how is risk handled in SCRUM projects. It fits well in the story because we'd like to minimize the risk and maximize the output/throughput of the project
+
+\end{enumerate}
+
+The problem that I have is how do I state that this is relevant to what I want to work on.
+
+The task at hand is not actually deeply connected to project management, but it is rather making the project management easier:
+we want to perform analysis of the usage data of a particular PMIS (JIRA) and identify the potential risks (e.g. outliers) based on the analysis.
+
+For example, we would be able to identify what are the bottlenecks of the workflow: is it a person? Is it the workflow itself?
+Can we make a workaround? Can we make a recommendation to the PM/developer on how to proceed? Who to assign the task to next?
+
+
 
 \subsection{Expected contributions}
 
@@ -127,6 +150,23 @@ The final outcome of the research is expected to be a \textit{Project Management
 %Guideline (delete from the final version):
 %Briefly describe the methodology that you intend to apply in your work. This section should describe the methods you intend to use (e.g., the framework used for development, theoretical frameworks), methods that will be applied for analysis and evaluation of your approach, and comparison with the most related works. The description should be approximately 500 characters long, including spaces.
 
+This is pretty vague as well, I am having difficulties identifying the things I can do with the data, let alone identifying the methodology of how I'm going to do that. The goal is to achieve some degree of \textbf{life-cycle analysis of the tasks}.
+
+For example, there are a couple of ideas of what we can do to achieve it:
+
+\begin{itemize}
+	\item analyse the time spent in a certain state of the workflow
+	
+	\item identify the people that are halting the process and recommend replacements
+
+	\item create distributions of different meta-data of the tasks: \#comments, \#changes, \# labels, \dots. All in order to find the correlation of some of the attributes (meta data fields): e.g. high priority cards have a high rate of state change in a very narrow time span.
+	
+	\item \dots
+\end{itemize}
+
+All of these are ideas which seem like they do not require any complicated analysis in order to achieve.
+
+The approach should be iterative: first do some "shallow" analysis in order to find something interesting, and then once we verify we bring out the "big guns".
 
 \subsection{References}
 \label{literature}

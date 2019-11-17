@@ -105,7 +105,7 @@ The proposed thesis has not been submitted nor approved in previous years.
 %Guideline (delete from the final version):
 %Explain the problem which you plan to tackle and motivate your work. In motivation, relate to the literature and unsolved problems that your thesis will address. Position your work within the narrow field of research. The text should be approximately 800 characters long, including spaces.
 
-Project managers (PMs) have the role leading the team towards the achieving of the project objectives~\cite{institute2017guide}. Project Management Information Systems (PMIS) are used by PMs to assist their decision making for planning, organizing and controlling projects~\cite{CANIELS2012162}. PMIS contain the state of the organization's projects and are visualizing it with Burn-Down Charts, Gantt Charts, or other basic visualisations which provide merely a high-level overview of metrics such as work completed, story points completed, deliverable status~\cite{institute2017guide}, etc. As such, PMIS do not provide enough useful information to PMs~\cite{CANIELS2012162}. 
+Project managers (PMs) have the role of leading the team towards the achieving of the project objectives~\cite{institute2017guide}. Project Management Information Systems (PMIS) are used by PMs to assist their decision making for planning, organizing and controlling projects~\cite{CANIELS2012162}. PMIS keep the state of the organization's projects and are visualizing it with Burn-Down Charts, Gantt Charts, or other basic visualisations which provide merely a high-level overview of metrics such as work completed, story points completed, deliverable status~\cite{institute2017guide}, etc. As such, PMIS do not provide enough useful information to PMs~\cite{CANIELS2012162}. 
 
 The value of PMIS drops due to their elementary reporting abilities. This leads to PMs having to do double the work: keeping the PMIS up to date and analysing the data separately to support the decision making.
 
@@ -123,30 +123,41 @@ The value of PMIS drops due to their elementary reporting abilities. This leads 
 %Prepare an overview of the related work that is directly related to your problem. Describe the main highlights of each related work in a few sentences. Point out pros and drawbacks. Reference the works listed in the References section. The related work should be focused and approximately half of A4 page long.
 
 
-The use of PMIS is a common and widespread practice across enterprises. It has been shown that they have a direct impact on the project success~\cite{RAYMOND2008213}, as they provide a structured overview of the project state and support the decision making process of PMs. Contemporary PMIS provide organization-wide transparency and their use is not limited to PMs, but their usage is by the majority of organization members. This is especially important within agile~\cite{alliance2001agile} environments. An example of such PMIS used for agile project management is \href{https://www.atlassian.com/software/jira}{JIRA}.
+The use of PMIS is a common and widespread practice across enterprises. It has been shown that they have a direct impact on the project success~\cite{RAYMOND2008213}, as they provide a structured overview of the project state and support the decision making process of PMs. Contemporary PMIS provide organization-wide transparency and their usage is not limited to only PMs, but it is instead widespread over the majority of the organization's members. This is especially important within agile~\cite{alliance2001agile} environments where every member is tracking their own progress. Agile project management has been gaining momentum ever since the appearance of its manifesto~\cite{alliance2001agile} because it has been shown to work in practice~\cite{SERRADOR20151040}. 
 
-The order of the following articles is very important, it explains the flow of the story:
+Our aim is to improve the general usability of contemporary PMIS which are used within projects which have applied agile project methodology. An example of such PMIS is Atlassian's  \href{https://www.atlassian.com/software/jira}{JIRA}, where we have the unique advantage of observing the users' habits of using the PMIS by examining the history of their usage: how often they interact with the PMIS, what do they edit, which workflow element are their tasks most often in, etc.
 
-\begin{enumerate}
-	\item \cite{CANIELS2012162}: why we need PMIS  (Project Management Information Systems), how do we benefit from it. We can use it to motivate the usage of PMIS
+By examining the history of the user's interactions with the PMIS we expect that we will be able to perform an analysis of the causality of each user's actions. A similar research has been performed within~\cite{Toole2006APM}, where they were able to classify how each of the performed actions influenced on the project: whether it had a positive or a negative effect.
 
-	\item \cite{RAYMOND2008213}: An old overview of PMIS. It is often cited. This is related just so we can identify what kinds of PMIS there are and what we are going to work with.
+Having the causality of the users' actions is very valuable for PMs in their task of performing risk management, which has been an issue for projects with agile methodologies. A concern has been brought up by~\cite{tavares2019risk} that SCRUM projects are susceptible to potential risk due to the fact that they do not have a specific process of risk management application, even though it is vital for the success of the project.
 
-	\item \cite{SERRADOR20151040}: a quantitative analysis of whether or not agile works. Why we are sticking with agile and how we can exploit it the most.
-
-	\item \cite{Toole2006APM}: has a good point about setting priorities and the causality of the actions. What actions we take and how they affect the final outcome
-
-	\item \cite{tavares2019risk}: This has a good point as well, how is risk handled in SCRUM projects. It fits well in the story because we'd like to minimize the risk and maximize the output/throughput of the project
-
-\end{enumerate}
-
-The problem that I have is how do I state that this is relevant to what I want to work on.
-
-The task at hand is not actually deeply connected to project management, but it is rather making the project management easier:
-we want to perform analysis of the usage data of a particular PMIS (JIRA) and identify the potential risks (e.g. outliers) based on the analysis.
-
-For example, we would be able to identify what are the bottlenecks of the workflow: is it a person? Is it the workflow itself?
-Can we make a workaround? Can we make a recommendation to the PM/developer on how to proceed? Who to assign the task to next?
+%
+%as they will be able to steer the project in the right direction, i.e. towards success. 
+%
+%It is also worth mentioning that having the causality is also helping PMs 
+%
+%The order of the following articles is very important, it explains the flow of the story:
+%
+%\begin{enumerate}
+%	\item \cite{CANIELS2012162}: why we need PMIS  (Project Management Information Systems), how do we benefit from it. We can use it to motivate the usage of PMIS
+%
+%	\item \cite{RAYMOND2008213}: An old overview of PMIS. It is often cited. This is related just so we can identify what kinds of PMIS there are and what we are going to work with.
+%
+%	\item \cite{SERRADOR20151040}: a quantitative analysis of whether or not agile works. Why we are sticking with agile and how we can exploit it the most.
+%
+%	\item \cite{Toole2006APM}: has a good point about setting priorities and the causality of the actions. What actions we take and how they affect the final outcome
+%
+%	\item \cite{tavares2019risk}: This has a good point as well, how is risk handled in SCRUM projects. It fits well in the story because we'd like to minimize the risk and maximize the output/throughput of the project
+%
+%\end{enumerate}
+%
+%The problem that I have is how do I state that this is relevant to what I want to work on.
+%
+%The task at hand is not actually deeply connected to project management, but it is rather making the project management easier:
+%we want to perform analysis of the usage data of a particular PMIS (JIRA) and identify the potential risks (e.g. outliers) based on the analysis.
+%
+%For example, we would be able to identify what are the bottlenecks of the workflow: is it a person? Is it the workflow itself?
+%Can we make a workaround? Can we make a recommendation to the PM/developer on how to proceed? Who to assign the task to next?
 
 
 

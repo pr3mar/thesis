@@ -50,7 +50,7 @@ Večna pot 113, 1000 Ljubljana\\
 \large Candidate: \Kandidat \\[10mm]}}
 
 
-I, \Kandidat, a student of the 2nd cycle study programme at the Faculty of computer and information science, am submitting a thesis topic proposal to be considered by the Committee for Student Affairs with the following title:
+I, \Kandidat, a student of the 2nd cycle study programme at the Faculty of Computer and Information Science, am submitting a thesis topic proposal to be considered by the Committee for Student Affairs with the following title:
 
 %\hfill\begin{minipage}{\dimexpr\textwidth-2cm}
 Slovenian: {\bf \SLONaslov}\\
@@ -86,13 +86,13 @@ Faculty of Computer and Information Science\\
 
 English: project management, task workflow analysis, data analysis
 
-Slovene: vodjenje projektov, analiza poteka dela, podatkovna analiza
+Slovene: vodenje projektov, analiza poteka dela, analiza podatkov
 
 \section{Keywords}
 
-English: agile project management, project management information system, quantitative data analysis, project success, performance metrics
+English: agile project management, project management information system, quantitative data analysis, project success, performance metrics, causality analysis
 
-Slovene: agilno vodjenje projektov, informacijski sistemi za podporo vodjenje projektov, kvantitativna podatkovna analiza, uspeh projekta, meritve uspe"snosti
+Slovene: agilno vodenje projektov, informacijski sistemi za podporo vodjenje projektov, kvantitativna analiza podatkov, uspe"snost projekta, metrike uspe"snosti, analiza vzročnosti
 
 \section{Detailed thesis proposal}
 
@@ -107,9 +107,11 @@ The proposed thesis has not been submitted nor approved in previous years.
 %Guideline (delete from the final version):
 %Explain the problem which you plan to tackle and motivate your work. In motivation, relate to the literature and unsolved problems that your thesis will address. Position your work within the narrow field of research. The text should be approximately 800 characters long, including spaces.
 
-Project managers (PMs) have the role of leading the team towards the achieving of the project objectives~\cite{institute2017guide}. Project Management Information Systems (PMIS) are used by PMs to assist their decision making for planning, organizing and controlling projects~\cite{CANIELS2012162}. PMIS keep the state of the organization's projects and are visualizing it with Burn-Down Charts, Gantt Charts, or other basic visualisations which provide merely a high-level overview of metrics such as work completed, story points completed, deliverable status~\cite{institute2017guide}, etc. As such, PMIS do not provide enough useful information to PMs~\cite{CANIELS2012162}. 
+Project managers (PMs) are responsible for leading their teams towards successful completion of the project objectives~\cite{institute2017guide}. Project Management Information Systems (PMIS) are used by PMs to assist their decision making for planning, organizing and controlling projects~\cite{CANIELS2012162}. PMIS keep the state of the organisation's projects and present it to PMs through various simple reports and visualisations such as Burn-Down Charts, Gantt Charts, etc., which usually facilitate only high level metrics such as story points completed, status of deliverables, etc.~\cite{institute2017guide}. High level overview of the project's progress is usually not satisfactory for PMs~\cite{CANIELS2012162}, which leads to poor decision making. To increase the quality of their decisions, PMs often need to rely on extra data analysis outside of the PMIS, which leads to additional workload. In this case PMs do not only have to keep the PMIS up to date, but also have to execute the additional analysis which is not supported bu the PMIS itself.
 
-The value of PMIS drops due to their elementary reporting abilities. This leads to PMs having to do double the work: keeping the PMIS up to date and analysing the data separately to support the decision making.
+%PMIS keep the state of the organization's projects and are visualizing it with Burn-Down Charts, Gantt Charts, or other basic visualisations which provide merely a high-level overview of metrics such as work completed, story points completed, deliverable status~\cite{institute2017guide}, etc. As such, PMIS do not provide enough useful information to PMs. 
+
+%The value of PMIS drops due to their elementary reporting abilities. This leads to PMs having to do double the work: keeping the PMIS up to date and analysing the data separately to support the decision making.
 
 %Which leads to PMIS being an unused source of knowledge.
 %for a greater purpose: to assess the members and identify the bottlenecks within the project's workflows.
@@ -125,11 +127,11 @@ The value of PMIS drops due to their elementary reporting abilities. This leads 
 %Prepare an overview of the related work that is directly related to your problem. Describe the main highlights of each related work in a few sentences. Point out pros and drawbacks. Reference the works listed in the References section. The related work should be focused and approximately half of A4 page long.
 
 
-The use of PMIS is a common and widespread practice across enterprises. It has been shown that they have a direct impact on the project success~\cite{RAYMOND2008213}, as they provide a structured overview of the project state and support the decision making process of PMs. Contemporary PMIS provide organization-wide transparency and their usage is not limited to only PMs, but it is instead widespread over the majority of the organization's members. This is especially important within agile environments where every member is tracking their own progress. Agile project management has been gaining momentum ever since the appearance of The Agile Manifesto~\cite{alliance2001agile} because it has been shown to work in practice~\cite{SERRADOR20151040}, i.e. the success rate of projects with agile methodology is greater than traditional projects. 
+The use of PMIS is a common and widespread practice across enterprises. It has been shown that PMIS have a direct impact on the project success since they provide a structured overview of the project's state and support the decision making process of PMs~\cite{RAYMOND2008213}. Contemporary PMIS provide organization-wide transparency and their usage is not limited only to PMs but it is instead widespread over the majority of the organization's members. This is especially important within agile environments where it is important to every member to track their own progress. Agile project management has been gaining momentum ever since the appearance of The Agile Manifesto~\cite{alliance2001agile} mainly because it has shown its worth in practice, where the success rate of agile projects is usually greater in comparison with more traditional projects~\cite{SERRADOR20151040}.
 
-Our aim is to improve the general usability of contemporary PMIS which are used within projects which have applied agile project methodology. An example of such PMIS is Atlassian's \href{https://www.atlassian.com/software/jira}{JIRA}, where we have the unique advantage of observing the users' habits of using the PMIS by examining the history of their usage: how often they interact with the PMIS, what do they edit, which workflow element are their tasks most often in, etc.
+Our aim is to improve the general usability of contemporary PMIS which are used within agile projects. One of the most common agile approaches nowadays is SCRUM, which specializes in achieving software agility~\cite{sutherland2013scrum}. An example of such PMIS is Atlassian's \href{https://www.atlassian.com/software/jira}{JIRA}, one of the most widespread solutions for tracking and managing agile projects, mainly focused on software development. With JIRA, we have the unique advantage of observing the users' habits of using the PMIS by examining the history of their usage: how often they interact with the PMIS, what do they edit, which workflow elements are they commonly working on, etc.
 
-By examining the history of the user's interactions with the PMIS we expect that we will be able to perform an analysis of the causality of the users actions and try to identify the possible bottlenecks which are preventing the projects from moving forward. A concern has been brought up by~\cite{tavares2019risk} that SCRUM projects~\cite{sutherland2013scrum} are susceptible to potential risk due to the fact that they do not have a specific process of risk management application, even though it is vital for the success of the project. A similar research has been performed within~\cite{Toole2006APM}, where they were able to classify how each of the performed actions influenced on the project: whether it had a positive or a negative effect.
+By examining the history of the user's interactions with the PMIS we expect that we will be able to perform an analysis of the causality of the user's actions and try to identify the possible bottlenecks which are preventing the projects from moving forward. A concern has been brought up by Serrador et al.~\cite{tavares2019risk} that SCRUM projects are susceptible to potential risk due to the fact that they do not have a specific process of risk management application, even though it is vital for the success of the project. A similar research has been performed by Toole~\cite{Toole2006APM}, where he was able to classify whether a certain performed action had a positive or a negative effect on the project.
 
 %
 %as they will be able to steer the project in the right direction, i.e. towards success. 
@@ -166,18 +168,24 @@ By examining the history of the user's interactions with the PMIS we expect that
 %Guideline (delete from the final version):
 %Describe the expected contributions of your masters thesis in the field of computer science. The contributions can be either scientific or technical. Describe the novelties of your contribution in relation to the related work and state-of-the-art (scientific or technical-wise). The description should be approximately 500 characters long, including spaces.
 
-Our first contribution is the validation of our hypothesis 
+Our first contribution is the validation of our hypothesis \textbf{H1}: Applying modern data analysis techniques to data generated by a contemporary PMIS can help us extract insights from which the underlying enterprise will benefit. 
 
-\textbf{H1}: Applying modern data analysis techniques to data generated by a contemporary PMIS can help us extract insights from which the underlying enterprise will benefit. 
-
-Under the assumption that our hypothesis is confirmed, our second contribution would be a prototype of a Project Management Support Tool (PMST) which offers benefits in optimizing the workflows of the projects and identifying the outliers of the parties involved.
+Under the assumption that our hypothesis is confirmed, our second contribution will be a prototype of a Project Management Support Tool (PMST) which will offer functionalities for optimizing the workflows in the projects and identifying various outlying project elements such as under- and over-performing users, too complex tasks, etc.
 
 \subsection{Methodology}
 
 %Guideline (delete from the final version):
 %Briefly describe the methodology that you intend to apply in your work. This section should describe the methods you intend to use (e.g., the framework used for development, theoretical frameworks), methods that will be applied for analysis and evaluation of your approach, and comparison with the most related works. The description should be approximately 500 characters long, including spaces.
 
-In order to achieve our expected contributions we need to analyse the data from a contemporary PMIS, in our case that will be Atlassian's \href{https://www.atlassian.com/software/jira}{JIRA}. Our plan is consisted of firstly performing ECTL processing on the data, in order to prepare the data for analysis. And then applying a variety of predominantly, but not necessarily limited to, statistical methods on the data to validate \textbf{H1}. In the case of confirmation of our hypothesis, we would continue to generalize our analysis in a form of prototype of a PMST.
+To achieve our expected contributions we need to analyse the data from a contemporary PMIS, in our case it will be Atlassian's \href{https://www.atlassian.com/software/jira}{JIRA}, which has an open API for accessing the underlying raw data which allows us to easily extract it. We will be using anonymized raw data provided by\href{https://www.celtra.com/}{Celtra}, where JIRA is used on a daily basis to keep track of the project's progress.
+
+Once the data is exported, we will perform an ECTL processing on it to prepare it for further analysis. We intend to validate our hypothesis by applying various methods predominantly from the fields of statistical modelling (comparison of life-cycles of different types of tasks) and network analysis (exploring the interconnectedness of the users) and their combination (uncovering the causality of the actions). Finally, if we manage to validate our hypothesis, we will develop a prototype PMST in a form of an application which will enable us to use our methodology in real world projects.
+
+%The provided data is consisted of meta-data of the usage of JIRA and it is mainly consisted of changing of the states of the tasks ... bla bla bla... no.
+%Identifying the outliers within the data will be executed by exploring the distributions of the data: 
+%Some of the intended methods to be used is comparison of 
+
+%Our plan is consisted of firstly performing ECTL processing on the data, in order to prepare the data for analysis. And then applying a variety of predominantly, but not necessarily limited to, statistical methods on the data to validate \textbf{H1}. In the case of confirmation of our hypothesis, we would continue to generalize our analysis in a form of prototype of a PMST.
 
 %This is pretty vague as well, I am having difficulties identifying the things I can do with the data, let alone identifying the methodology of how I'm going to do that. 
 

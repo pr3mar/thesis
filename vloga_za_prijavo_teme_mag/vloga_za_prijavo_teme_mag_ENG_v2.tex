@@ -50,18 +50,18 @@ Večna pot 113, 1000 Ljubljana\\
 \large Candidate: \Kandidat \\[10mm]}}
 
 
-I, \Kandidat, a student of the 2nd cycle study programme at the Faculty of computer and information science, am submitting a thesis topic proposal to be considered by the Committee for Student Affairs with the following title:
+I, \Kandidat, a student of the 2nd cycle study programme at the Faculty of Computer and Information Science, am submitting a thesis topic proposal to be considered by the Committee for Student Affairs with the following title:
 
 %\hfill\begin{minipage}{\dimexpr\textwidth-2cm}
 Slovenian: {\bf \SLONaslov}\\
 English: {\bf \ENGNaslov}
 %\end{minipage}
 
-This topic was already approved last year: {\bf \textit{NO}}
+This topic was already approved last year: \textbf{NO}
 
-I declare that the mentor listed below have approved the submission of the thesis topic proposal described in the remainder of this document.
+I declare that the mentor listed below has approved the submission of the thesis topic proposal described in the remainder of this document.
 
-I would like to write the thesis in English with the following reason: I am a foreigner and more experienced with writing in English.
+I would like to write the thesis in English with the following reason: I am a foreigner and therefore have more experience with writing in English.
 
 I propose the following mentor:
 
@@ -84,13 +84,15 @@ Faculty of Computer and Information Science\\
 
 \section{The narrow field of the thesis topic}
 
-English: e.g. computer science, computer architecture
+English: project management, task workflow analysis, data analysis
 
+Slovene: vodenje projektov, analiza poteka dela, analiza podatkov
 
-\section{Key-words}
+\section{Keywords}
 
-English:
+English: agile project management, project management information system, quantitative data analysis, project success, performance metrics, causality analysis
 
+Slovene: agilno vodenje projektov, informacijski sistemi za podporo vodjenje projektov, kvantitativna analiza podatkov, uspe"snost projekta, metrike uspe"snosti, analiza vzročnosti
 
 \section{Detailed thesis proposal}
 
@@ -100,44 +102,121 @@ English:
 \textbf{Past approvements of the proposed thesis topic:}\\
 The proposed thesis has not been submitted nor approved in previous years.
 
-% In case you are submitting a topic that has already been approved in the previous years, please state this here and explain the potential differences to that topic.
-
 \subsection{Introduction and problem formulation}
 
-Guideline (delete from the final version):
-Explain the problem which you plan to tackle and motivate your work. In motivation, relate to the literature and unsolved problems that your thesis will address. Position your work within the narrow field of research. The text should be approximately 800 characters long, including spaces.
+%Guideline (delete from the final version):
+%Explain the problem which you plan to tackle and motivate your work. In motivation, relate to the literature and unsolved problems that your thesis will address. Position your work within the narrow field of research. The text should be approximately 800 characters long, including spaces.
 
+Project managers (PMs) are responsible for leading their teams towards successful completion of the project’s objectives~\cite{institute2017guide}. Project Management Information Systems (PMIS) are used by PMs to assist their decision making for planning, organizing and controlling projects ~\cite{CANIELS2012162}. PMIS keep the state of projects and present it to PMs via simplistic reports and visualisations, such as burn-down charts and Gantt charts. Unfortunately, these visualisations offer only high-level metrics such as story points completed, the status of deliverables, etcetera~\cite{institute2017guide}. A high-level overview of the progress is unsatisfactory for PMs and causes poor decision making~\cite{CANIELS2012162}. That forces them to perform additional data analyses. The PMIS does not provide the aforementioned additional workload, but it certainly required to increase the quality of the decisions.
+
+%PMIS keep the state of the organization's projects and are visualizing it with Burn-Down Charts, Gantt Charts, or other basic visualisations which provide merely a high-level overview of metrics such as work completed, story points completed, deliverable status~\cite{institute2017guide}, etc. As such, PMIS do not provide enough useful information to PMs. 
+
+%The value of PMIS drops due to their elementary reporting abilities. This leads to PMs having to do double the work: keeping the PMIS up to date and analysing the data separately to support the decision making.
+
+%Which leads to PMIS being an unused source of knowledge.
+%for a greater purpose: to assess the members and identify the bottlenecks within the project's workflows.
+%~\footnote{In agile environments the Burn-Down Charts seem to be more useful because they visualize the percent of the project's deliverables, however, in traditional, waterfall projects Gantt Charts are used because they visualize the state at which each step of the project is at.}
+
+%However, the data contains much more unused information than it has been initially anticipated. 
+
+%Project Management Information Systems (PMIS)~\cite{institute2017guide} provide structure to the projects which support project managers' (PM) task of monitoring and optimizing the organizations processes. Whereas the PMIS' role is to keep the data well-structured and easily manageable, the PMIS usually provide only a low level of reporting capability. The basic reports and the visualizations provided by the PMIS do not provide much semantic insight from the underlying data, which is often of critical significance. 
 
 \subsection{Related work}
 
-Guideline (delete from the final version):
-Prepare an overview of the related work that is directly related to your problem. Describe the main highlights of each related work in a few sentences. Point out pros and drawbacks. Reference the works listed in the References section. The related work should be focused and approximately half of A4 page long.
+%Guideline (delete from the final version):
+%Prepare an overview of the related work that is directly related to your problem. Describe the main highlights of each related work in a few sentences. Point out pros and drawbacks. Reference the works listed in the References section. The related work should be focused and approximately half of A4 page long.
+
+PMIS usage is a common and widespread practice across enterprises.  PMIS have a direct impact on project success because they provide a structured overview of the project’s state and support the decision making the process of PMs~\cite{RAYMOND2008213}. Contemporary PMIS provide organization-wide transparency. Their usage is not limited only to PMs but widespread over the majority of the organization’s members. This is particularly important in agile environments, where all members need to track their progress on their own. Agile project management has been on the uprise ever since the appearance of The Agile Manifesto~\cite{alliance2001agile} mainly because it has shown its worth in practice. The success rate of agile projects is usually much greater in comparison to more traditional project management approaches~\cite{SERRADOR20151040}.
+
+We aim to improve the general usability of contemporary PMIS which agile projects use. One of the most common agile approaches nowadays is SCRUM, which specializes in achieving software agility~\cite{sutherland2013scrum}. An example of such a PMIS is Atlassian’s \href{https://www.atlassian.com/software/jira}{JIRA}, one of the most widespread solutions for tracking and managing agile projects, mainly focused on software development. With \href{https://www.atlassian.com/software/jira}{JIRA}, we have the unique advantage of observing users’ habits when using the PMIS by examining the history of their actions: how often they interact with the PMIS, what they edit, which workflow elements they are commonly working on, and so on. 
+
+Examining the history of the users’ interactions with the PMIS we expect that we will be able to perform an analysis of the causality of a user’s actions and try to identify the possible bottlenecks which are preventing the projects from moving forward. Serrador et al. brought up a concern that SCRUM projects are susceptible to potential risk~\cite{tavares2019risk} because they do not have a specific process of risk management application, even though it is vital for the success of the project. Toole~\cite{Toole2006APM} has performed similar research where he was able to classify whether a particular performed action had a positive or a negative effect on the project. 
+
+%
+%as they will be able to steer the project in the right direction, i.e. towards success. 
+%
+%It is also worth mentioning that having the causality is also helping PMs 
+%
+%The order of the following articles is very important, it explains the flow of the story:
+%
+%\begin{enumerate}
+%	\item \cite{CANIELS2012162}: why we need PMIS  (Project Management Information Systems), how do we benefit from it. We can use it to motivate the usage of PMIS
+%
+%	\item \cite{RAYMOND2008213}: An old overview of PMIS. It is often cited. This is related just so we can identify what kinds of PMIS there are and what we are going to work with.
+%
+%	\item \cite{SERRADOR20151040}: a quantitative analysis of whether or not agile works. Why we are sticking with agile and how we can exploit it the most.
+%
+%	\item \cite{Toole2006APM}: has a good point about setting priorities and the causality of the actions. What actions we take and how they affect the final outcome
+%
+%	\item \cite{tavares2019risk}: This has a good point as well, how is risk handled in SCRUM projects. It fits well in the story because we'd like to minimize the risk and maximize the output/throughput of the project
+%
+%\end{enumerate}
+%
+%The problem that I have is how do I state that this is relevant to what I want to work on.
+%
+%The task at hand is not actually deeply connected to project management, but it is rather making the project management easier:
+%we want to perform analysis of the usage data of a particular PMIS (JIRA) and identify the potential risks (e.g. outliers) based on the analysis.
+%
+%For example, we would be able to identify what are the bottlenecks of the workflow: is it a person? Is it the workflow itself?
+%Can we make a workaround? Can we make a recommendation to the PM/developer on how to proceed? Who to assign the task to next?
+
+
 
 \subsection{Expected contributions}
 
-Guideline (delete from the final version):
-Describe the expected contributions of your masters thesis in the field of computer science. The contributions can be either scientific or technical. Describe the novelties of your contribution in relation to the related work and state-of-the-art (scientific or technical-wise). The description should be approximately 500 characters long, including spaces.
+%Guideline (delete from the final version):
+%Describe the expected contributions of your masters thesis in the field of computer science. The contributions can be either scientific or technical. Describe the novelties of your contribution in relation to the related work and state-of-the-art (scientific or technical-wise). The description should be approximately 500 characters long, including spaces.
+
+Our first contribution is the validation of the hypothesis that applying modern data analysis techniques to information generated by a contemporary PMIS can help us extract insights from which the underlying enterprise will benefit. 
+
+Under the assumption that our hypothesis is confirmed, our second contribution will be a prototype of a Project Management Support Tool (PMST) which will offer functionalities for optimizing the workflows in the projects and identifying various outlying project elements such as under- and over-performing users, very complex tasks, etc.
 
 \subsection{Methodology}
 
-Guideline (delete from the final version):
-Briefly describe the methodology that you intend to apply in your work. This section should describe the methods you intend to use (e.g., the framework used for development, theoretical frameworks), methods that will be applied for analysis and evaluation of your approach, and comparison with the most related works. The description should be approximately 500 characters long, including spaces.
+%Guideline (delete from the final version):
+%Briefly describe the methodology that you intend to apply in your work. This section should describe the methods you intend to use (e.g., the framework used for development, theoretical frameworks), methods that will be applied for analysis and evaluation of your approach, and comparison with the most related works. The description should be approximately 500 characters long, including spaces.
 
+To achieve our expected contributions, we will analyse data from a contemporary PMIS, which is provided by \href{https://www.celtra.com/}{Celtra}. Their PMIS of choice is \href{https://www.atlassian.com/software/jira}{JIRA}, which is used daily to keep track of their project’s progress. Furthermore, \href{https://www.atlassian.com/software/jira}{JIRA} has an open API for accessing the underlying data, which allows easy extraction. 
+
+Data cleansing, i.e. ETL pre-processing, of the data is required upon exporting it, to prepare it for further analysis. We intend to validate our hypothesis by applying various methods, predominantly from the fields of statistical modelling (life-cycle comparison of different types of tasks) and network analysis (exploring the interconnectedness of users), and their combination (uncovering the causality of the actions). Finally, in the case of successfully validating our hypothesis, we will develop a prototype PMST in the form of an application which will enable us to use our methodology in real-world projects.
+
+%The provided data is consisted of meta-data of the usage of JIRA and it is mainly consisted of changing of the states of the tasks ... bla bla bla... no.
+%Identifying the outliers within the data will be executed by exploring the distributions of the data: 
+%Some of the intended methods to be used is comparison of 
+
+%Our plan is consisted of firstly performing ECTL processing on the data, in order to prepare the data for analysis. And then applying a variety of predominantly, but not necessarily limited to, statistical methods on the data to validate \textbf{H1}. In the case of confirmation of our hypothesis, we would continue to generalize our analysis in a form of prototype of a PMST.
+
+%This is pretty vague as well, I am having difficulties identifying the things I can do with the data, let alone identifying the methodology of how I'm going to do that. 
+
+%The goal is to achieve some degree of \textbf{life-cycle analysis of the tasks}.
+%
+%For example, there are a couple of ideas of what we can do to achieve it:
+%
+%\begin{itemize}
+%	\item analyse the time spent in a certain state of the workflow
+%	
+%	\item identify the people that are halting the process and recommend replacements
+%
+%	\item create distributions of different meta-data of the tasks: \#comments, \#changes, \# labels, \dots. All in order to find the correlation of some of the attributes (meta data fields): e.g. high priority cards have a high rate of state change in a very narrow time span.
+%	
+%	\item \dots
+%\end{itemize}
+%
+%All of these are ideas which seem like they do not require any complicated analysis in order to achieve.
+%
+%The approach should be iterative: first do some ``shallow`` analysis in order to find something interesting, and then once we verify we bring out the ``big guns``.
 
 \subsection{References}
-\label{literatura}
+\label{literature}
 
 
-Guideline (delete from the final version):
-List all the references that you cite in the proposal. Use the scientific standard of citing, e.g.,
-\cite{Zivkovic2004}. The list should contain at least a few works published in the recent years. Preferably, the references should include publications from conferences, journals or other well-accepted sources in your field.
+%Guideline (delete from the final version):
+%List all the references that you cite in the proposal. Use the scientific standard of citing, e.g. \cite{Zivkovic2004}. The list should contain at least a few works published in the recent years. Preferably, the references should include publications from conferences, journals or other well-accepted sources in your field.
 
 \renewcommand\refname{}
 \vspace{-50px}
 \bibliographystyle{elsarticle-num}
 \bibliography{./bibliografija/bibliography}
-
-
 
 
 %\bigskip

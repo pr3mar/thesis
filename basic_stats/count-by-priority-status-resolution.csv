@@ -1,0 +1,64 @@
+﻿Priority,Status,Resolution,Count,Avg days to resolve,Avg hours to resolve
+Blocker,Live,Done,1,0.000000,8.000000
+Blocker,Cancelled,Done,5,0.200000,12.400000
+Blocker,Cancelled,Won't Resolve,8,1.125000,25.000000
+Blocker,Cancelled,Duplicate,17,1.823529,43.294118
+Blocker,Live,Resolved,437,1.864989,45.173913
+Blocker,Cancelled,Not Our Issue,8,1.875000,46.500000
+Blocker,Cancelled,Resolved,37,1.972973,46.000000
+Blocker,Master,Resolved,1,2.000000,46.000000
+Blocker,Cancelled,Incomplete,3,2.333333,53.333333
+Blocker,Reverted,Resolved,5,2.600000,62.600000
+Blocker,Cancelled,Cannot Reproduce,8,3.375000,80.625000
+Blocker,Cancelled,Won't Do,8,4.375000,103.250000
+Critical,Cancelled,Not Our Issue,57,8.543860,204.000000
+Critical,Cancelled,Incomplete,5,9.000000,216.400000
+Critical,Master,Resolved,12,9.250000,222.500000
+Critical,Cancelled,Done,4,10.750000,258.500000
+Critical,Live,Resolved,860,16.539535,396.495349
+Critical,Cancelled,Duplicate,53,17.188679,410.603774
+Critical,Reverted,Resolved,4,18.750000,449.000000
+Critical,Cancelled,Cannot Reproduce,19,23.526316,560.210526
+Critical,Cancelled,Resolved,100,27.540000,660.970000
+Critical,Cancelled,Won't Resolve,49,36.428571,874.510204
+Critical,Cancelled,Won't Do,18,54.666667,1308.277778
+Critical,Live,Done,5,107.200000,2568.400000
+Critical,Cancelled,Timeout,4,329.250000,7900.250000
+Major,Cancelled,Unrelated to Project (SSD),1,1.000000,21.000000
+Major,Live,Won't Resolve,1,15.000000,370.000000
+Major,Cancelled,Not Our Issue,252,28.234127,676.376984
+Major,Master,Resolved,35,39.085714,938.771429
+Major,Live,Done,10,41.900000,1001.600000
+Major,Live,Resolved,2756,50.965893,1222.443759
+Major,Cancelled,Done,35,54.685714,1311.742857
+Major,Cancelled,Duplicate,315,57.387302,1376.390476
+Major,Cancelled,Resolved,362,62.770718,1505.662983
+Major,Cancelled,Cannot Reproduce,116,75.448276,1809.206897
+Major,Cancelled,Incomplete,47,75.617021,1811.872340
+Major,Cancelled,Won't Resolve,436,108.032110,2592.073394
+Major,Reverted,Resolved,26,173.153846,4152.961538
+Major,Cancelled,Won't Do,232,210.806034,5054.392241
+Major,Cancelled,Timeout,54,332.500000,7975.759259
+Minor,Cancelled,Unrelated to Project (SSD),1,7.000000,170.000000
+Minor,Cancelled,Not Our Issue,141,33.262411,798.751773
+Minor,Master,Resolved,34,40.323529,969.647059
+Minor,Live,Resolved,3560,52.339326,1255.654213
+Minor,Reverted,Resolved,15,73.866667,1773.800000
+Minor,Live,Done,10,74.900000,1796.600000
+Minor,Cancelled,Done,31,79.709677,1911.548387
+Minor,Cancelled,Duplicate,391,94.074169,2256.611253
+Minor,Cancelled,Incomplete,58,117.051724,2804.913793
+Minor,Cancelled,Cannot Reproduce,186,120.897849,2900.747312
+Minor,Cancelled,Resolved,527,138.979127,3334.709677
+Minor,Cancelled,Won't Resolve,832,183.567308,4405.043269
+Minor,Cancelled,Won't Do,488,311.924180,7481.241803
+Minor,Cancelled,Timeout,103,446.873786,10720.582524
+Trivial,Cancelled,Done,2,25.000000,603.000000
+Trivial,Live,Resolved,83,42.638554,1021.530120
+Trivial,Cancelled,Not Our Issue,6,109.500000,2627.500000
+Trivial,Cancelled,Cannot Reproduce,6,121.333333,2907.666667
+Trivial,Cancelled,Resolved,16,150.312500,3609.625000
+Trivial,Cancelled,Won't Resolve,42,192.809524,4627.309524
+Trivial,Cancelled,Won't Do,31,299.354839,7180.806452
+Trivial,Cancelled,Duplicate,14,299.928571,7197.357143
+Trivial,Cancelled,Timeout,5,597.000000,14318.600000

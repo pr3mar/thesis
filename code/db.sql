@@ -94,4 +94,27 @@ INSERT ALL INTO COMMENTS
 SELECT * FROM COMMENTS LIMIT 100;
 
 
--- TODO: issue links
+-- Issue links
+CREATE OR REPLACE TABLE ISSUE_LINKS (
+    relationType VARCHAR(64),
+    idFrom VARCHAR(8),
+    keyFrom VARCHAR(10),
+    linkType VARCHAR(64),
+    relation VARCHAR(64),
+    idTo VARCHAR(8),
+    keyTo VARCHAR(10)
+);
+
+INSERT ALL INTO ISSUE_LINKS
+  SELECT
+      links.value:type:name::string "RelationType",
+      ji.id "idFrom",
+      ji.key "keyFrom",
+      IFF (links.value:inwardIssue IS NOT NULL, 'inward', 'outward') "LinkType",
+      IFF ("LinkType" = 'inward', links.value:type:inward, links.value:type:outward)::string "Relation",
+      IFF ("LinkType" = 'inward', links.value:inwardIssue:id, links.value:outwardIssue:id)::string "idTo",
+      IFF ("LinkType" = 'inward', links.value:inwardIssue:key, links.value:outwardIssue:key)::string "keyTo"
+  FROM
+      "ISSUES" ji,
+      LATERAL FLATTEN(ji.fields:issuelinks) links
+  WHERE "keyTo" LIKE 'MAB-%';

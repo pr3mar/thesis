@@ -282,5 +282,7 @@ __pycache__/*
 .vscode/*
 output/*.json
 
-irrelevant/*
-cant-share/*
+irrelevant/
+cant-share/
+data/
+venv/

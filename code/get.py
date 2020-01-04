@@ -7,10 +7,11 @@ from pathlib import Path
 
 
 base_url = "https://celtra.atlassian.net/"
-
+issueIdOrKey = "MAB-19048"
 # url = f"{base_url}rest/api/3/field"
 # url = f"{base_url}rest/api/3/label"
-url = f"{base_url}/rest/api/3/resolution"
+# url = f"{base_url}/rest/api/3/resolution"
+url = f"{base_url}/rest/api/3/issue/{issueIdOrKey}/changelog"
 # url = f"{base_url}rest/api/3/project/{projectIdOrKey}/components"  # set `projectIdOrKey`
 # url = f"{base_url}rest/api/3/role/{roleId}/actors"  # need elevated permissionss
 

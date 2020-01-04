@@ -1,64 +1,63 @@
--- NOTE: Data up to ~2019-11-22
+-- -- NOTE: Data up to 2020-01-04
 
--- get all the resolved issues ordered by their time to resolve
+// main view, resolved
 SELECT 
     sha2(ji.key) "Code", 
     ji.fields:issuetype:name::string "Type", 
     ji.fields:resolution:name::string "Resolution", 
     ji.fields:status:name::string "Status", 
     ji.fields:priority:name::string "Priority", 
-    ji.changelog:total "Changelog Count", 
-    ji.fields:comment:total "Comments Count", 
+//    ji.changelog:total "Changelog Count",  -- need to rewrite this one
+//    ji.fields:comment:total "Comments Count", -- need to rewrite this one
     ji.fields:watches:watchCount "Watch Count",
-    TO_TIMESTAMP_NTZ(ji.fields:created) "Date Created",
-    TO_TIMESTAMP_NTZ(ji.fields:resolutiondate) "Date resolved",
-    DATEDIFF(days, TO_TIMESTAMP_NTZ(ji.fields:created), TO_TIMESTAMP_NTZ(ji.fields:resolutiondate)) "Days to resolve",
-    DATEDIFF(hour, TO_TIMESTAMP_NTZ(ji.fields:created), TO_TIMESTAMP_NTZ(ji.fields:resolutiondate)) "Hours to resolve"
+    TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') "Date Created",
+    TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') "Date resolved",
+    DATEDIFF(days, TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'), TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')) "Days to resolve",
+    DATEDIFF(hour, TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'), TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')) "Hours to resolve"
 FROM 
-    "STITCHDATA"."JIRA"."JIRA_ISSUES" ji
+    ISSUES ji
 WHERE 
     ji.KEY LIKE 'MAB-%'
     AND ji.fields:issuetype:name IN ('New Feature or Improvement', 'Bug', 'Internal Improvement')
     AND NOT IS_NULL_VALUE(ji.fields:resolution)
 ORDER BY 
     "Days to resolve",
-    "Watch Count" DESC, 
-    "Changelog Count" DESC, 
-    "Comments Count" DESC;
+    "Watch Count" DESC;
+//    "Changelog Count" DESC, 
+//    "Comments Count" DESC;
 
-
--- get all UNresolved issues and their *UP TO DATE* time to resolve
+-- main view, UNresolved
 SELECT 
     sha2(ji.key) "Code", 
     ji.fields:issuetype:name::string "Type", 
     ji.fields:status:name::string "Status", 
     ji.fields:priority:name::string "Priority", 
-    ji.changelog:total::string "Changelog Count", 
-    ji.fields:comment:total "Comments Count", 
+//    ji.changelog:total::string "Changelog Count", -- need to rewrite this one
+//    ji.fields:comment:total "Comments Count", -- need to rewrite this one
     ji.fields:watches:watchCount "Watch Count",
-    TO_TIMESTAMP_NTZ(ji.fields:created) "Date Created",
-    DATEDIFF(days, TO_TIMESTAMP_NTZ(ji.fields:created), IFF(IS_NULL_VALUE(ji.fields:resolutiondate), CURRENT_TIMESTAMP, TO_TIMESTAMP_NTZ(ji.fields:resolutiondate))) "Days to date"
+    TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') "Date Created",
+    DATEDIFF(days, TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'), IFF(ji.fields:resolutiondate IS NULL, CURRENT_TIMESTAMP, TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'))) "Days to date"
 FROM 
-    "STITCHDATA"."JIRA"."JIRA_ISSUES" ji
+    ISSUES ji
 WHERE 
     ji.KEY LIKE 'MAB-%'
     AND ji.fields:issuetype:name IN ('New Feature or Improvement', 'Bug', 'Internal Improvement')
-    AND IS_NULL_VALUE(ji.fields:resolution)
+    AND ji.fields:resolution IS NULL
 ORDER BY 
-    "Watch Count" DESC, 
-    "Changelog Count" DESC, 
-    "Comments Count" DESC;
+    "Watch Count" DESC;
+//    "Changelog Count" DESC, 
+//    "Comments Count" DESC;
 
 -- main view, resolved aggregates
 SELECT 
-    ji.fields:priority:name "Priority", 
-    ji.fields:status:name "Status", 
-    ji.fields:resolution:name "Resolution", 
+    ji.fields:priority:name::string "Priority", 
+    ji.fields:status:name::string "Status", 
+    ji.fields:resolution:name::string "Resolution", 
     count(*) "Count",
-    AVG(DATEDIFF(days, TO_TIMESTAMP_NTZ(ji.fields:created), IFF(IS_NULL_VALUE(ji.fields:resolutiondate), CURRENT_TIMESTAMP, TO_TIMESTAMP_NTZ(ji.fields:resolutiondate)))) "Avg days to resolve",
-    AVG(DATEDIFF(hour, TO_TIMESTAMP_NTZ(ji.fields:created), IFF(IS_NULL_VALUE(ji.fields:resolutiondate), CURRENT_TIMESTAMP, TO_TIMESTAMP_NTZ(ji.fields:resolutiondate)))) "Avg hours to resolve"
+    AVG(DATEDIFF(days, TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'), IFF(ji.fields:resolutiondate IS NULL, CURRENT_TIMESTAMP, TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')))) as "Avg days to resolve",
+    AVG(DATEDIFF(hour, TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'), IFF(ji.fields:resolutiondate IS NULL, CURRENT_TIMESTAMP, TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')))) as "Avg hours to resolve"
 FROM 
-    "JIRA"."JIRA_ISSUES" ji
+    ISSUES ji
 WHERE 
     ji.KEY LIKE 'MAB-%'
     AND ji.fields:issuetype:name IN ('New Feature or Improvement', 'Bug', 'Internal Improvement')
@@ -71,3 +70,31 @@ ORDER BY
     "Priority",
     "Avg days to resolve",
     "Count" DESC;
+
+// get all issue types and their counts
+SELECT ji.fields:issuetype:name::string "type", count(*)
+FROM ISSUES ji
+WHERE ji.KEY LIKE 'MAB-%'
+GROUP BY "type";
+
+SELECT ji.key, ji.fields:created, ji.fields:issuetype:name::string, ji.fields:customfield_10004::int "Story Points"
+FROM ISSUES ji
+WHERE ji.KEY LIKE 'MAB-%' AND ji.fields:customfield_10004 IS NOT NULL;
+
+SELECT 
+    sha2(ji.key),
+    ji.fields:priority:name::string "Priority", 
+    ji.fields:status:name::string "Status", 
+    ji.fields:resolution:name::string "Resolution",
+    TO_DATE(ji.fields:duedate) "Due date", 
+    DATEDIFF(days, "Due date", CURRENT_DATE) "Days overdue"
+FROM ISSUES ji
+WHERE 
+    ji.KEY LIKE 'MAB-%'
+    AND TO_DATE(ji.fields:duedate) IS NOT NULL
+    AND ji.fields:resolutiondate IS NULL
+    AND DATEDIFF(days, TO_DATE(ji.fields:duedate), CURRENT_DATE) > 1
+    AND "Status" NOT IN ('Live', 'Done', 'Cancelled')
+ORDER BY
+    "Priority",
+    "Days overdue" DESC;

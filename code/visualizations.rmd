@@ -1,0 +1,58 @@
+---
+title: "Basic Jira visualizations"
+author: Marko Prelevikj
+output:
+    prettydoc::html_pretty:
+      highlight: github
+      theme: architect
+      toc: true
+      toc_depth: 2
+---
+
+```{r, include = F}
+library(ggplot2)
+library(tidyr)
+library(reshape2)
+```
+
+# Introduction
+
+# Diving in
+
+## Breakdown by issue type:
+
+```{r issueTypes, echo = F, results = 'hide'}
+breakdownByType <- read.csv(file="../basic_stats/by_type.csv")
+
+issueTypes <- ggplot(breakdownByType) +
+      geom_bar(aes(Issue.type, Count), stat = "identity") +
+      geom_bar(aes(Issue.type, Count, fill=Resolved), stat = "identity", position = "dodge") +
+      xlab("Issue type") +
+      ylab("Count")
+issueTypes
+```
+
+## Breakdown by priority:
+
+```{r issuePriority, echo = F, results = 'hide'}
+
+breakdownByPriority <- read.csv(file="../basic_stats/by-priority.csv")
+
+issuePriority <- ggplot(breakdownByPriority) +
+      geom_bar(aes(Issue.priority, Count), stat = "identity") +
+      geom_bar(aes(Issue.priority, Count, fill=Resolved), stat = "identity", position = "dodge") +
+      xlab("Issue priority") + ylab("Count")
+issuePriority
+```
+
+## Overdue issues:
+
+|Priority|Issues overdue|Avg days overdue|
+|---|---|---|
+|Blocker|/|/|
+|Critical|4|46.50|
+|Major|25|155.12|
+|Minor|19|59.95|
+|Trivial|/|/|
+
+## Histograms

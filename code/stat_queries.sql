@@ -93,7 +93,8 @@ ORDER BY
 
 // get all issue types and their counts
 SELECT
-    ji.fields:issuetype:name::string "Issue type",
+--     ji.fields:issuetype:name::string "Issue type",
+    ji.fields:priority:name::string "Issue priority",
     IFF(ji.fields:resolutiondate IS NULL, 'No', 'Yes') "Resolved",
     count(*) "Count"
 FROM
@@ -102,29 +103,36 @@ WHERE
     ji.KEY LIKE 'MAB-%'
     AND ji.fields:issuetype:name IN ('Bug', 'Epic', 'Internal Improvement', 'New Feature or Improvement')
 GROUP BY
+    "Issue priority",
     "Resolved"
 ORDER BY
-    "Issue type",
+--     "Issue type",
+    "Issue priority",
     "Count" DESC;
 
 SELECT ji.key, ji.fields:created, ji.fields:issuetype:name::string, ji.fields:customfield_10004::int "Story Points"
 FROM ISSUES ji
 WHERE ji.KEY LIKE 'MAB-%' AND ji.fields:customfield_10004 IS NOT NULL;
 
+
+--
 SELECT 
-    sha2(ji.key),
+--     sha2(ji.key),
     ji.fields:priority:name::string "Priority", 
-    ji.fields:status:name::string "Status", 
-    ji.fields:resolution:name::string "Resolution",
-    TO_DATE(ji.fields:duedate) "Due date", 
-    DATEDIFF(days, "Due date", CURRENT_DATE) "Days overdue"
+--     ji.fields:status:name::string "Status",
+--     TO_DATE(ji.fields:duedate) "Due date",
+    count(*) "Issues overdue",
+    AVG(DATEDIFF(days, TO_DATE(ji.fields:duedate), CURRENT_DATE))"Avg days overdue"
 FROM ISSUES ji
 WHERE 
     ji.KEY LIKE 'MAB-%'
     AND TO_DATE(ji.fields:duedate) IS NOT NULL
     AND ji.fields:resolutiondate IS NULL
     AND DATEDIFF(days, TO_DATE(ji.fields:duedate), CURRENT_DATE) > 1
-    AND "Status" NOT IN ('Live', 'Done', 'Cancelled')
+    AND ji.fields:status:name::string NOT IN ('Live', 'Done', 'Cancelled')
+GROUP BY
+    "Priority"
+--      "Status"
 ORDER BY
     "Priority",
-    "Days overdue" DESC;
+    "Avg days overdue" DESC;

@@ -2,51 +2,71 @@
 
 // main view, resolved
 SELECT 
-    sha2(ji.key) "Code", 
-    ji.fields:issuetype:name::string "Type", 
-    ji.fields:resolution:name::string "Resolution", 
-    ji.fields:status:name::string "Status", 
-    ji.fields:priority:name::string "Priority", 
-//    ji.changelog:total "Changelog Count",  -- need to rewrite this one
-//    ji.fields:comment:total "Comments Count", -- need to rewrite this one
+    sha2(ji.key) "Issue id",
+    ji.fields:issuetype:name::string "Issue Type",
+    ji.fields:priority:name::string "Priority",
+    ji.fields:resolution:name::string "Resolution",
+    ji.fields:status:name::string "Status",
+    ch."Changelog Count",
+    com."Comments Count",
     ji.fields:watches:watchCount "Watch Count",
     TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') "Date Created",
     TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') "Date resolved",
     DATEDIFF(days, TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'), TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')) "Days to resolve",
     DATEDIFF(hour, TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'), TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')) "Hours to resolve"
-FROM 
+FROM
     ISSUES ji
-WHERE 
+    JOIN (
+        SELECT KEY, COUNT(*) "Changelog Count"
+        FROM JIRA.CHANGELOGS
+        GROUP BY key
+    ) ch on ch.key = ji.key
+    JOIN (
+        SELECT KEY, COUNT(*) "Comments Count"
+        FROM JIRA.COMMENTS
+        GROUP BY key
+    ) com on com.key = ji.key
+WHERE
     ji.KEY LIKE 'MAB-%'
-    AND ji.fields:issuetype:name IN ('New Feature or Improvement', 'Bug', 'Internal Improvement')
-    AND NOT IS_NULL_VALUE(ji.fields:resolution)
-ORDER BY 
+    AND ji.fields:issuetype: name IN ('Bug', 'Epic', 'Internal Improvement', 'New Feature or Improvement')
+    AND ji.fields:resolutiondate IS NOT NULL
+ORDER BY
     "Days to resolve",
-    "Watch Count" DESC;
-//    "Changelog Count" DESC, 
-//    "Comments Count" DESC;
+    "Watch Count" DESC,
+    "Changelog Count" DESC,
+    "Comments Count" DESC;
 
 -- main view, UNresolved
 SELECT 
-    sha2(ji.key) "Code", 
-    ji.fields:issuetype:name::string "Type", 
-    ji.fields:status:name::string "Status", 
-    ji.fields:priority:name::string "Priority", 
-//    ji.changelog:total::string "Changelog Count", -- need to rewrite this one
-//    ji.fields:comment:total "Comments Count", -- need to rewrite this one
+    sha2(ji.key) "Issue id",
+    ji.fields:issuetype:name::string "Type",
+    ji.fields:status:name::string "Status",
+    ji.fields:priority:name::string "Priority",
+    ch."Changelog Count",
+    com."Comments Count",
     ji.fields:watches:watchCount "Watch Count",
     TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') "Date Created",
     DATEDIFF(days, TO_TIMESTAMP_NTZ(ji.fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'), IFF(ji.fields:resolutiondate IS NULL, CURRENT_TIMESTAMP, TO_TIMESTAMP_NTZ(ji.fields:resolutiondate::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'))) "Days to date"
 FROM 
     ISSUES ji
+    JOIN (
+        SELECT KEY, COUNT(*) "Changelog Count"
+        FROM JIRA.CHANGELOGS
+        GROUP BY key
+    ) ch on ch.key = ji.key
+    JOIN (
+        SELECT KEY, COUNT(*) "Comments Count"
+        FROM JIRA.COMMENTS
+        GROUP BY key
+    ) com on com.key = ji.key
 WHERE 
     ji.KEY LIKE 'MAB-%'
-    AND ji.fields:issuetype:name IN ('New Feature or Improvement', 'Bug', 'Internal Improvement')
-    AND ji.fields:resolution IS NULL
-ORDER BY 
-    "Watch Count" DESC;
-//    "Changelog Count" DESC, 
-//    "Comments Count" DESC;
+    AND ji.fields:issuetype:name IN ('Bug', 'Epic', 'Internal Improvement', 'New Feature or Improvement')
+    AND ji.fields:resolutiondate IS NULL AND ji.fields:resolution:name IS NULL
+ORDER BY
+    "Watch Count" DESC,
+    "Changelog Count" DESC,
+    "Comments Count" DESC;
 
 -- main view, resolved aggregates
 SELECT 
@@ -60,8 +80,8 @@ FROM
     ISSUES ji
 WHERE 
     ji.KEY LIKE 'MAB-%'
-    AND ji.fields:issuetype:name IN ('New Feature or Improvement', 'Bug', 'Internal Improvement')
-    AND NOT IS_NULL_VALUE(ji.fields:resolution)
+    AND ji.fields:issuetype:name IN ('Bug', 'Epic', 'Internal Improvement', 'New Feature or Improvement')
+    AND ji.fields:resolution IS NOT NULL
 GROUP BY
     "Priority",
     "Status",
@@ -72,10 +92,20 @@ ORDER BY
     "Count" DESC;
 
 // get all issue types and their counts
-SELECT ji.fields:issuetype:name::string "type", count(*)
-FROM ISSUES ji
-WHERE ji.KEY LIKE 'MAB-%'
-GROUP BY "type";
+SELECT
+    ji.fields:issuetype:name::string "Issue type",
+    IFF(ji.fields:resolutiondate IS NULL, 'No', 'Yes') "Resolved",
+    count(*) "Count"
+FROM
+    ISSUES ji
+WHERE
+    ji.KEY LIKE 'MAB-%'
+    AND ji.fields:issuetype:name IN ('Bug', 'Epic', 'Internal Improvement', 'New Feature or Improvement')
+GROUP BY
+    "Resolved"
+ORDER BY
+    "Issue type",
+    "Count" DESC;
 
 SELECT ji.key, ji.fields:created, ji.fields:issuetype:name::string, ji.fields:customfield_10004::int "Story Points"
 FROM ISSUES ji

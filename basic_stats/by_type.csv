@@ -1,10 +1,9 @@
-type,COUNT
-"New Feature or Improvement",3107
-"Epic",340
-"Task",1353
-"Bug",7974
-"Bug (Sub-task)",378
-"Sub-task",953
-"Improvement (Sub-task)",234
-"Internal Improvement",3733
-"Prototype",105
+Issue type,Resolved,Count
+Bug,Yes,7739
+Bug,No,400
+Epic,Yes,199
+Epic,No,159
+Internal Improvement,Yes,3473
+Internal Improvement,No,435
+New Feature or Improvement,Yes,2869
+New Feature or Improvement,No,285

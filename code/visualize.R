@@ -2,7 +2,7 @@ library(ggplot2)
 library(tidyr)
 library(reshape2)
 
-breakdownByType <- read.csv(file="../basic_stats/by_type.csv")
+breakdownByType <- read.csv(file="basic_stats/by_type.csv")
 
 issueTypes <- ggplot(breakdownByType) +
       geom_bar(aes(Issue.type, Count), stat = "identity") +
@@ -21,3 +21,17 @@ issuePriority
 
 
 resolvedIssues <- read.csv(file = "basic_stats/resolved-issues.csv")
+issueTypes <- unique(resolvedIssues$Issue.Type)
+plots <- list()
+for (type in issueTypes) {
+  data <- resolvedIssues[resolvedIssues$Issue.Type == type,]
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Watch.Count), binwidth = 1, color="black", fill="red") +
+    scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("People watching") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+plots["Bug"]

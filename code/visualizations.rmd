@@ -20,7 +20,7 @@ library(gridExtra)
 
 # Diving in
 
-## Breakdown by issue type:
+## Breakdown by issue type
 
 ```{r issueTypes, echo = F, results = 'hide'}
 breakdownByType <- read.csv(file="../basic_stats/by_type.csv")
@@ -33,7 +33,7 @@ priorityTypes <- ggplot(breakdownByType) +
 priorityTypes
 ```
 
-## Breakdown by priority:
+## Breakdown by priority
 
 ```{r issuePriority, echo = F, results = 'hide'}
 
@@ -46,7 +46,7 @@ issuePriority <- ggplot(breakdownByPriority) +
 issuePriority
 ```
 
-## Overdue issues:
+## Overdue issues
 
 |Priority|Issues overdue|Avg days overdue|
 |---|---|---|
@@ -102,7 +102,7 @@ nCol <- floor(sqrt(n))
 do.call("grid.arrange", c(plots, ncol=nCol))
 ```
 
-## Number of Comments
+## Comments
 ### By issue type
 ```{r commentHistograms, echo = F, results = 'hide'}
 issueTypes <- unique(resolvedIssues$Issue.Type)
@@ -143,7 +143,7 @@ nCol <- floor(sqrt(n))
 do.call("grid.arrange", c(plots, ncol=nCol))
 ```
 
-## Number of changelog items
+## Changelog items
 
 ### By issue type
 ```{r changelogHistograms, echo = F, results = 'hide'}
@@ -186,7 +186,7 @@ do.call("grid.arrange", c(plots, ncol=nCol))
 ```
 
 
-## Number of days to resolve
+## Days to resolve
 
 ### By issue type
 ```{r dtrTypeHistograms, echo = F, results = 'hide'}
@@ -229,3 +229,175 @@ nCol <- floor(sqrt(n))
 do.call("grid.arrange", c(plots, ncol=nCol))
 ```
 
+# Unresolved issues breakdown
+
+```{r, echo = F, results = 'hide'}
+unresolvedIssues <- read.csv(file = "../basic_stats/unresolved-issues.csv")
+```
+## Watch count
+### By issue type
+```{r watchHistogramsUnresolved, echo = F, results = 'hide'}
+issueTypes <- unique(unresolvedIssues$Issue.Type)
+plots <- list()
+for (type in issueTypes) {
+  data <- unresolvedIssues[unresolvedIssues$Issue.Type == type,]
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Watch.Count), binwidth = 1, color="black", fill="red") +
+    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("People watching") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+n <- length(plots)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(plots, ncol=nCol))
+```
+
+### By priority
+```{r priprotyWatchUnresolved, echo = F, results = 'hide'}
+priorityTypes <- sort(unique(unresolvedIssues$Priority))
+plots <- list()
+for (type in priorityTypes) {
+  data <- unresolvedIssues[unresolvedIssues$Priority == type,]
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Watch.Count), binwidth = 1, color="black", fill="red") +
+    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("People watching") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+n <- length(plots)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(plots, ncol=nCol))
+```
+
+## Comments
+### By issue type
+```{r commentHistogramsUnresolved, echo = F, results = 'hide'}
+issueTypes <- unique(unresolvedIssues$Issue.Type)
+plots <- list()
+for (type in issueTypes) {
+  data <- unresolvedIssues[unresolvedIssues$Issue.Type == type,]
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Comments.Count), binwidth = 5, color="black", fill="red") +
+    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("Comments count") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+n <- length(plots)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(plots, ncol=nCol))
+```
+
+### By priority
+```{r priorityCommentUnresolved, echo = F, results = 'hide'}
+priorityTypes <- sort(unique(unresolvedIssues$Priority))
+plots <- list()
+for (type in priorityTypes) {
+  data <- unresolvedIssues[unresolvedIssues$Priority == type,]
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Comments.Count), binwidth = 5, color="black", fill="red") +
+    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("Comments count") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+n <- length(plots)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(plots, ncol=nCol))
+```
+
+## Changelog items
+
+### By issue type
+```{r changelogHistogramsUnresolved, echo = F, results = 'hide'}
+issueTypes <- unique(unresolvedIssues$Issue.Type)
+plots <- list()
+for (type in issueTypes) {
+  data <- unresolvedIssues[unresolvedIssues$Issue.Type == type,]
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Changelog.Count), binwidth = 10, color="black", fill="red") +
+    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("Changelog count") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+n <- length(plots)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(plots, ncol=nCol))
+```
+
+### By priority
+```{r priorityChangelogUnresolved, echo = F, results = 'hide'}
+priorityTypes <- sort(unique(unresolvedIssues$Priority))
+plots <- list()
+for (type in priorityTypes) {
+  data <- unresolvedIssues[unresolvedIssues$Priority == type,]
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Changelog.Count), binwidth = 10, color="black", fill="red") +
+    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("Changelog count") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+n <- length(plots)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(plots, ncol=nCol))
+```
+
+
+## Days to date
+
+### By issue type
+```{r dtrTypeHistogramsUnresolved, echo = F, results = 'hide'}
+issueTypes <- unique(unresolvedIssues$Issue.Type)
+plots <- list()
+for (type in issueTypes) {
+  data <- unresolvedIssues[unresolvedIssues$Issue.Type == type,]
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Days.to.date), binwidth = 50, color="black", fill="red") +
+    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("Days to date") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+n <- length(plots)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(plots, ncol=nCol))
+```
+
+
+### By priority
+```{r dtrPriorityHistogramsUnresolved, echo = F, results = 'hide'}
+priorityTypes <- sort(unique(unresolvedIssues$Priority))
+plots <- list()
+for (type in priorityTypes) {
+  data <- unresolvedIssues[unresolvedIssues$Priority == type,]
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Days.to.date), binwidth = 50, color="black", fill="red") +
+    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("Days to date") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+n <- length(plots)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(plots, ncol=nCol))
+```

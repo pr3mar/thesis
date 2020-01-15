@@ -35,3 +35,23 @@ for (type in issueTypes) {
 }
 
 plots["Bug"]
+
+unrresolvedIssues <- read.csv(file = "basic_stats/unresolved-issues.csv")
+issueTypes <- sort(unique(unrresolvedIssues$Status))
+plots <- list()
+for (type in issueTypes) {
+  data <- unrresolvedIssues[unrresolvedIssues$Status == type,]
+  if (nrow(data) < 100) {
+    cat(type, nrow(data), fill = TRUE)
+    next
+  }
+  plots[[type]] <- ggplot(data) +
+    geom_histogram(aes(x = Comments.Count), binwidth = 1, color="black", fill="red") +
+    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    ylab("Issue count") +
+    xlab("People watching") +
+    ggtitle(type) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+plots

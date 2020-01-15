@@ -41,16 +41,16 @@ issueTypes <- sort(unique(unrresolvedIssues$Status))
 plots <- list()
 for (type in issueTypes) {
   data <- unrresolvedIssues[unrresolvedIssues$Status == type,]
-  if (nrow(data) < 100) {
-    cat(type, nrow(data), fill = TRUE)
+  if (nrow(data) < 30) {
+    cat("Ignored because too little data: ", type, nrow(data), fill = TRUE)
     next
   }
   plots[[type]] <- ggplot(data) +
-    geom_histogram(aes(x = Comments.Count), binwidth = 1, color="black", fill="red") +
+    geom_histogram(aes(x = Changelog.Count), binwidth = 5, color="black", fill="red") +
     # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
     ylab("Issue count") +
-    xlab("People watching") +
-    ggtitle(type) +
+    xlab("Changelog count") +
+    ggtitle(paste0(type, ", (", nrow(data), ")")) +
     theme(plot.title = element_text(hjust = 0.5))
 }
 

@@ -44,7 +44,9 @@ SELECT COUNT(*) FROM ISSUES;
 CREATE TABLE CHANGELOGS (
     id VARCHAR(8),
     key VARCHAR(10),
-    changelog OBJECT,
+    userId VARCHAR(128),
+    changelogItem OBJECT,
+    dateCreated TIMESTAMP_NTZ(9),
     dateAccessed TIMESTAMP_NTZ(9)
 );
 
@@ -52,15 +54,19 @@ CREATE TEMPORARY TABLE CHANGELOG_TEMP (tmp VARIANT);
 
 COPY INTO CHANGELOG_TEMP FROM @read_json/changelogs.gz;
 
-INSERT ALL INTO CHANGELOGS
-    SELECT
-        tmp:id::string id,
-        tmp:key::string key,
-        changelog.value,
-        TO_TIMESTAMP_NTZ(tmp:api_dateAccessed) dateAccessed
-    FROM
-        CHANGELOG_TEMP,
-        LATERAL FLATTEN(tmp:changelog) changelog;
+INSERT ALL INTO "U_MARKOPRELEVIKJ"."JIRA"."CHANGELOGS"
+  SELECT
+      tmp:id::string id,
+      tmp:key::string key,
+      changelog.value:author:emailAddress::string userId,
+      item.value changelogItem,
+      TO_TIMESTAMP_NTZ(changelog.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') created,
+      TO_TIMESTAMP_NTZ(tmp:api_dateAccessed) dateAccessed
+  FROM
+      CHANGELOG_TEMP,
+      LATERAL FLATTEN(tmp:changelog) changelog,
+      LATERAL FLATTEN(changelog.value:items) item
+  ORDER BY created DESC;
 
 SELECT count(distinct key) FROM CHANGELOGS;
 
@@ -94,7 +100,7 @@ INSERT ALL INTO COMMENTS
 SELECT * FROM COMMENTS LIMIT 100;
 
 
--- Issue links
+-- -- -- -- -- -- ISSUE LINKS
 CREATE OR REPLACE TABLE ISSUE_LINKS (
     relationType VARCHAR(64),
     idFrom VARCHAR(8),
@@ -118,3 +124,31 @@ INSERT ALL INTO ISSUE_LINKS
       "ISSUES" ji,
       LATERAL FLATTEN(ji.fields:issuelinks) links
   WHERE "keyTo" LIKE 'MAB-%';
+
+
+-- -- -- -- -- -- USERS
+CREATE TABLE USERS (
+  accountId VARCHAR(128),
+  active BOOLEAN,
+  accountType VARCHAR(32),
+  displayName VARCHAR(62),
+  email VARCHAR(128),
+  userKey VARCHAR(128),
+  other OBJECT
+);
+
+CREATE OR REPLACE TEMPORARY TABLE USERS_TEMP (tmp VARIANT);
+COPY INTO USERS_TEMP FROM @read_json/users.gz;
+
+INSERT ALL INTO USERS
+  SELECT
+      tmp:accountId::string accountId,
+      tmp:active active,
+      tmp:accountType::string accountType,
+      tmp:displayName::string displayName,
+      tmp:emailAddress::string email,
+      tmp:key::string userKey,
+      tmp other
+  FROM USERS_TEMP;
+
+SELECT * FROM USERS;

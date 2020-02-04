@@ -109,6 +109,29 @@ def get_issue_comments(issue):
     }
 
 
+def get_users():
+    fname = f"{data_dir}/users.json"
+    if USE_CACHE and os.path.isfile(fname):
+        print(f"Using cached result from {fname}")
+        with open(fname) as file:
+            return json.load(file)
+    url = f"{base_url}/rest/api/3/users/search"
+    max_results = 1000
+    start_at = 0
+    query = {"maxResults": max_results, "startAt": start_at}
+    users_temp = json.loads(requests.request("GET", url, headers=headers, params=query, auth=auth).text)
+    users = []
+    for i, user in enumerate(users_temp):
+        query = {"accountId": user["accountId"]}
+        print(f"[{i + 1}/{len(users_temp)}] Getting user: {user['accountId']}")
+        resp = requests.request("GET", f"{base_url}/rest/api/3/user", headers=headers, params=query, auth=auth)
+        usr = json.loads(resp.text)
+        users.append(usr)
+    with open(fname, "w") as file:
+        json.dump(users, file)
+    return users
+
+
 def exec_get(url, query, append=None):
     resp = requests.request("GET", url, headers=headers, params=query, auth=auth)
     issue_response = json.loads(resp.text)
@@ -126,9 +149,11 @@ if __name__ == '__main__':
     auth = HTTPBasicAuth(credentials[0], credentials[1])
     headers = {"Accept": "application/json"}
 
-    issues = get_all_issues()
-    changelogs = get_changelogs(issues)
-    comments = get_comments(issues)
-    print(len(issues))
-    print(len(changelogs))
-    print(len(comments))
+    # issues = get_all_issues()
+    # changelogs = get_changelogs(issues)
+    # comments = get_comments(issues)
+    users = get_users()
+    # print(len(issues))
+    # print(len(changelogs))
+    # print(len(comments))
+    print(len(users))

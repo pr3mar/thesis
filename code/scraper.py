@@ -149,11 +149,11 @@ if __name__ == '__main__':
     auth = HTTPBasicAuth(credentials[0], credentials[1])
     headers = {"Accept": "application/json"}
 
-    # issues = get_all_issues()
-    # changelogs = get_changelogs(issues)
-    # comments = get_comments(issues)
+    issues = get_all_issues()
+    changelogs = get_changelogs(issues)
+    comments = get_comments(issues)
     users = get_users()
-    # print(len(issues))
-    # print(len(changelogs))
-    # print(len(comments))
+    print(len(issues))
+    print(len(changelogs))
+    print(len(comments))
     print(len(users))

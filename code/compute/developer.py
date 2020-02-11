@@ -1,8 +1,25 @@
 import code.config
+import datetime
 from code.db.utils import SnowflakeWrapper
 
 
-def get_cards(sw: SnowflakeWrapper, interval):
+def get_cards(sw: SnowflakeWrapper, interval: (datetime, datetime)):
+    # Use this query:
+    # SELECT
+    #     KEY,
+    #     ARRAY_AGG(
+    #         OBJECT_CONSTRUCT(
+    #             'author', USERID,
+    #             'dateCreated', DATECREATED,
+    #             'changelogItem', CHANGELOGITEM
+    #             )
+    #         ) CHANGELOGITEMS
+    # FROM CHANGELOGS
+    # WHERE
+    #     CHANGELOGITEM:field ILIKE 'status'
+    #     AND DATECREATED >= '2019-10-01'
+    #     AND DATECREATED < '2020-01-01'
+    # GROUP BY KEY;
     return 0
 
 

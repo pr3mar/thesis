@@ -4,16 +4,25 @@ import os
 from datetime import datetime
 from requests.auth import HTTPBasicAuth
 from pathlib import Path
-
+from gzip import GzipFile
 USE_CACHE = True
 
 
+def load_cache(fname):
+    with GzipFile(fname, 'r') as file:
+        return json.loads(file.read().decode('utf-8'))
+
+
+def store_cache(fname, data):
+    with GzipFile(fname, 'w') as file:
+        return file.write(json.dumps(data).encode('utf-8'))
+
+
 def get_all_issues():
-    fname = f"{data_dir}/issues.json"
+    fname = f"{data_dir}/issues.gz"
     if USE_CACHE and os.path.isfile(fname):
         print(f"Using cached result from {fname}")
-        with open(fname) as file:
-            return json.load(file)
+        return load_cache(fname)
     url = f"{base_url}/rest/api/3/search"
     start_at = 0
     max_results = 100
@@ -33,21 +42,17 @@ def get_all_issues():
         for issue in resp["issues"]:
             issue["api_dateAccessed"] = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
             issues.append(issue)
-
-    with open(fname, "w") as file:
-        json.dump(issues, file)
+    store_cache(fname, issues)
     return issues
 
 
 def get_changelogs(issues):
-    fname = f"{data_dir}/changelogs.json"
+    fname = f"{data_dir}/changelogs.gz"
     if USE_CACHE and os.path.isfile(fname):
         print(f"Using cached result from {fname}")
-        with open(fname) as file:
-            return json.load(file)
+        return load_cache(fname)
     changelogs = [get_issue_changelog(issue) for issue in issues]
-    with open(fname, "w") as file:
-        json.dump(changelogs, file)
+    store_cache(fname, changelogs)
     return changelogs
 
 
@@ -75,14 +80,12 @@ def get_issue_changelog(issue):
 
 
 def get_comments(issues):
-    fname = f"{data_dir}/comments.json"
+    fname = f"{data_dir}/comments.gz"
     if USE_CACHE and os.path.isfile(fname):
         print(f"Using cached result from {fname}")
-        with open(fname) as file:
-            return json.load(file)
+        return load_cache(fname)
     comments = [get_issue_comments(issue) for issue in issues]
-    with open(fname, "w") as file:
-        json.dump(comments, file)
+    store_cache(fname, comments)
     return comments
 
 
@@ -110,11 +113,10 @@ def get_issue_comments(issue):
 
 
 def get_users():
-    fname = f"{data_dir}/users.json"
+    fname = f"{data_dir}/users.gz"
     if USE_CACHE and os.path.isfile(fname):
         print(f"Using cached result from {fname}")
-        with open(fname) as file:
-            return json.load(file)
+        return load_cache(fname)
     url = f"{base_url}/rest/api/3/users/search"
     max_results = 1000
     start_at = 0
@@ -127,8 +129,7 @@ def get_users():
         resp = requests.request("GET", f"{base_url}/rest/api/3/user", headers=headers, params=query, auth=auth)
         usr = json.loads(resp.text)
         users.append(usr)
-    with open(fname, "w") as file:
-        json.dump(users, file)
+    store_cache(fname, users)
     return users
 
 
@@ -143,7 +144,7 @@ def exec_get(url, query, append=None):
 
 
 if __name__ == '__main__':
-    data_dir = '../data'
+    data_dir = 'data'  # work dir is root of git repo
     base_url = "https://celtra.atlassian.net/"
     credentials = open(f"{str(Path.home())}/.atlassian").read().strip().split(":")
     auth = HTTPBasicAuth(credentials[0], credentials[1])

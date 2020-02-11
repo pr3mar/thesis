@@ -7,10 +7,10 @@ The plan:
 - [x] we are missing the comments, edits --> history of editing, [!] actually we have all of these
 - [x] Export the data to MySQL/..., currently stuck on Snowflake, won't do for now, I can query JSONs easily there
 - [x] wip -> Script to automatically transform the data into 'analyzable' form
-    - [x] queries in [`basic_stats.sql`](code/stat_queries.sql) generates some views, see the `.csv`s in `basic_stats/`
+    - [x] queries in [`basic_stats.sql`](code/db/stat_queries.sql) generates some views, see the `.csv`s in `basic_stats/`
     - [x] ~~wip -> explore which fields are useful for analysis of the distributions, e.g. `Watch count` is very insightful [1].~~
     - [x] ~~explore what is the best way to do this, we already have a couple of supplementary tables for transitions~~
-    - [x] write queries which to generate views on demand (see the [sqls](code/stat_queries.sql)), will be updated on demand
+    - [x] write queries which to generate views on demand (see the [sqls](code/db/stat_queries.sql)), will be updated on demand
 - [ ] WIP: identify additional _dimensions_ and _metrics_ [1][2]
 -----------
 ## Phase 2:

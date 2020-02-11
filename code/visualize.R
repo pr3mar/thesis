@@ -2,7 +2,7 @@ library(ggplot2)
 library(tidyr)
 library(reshape2)
 
-breakdownByType <- read.csv(file="basic_stats/by_type.csv")
+breakdownByType <- read.csv(file= "../results/basic_stats/by_type.csv")
 
 issueTypes <- ggplot(breakdownByType) +
       geom_bar(aes(Issue.type, Count), stat = "identity") +
@@ -11,7 +11,7 @@ issueTypes <- ggplot(breakdownByType) +
 issueTypes
 
 
-breakdownByPriority <- read.csv(file="basic_stats/by-priority.csv")
+breakdownByPriority <- read.csv(file= "../results/basic_stats/by-priority.csv")
 
 issuePriority <- ggplot(breakdownByPriority) +
       geom_bar(aes(Issue.priority, Count), stat = "identity") +
@@ -20,7 +20,7 @@ issuePriority <- ggplot(breakdownByPriority) +
 issuePriority
 
 
-resolvedIssues <- read.csv(file = "basic_stats/resolved-issues.csv")
+resolvedIssues <- read.csv(file = "../results/basic_stats/resolved-issues.csv")
 issueTypes <- unique(resolvedIssues$Issue.Type)
 plots <- list()
 for (type in issueTypes) {
@@ -36,7 +36,7 @@ for (type in issueTypes) {
 
 plots["Bug"]
 
-unrresolvedIssues <- read.csv(file = "basic_stats/unresolved-issues.csv")
+unrresolvedIssues <- read.csv(file = "../results/basic_stats/unresolved-issues.csv")
 issueTypes <- sort(unique(unrresolvedIssues$Status))
 plots <- list()
 for (type in issueTypes) {

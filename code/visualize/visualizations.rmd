@@ -53,25 +53,25 @@ There are 4 different types of issues we are going to consider:
     * **NOTE** In this analysis, we will consider the Epic cards as hubs, i.e. a special type of issue which links together more related issues. As such, we will not analyze its workflow.
     * workflow:
 
-    ![epic workflow](../workflows/workflow_epic.png)
+    ![epic workflow](../../workflows/workflow_epic.png)
 
 2. **New feature or improvement** - as the name suggests, this is an issue type for new features with a single deploy.
     * E.g. introducing a new dimension for breaking down the data.
     * workflow:
 
-    ![workflow](../workflows/workflow_new-feature.png)
+    ![workflow](../../workflows/workflow_new-feature.png)
 
 3. **Internal improvement** - non-feature related improvement with a single deploy.
     * E.g. optimizing a query to get a report faster.
     * workflow:
 
-    ![internal improvement workflow](../workflows/workflow_improvement.png)
+    ![internal improvement workflow](../../workflows/workflow_improvement.png)
 
 4. **Bug** - reported bugs - product components which have an unexpected/faulty behavior.
     * E.g. the report metrics are faulty.
     * workflow:
 
-    ![bug workflow](../workflows/workflow_bug.png)
+    ![bug workflow](../../workflows/workflow_bug.png)
 
 5. **Subtasks** - 2., 3. and 4. can be broken down into sub-tasks which are deployed together as a whole.
     * E.g. The query optimization requires a change in how a field in the database is stored.
@@ -139,7 +139,7 @@ In this section, we present a high level overview of how many issues there are a
 ## Breakdown by issue type
 
 ```{r issueTypes, echo = F, results = 'hide'}
-breakdownByType <- read.csv(file="../basic_stats/by_type.csv")
+breakdownByType <- read.csv(file= "../../results/basic_stats/by_type.csv")
 
 priorityTypes <- ggplot(breakdownByType) +
       geom_bar(aes(Issue.type, Count), stat = "identity") +
@@ -153,7 +153,7 @@ priorityTypes
 
 ```{r issuePriority, echo = F, results = 'hide'}
 
-breakdownByPriority <- read.csv(file="../basic_stats/by-priority.csv")
+breakdownByPriority <- read.csv(file= "../../results/basic_stats/by-priority.csv")
 
 issuePriority <- ggplot(breakdownByPriority) +
       geom_bar(aes(Issue.priority, Count), stat = "identity") +
@@ -175,7 +175,7 @@ issuePriority
 # Resolved issues breakdown
 
 ```{r, echo = F, results = 'hide'}
-resolvedIssues <- read.csv(file = "../basic_stats/resolved-issues.csv")
+resolvedIssues <- read.csv(file = "../../results/basic_stats/resolved-issues.csv")
 ```
 ## Watch count
 ### By issue type
@@ -348,7 +348,7 @@ do.call("grid.arrange", c(plots, ncol=nCol))
 # Unresolved issues breakdown
 
 ```{r, echo = F, results = 'hide'}
-unresolvedIssues <- read.csv(file = "../basic_stats/unresolved-issues.csv")
+unresolvedIssues <- read.csv(file = "../../results/basic_stats/unresolved-issues.csv")
 ```
 ## Watch count
 ### By issue type

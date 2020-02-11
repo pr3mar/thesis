@@ -287,3 +287,4 @@ cant-share/
 data/
 venv/
 .Rhistory
+.env

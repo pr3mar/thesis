@@ -3,8 +3,10 @@ import json
 import os
 from datetime import datetime
 from requests.auth import HTTPBasicAuth
-from pathlib import Path
 from gzip import GzipFile
+# assumes that working directory is git repo root (`thesis/`)
+# a hack to import from parent directory
+import code.config as config
 USE_CACHE = True
 
 
@@ -136,6 +138,7 @@ def get_users():
 def exec_get(url, query, append=None):
     resp = requests.request("GET", url, headers=headers, params=query, auth=auth)
     issue_response = json.loads(resp.text)
+    print(issue_response)
     if append is not None:
         print(f"Working on {append}: [{issue_response['startAt']:5}/{issue_response['total']:6}]")
     else:
@@ -144,10 +147,9 @@ def exec_get(url, query, append=None):
 
 
 if __name__ == '__main__':
-    data_dir = 'data'  # work dir is root of git repo
+    data_dir = config.data_root
     base_url = "https://celtra.atlassian.net/"
-    credentials = open(f"{str(Path.home())}/.atlassian").read().strip().split(":")
-    auth = HTTPBasicAuth(credentials[0], credentials[1])
+    auth = HTTPBasicAuth(config.jiraUsername, config.jiraPassword)
     headers = {"Accept": "application/json"}
 
     issues = get_all_issues()

@@ -8,7 +8,7 @@ verify_ssl = true
 [packages]
 requests = "*"
 python-dotenv = "*"
-snowflake-connector-python = "*"
+snowflake-connector-python = {extras = ["pandas"],version = "*"}
 
 [requires]
 python_version = "3.7"

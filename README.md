@@ -23,6 +23,8 @@ The plan:
 - [ ] Quarter analysis: -> will be useful for
     - how many tickets are completed in a quarter per user/team/overall
     - how many tickets got to QA
+- [ ] How often are [issue types] created?
+
 -----------
 ## Findings so far:
 - [1]: `Watch count` is the number of users that are getting updates/notifications of the given issue. It indicates how many people are interested in the development of the issue.

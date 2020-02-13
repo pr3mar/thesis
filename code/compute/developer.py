@@ -3,7 +3,15 @@ import datetime
 from code.db.utils import SnowflakeWrapper
 
 
-def get_cards(sw: SnowflakeWrapper, interval: (datetime, datetime)):
+def get_authored_activity(sw: SnowflakeWrapper, interval: (datetime, datetime), user_id=None):
+    """
+    includes comments, changelogs where
+
+    :param sw: SnowflakeWrapper
+    :param interval: [start, end)
+    :param user_id: ID of a user [if not given gets all users]
+    :return:
+    """
     # Use this query:
     # SELECT
     #     KEY,

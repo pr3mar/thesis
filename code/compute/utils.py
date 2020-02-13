@@ -57,7 +57,7 @@ def changelog_on_interval(sw: SnowflakeWrapper, interval: (date, date)):
     )
 
 
-def cards_active_on_interval(sw: SnowflakeWrapper, interval: (date, date), props=None):
+def cards_active_on_interval(sw: SnowflakeWrapper, interval: (date, date), cols=None):
     validate_interval(interval)
     get_keys_sql = (
         f"SELECT "
@@ -69,12 +69,12 @@ def cards_active_on_interval(sw: SnowflakeWrapper, interval: (date, date), props
         f"  DATECREATED < '{strdate(interval[1])}' "
         f"GROUP BY KEY"
     )
-    if props is None:
+    if cols is None:
         return sw.execute_query(get_keys_sql)
     else:
         sql = (
             f"SELECT "
-            f" {mask_props(props)} "
+            f" {mask_props(cols)} "
             f"FROM "
             f"  ISSUES "
             f" WHERE "
@@ -91,7 +91,7 @@ if __name__ == '__main__':
         print(result)
         result = cards_active_on_interval(sw,
                                           (date(2019, 10, 1), date(2020, 1, 1)),
-                                          props=[
+                                          cols=[
                                               ('key', 'key'),
                                               (decode_user("fields", "owner"), "owner"),
                                               (decode_user("fields", "assignee"), "assignee"),

@@ -12,7 +12,7 @@ class SnowflakeWrapper:
         if self.__connection:
             self.__connection.close()
 
-    def execute_query(self, query: str):
+    def execute_query(self, query: str) -> object:
         return self.__cursor.execute(query).fetch_pandas_all()
 
     @staticmethod

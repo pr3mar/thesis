@@ -1,4 +1,6 @@
 import json
+from typing import Union
+
 import pandas as pd
 import code.config as config
 from datetime import date
@@ -23,7 +25,7 @@ def decode_user(parent_field: str, user_field: str) -> str:
 
 
 def strdate(d: date) -> str:
-    return d.strftime('%Y-%m-%d')
+    return f"'{d.strftime('%Y-%m-%d')}'"
 
 
 def validate_interval(interval: (date, date)) -> bool:
@@ -35,6 +37,10 @@ def validate_interval(interval: (date, date)) -> bool:
 
 def mask_props(props: list) -> str:
     return ','.join([f'{p[0]} "{p[1]}"' for p in props])
+
+
+def mask_in(ids: list) -> str:
+    return ','.join([f"'{i}'" for i in ids])
 
 
 def changelog_on_interval(sw: SnowflakeWrapper, interval: (date, date)):
@@ -51,8 +57,8 @@ def changelog_on_interval(sw: SnowflakeWrapper, interval: (date, date)):
         f"        ) CHANGELOGITEMS "
         f"FROM CHANGELOGS "
         f"WHERE "
-        f"    DATECREATED >= '{strdate(interval[0])}' AND "
-        f"    DATECREATED < '{strdate(interval[1])}' "
+        f"    DATECREATED >= {strdate(interval[0])} AND "
+        f"    DATECREATED < {strdate(interval[1])} "
         f"GROUP BY KEY; "
     )
 

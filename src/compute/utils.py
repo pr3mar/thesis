@@ -3,19 +3,21 @@ from typing import Union
 
 import pandas as pd
 import src.config as config
-from datetime import date
+from datetime import date, datetime, timedelta
 from src.db.utils import SnowflakeWrapper
 
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 __data_schema = {el["name"].lower().replace(" ", "_"): el["key"] for el in
                  json.loads(open(f"{config.data_root}/schema.json", encoding='utf-8').read())}
+timestamp_format = "%Y-%m-%d %H:%M:%S.%f"
 
 
 class Interval:
     def __init__(self, fromDate: date, toDate: date):
         self.__fromDate = fromDate
         self.__toDate = toDate
+        self.validate()
 
     def fromDate(self) -> str:
         return Interval.strdate(self.__fromDate)
@@ -54,6 +56,20 @@ def mask_in(ids: list) -> str:
     return ','.join([f"'{i}'" for i in ids])
 
 
+def load_with_datetime(pairs):
+    """Load with dates"""
+    d = {}
+    for k, v in pairs:
+        if isinstance(v, str):
+            try:
+                d[k] = datetime.strptime(v, timestamp_format)
+            except ValueError:
+                d[k] = v
+        else:
+            d[k] = v
+    return d
+
+
 def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Union[None, list] = None) -> pd.DataFrame:
     """
     Returns the work activity (changes of assignees and statuses) on a given interval.
@@ -76,7 +92,7 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
         f"        OBJECT_CONSTRUCT( "
         f"            'author', USERID, "
         f"            'dateCreated', DATECREATED, "
-        f"            'changelogItem', CHANGELOGITEM "
+        f"            'changelogItems', ARRAY_CONSTRUCT(CHANGELOGITEM) "
         f"            ) "
         f"        ) CHANGELOGITEMS "
         f"FROM CHANGELOGS "
@@ -84,10 +100,50 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
         f"    changelogItem:field IN ('status', 'assignee') AND "
         f"    {ids} "
         f"    DATECREATED < {interval.toDate()} "
-        f"GROUP BY KEY; "
+        f"GROUP BY KEY "
+        # f"LIMIT 1"
     )
-    changelog['CHANGELOGITEMS'] = changelog['CHANGELOGITEMS'].apply(lambda x: json.loads(x))
+    changelog['CHANGELOGITEMS'] = changelog['CHANGELOGITEMS'].apply(
+        lambda x: sort_and_merge(json.loads(x, object_pairs_hook=load_with_datetime)))
     return changelog
+
+
+def sort_and_merge(changelog):
+    """
+    merges reassignments of issues into a single item, conditions:
+        - same author
+        - time delta between actions < 5 minutes
+    :param changelog:
+    :return: sorted & merged changelog items
+    """
+    MAX_DELTA_MINUTES = 5
+    chlog = changelog
+    chlog.sort(key=lambda x: x['dateCreated'])
+    prev_id = 0
+    prev_item = chlog[prev_id]
+    current_id = prev_id + 1
+    while current_id < len(chlog):
+        current_item = chlog[current_id]
+        fields = [i["field"] for i in current_item["changelogItems"]] + [i["field"] for i in
+                                                                         prev_item["changelogItems"]]
+        delta: timedelta = current_item["dateCreated"] - prev_item["dateCreated"]
+        # print(f"Items [{len(fields)}] = {fields}", prev_item["dateCreated"], current_item["dateCreated"], delta)
+        if current_item["author"] != prev_item["author"] or \
+                set(fields) != {"assignee", "status"} or len(fields) != 2 or \
+                (delta.seconds // 60) > MAX_DELTA_MINUTES:
+            prev_id, prev_item = current_id, current_item
+            current_id += 1
+            continue
+        changelogItems = current_item["changelogItems"] + prev_item["changelogItems"]
+        chlog[prev_id] = {
+            "author": current_item["author"],
+            "dateCreated": prev_item["dateCreated"],
+            "changelogItems": changelogItems
+        }
+        chlog[current_id]["delete"] = True
+        prev_id, prev_item = current_id, chlog[prev_id]
+        current_id += 1
+    return [x for x in changelog if "delete" not in x]
 
 
 def cards_active_on_interval(sw: SnowflakeWrapper, interval: Interval, cols=None) -> Union[list, pd.DataFrame]:

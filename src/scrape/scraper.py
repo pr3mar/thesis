@@ -6,7 +6,7 @@ from requests.auth import HTTPBasicAuth
 from gzip import GzipFile
 # assumes that working directory is git repo root (`thesis/`)
 # a hack to import from parent directory
-import code.config as config
+import src.config as config
 USE_CACHE = True
 
 

@@ -1,16 +1,20 @@
+import json
+import matplotlib.pyplot as plt
+import pandas as pd
 from typing import Union
 from datetime import date
-from code.db.utils import SnowflakeWrapper
-from code.compute.utils import strdate, mask_in
+from src.db.utils import SnowflakeWrapper
+from src.compute.utils import strdate, mask_in
 
 
 def get_aggregated_authored_activity(sw: SnowflakeWrapper, interval: (date, date), user_id: Union[None, list] = None):
     ids = "" if user_id is None else f" USERID IN ({mask_in(user_id)}) AND"
-    return sw.execute_query(
+    result = sw.execute_query(
         f"SELECT "
         f"    USERID, "
         f"    ARRAY_AGG( "
         f"        OBJECT_CONSTRUCT( "
+        f"            'userId', USERID, "
         f"            'field', FIELD, "
         f"            'count', CNT "
         f"            ) "
@@ -36,6 +40,12 @@ def get_aggregated_authored_activity(sw: SnowflakeWrapper, interval: (date, date
         f"GROUP BY 1 "
         f"ORDER BY 1; "
     )
+    return pd.concat(
+        result['ACTIVITY'].apply(
+            lambda x:
+            pd.DataFrame(json.loads(x))
+                .pivot(index='userId', columns='field', values='count')).tolist(),
+        sort=True)
 
 
 def get_authored_activity(sw: SnowflakeWrapper, interval: (date, date), user_id: Union[None, list] = None):
@@ -71,5 +81,8 @@ if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
         # result = get_authored_activity(sw, (date(2019, 10, 1), date(2020, 1, 1)), ['andrej.oblak'])
-        result = get_aggregated_authored_activity(sw, (date(2019, 10, 1), date(2020, 1, 1))) #, ['andrej.oblak'])
+        result = get_aggregated_authored_activity(sw, (date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
         print(result)
+        plt.figure()
+        result.hist('status', bins=40)
+        plt.show()

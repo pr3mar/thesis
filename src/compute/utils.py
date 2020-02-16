@@ -2,9 +2,9 @@ import json
 from typing import Union
 
 import pandas as pd
-import code.config as config
+import src.config as config
 from datetime import date
-from code.db.utils import SnowflakeWrapper
+from src.db.utils import SnowflakeWrapper
 
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)

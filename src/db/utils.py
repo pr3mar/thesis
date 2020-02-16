@@ -1,5 +1,5 @@
 import pandas as pd
-import code.config as config
+import src.config as config
 from snowflake.connector import connect, SnowflakeConnection
 
 
@@ -12,7 +12,7 @@ class SnowflakeWrapper:
         if self.__connection:
             self.__connection.close()
 
-    def execute_query(self, query: str) -> object:
+    def execute_query(self, query: str) -> pd.DataFrame:
         return self.__cursor.execute(query).fetch_pandas_all()
 
     @staticmethod

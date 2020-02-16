@@ -70,6 +70,74 @@ def load_with_datetime(pairs):
     return d
 
 
+def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[None, list] = None) -> pd.DataFrame:
+    changelogs = work_activity_on_interval(sw, interval, keys)
+    timelines = []
+    for _, row in changelogs.iterrows():
+        timeline = []
+        status_from, status_to, changed_assignee = "BACKLOG", "BACKLOG", False  # default status at the beginning (top of workflow)
+        assign_from, assign_to, changed_status = None, None, False
+        date_transitioned, date_assigned = datetime.now(), datetime.now()  # should be date the issue was created
+        for logs in row["CHANGELOGITEMS"]:
+            # print(f'Number of items {len(logs["changelogItems"])}')
+            author = logs["author"]
+            date_created = logs["dateCreated"]
+            # can detect re-assignments here
+            for log in [x for x in logs["changelogItems"] if x["field"] == "assignee"]:
+                assign_from = None if "from" not in log else log["from"]
+                assign_to = None if "to" not in log else log["to"]  # the latest assignee
+                # print(f"[{author}]: [{status_to}] Reassign from `{assign_from}`, to `{assign_to}`")
+                changed_assignee = True
+            for log in [x for x in logs["changelogItems"] if x["field"] == "status"]:
+                status_from = None if "fromString" not in log else log["fromString"]
+                status_to = None if "toString" not in log else log["toString"]  # the latest status
+                # print(f"[{author}]: [{assign_to}] Transition from `{status_from}`, to `{status_to}`")
+                changed_status = True
+            if changed_status and changed_assignee:
+                timeline.append({
+                    "status": status_from,
+                    "assignee": assign_from if assign_from is not None else author,
+                    "date_to": date_created,
+                    "date_from": date_transitioned,
+                    "tdelta": date_created - date_transitioned
+                })
+                date_transitioned = date_created
+                changed_status = False
+                changed_assignee = False
+                continue
+            if changed_status:
+                timeline.append({
+                    "status": status_from,
+                    "assignee": assign_to if assign_to is not None else f"{author}",
+                    "date_to": date_created,
+                    "date_from": date_transitioned,
+                    "tdelta": date_created - date_transitioned
+                })
+                date_transitioned = date_created
+                changed_status = False
+                continue
+            if changed_assignee:
+                timeline.append({
+                    "status": status_to,
+                    "assignee": assign_from if assign_from is not None else f"{author}",
+                    "date_to": date_assigned,
+                    "date_from": date_created,
+                    "tdelta": date_created - date_assigned
+                })
+                date_assigned = date_created
+                changed_assignee = False
+        timeline.append({
+            "status": status_to,  # last known status
+            "assignee": assign_to,  # last known assignee
+            "date_to": datetime.now(),  # it's still ongoing
+            "date_from": date_transitioned,
+            "tdelta": datetime.now() - max(date_transitioned, date_assigned)
+        })
+        timelines.append(timeline)
+    changelogs["timelines"] = timelines
+    return changelogs
+
+
 def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Union[None, list] = None) -> pd.DataFrame:
     """
     Returns the work activity (changes of assignees and statuses) on a given interval.
@@ -101,7 +169,7 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
         f"    {ids} "
         f"    DATECREATED < {interval.toDate()} "
         f"GROUP BY KEY "
-        # f"LIMIT 1"
+        f"LIMIT 1"
     )
     changelog['CHANGELOGITEMS'] = changelog['CHANGELOGITEMS'].apply(
         lambda x: sort_and_merge(json.loads(x, object_pairs_hook=load_with_datetime)))

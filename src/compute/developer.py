@@ -4,7 +4,7 @@ import pandas as pd
 import src.compute.utils as utils
 from collections import defaultdict
 from typing import Union
-from datetime import date
+from datetime import date, datetime
 from src.db.utils import SnowflakeWrapper
 from src.compute.utils import mask_in, Interval
 
@@ -46,7 +46,7 @@ def get_aggregated_authored_activity(sw: SnowflakeWrapper, interval: Interval, u
         result['ACTIVITY'].apply(
             lambda x:
             pd.DataFrame(json.loads(x))
-                .pivot(index='userId', columns='field', values='count')).tolist(),
+                .pivot(index='userId', columns='field', values='count')).tolist(),  # TODO Add breakdown by issue type
         sort=True)
 
 
@@ -79,15 +79,12 @@ def get_authored_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Uni
     )
 
 
-def get_work_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Union[None, list] = None) -> dict:
-    def extract_users_involved(changelogs: pd.DataFrame) -> defaultdict:
+def get_work_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Union[None, list] = None) -> (dict, dict):
+    def extract_users_involved(changelogs: pd.DataFrame) -> dict:
         users = defaultdict(set)
         for _, row in changelogs.iterrows():
             key = row["KEY"]
-            changelog = row["CHANGELOGITEMS"]
-            for logs in changelog:
-                if len(logs["changelogItems"]) > 1:
-                    print(logs)
+            for logs in row["CHANGELOGITEMS"]:
                 for log in logs["changelogItems"]:
                     if log["field"] != "assignee":
                         continue
@@ -95,14 +92,22 @@ def get_work_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Union[N
                         users[log["from"]].add(key)
                     if "to" in log:
                         users[log["to"]].add(key)
-        return users
+        return dict(users)
 
-    def user_breakdown(changelogs: pd.DataFrame):
-        return []
+    def user_breakdown(changelogWTimelines: pd.DataFrame) -> pd.DataFrame:
+        changelogWTimelines['timelines'] = changelogWTimelines['timelines'].apply(
+            lambda x:
+            pd.DataFrame(x)
+                .groupby('assignee', as_index=False)['status', 'date_from', 'date_to']
+                .agg((lambda y: list(y)))
+        )
+        return changelogWTimelines
+        # return changelogWTimelines #, changelogWTimelines.groupby('assignee', as_index=False)['status', 'date_from', 'date_to'].agg({'list': (lambda x: list(x))})
 
     changelogs = utils.work_activity_on_interval(sw, interval)
     users = extract_users_involved(changelogs)
-    return dict(users)
+    users_breakdown = user_breakdown(utils.build_issue_timelines(sw, interval))
+    return users, users_breakdown
 
 
 if __name__ == '__main__':
@@ -113,5 +118,5 @@ if __name__ == '__main__':
         # plt.figure()
         # result.hist('status', bins=40)
         # plt.show()
-        result = get_work_activity(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
+        result, timelines = get_work_activity(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
         print(result)

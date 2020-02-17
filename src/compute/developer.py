@@ -106,7 +106,8 @@ def get_work_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Union[N
 
     changelogs = utils.work_activity_on_interval(sw, interval)
     users = extract_users_involved(changelogs)
-    users_breakdown = user_breakdown(utils.build_issue_timelines(sw, interval))
+    # users_breakdown = user_breakdown(utils.build_issue_timelines(sw, interval))
+    users_breakdown = utils.build_issue_timelines(sw, interval)
     return users, users_breakdown
 
 

@@ -19,6 +19,8 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
         date_transitioned, date_assigned = date_issue_created, date_issue_created
         for logs in row["CHANGELOGITEMS"]:
             # print(f'Number of items {len(logs["changelogItems"])}')
+            # if len(logs["changelogItems"]) > 2:
+            #     raise Exception("WHOA THERE")
             author = logs["author"]
             date_created = logs["dateCreated"]
             # TODO: can detect re-assignments here
@@ -32,7 +34,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
                 status_to = None if "toString" not in log else log["toString"]  # the latest status
                 # print(f"[{author}]: [{assign_to}] Transition from `{status_from}`, to `{status_to}`")
                 changed_status = True
-            if changed_status and changed_assignee:
+            if changed_status and changed_assignee:  # doesn't work if there are 2+ changes in a small delta time
                 timeline.append({
                     "status": status_from,
                     "assignee": assign_from if assign_from is not None else author,
@@ -79,7 +81,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
     return copy
 
 
-def persist_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[None, list] = None ) -> None:
+def persist_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[None, list] = None) -> None:
     try:
         timelines = build_issue_timelines(sw, interval, keys)
         SnowflakeWrapper.execute_df_query(timelines, "timelines_temp", ifexists='replace')
@@ -114,7 +116,7 @@ def persist_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Unio
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
-        # timelines = build_issue_timelines(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))
+        timelines = build_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))
         # print(timelines)
         # SnowflakeWrapper.execute_df_query(timelines, "timelines", ifexists='replace')
-        persist_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))
+        # persist_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))

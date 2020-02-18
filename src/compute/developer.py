@@ -107,17 +107,17 @@ def get_work_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Union[N
     changelogs = utils.work_activity_on_interval(sw, interval)
     users = extract_users_involved(changelogs)
     # users_breakdown = user_breakdown(utils.build_issue_timelines(sw, interval))
-    users_breakdown = utils.build_issue_timelines(sw, interval)
-    return users, users_breakdown
+    # users_breakdown = utils.build_issue_timelines(sw, interval)
+    return users
 
 
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
         # result = get_authored_activity(sw, (date(2019, 10, 1), date(2020, 1, 1)), ['andrej.oblak'])
-        # result = get_aggregated_authored_activity(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
-        # plt.figure()
-        # result.hist('status', bins=40)
-        # plt.show()
-        result, timelines = get_work_activity(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
-        print(result)
+        result = get_aggregated_authored_activity(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
+        plt.figure()
+        result.hist('status', bins=40)
+        plt.show()
+        # result, timelines = get_work_activity(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
+        # print(result)

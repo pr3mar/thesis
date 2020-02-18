@@ -114,6 +114,7 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
         f"        ) CHANGELOGITEMS "
         f"FROM CHANGELOGS c INNER JOIN ISSUES i ON c.KEY = i.KEY "
         f"WHERE "
+        f"    c.KEY IN ('MAB-14432') AND "
         f"    c.changelogItem:field IN ('status', 'assignee') AND "
         f"    {ids} "
         f"    c.DATECREATED < {interval.toDate()} "

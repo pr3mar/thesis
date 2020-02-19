@@ -57,7 +57,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
                 date_transitioned = date_created
                 changed_status = False
                 continue
-            if changed_assignee:
+            if changed_assignee:  # TODO: it fails here, example MAB-14432
                 timeline.append({
                     "status": status_to,
                     "assignee": assign_from if assign_from is not None else f"{author}",

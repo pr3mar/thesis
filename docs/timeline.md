@@ -27,6 +27,9 @@ Some insights which are available from timeline analysis:
     - issue + developer: how much time per issue has a developer spent
     - developer: how much time a developer has spent in total
     - status: how much time have all the developers spent in a given status
+- calculating an average user/team
+    - comparison/ranking of users
+    - inferring what went wrong/what needs to be improved
 - basic detection of cycles
     - count(unique keys) != count(times in state) 
 - basic detection of workflow inconsistencies (e.g. how can an issue be twice in master?)
@@ -63,7 +66,8 @@ that all timelines are independent of each other, but this is clearly not the ca
 In this section we are going to try to take into account this fact and rectify the analysis,
 or at least visualize how a user's workload looks like.
 
-
+This can look like a histogram, with the time on the x-axis, and amount of concurrent tasks on the y-axis.
+Very easy, very doable. Need to calculate the overlapping intervals and sort them.
 
 ## Some useful SQL views
 

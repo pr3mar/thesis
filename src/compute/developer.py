@@ -1,12 +1,33 @@
 import json
+import pickle
+import os
 import matplotlib.pyplot as plt
 import pandas as pd
+import src.config as config
+from pandas import DataFrame
 import src.compute.utils as utils
 from collections import defaultdict
 from typing import Union
-from datetime import date, datetime
+from datetime import date
 from src.db.utils import SnowflakeWrapper
 from src.compute.utils import mask_in, Interval
+
+
+def get_developer_ids(sw: SnowflakeWrapper) -> list:
+    return sw.execute_query(
+        "SELECT USERKEY KEY "
+        "FROM USERS "
+        "WHERE ACTIVE = TRUE AND USERKEY NOT ILIKE '%addon%'"
+        "ORDER BY 1;"
+    )['KEY'].tolist()
+
+
+def get_distinct_statuses(sw: SnowflakeWrapper) -> list:
+    return sw.execute_query(
+        "SELECT ID "
+        "FROM STATUSES "
+        "ORDER BY 1;"
+    )['ID'].tolist()
 
 
 def get_aggregated_authored_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Union[None, list] = None):
@@ -79,45 +100,60 @@ def get_authored_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Uni
     )
 
 
-def get_work_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Union[None, list] = None) -> (dict, dict):
-    def extract_users_involved(changelogs: pd.DataFrame) -> dict:
-        users = defaultdict(set)
-        for _, row in changelogs.iterrows():
-            key = row["KEY"]
-            for logs in row["CHANGELOGITEMS"]:
-                for log in logs["changelogItems"]:
-                    if log["field"] != "assignee":
-                        continue
-                    if "from" in log:
-                        users[log["from"]].add(key)
-                    if "to" in log:
-                        users[log["to"]].add(key)
-        return dict(users)
+def get_developer(sw: SnowflakeWrapper, interval: Interval, userId: str) -> DataFrame:
+    return sw.execute_query(
+        f" SELECT "
+        f"     id AS STATUS, "
+        f"     UNIQUEKEYS, "
+        f"     COUNT, "
+        f"     AVG_DAY, "
+        f"     MAX_DAYS, "
+        f"     MIN_DAYS "
+        f" FROM STATUSES s "
+        f" LEFT JOIN ( "
+        f"     SELECT "
+        f"         STATUS, "
+        f"         COUNT(DISTINCT KEY)             UNIQUEKEYS, "
+        f"         COUNT(*)                        COUNT, "
+        f"         AVG(TIMEDELTA) / (60 * 60 * 24) AVG_DAY, "
+        f"         MAX(TIMEDELTA) / (60 * 60 * 24) MAX_DAYS, "
+        f"         MIN(TIMEDELTA) / (60 * 60 * 24) MIN_DAYS "
+        f"     FROM TIMELINES "
+        f"     WHERE "
+        f"         DATEFROM >= {interval.fromDate()} "
+        f"         AND DATETO < {interval.toDate()} "
+        f"         AND ASSIGNEE = '{userId}' "
+        f"     GROUP BY "
+        f"         STATUS "
+        f"     ORDER BY 1 "
+        f" ) t ON t.STATUS = s.id; "
+    )
 
-    def user_breakdown(changelogWTimelines: pd.DataFrame) -> pd.DataFrame:
-        changelogWTimelines['timelines'] = changelogWTimelines['timelines'].apply(
-            lambda x:
-            pd.DataFrame(x)
-                .groupby('assignee', as_index=False)['status', 'date_from', 'date_to']
-                .agg((lambda y: list(y)))
-        )
-        return changelogWTimelines
-        # return changelogWTimelines #, changelogWTimelines.groupby('assignee', as_index=False)['status', 'date_from', 'date_to'].agg({'list': (lambda x: list(x))})
 
-    changelogs = utils.work_activity_on_interval(sw, interval)
-    users = extract_users_involved(changelogs)
-    # users_breakdown = user_breakdown(utils.build_issue_timelines(sw, interval))
-    # users_breakdown = utils.build_issue_timelines(sw, interval)
-    return users
+def get_average_developer(sw: SnowflakeWrapper, interval: Interval, use_cached: bool = True) -> list:
+    fname = f"{config.data_root}/avg_devs.pkl"
+    if use_cached and os.path.isfile(fname):
+        statuses = pickle.load(fname, encoding='utf8')
+    else:
+        statuses = {s: DataFrame(columns=["STATUS", "UNIQUEKEYS", "COUNT", "AVG_DAY", "MAX_DAYS", "MIN_DAYS"]) for s in
+                    get_distinct_statuses(sw)}
+        for user_id in get_developer_ids(sw):
+            print(user_id)
+            for _, row in get_developer(sw, interval, user_id).iterrows():
+                statuses[row['STATUS']] = statuses[row['STATUS']].append(row, ignore_index=True)
+        with open(fname, "wb") as out_file:
+            pickle.dump(statuses, out_file)
+    return statuses
 
 
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
         # result = get_authored_activity(sw, (date(2019, 10, 1), date(2020, 1, 1)), ['andrej.oblak'])
-        result = get_aggregated_authored_activity(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
-        plt.figure()
-        result.hist('status', bins=40)
-        plt.show()
-        # result, timelines = get_work_activity(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
-        # print(result)
+        # result = get_aggregated_authored_activity(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))  # , ['andrej.oblak'])
+        # plt.figure()
+        # result.hist('status', bins=40)
+        # plt.show()
+        # dev = get_developer(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)), 'marko.prelevikj')
+        avg_dev = get_average_developer(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))
+        print(avg_dev)

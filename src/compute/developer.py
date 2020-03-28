@@ -3,10 +3,12 @@ import pickle
 import os
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 import src.config as config
 from pandas import DataFrame
 import src.compute.utils as utils
 from collections import defaultdict
+from src.config import data_root
 from typing import Union
 from datetime import date
 from src.db.utils import SnowflakeWrapper
@@ -130,20 +132,55 @@ def get_developer(sw: SnowflakeWrapper, interval: Interval, userId: str) -> Data
     )
 
 
-def get_average_developer(sw: SnowflakeWrapper, interval: Interval, use_cached: bool = True) -> list:
+def get_all_developer_by_status(sw: SnowflakeWrapper, interval: Interval, use_cached: bool = True) -> dict:
     fname = f"{config.data_root}/avg_devs.pkl"
     if use_cached and os.path.isfile(fname):
-        statuses = pickle.load(fname, encoding='utf8')
+        with open(fname, 'rb') as file:
+            return pickle.load(file, encoding='utf8')
     else:
-        statuses = {s: DataFrame(columns=["STATUS", "UNIQUEKEYS", "COUNT", "AVG_DAY", "MAX_DAYS", "MIN_DAYS"]) for s in
+        statuses = {s: DataFrame(columns=["STATUS", "USERID", "UNIQUEKEYS", "COUNT", "AVG_DAY", "MAX_DAYS", "MIN_DAYS"])
+                    for s in
                     get_distinct_statuses(sw)}
         for user_id in get_developer_ids(sw):
             print(user_id)
             for _, row in get_developer(sw, interval, user_id).iterrows():
+                row.insert(0, 'USERID', user_id)
                 statuses[row['STATUS']] = statuses[row['STATUS']].append(row, ignore_index=True)
         with open(fname, "wb") as out_file:
             pickle.dump(statuses, out_file)
     return statuses
+
+
+def merge_statuses(by_status: dict, merged_statuses: dict) -> dict:
+    merged = {}
+    for key, statuses in merged_statuses.items():
+        merged[key] = pd.concat([by_status[s] for s in statuses], ignore_index=True)
+    return merged
+
+
+def avg_by_status(data: dict, include_nans=False) -> dict:
+    avgs = {}
+    for k, v in data.items():
+        nans = v.isna().sum()[1:]
+        if (nans[1:] < nans[1:].max()).all():
+            print((nans[1:] < nans[1:].max()).all())
+            raise Exception(f"not all vals are max nan {nans}")
+        v["AVG_DAY"] = v["AVG_DAY"].map(lambda x: pd.np.nan if x is None else float(x))
+        avgs[k] = v.fillna(0.).mean() if include_nans else v.mean()
+        avgs[k]["NANs"] = nans[1:].max()
+        avgs[k]["ALL"] = len(v)
+    return avgs
+
+
+def get_avg_developer(sw: SnowflakeWrapper, include_nans: bool = False) -> dict:
+    with open(f"{data_root}/statuses/merged.json") as file_statuses, \
+            open(f"{data_root}/developer/avg_dev{'' if include_nans else '_nan'}.pkl", "wb") as output_file:
+        merged_categories = json.load(file_statuses)
+        data_by_status = get_all_developer_by_status(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))
+        merged = merge_statuses(data_by_status, merged_categories)
+        avg_dev = avg_by_status(merged, include_nans)
+        pickle.dump(avg_dev, output_file)
+        return avg_dev
 
 
 if __name__ == '__main__':
@@ -155,5 +192,5 @@ if __name__ == '__main__':
         # result.hist('status', bins=40)
         # plt.show()
         # dev = get_developer(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)), 'marko.prelevikj')
-        avg_dev = get_average_developer(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))
-        print(avg_dev)
+        avg_dev = get_avg_developer(sw, include_nans=False)
+        avg_dev_nan = get_avg_developer(sw, include_nans=True)

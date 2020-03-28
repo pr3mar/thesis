@@ -1,0 +1,70 @@
+{
+    "backlog": [
+        "BACKLOG",
+        "Backlog",
+        "Development Backlog",
+        "IN BACKLOG",
+        "In Backlog",
+        "Not Started",
+        "Ready for Work",
+        "Ready for dev",
+        "TODO for Devs",
+        "To Do",
+        "To-Do"
+    ],
+    "on_hold": [
+        "CR On Hold",
+        "Development On Hold",
+        "On Hold",
+        "PR On Hold",
+        "Pending Approval",
+        "Pending Product review"
+    ],
+    "cancelled": [
+        "Cancelled",
+        "Reverted"
+    ],
+    "cr": [
+        "Code review"
+    ],
+    "dev": [
+        "Development",
+        "In Progress",
+        "In development",
+        "Needs CR fixes",
+        "Needs QA fixes",
+        "Needs fixes",
+        "Review",
+        "Work in Progress"
+    ],
+    "done": [
+        "Done",
+        "In master",
+        "Live",
+        "Master"
+    ],
+    "product": [
+        "In Planning",
+        "In Research",
+        "In Review",
+        "Needs PR fixes",
+        "Needs SR feedback",
+        "Needs review feedback",
+        "Pending Review",
+        "Product review",
+        "Research",
+        "Spec design",
+        "Spec in Progress",
+        "Spec in Review",
+        "Spec review"
+    ],
+    "qa": [
+        "In QA Review",
+        "Needs QA Feedback",
+        "Testing"
+    ],
+    "qa_hold": [
+        "Pending QA Review",
+        "Testing On Hold"
+    ]
+}

@@ -1,8 +1,8 @@
 import json
-from typing import Union
-
 import pandas as pd
 import src.config as config
+from copy import deepcopy
+from typing import Union
 from datetime import date, datetime, timedelta
 from src.db.utils import SnowflakeWrapper
 
@@ -114,7 +114,7 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
         f"        ) CHANGELOGITEMS "
         f"FROM CHANGELOGS c INNER JOIN ISSUES i ON c.KEY = i.KEY "
         f"WHERE "
-        f"    c.KEY IN ('MAB-14432') AND "
+        f"    c.KEY IN ('MAB-301') AND "
         f"    c.changelogItem:field IN ('status', 'assignee') AND "
         f"    {ids} "
         f"    c.DATECREATED < {interval.toDate()} "
@@ -134,23 +134,27 @@ def sort_and_merge(changelog):
     :param changelog:
     :return: sorted & merged changelog items
     """
+    def changelog_affected_fields(item: dict) -> list:
+        # field <=> which field has been affected in the changelog item
+        return [i["field"] for i in item["changelogItems"]]
+
     MAX_DELTA_MINUTES = 5
-    chlog = changelog
+    chlog = deepcopy(changelog)
     chlog.sort(key=lambda x: x['dateCreated'])
     prev_id = 0
     prev_item = chlog[prev_id]
-    current_id = prev_id + 1
-    while current_id < len(chlog):
+    current_id = prev_id
+    while (current_id + 1) < len(chlog):
+        current_id += 1
         current_item = chlog[current_id]
-        fields = [i["field"] for i in current_item["changelogItems"]] + [i["field"] for i in
-                                                                         prev_item["changelogItems"]]
+        fields: set = set(changelog_affected_fields(current_item) + changelog_affected_fields(prev_item))
         delta: timedelta = current_item["dateCreated"] - prev_item["dateCreated"]
-        # print(f"Items [{len(fields)}] = {fields}", prev_item["dateCreated"], current_item["dateCreated"], delta)
+        print(f"Items [{len(fields)}] = {fields}, prev_created", prev_item["dateCreated"], "curr_created", current_item["dateCreated"], delta)
+        print(f"prev author = {prev_item['author']}, curr author = {current_item['author']}")
         if current_item["author"] != prev_item["author"] or \
-                set(fields) != {"assignee", "status"} or len(fields) != 2 or \
+                fields != {"assignee", "status"} or len(fields) != 2 or \
                 (delta.seconds // 60) > MAX_DELTA_MINUTES:
             prev_id, prev_item = current_id, current_item
-            current_id += 1
             continue
         changelogItems = current_item["changelogItems"] + prev_item["changelogItems"]
         chlog[prev_id] = {
@@ -159,9 +163,8 @@ def sort_and_merge(changelog):
             "changelogItems": changelogItems
         }
         chlog[current_id]["delete"] = True
-        prev_id, prev_item = current_id, chlog[prev_id]
-        current_id += 1
-    return [x for x in changelog if "delete" not in x]
+    filtered = [x for x in chlog if "delete" not in x]
+    return filtered
 
 
 def cards_active_on_interval(sw: SnowflakeWrapper, interval: Interval, cols=None) -> Union[list, pd.DataFrame]:

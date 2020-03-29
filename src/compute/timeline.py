@@ -17,6 +17,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
         status_from, status_to, changed_assignee = "BACKLOG", "BACKLOG", False  # default status at the beginning (top of workflow)
         assign_from, assign_to, changed_status = None, reporter, False
         date_transitioned, date_assigned = date_issue_created, date_issue_created
+        # TODO: dateFrom > dateTo, example: MAB-301
         for logs in row["CHANGELOGITEMS"]:
             # print(f'Number of items {len(logs["changelogItems"])}')
             # if len(logs["changelogItems"]) > 2:

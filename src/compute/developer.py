@@ -142,7 +142,6 @@ def get_all_developer_by_status(sw: SnowflakeWrapper, interval: Interval, use_ca
                     for s in
                     get_distinct_statuses(sw)}
         for user_id in get_developer_ids(sw):
-            print(user_id)
             for _, row in get_developer(sw, interval, user_id).iterrows():
                 row.insert(0, 'USERID', user_id)
                 statuses[row['STATUS']] = statuses[row['STATUS']].append(row, ignore_index=True)

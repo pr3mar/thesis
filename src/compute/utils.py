@@ -114,12 +114,12 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
         f"        ) CHANGELOGITEMS "
         f"FROM CHANGELOGS c INNER JOIN ISSUES i ON c.KEY = i.KEY "
         f"WHERE "
-        f"    c.KEY IN ('MAB-301') AND "
         f"    c.changelogItem:field IN ('status', 'assignee') AND "
         f"    {ids} "
         f"    c.DATECREATED < {interval.toDate()} "
         f"GROUP BY 1, 2, 3 "
-        # f"LIMIT 1"
+        # f"    c.KEY IN ('MAB-14432') AND "
+        # f"LIMIT 1"gcsa
     )
     changelog['CHANGELOGITEMS'] = changelog['CHANGELOGITEMS'].apply(
         lambda x: sort_and_merge(json.loads(x, object_pairs_hook=load_with_datetime)))
@@ -149,8 +149,9 @@ def sort_and_merge(changelog):
         current_item = chlog[current_id]
         fields: set = set(changelog_affected_fields(current_item) + changelog_affected_fields(prev_item))
         delta: timedelta = current_item["dateCreated"] - prev_item["dateCreated"]
-        print(f"Items [{len(fields)}] = {fields}, prev_created", prev_item["dateCreated"], "curr_created", current_item["dateCreated"], delta)
-        print(f"prev author = {prev_item['author']}, curr author = {current_item['author']}")
+        # helpful for debugging:
+        # print(f"Items [{len(fields)}] = {fields}, prev_created", prev_item["dateCreated"], "curr_created", current_item["dateCreated"], delta)
+        # print(f"prev author = {prev_item['author']}, curr author = {current_item['author']}")
         if current_item["author"] != prev_item["author"] or \
                 fields != {"assignee", "status"} or len(fields) != 2 or \
                 (delta.seconds // 60) > MAX_DELTA_MINUTES:

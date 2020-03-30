@@ -11,7 +11,8 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
     def filter_log_items(items: dict, prop: str) -> Union[dict, None]:
         filtered = [x for x in items["changelogItems"] if x["field"] == prop]
         if len(filtered) > 1:
-            raise Exception(f"More than 1 filtered item: {filtered}")
+            print(f"More than 1 filtered item of type {prop}: {filtered}")
+            return filtered[0]
         elif len(filtered) == 1:
             return filtered[0]
         else:
@@ -24,24 +25,23 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
         status_from, status_to, changed_assignee = "BACKLOG", "BACKLOG", False  # default status at the beginning (top of workflow)
         assign_from, assign_to, changed_status = None, None, False
         last_change = date_issue_created
-        # TODO: dateFrom > dateTo, example: MAB-301
         for logs in row["CHANGELOGITEMS"]:
-            print(f'Number of items {len(logs["changelogItems"])}')
+            # print(f'Number of items {len(logs["changelogItems"])}')
             author = logs["author"]
             date_created = logs["dateCreated"]
-            print(f"date_created = {date_created}, date_transitioned = {last_change}")
+            # print(f"date_created = {date_created}, date_transitioned = {last_change}")
             # TODO: can detect re-assignments here
             change_assignee = filter_log_items(logs, "assignee")
             if change_assignee is not None:
                 assign_from = None if "from" not in change_assignee else change_assignee["from"]
                 assign_to = None if "to" not in change_assignee else change_assignee["to"]  # the latest assignee
-                print(f"[{author}]: [{status_to}] Reassign from `{assign_from}`, to `{assign_to}`")
+                # print(f"[{author}]: [{status_to}] Reassign from `{assign_from}`, to `{assign_to}`")
                 changed_assignee = True
             change_status = filter_log_items(logs, "status")
             if change_status is not None:
                 status_from = None if "fromString" not in change_status else change_status["fromString"]
                 status_to = None if "toString" not in change_status else change_status["toString"]  # the latest status
-                print(f"[{author}]: [{assign_to}] Transition from `{status_from}`, to `{status_to}`")
+                # print(f"[{author}]: [{assign_to}] Transition from `{status_from}`, to `{status_to}`")
                 changed_status = True
             if last_change > date_created:
                 raise Exception("WAIT A SEC")
@@ -85,7 +85,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
         timelines.append(json.dumps(timeline, default=Interval.isDate))
     copy = changelogs.copy()
     copy = copy.drop(["CHANGELOGITEMS"], axis=1)
-    print(timelines)
+    # print(timelines)
     copy["timelines"] = timelines
     return copy
 

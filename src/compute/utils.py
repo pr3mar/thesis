@@ -154,16 +154,19 @@ def sort_and_merge(changelog):
         # print(f"prev author = {prev_item['author']}, curr author = {current_item['author']}")
         if current_item["author"] != prev_item["author"] or \
                 fields != {"assignee", "status"} or len(fields) != 2 or \
-                (delta.seconds // 60) > MAX_DELTA_MINUTES:
+                (delta.seconds // 60) > MAX_DELTA_MINUTES \
+                or len(prev_item['changelogItems']) > 1:
             prev_id, prev_item = current_id, current_item
             continue
-        changelogItems = current_item["changelogItems"] + prev_item["changelogItems"]
+        changelogItems = deepcopy(current_item["changelogItems"]) + deepcopy(prev_item["changelogItems"])
         chlog[prev_id] = {
             "author": current_item["author"],
             "dateCreated": prev_item["dateCreated"],
             "changelogItems": changelogItems
         }
         chlog[current_id]["delete"] = True
+        prev_item = chlog[prev_id]
+    # print("merged: ", [x for x in chlog if len(x['changelogItems']) > 2])
     filtered = [x for x in chlog if "delete" not in x]
     return filtered
 

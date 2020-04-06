@@ -1,9 +1,11 @@
 import json
+from datetime import date, datetime
 from typing import Union
 
 import pandas as pd
-from datetime import date, datetime, timedelta
-from src.compute.utils import Interval, work_activity_on_interval
+
+from src.compute.changelogs import work_activity_on_interval
+from src.compute.utils import Interval
 from src.db.utils import SnowflakeWrapper
 
 
@@ -11,8 +13,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
     def filter_log_items(items: dict, prop: str) -> Union[dict, None]:
         filtered = [x for x in items["changelogItems"] if x["field"] == prop]
         if len(filtered) > 1:
-            print(f"More than 1 filtered item of type {prop}: {filtered}")
-            return filtered[0]
+            raise Exception(f"More than 1 filtered item of type {prop}: {filtered}")
         elif len(filtered) == 1:
             return filtered[0]
         else:
@@ -26,11 +27,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
         assign_from, assign_to, changed_status = None, None, False
         last_change = date_issue_created
         for logs in row["CHANGELOGITEMS"]:
-            # print(f'Number of items {len(logs["changelogItems"])}')
-            author = logs["author"]
             date_created = logs["dateCreated"]
-            # print(f"date_created = {date_created}, date_transitioned = {last_change}")
-            # TODO: can detect re-assignments here
             change_assignee = filter_log_items(logs, "assignee")
             if change_assignee is not None:
                 assign_from = None if "from" not in change_assignee else change_assignee["from"]
@@ -65,7 +62,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
                     "tdelta": date_created - last_change
                 })
                 changed_status = False
-            if changed_assignee:  # TODO: it fails here, example MAB-14432
+            if changed_assignee:
                 timeline.append({
                     "status": status_to,
                     "assignee": assign_from,

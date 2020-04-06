@@ -1,6 +1,7 @@
 import pandas as pd
 import src.config as config
-from snowflake.connector import connect, SnowflakeConnection
+from typing import Union
+from snowflake.connector import connect, SnowflakeConnection, DictCursor
 from snowflake.sqlalchemy import URL
 from sqlalchemy import create_engine
 
@@ -8,14 +9,20 @@ from sqlalchemy import create_engine
 class SnowflakeWrapper:
     def __init__(self, connection):
         self.__connection = connection
-        self.__cursor = self.__connection.cursor()
+        self.__cursor: DictCursor = self.__connection.cursor()
 
     def __del__(self):
         if self.__connection:
             self.__connection.close()
 
-    def execute_query(self, query: str) -> pd.DataFrame:
+    def fetch_df(self, query: str) -> Union[list, pd.DataFrame]:
         return self.__cursor.execute(query).fetch_pandas_all()
+
+    def fetch(self, query, single_row=False):
+        if single_row:
+            return self.__cursor.execute(query).fetchone()
+        else:
+            return self.__cursor.execute(query).fetchall()
 
     def execute(self, query: str) -> None:
         self.__cursor.execute(query)

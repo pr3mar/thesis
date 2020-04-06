@@ -1,9 +1,11 @@
 import json
-import pandas as pd
-import src.config as config
 from copy import deepcopy
-from typing import Union
 from datetime import date, datetime, timedelta
+from typing import Union
+
+import pandas as pd
+
+import src.config as config
 from src.db.utils import SnowflakeWrapper
 
 pd.set_option('display.max_columns', 500)
@@ -21,6 +23,9 @@ class Interval:
         self.__toDate = toDate
         self.validate()
 
+    def __str__(self):
+        return f"({self.fromDate()}, {self.toDate()})"
+
     def fromDate(self) -> str:
         return Interval.strdate(self.__fromDate)
 
@@ -31,7 +36,7 @@ class Interval:
         if self.__fromDate <= self.__toDate:
             return True
         else:
-            raise RuntimeError(f"Invalid interval given: ({self.fromDate()}, {self.toDate()})")
+            raise RuntimeError(f"Invalid interval given: {self}")
 
     @staticmethod
     def strdate(d: date) -> str:
@@ -100,7 +105,7 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
     if keys is None:
         keys = cards_active_on_interval(sw, interval)
     ids = f" c.KEY IN ({mask_in(keys)}) AND "
-    changelog = sw.execute_query(
+    changelog = sw.fetch_df(
         f"SELECT "
         f"    c.KEY, "
         f"    i.{decode_user('fields', 'reporter')} reporter, "
@@ -171,46 +176,22 @@ def sort_and_merge(changelog):
     return filtered
 
 
-def cards_active_on_interval(sw: SnowflakeWrapper, interval: Interval, cols=None) -> Union[list, pd.DataFrame]:
-    interval.validate()
-    get_keys_sql = (
-        f"SELECT "
-        f"  KEY "
-        f"FROM "
-        f"  CHANGELOGS "
-        f"WHERE "
-        f"  DATECREATED >= {interval.fromDate()} AND "
-        f"  DATECREATED < {interval.toDate()} "
-        f"GROUP BY KEY"
-    )
-    if cols is None:
-        return sw.execute_query(get_keys_sql)["KEY"].tolist()
-    else:
-        return sw.execute_query(
-            f"SELECT "
-            f" {mask_props(cols)} "
-            f"FROM "
-            f"  ISSUES "
-            f" WHERE "
-            f"  KEY IN ({get_keys_sql});"
-        )
-
-
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
-        res_keys = cards_active_on_interval(sw,
-                                            Interval(date(2019, 10, 1), date(2020, 1, 1)),
-                                            cols=[
-                                                ('key', 'key'),
-                                                (decode_user("fields", "owner"), "owner"),
-                                                (decode_user("fields", "assignee"), "assignee"),
-                                                (decode_user("fields", "creator"), "creator"),
-                                                (decode_field("fields", "due_date"), "due_date"),
-                                            ]
-                                            )
-        print(len(res_keys))
-        res = work_activity_on_interval(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))
-        print(len(res))
+        # res_keys = cards_active_on_interval(sw,
+        #                                     Interval(date(2019, 10, 1), date(2020, 1, 1)),
+        #                                     cols=[
+        #                                         ('key', 'key'),
+        #                                         (decode_user("fields", "owner"), "owner"),
+        #                                         (decode_user("fields", "assignee"), "assignee"),
+        #                                         (decode_user("fields", "creator"), "creator"),
+        #                                         (decode_field("fields", "due_date"), "due_date"),
+        #                                     ]
+        #                                     )
+        # print(len(res_keys))
+        # res = work_activity_on_interval(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))
+        # print(len(res))
+        res = unique_active_cards(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))
         print(res)
     # print(json.dumps(__data_schema, indent=4))

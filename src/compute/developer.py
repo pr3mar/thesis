@@ -16,7 +16,7 @@ from src.compute.utils import mask_in, Interval
 
 
 def get_developer_ids(sw: SnowflakeWrapper) -> list:
-    return sw.execute_query(
+    return sw.fetch_df(
         "SELECT USERKEY KEY "
         "FROM USERS "
         "WHERE ACTIVE = TRUE AND USERKEY NOT ILIKE '%addon%'"
@@ -25,7 +25,7 @@ def get_developer_ids(sw: SnowflakeWrapper) -> list:
 
 
 def get_distinct_statuses(sw: SnowflakeWrapper) -> list:
-    return sw.execute_query(
+    return sw.fetch_df(
         "SELECT ID "
         "FROM STATUSES "
         "ORDER BY 1;"
@@ -34,7 +34,7 @@ def get_distinct_statuses(sw: SnowflakeWrapper) -> list:
 
 def get_aggregated_authored_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Union[None, list] = None):
     ids = "" if user_id is None else f" USERID IN ({mask_in(user_id)}) AND"
-    result = sw.execute_query(
+    result = sw.fetch_df(
         f"SELECT "
         f"    USERID, "
         f"    ARRAY_AGG( "
@@ -83,7 +83,7 @@ def get_authored_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Uni
     :return:
     """
     ids = "" if user_id is None else f" USERID IN ({mask_in(user_id)}) AND "
-    return sw.execute_query(
+    return sw.fetch_df(
         f"SELECT "
         f"    USERID, "
         f"    ARRAY_AGG( "
@@ -103,7 +103,7 @@ def get_authored_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Uni
 
 
 def get_developer(sw: SnowflakeWrapper, interval: Interval, userId: str) -> DataFrame:
-    return sw.execute_query(
+    return sw.fetch_df(
         f" SELECT "
         f"     id AS STATUS, "
         f"     UNIQUEKEYS, "

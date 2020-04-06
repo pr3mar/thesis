@@ -26,7 +26,7 @@ def unique_active_cards(sw: SnowflakeWrapper, interval: Interval) -> int:
 def transition_frequency(sw: SnowflakeWrapper, interval: Interval, limit=10, order="DESC") -> pd.DataFrame:
     limit_query = f"LIMIT {limit}" if 0 < limit < 100 else ""
     query_order = order if order.upper() in ["ASC", "DESC"] else "DESC"
-    return sw.fetch_df(
+    return sw.fetch_df(  # TODO: add option to aggregate by week
         f'SELECT '
         f'    CHANGELOGITEM:fromString::string "FromStatus", '
         f'    CHANGELOGITEM:toString::string "ToStatus", '

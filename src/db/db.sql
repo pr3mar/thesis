@@ -19,6 +19,7 @@ CREATE TABLE ISSUES (
     expand VARCHAR(256),
     renderedFields OBJECT,
     self VARCHAR(256),
+    dateCreated TIMESTAMP_NTZ(9),
     dateAccessed TIMESTAMP_NTZ(9)
 );
 
@@ -34,6 +35,7 @@ INSERT ALL INTO ISSUES
         tmp:expand::string expand,
         tmp:renderedFields renderedFields,
         tmp:self::string self,
+        TO_TIMESTAMP_NTZ(convert_timezone('UTC', to_timestamp_tz(tmp:fields:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'))) dateCreated,
         TO_TIMESTAMP_NTZ(tmp:api_dateAccessed) dateAccessed
     FROM ISSUES_TEMP;
 
@@ -41,13 +43,17 @@ SELECT COUNT(*) FROM ISSUES;
 
 -- -- -- -- -- -- CHANGELOGS
 
-CREATE TABLE CHANGELOGS (
-    id VARCHAR(8),
-    key VARCHAR(10),
-    userId VARCHAR(128),
-    changelogItem OBJECT,
-    dateCreated TIMESTAMP_NTZ(9),
-    dateAccessed TIMESTAMP_NTZ(9)
+CREATE OR REPLACE TABLE CHANGELOGS (
+    id VARCHAR(8) NOT NULL,
+    key VARCHAR(10) NOT NULL,
+    userId VARCHAR(128) NOT NULL,
+    changelogItem OBJECT NOT NULL,
+    YEAR VARCHAR(4) NOT NULL,
+    QUARTER VARCHAR(1) NOT NULL,
+    MONTH VARCHAR(2) NOT NULL,
+    WEEKOFYEAR VARCHAR(2) NOT NULL,
+    dateCreated TIMESTAMP_NTZ(9) NOT NULL,
+    dateAccessed TIMESTAMP_NTZ(9) NOT NULL
 );
 
 CREATE TEMPORARY TABLE CHANGELOG_TEMP (tmp VARIANT);
@@ -58,9 +64,13 @@ INSERT ALL INTO CHANGELOGS
   SELECT
       tmp:id::string id,
       tmp:key::string key,
-      changelog.value:author:emailAddress::string userId,
+      changelog.value:author:key::string userId,
       item.value changelogItem,
-      TO_TIMESTAMP_NTZ(changelog.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') created,
+      YEAR(convert_timezone('UTC', to_timestamp_tz(changelog.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')))::string year,
+      QUARTER(convert_timezone('UTC', to_timestamp_tz(changelog.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')))::string quarter,
+      MONTH(convert_timezone('UTC', to_timestamp_tz(changelog.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')))::string month,
+      WEEKOFYEAR(convert_timezone('UTC', to_timestamp_tz(changelog.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')))::string weekOfYear,
+      TO_TIMESTAMP_NTZ(convert_timezone('UTC', to_timestamp_tz(changelog.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'))) created,
       TO_TIMESTAMP_NTZ(tmp:api_dateAccessed) dateAccessed
   FROM
       CHANGELOG_TEMP,
@@ -90,8 +100,8 @@ INSERT ALL INTO COMMENTS
         tmp:id::string id,
         tmp:key::string key,
         comment.value,
-        TO_TIMESTAMP_NTZ(comment.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') created,
-        TO_TIMESTAMP_NTZ(comment.value:updated::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM') updated,
+        convert_timezone('UTC', to_timestamp_tz(comment.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')) created,
+        convert_timezone('UTC', to_timestamp_tz(comment.value:updated::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')) created,
         TO_TIMESTAMP_NTZ(tmp:api_dateAccessed) accessed
     FROM
         COMMENTS_TEMP,

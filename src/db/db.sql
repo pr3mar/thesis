@@ -100,8 +100,8 @@ INSERT ALL INTO COMMENTS
         tmp:id::string id,
         tmp:key::string key,
         comment.value,
-        convert_timezone('UTC', to_timestamp_tz(comment.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')) created,
-        convert_timezone('UTC', to_timestamp_tz(comment.value:updated::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')) created,
+        TO_TIMESTAMP_NTZ(convert_timezone('UTC', to_timestamp_tz(comment.value:created::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'))) created,
+        TO_TIMESTAMP_NTZ(convert_timezone('UTC', to_timestamp_tz(comment.value:updated::string, 'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM'))) updated,
         TO_TIMESTAMP_NTZ(tmp:api_dateAccessed) accessed
     FROM
         COMMENTS_TEMP,

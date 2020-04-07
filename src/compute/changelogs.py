@@ -23,22 +23,24 @@ def unique_active_cards(sw: SnowflakeWrapper, interval: Interval) -> int:
     )[0]
 
 
-def transition_frequency(sw: SnowflakeWrapper, interval: Interval, limit=10, order="DESC") -> pd.DataFrame:
+def transition_frequency(sw: SnowflakeWrapper, interval: Interval, limit=10, order="DESC", by_week=False) -> pd.DataFrame:
     limit_query = f"LIMIT {limit}" if 0 < limit < 100 else ""
     query_order = order if order.upper() in ["ASC", "DESC"] else "DESC"
-    return sw.fetch_df(  # TODO: add option to aggregate by week
+    breakdown_by_week = f'WEEKOFYEAR "weekOfYear",' if by_week else ""
+    # TODO: add join to weeks table which will yield NULLs wherever there are missing values
+    #  later on, the NULLs will be converted to zeros (0).
+    return sw.fetch_df(
         f'SELECT '
-        f'    CHANGELOGITEM:fromString::string "FromStatus", '
-        f'    CHANGELOGITEM:toString::string "ToStatus", '
+        f'    {breakdown_by_week} '
+        f'    CHANGELOGITEM:fromString::string  || \' -> \' || CHANGELOGITEM:toString::string "Transition", '
         f'    COUNT(*) "TotalTransitions" '
         f'FROM CHANGELOGS '
         f'WHERE '
         f'    CHANGELOGITEM:field::string = \'status\' '
         f'    AND DATECREATED >= {interval.fromDate()} AND DATECREATED < {interval.toDate()} '
-        f'GROUP BY 1, 2 '
-        f'ORDER BY 3 {query_order} '
-        f'{limit_query}; '
-    )
+        f'GROUP BY 1 {", 2" if by_week else ""} '
+        f'ORDER BY {"1" if by_week else "2"} {query_order} '
+        f'{limit_query}; ')
 
 
 def cards_active_on_interval(sw: SnowflakeWrapper, interval: Interval, cols=None) -> Union[list, pd.DataFrame]:

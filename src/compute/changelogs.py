@@ -23,24 +23,37 @@ def unique_active_cards(sw: SnowflakeWrapper, interval: Interval) -> int:
     )[0]
 
 
-def transition_frequency(sw: SnowflakeWrapper, interval: Interval, limit=10, order="DESC", by_week=False) -> pd.DataFrame:
+def transition_frequency(sw: SnowflakeWrapper, interval: Interval, limit=10, order="DESC", by_status=True, by_week=False) -> pd.DataFrame:
     limit_query = f"LIMIT {limit}" if 0 < limit < 100 else ""
+
+    breakdown_by_week = f'YEAR "Year", IFF(MONTH = 12 AND WEEKOFYEAR = 1, WEEKOFYEAR + 52, WEEKOFYEAR) "WeekOfYear",' if by_week else ""
+    breakdown_by_status = f'CHANGELOGITEM:fromString::string  || \' -> \' || CHANGELOGITEM:toString::string "Transition",' if by_status else ""
+
+    query_group_by_props = 0 + (2 if by_week else 0) + (1 if by_status else 0)
+    group_by = f"GROUP BY {','.join([str(i + 1) for i in range(query_group_by_props)])}" if query_group_by_props > 0 else ""
+
     query_order = order if order.upper() in ["ASC", "DESC"] else "DESC"
-    breakdown_by_week = f'WEEKOFYEAR "weekOfYear",' if by_week else ""
+    if not by_week:
+        order_by = f"ORDER BY {query_group_by_props + 1} {query_order}"
+    else:
+        order_by = f"ORDER BY {','.join([str(i + 1) for i in range(query_group_by_props + 1)])} {query_order}"
+
     # TODO: add join to weeks table which will yield NULLs wherever there are missing values
     #  later on, the NULLs will be converted to zeros (0).
-    return sw.fetch_df(
+    sql = (
         f'SELECT '
         f'    {breakdown_by_week} '
-        f'    CHANGELOGITEM:fromString::string  || \' -> \' || CHANGELOGITEM:toString::string "Transition", '
+        f'    {breakdown_by_status} '
         f'    COUNT(*) "TotalTransitions" '
         f'FROM CHANGELOGS '
         f'WHERE '
         f'    CHANGELOGITEM:field::string = \'status\' '
         f'    AND DATECREATED >= {interval.fromDate()} AND DATECREATED < {interval.toDate()} '
-        f'GROUP BY 1 {", 2" if by_week else ""} '
-        f'ORDER BY {"1" if by_week else "2"} {query_order} '
+        f'{group_by} '
+        f'{order_by} '
         f'{limit_query}; ')
+    # print(sql)
+    return sw.fetch_df(sql)
 
 
 def cards_active_on_interval(sw: SnowflakeWrapper, interval: Interval, cols=None) -> Union[list, pd.DataFrame]:

@@ -10,26 +10,27 @@ from src.compute.utils import Interval, load_with_datetime
 from src.db.utils import SnowflakeWrapper
 
 
-def unique_active_cards(sw: SnowflakeWrapper, interval: Interval) -> int:
-    return sw.fetch(
-        f"SELECT "
-        f"  COUNT(DISTINCT KEY) CNT "
-        f"FROM "
-        f"  CHANGELOGS "
-        f"WHERE"
-        f"  DATECREATED >= {interval.fromDate()}"
-        f"  AND DATECREATED < {interval.toDate()}",
-        single_row=True
-    )[0]
-
-
-def transition_frequency(sw: SnowflakeWrapper, interval: Interval, limit=10, order="DESC", by_status=True, by_week=False) -> pd.DataFrame:
+def transition_frequency(
+    sw: SnowflakeWrapper,
+    interval: Interval,
+    limit=10,
+    order="DESC",
+    by_status=True,
+    by_week=False,
+    by_issue_type=False,
+    by_issue_priority=False,
+    get_sql=False
+) -> Union[pd.DataFrame, str]:
     limit_query = f"LIMIT {limit}" if 0 < limit < 100 else ""
 
+    breakdown_by_issue_type = f'I.FIELDS:issuetype:name "IssueType",' if by_issue_type else ""
+    breakdown_by_issue_priority = f'I.FIELDS:priority:name "IssuePriority",' if by_issue_priority else ""
     breakdown_by_week = f'YEAR "Year", IFF(MONTH = 12 AND WEEKOFYEAR = 1, WEEKOFYEAR + 52, WEEKOFYEAR) "WeekOfYear",' if by_week else ""
     breakdown_by_status = f'CHANGELOGITEM:fromString::string  || \' -> \' || CHANGELOGITEM:toString::string "Transition",' if by_status else ""
 
-    query_group_by_props = 0 + (2 if by_week else 0) + (1 if by_status else 0)
+    join_issues = "INNER JOIN ISSUES I on C.KEY = I.KEY " if breakdown_by_issue_type or by_issue_priority else ""
+
+    query_group_by_props = 0 + (2 if by_week else 0) + (1 if by_status else 0) + (1 if by_issue_type else 0) + (1 if by_issue_priority else 0)
     group_by = f"GROUP BY {','.join([str(i + 1) for i in range(query_group_by_props)])}" if query_group_by_props > 0 else ""
 
     query_order = order if order.upper() in ["ASC", "DESC"] else "DESC"
@@ -43,16 +44,22 @@ def transition_frequency(sw: SnowflakeWrapper, interval: Interval, limit=10, ord
     sql = (
         f'SELECT '
         f'    {breakdown_by_week} '
+        f'    {breakdown_by_issue_type} '
+        f'    {breakdown_by_issue_priority} '
         f'    {breakdown_by_status} '
         f'    COUNT(*) "TotalTransitions" '
-        f'FROM CHANGELOGS '
+        f'FROM CHANGELOGS C '
+        f'      {join_issues} '
         f'WHERE '
-        f'    CHANGELOGITEM:field::string = \'status\' '
-        f'    AND DATECREATED >= {interval.fromDate()} AND DATECREATED < {interval.toDate()} '
+        f'    C.CHANGELOGITEM:field::string = \'status\' '
+        f'    AND C.DATECREATED >= {interval.fromDate()} AND C.DATECREATED < {interval.toDate()} '
         f'{group_by} '
         f'{order_by} '
-        f'{limit_query}; ')
-    # print(sql)
+        f'{limit_query}; '
+    )
+    print(sql)
+    if get_sql:
+        return sql
     return sw.fetch_df(sql)
 
 

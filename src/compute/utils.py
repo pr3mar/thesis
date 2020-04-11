@@ -192,6 +192,4 @@ if __name__ == '__main__':
         # print(len(res_keys))
         # res = work_activity_on_interval(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))
         # print(len(res))
-        res = unique_active_cards(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)))
-        print(res)
     # print(json.dumps(__data_schema, indent=4))

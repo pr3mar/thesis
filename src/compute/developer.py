@@ -1,18 +1,17 @@
 import json
-import pickle
 import os
+import pickle
+from datetime import date
+from typing import Union
+
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
-import src.config as config
 from pandas import DataFrame
-import src.compute.utils as utils
-from collections import defaultdict
-from src.config import data_root
-from typing import Union
-from datetime import date
-from src.db.utils import SnowflakeWrapper
+
+import src.config as config
 from src.compute.utils import mask_in, Interval
+from src.config import data_root
+from src.db.utils import SnowflakeWrapper
 
 
 def get_developer_ids(sw: SnowflakeWrapper) -> list:
@@ -30,6 +29,11 @@ def get_distinct_statuses(sw: SnowflakeWrapper) -> list:
         "FROM STATUSES "
         "ORDER BY 1;"
     )['ID'].tolist()
+
+
+def get_avg_authored_activity(sw: SnowflakeWrapper, interval: Interval) -> pd.DataFrame:
+    activity = get_aggregated_authored_activity(sw, interval)
+    return activity.fillna(0).describe().T.sort_values(by="mean", ascending=False)
 
 
 def get_aggregated_authored_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Union[None, list] = None):

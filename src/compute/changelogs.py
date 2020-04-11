@@ -23,8 +23,8 @@ def transition_frequency(
 ) -> Union[pd.DataFrame, str]:
     limit_query = f"LIMIT {limit}" if 0 < limit < 100 else ""
 
-    breakdown_by_issue_type = f'I.FIELDS:issuetype:name "IssueType",' if by_issue_type else ""
-    breakdown_by_issue_priority = f'I.FIELDS:priority:name "IssuePriority",' if by_issue_priority else ""
+    breakdown_by_issue_type = f'I.FIELDS:issuetype:name::string "IssueType",' if by_issue_type else ""
+    breakdown_by_issue_priority = f'I.FIELDS:priority:name::string "IssuePriority",' if by_issue_priority else ""
     breakdown_by_week = f'YEAR "Year", IFF(MONTH = 12 AND WEEKOFYEAR = 1, WEEKOFYEAR + 52, WEEKOFYEAR) "WeekOfYear",' if by_week else ""
     breakdown_by_status = f'CHANGELOGITEM:fromString::string  || \' -> \' || CHANGELOGITEM:toString::string "Transition",' if by_status else ""
 

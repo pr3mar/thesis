@@ -1,5 +1,5 @@
 import json
-from datetime import date, datetime
+from datetime import datetime
 from typing import Union
 
 import pandas as pd
@@ -119,10 +119,30 @@ def persist_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Unio
         raise e
 
 
+def get_avg_timeline(sw: SnowflakeWrapper, interval: Interval) -> pd.DataFrame:
+    query = (
+        f'SELECT '
+        f'    STATUS "Status", '
+        f'    COUNT(DISTINCT KEY)             "UniqueIssues", '
+        f'    COUNT(*)                        "Issues", '
+        f'    AVG(TIMEDELTA) / (60 * 60 * 24) "AvgDays", '
+        f'    MAX(TIMEDELTA) / (60 * 60 * 24) "MaxDays", '
+        f'    MIN(TIMEDELTA) / (60 * 60 * 24) "MinDays" '
+        f'FROM TIMELINES t '
+        f'WHERE '
+        f'    t.DATEFROM >= {interval.fromDate()} '
+        f'    AND t.DATETO < {interval.toDate()} '
+        f'GROUP BY 1 '
+        f'ORDER BY 1, 4 DESC; '
+    )
+    print(query)
+    return sw.fetch_df(query)
+
+
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
-        timelines = build_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))
+        # timelines = build_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))
         # print(timelines)
         # SnowflakeWrapper.execute_df_query(timelines, "timelines", ifexists='replace')
-        persist_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))
+        # persist_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))

@@ -26,11 +26,14 @@ class Interval:
     def __str__(self):
         return f"({self.fromDate()}, {self.toDate()})"
 
-    def fromDate(self) -> str:
-        return Interval.strdate(self.__fromDate)
+    def fname(self):
+        return f"{self.fromDate(escape=False)}_{self.toDate(escape=False)}"
 
-    def toDate(self) -> str:
-        return Interval.strdate(self.__toDate)
+    def fromDate(self, escape=True) -> str:
+        return Interval.strdate(self.__fromDate, escape)
+
+    def toDate(self, escape=True) -> str:
+        return Interval.strdate(self.__toDate, escape)
 
     def validate(self) -> bool:
         if self.__fromDate <= self.__toDate:
@@ -39,11 +42,15 @@ class Interval:
             raise RuntimeError(f"Invalid interval given: {self}")
 
     @staticmethod
-    def strdate(d: date) -> str:
-        return f"'{d.strftime(Interval.date_format)}'"
+    def strdate(d: date, escape=True) -> str:
+        if escape:
+            return f"'{d.strftime(Interval.date_format)}'"
+        return f"{d.strftime(Interval.date_format)}"
 
     @staticmethod
-    def strtimestamp(d: datetime) -> str:
+    def strtimestamp(d: datetime, escape=True) -> str:
+        if escape:
+            return f"'{d.strftime(Interval.timestamp_format)}'"
         return f"'{d.strftime(Interval.timestamp_format)}'"
 
     @staticmethod

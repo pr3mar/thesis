@@ -77,7 +77,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
             "assignee": assign_to,  # last known assignee
             "date_to": None,  # it's still ongoing
             "date_from": last_change,
-            "tdelta": datetime.now() - last_change
+            "tdelta": datetime.now() - last_change  # TODO HANDLE THIS CASE
         })
         timelines.append(json.dumps(timeline, default=Interval.isDate))
     copy = changelogs.copy()
@@ -122,9 +122,10 @@ def persist_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Unio
 def get_avg_timeline(sw: SnowflakeWrapper, interval: Interval) -> pd.DataFrame:
     query = (
         f'SELECT '
-        f'    STATUS "Status", '
+        f'    STATUS                          "Status", '
         f'    COUNT(DISTINCT KEY)             "UniqueIssues", '
         f'    COUNT(*)                        "Issues", '
+        f'    "Issues" - "UniqueIssues"       "Reassignments", '
         f'    AVG(TIMEDELTA) / (60 * 60 * 24) "AvgDays", '
         f'    MAX(TIMEDELTA) / (60 * 60 * 24) "MaxDays", '
         f'    MIN(TIMEDELTA) / (60 * 60 * 24) "MinDays" '

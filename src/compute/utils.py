@@ -29,10 +29,14 @@ class Interval:
     def fname(self):
         return f"{self.fromDate(escape=False)}_{self.toDate(escape=False)}"
 
-    def fromDate(self, escape=True) -> str:
+    def fromDate(self, escape=True, raw=False) -> Union[str, date]:
+        if raw:
+            return self.__fromDate
         return Interval.strdate(self.__fromDate, escape)
 
-    def toDate(self, escape=True) -> str:
+    def toDate(self, escape=True, raw=False) -> Union[str, date]:
+        if raw:
+            return self.__toDate
         return Interval.strdate(self.__toDate, escape)
 
     def validate(self) -> bool:
@@ -52,6 +56,10 @@ class Interval:
         if escape:
             return f"'{d.strftime(Interval.timestamp_format)}'"
         return f"'{d.strftime(Interval.timestamp_format)}'"
+
+    @staticmethod
+    def to_datetime(d: date) -> datetime:
+        return datetime(d.year, d.month, d.day)
 
     @staticmethod
     def isDate(d):

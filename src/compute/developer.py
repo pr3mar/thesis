@@ -141,7 +141,7 @@ def get_developer(sw: SnowflakeWrapper, interval: Interval, userId: str) -> Data
 
 
 def get_all_developer_by_status(sw: SnowflakeWrapper, interval: Interval, use_cached: bool = True) -> dict:
-    fname = f"{config.data_root}/avg_devs-{interval.fname()}.pkl"
+    fname = f"{config.data_root}/avg/avg_devs-{interval.fname()}.pkl"
     if use_cached and os.path.isfile(fname):
         with open(fname, 'rb') as file:
             return pickle.load(file, encoding='utf8')
@@ -186,8 +186,8 @@ def avg_by_status(data: dict, include_nans=False) -> dict:
 def get_avg_developer(sw: SnowflakeWrapper, interval: Interval, include_nans: bool = False, merge=False) -> (DataFrame):
     fname = f"{data_root}/developer/avg_dev_" \
             f"{interval.fname()}" \
-            f"{'' if include_nans else '_nan'}" \
-            f"{'' if merge else '_merged'}.pkl"
+            f"{'_nan' if include_nans else ''}" \
+            f"{'_merged' if merge else ''}.pkl"
     with open(fname, "wb") as output_file:
         data_by_status = get_all_developer_by_status(sw, interval)
         if merge:

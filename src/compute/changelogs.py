@@ -103,27 +103,32 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
     if keys is None:
         keys = cards_active_on_interval(sw, interval)
     ids = f" c.KEY IN ({utils.mask_in(keys)}) AND "
-    changelog = sw.fetch_df(
+    if interval or ids:
+        print("WARNING: Given interval and/or ids are being ignored at the moment.")
+    sql = (
         f"SELECT "
         f"    c.KEY, "
         f"    i.{utils.decode_user('fields', 'reporter')} reporter, "
-        f"    TO_TIMESTAMP_NTZ(i.{utils.decode_field('fields', 'created')}::string, 'YYYY-MM-DD\"T\"HH24:MI:SS.FF TZHTZM') dateCreated, "
+        f"    TO_TIMESTAMP_NTZ(convert_timezone('UTC', to_timestamp_tz(i.{utils.decode_field('fields', 'created')}::string, 'YYYY-MM-DD\"T\"HH24:MI:SS.FF TZHTZM'))) dateCreated, "
         f"    ARRAY_AGG( "
         f"        OBJECT_CONSTRUCT( "
         f"            'author', USERID, "
-        f"            'dateCreated', DATECREATED, "
+        f"            'dateCreated', c.DATECREATED, "
         f"            'changelogItems', ARRAY_CONSTRUCT(CHANGELOGITEM) "
         f"            ) "
         f"        ) CHANGELOGITEMS "
         f"FROM CHANGELOGS c INNER JOIN ISSUES i ON c.KEY = i.KEY "
         f"WHERE "
         f"    c.changelogItem:field IN ('status', 'assignee') AND "
-        f"    {ids} "
         f"    c.DATECREATED < {interval.toDate()} "
         f"GROUP BY 1, 2, 3 "
+        # f"    {ids} "
         # f"    c.KEY IN ('MAB-14432') AND "
         # f"LIMIT 1"gcsa
     )
+    print(f"Executing: {sql}")
+    changelog = sw.fetch_df(sql)
+
     changelog['CHANGELOGITEMS'] = changelog['CHANGELOGITEMS'].apply(
         lambda x: sort_and_merge(json.loads(x, object_pairs_hook=load_with_datetime)))
     return changelog

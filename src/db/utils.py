@@ -31,7 +31,7 @@ class SnowflakeWrapper:
     def execute_df_query(df, table, ifexists='fail'):
         en = SnowflakeWrapper.create_snowflake_engine()
         with en.connect() as conn:
-            df.to_sql(table, con=en, index=False, if_exists=ifexists)
+            df.to_sql(table, con=en, index=False, if_exists=ifexists, chunksize=10000)
         en.dispose()
 
     @staticmethod

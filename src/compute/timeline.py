@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, date
 from typing import Union
 
 import pandas as pd
@@ -77,7 +77,7 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
             "assignee": assign_to,  # last known assignee
             "date_to": None,  # it's still ongoing
             "date_from": last_change,
-            "tdelta": datetime.now() - last_change  # TODO HANDLE THIS CASE
+            "tdelta": Interval.to_datetime(interval.toDate(raw=True)) - last_change
         })
         timelines.append(json.dumps(timeline, default=Interval.isDate))
     copy = changelogs.copy()
@@ -146,4 +146,4 @@ if __name__ == '__main__':
         # timelines = build_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))
         # print(timelines)
         # SnowflakeWrapper.execute_df_query(timelines, "timelines", ifexists='replace')
-        # persist_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))
+        persist_issue_timelines(sw, Interval(date(2019, 7, 1), date(2020, 1, 1)))

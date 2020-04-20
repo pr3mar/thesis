@@ -13,6 +13,7 @@ snowflake-connector-python = {extras = ["pandas"],version = "*"}
 matplotlib = "*"
 sqlalchemy = "*"
 jupyter = "*"
+scipy = "*"
 
 [requires]
 python_version = "3.7"

@@ -72,7 +72,7 @@ Very easy, very doable. Need to calculate the overlapping intervals and sort the
 ## Some useful SQL views
 
 ```sql
--- 1) avg time in status of a user per issue for a given interval 
+-- 1) by_status time in status of a user per issue for a given interval 
 SELECT
     KEY,
     ASSIGNEE,

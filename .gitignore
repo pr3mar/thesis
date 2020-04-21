@@ -284,7 +284,9 @@ output/*.json
 
 irrelevant/
 cant-share/
-data/
+data/*
+!data/anonymous/
+!data/figs/
 venv/
 .Rhistory
 .env

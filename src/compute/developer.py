@@ -4,8 +4,8 @@ import pickle
 from datetime import date
 from typing import Union
 
-import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 from pandas import DataFrame
 
 import src.config as config
@@ -136,7 +136,7 @@ def get_developer(sw: SnowflakeWrapper, interval: Interval, userId: str) -> Data
         f"     ORDER BY 1 "
         f" ) t ON t.STATUS = s.id; "
     )
-    df["AVG_DAY"] = df["AVG_DAY"].map(lambda x: pd.np.nan if x is None else float(x))
+    df["AVG_DAY"] = df["AVG_DAY"].map(lambda x: np.nan if x is None else float(x))
     return df
 
 

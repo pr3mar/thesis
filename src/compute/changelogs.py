@@ -57,7 +57,7 @@ def transition_frequency(
         f'{order_by} '
         f'{limit_query}; '
     )
-    print(sql)
+    # print(sql)
     if get_sql:
         return sql
     return sw.fetch_df(sql)

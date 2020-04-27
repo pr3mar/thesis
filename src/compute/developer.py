@@ -9,7 +9,7 @@ import numpy as np
 from pandas import DataFrame
 
 import src.config as config
-from src.compute.utils import mask_in, Interval
+from src.compute.utils import mask_in, Interval, get_distinct_statuses
 from src.config import data_root
 from src.db.utils import SnowflakeWrapper
 
@@ -21,14 +21,6 @@ def get_developer_ids(sw: SnowflakeWrapper) -> list:
         "WHERE ACTIVE = TRUE AND USERKEY NOT ILIKE '%addon%'"
         "ORDER BY 1;"
     )['KEY'].tolist()
-
-
-def get_distinct_statuses(sw: SnowflakeWrapper) -> list:
-    return sw.fetch_df(
-        "SELECT ID "
-        "FROM STATUSES "
-        "ORDER BY 1;"
-    )['ID'].tolist()
 
 
 def get_avg_authored_activity(sw: SnowflakeWrapper, interval: Interval) -> pd.DataFrame:
@@ -107,6 +99,7 @@ def get_authored_activity(sw: SnowflakeWrapper, interval: Interval, user_id: Uni
 
 
 def get_developer(sw: SnowflakeWrapper, interval: Interval, userId: str) -> DataFrame:
+    # FIXME this can be done in a single query just like the tickets, aggregate by assignee
     df = sw.fetch_df(
         f" SELECT "
         f"     id AS STATUS, "
@@ -122,7 +115,7 @@ def get_developer(sw: SnowflakeWrapper, interval: Interval, userId: str) -> Data
         f"         STATUS, "
         f'         COUNT(DISTINCT KEY)             "UniqueIssues", '
         f'         COUNT(*)                        "Issues", '
-        f'         COUNT(*)                        "Reassignments", '
+        f'         "Issues" - "UniqueIssues"       "Reassignments", '
         f"         AVG(TIMEDELTA) / (60 * 60 * 24) AVG_DAY, "
         f"         MAX(TIMEDELTA) / (60 * 60 * 24) MAX_DAYS, "
         f"         MIN(TIMEDELTA) / (60 * 60 * 24) MIN_DAYS "
@@ -141,7 +134,7 @@ def get_developer(sw: SnowflakeWrapper, interval: Interval, userId: str) -> Data
 
 
 def get_all_developers_by_status(sw: SnowflakeWrapper, interval: Interval, use_cached: bool = True) -> dict:
-    fname = f"{config.data_root}/by_status/avg_devs-{interval.fname()}.pkl"
+    fname = f"{config.data_root}/developers/by_status/avg_devs-{interval.fname()}.pkl"
     if use_cached and os.path.isfile(fname):
         with open(fname, 'rb') as file:
             return pickle.load(file, encoding='utf8')
@@ -151,6 +144,7 @@ def get_all_developers_by_status(sw: SnowflakeWrapper, interval: Interval, use_c
                     get_distinct_statuses(sw)}
         for user_id in get_developer_ids(sw):
             print(f"Working...")
+            # FIXME this can be done in a single query just like the tickets
             for _, row in get_developer(sw, interval, user_id).iterrows():
                 row = pd.concat([pd.Series([user_id], index=['USERID']), row])
                 statuses[row['STATUS']] = statuses[row['STATUS']].append(row, ignore_index=True)
@@ -184,7 +178,7 @@ def avg_by_status(data: dict, include_nans=False) -> dict:
 
 
 def get_avg_developer(sw: SnowflakeWrapper, interval: Interval, include_nans: bool = False, merge=False) -> (DataFrame):
-    fname = f"{data_root}/developer/avg_dev_" \
+    fname = f"{data_root}/developers/developer/avg_dev_" \
             f"{interval.fname()}" \
             f"{'_nan' if include_nans else ''}" \
             f"{'_merged' if merge else ''}.pkl"

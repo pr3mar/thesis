@@ -63,8 +63,7 @@ def transition_frequency(
     return sw.fetch_df(sql)
 
 
-def cards_active_on_interval(sw: SnowflakeWrapper, interval: Interval, cols=None) -> Union[list, pd.DataFrame]:
-    interval.validate()
+def tickets_active_on_interval(sw: SnowflakeWrapper, interval: Interval, cols=None) -> Union[list, pd.DataFrame]:
     get_keys_sql = (
         f"SELECT "
         f"  KEY "
@@ -88,7 +87,7 @@ def cards_active_on_interval(sw: SnowflakeWrapper, interval: Interval, cols=None
         )
 
 
-def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Union[None, list] = None) -> pd.DataFrame:
+def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, ticket_keys: Union[None, list] = None) -> pd.DataFrame:
     """
     Returns the work activity (changes of assignees and statuses) on a given interval.
     To be able to infer the beginning state of the issue at intervalStartDate, the activity is provided on the interval:
@@ -96,13 +95,12 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
 
     :param sw: SnowflakeWrapper
     :param interval: (from:date, to:date)
-    :param keys: custom list of cards
+    :param ticket_keys: custom list of ticket keys
     :return:
     """
-    interval.validate()
-    if keys is None:
-        keys = cards_active_on_interval(sw, interval)
-    ids = f" c.KEY IN ({utils.mask_in(keys)}) AND "
+    if ticket_keys is None:
+        ticket_keys = tickets_active_on_interval(sw, interval)
+    ids = f" c.KEY IN ({utils.mask_in(ticket_keys)}) AND "
     if interval or ids:
         print("WARNING: Given interval and/or ids are being ignored at the moment.")
     sql = (
@@ -122,9 +120,6 @@ def work_activity_on_interval(sw: SnowflakeWrapper, interval: Interval, keys: Un
         f"    c.changelogItem:field IN ('status', 'assignee') AND "
         f"    c.DATECREATED < {interval.toDate()} "
         f"GROUP BY 1, 2, 3 "
-        # f"    {ids} "
-        # f"    c.KEY IN ('MAB-14432') AND "
-        # f"LIMIT 1"gcsa
     )
     print(f"Executing: {sql}")
     changelog = sw.fetch_df(sql)

@@ -14,6 +14,7 @@ matplotlib = "*"
 sqlalchemy = "*"
 jupyter = "*"
 scipy = "*"
+snowflake-sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"

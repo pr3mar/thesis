@@ -16,10 +16,11 @@ def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True)
         f"SELECT "
         f"  s.id AS STATUS, "
         f"  t.KEY TICKET_KEY, "
+        f'  "IssueType", '
         f'  "IssuePriority", '
-        f'  "UniqueIssues", '
-        f'  "Issues", '
-        f'  "Reassignments", '
+        f'  "States", '
+        f'  "Transitions", '
+        f'  "DegreeOfCycling", '
         f"  AVG_DAYS, "
         f"  MAX_DAYS, "
         f"  MIN_DAYS, "
@@ -31,10 +32,11 @@ def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True)
         f"    SELECT "
         f"      t.KEY, "
         f"      STATUS, "
+        f'      i.FIELDS:issuetype:name::string "IssueType", '
         f'      i.FIELDS:priority:name::string "IssuePriority" ,'
-        f'      COUNT(DISTINCT t.KEY)                "UniqueIssues", '
-        f'      COUNT(*)                             "Issues", '
-        f'      "Issues" - "UniqueIssues"            "Reassignments", '
+        f'      COUNT(DISTINCT t.STATUS)             "States", '
+        f'      COUNT(*)                             "Transitions", '
+        f'      ("Transitions"/"States") - 1 "DegreeOfCycling", '
         f"      AVG(TIMEDELTA) / (60 * 60 * 24) AVG_DAYS, "
         f"      MAX(TIMEDELTA) / (60 * 60 * 24) MAX_DAYS, "
         f"      MIN(TIMEDELTA) / (60 * 60 * 24) MIN_DAYS, "
@@ -46,7 +48,7 @@ def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True)
         f"    WHERE "
         f'      t.KEY IN (SELECT DISTINCT KEY FROM CHANGELOGS WHERE DATECREATED >= {interval.fromDate()} AND DATECREATED < {interval.toDate()}) '
         f'      AND i.FIELDS:resolution IS {"NOT" if resolved else ""} NULL '
-        f"    GROUP BY 1, 2 "
+        f"    GROUP BY 1, 2, 3, 4 "
         f"    ORDER BY 1 "
         f"  ) t ON t.STATUS = s.id; "
     )
@@ -54,7 +56,7 @@ def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True)
     df = sw.fetch_df(sql)
     df["AVG_HOUR"] = df["AVG_HOUR"].map(lambda x: np.nan if x is None else float(x))
     df["AVG_DAYS"] = df["AVG_DAYS"].map(lambda x: np.nan if x is None else float(x))
-    return df
+    return df.set_index("TICKET_KEY")
 
 
 def get_tickets_by_status(sw: SnowflakeWrapper, interval: Interval, use_cached: bool = False) -> dict:

@@ -11,48 +11,53 @@ from src.config import data_root
 from src.db.utils import SnowflakeWrapper
 
 
-def get_tickets(sw: SnowflakeWrapper, interval: Interval, ticket_ids: Union[list, None] = None, resolved: bool = True) -> DataFrame:
-    tickets = f'AND t.KEY IN ({mask_in(ticket_ids)})' if ticket_ids is not None else ''
+def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True) -> DataFrame:
     sql = (
         f"SELECT "
-        f"    s.id AS STATUS, "
-        f"    t.KEY TICKET_KEY, "
-        f'    "UniqueIssues", '
-        f'    "Issues", '
-        f'    "Reassignments", '
-        f"    AVG_DAY, "
-        f"    MAX_DAYS, "
-        f"    MIN_DAYS "
-        f"FROM "
-        f"    STATUSES s "
-        f"    LEFT JOIN ( "
-        f"        SELECT "
-        f"            t.KEY, "
-        f"            STATUS, "
-        f'            COUNT(DISTINCT t.KEY)           "UniqueIssues", '
-        f'            COUNT(*)                        "Issues", '
-        f'            "Issues" - "UniqueIssues"       "Reassignments", '
-        f"            AVG(TIMEDELTA) / (60 * 60 * 24) AVG_DAY, "
-        f"            MAX(TIMEDELTA) / (60 * 60 * 24) MAX_DAYS, "
-        f"            MIN(TIMEDELTA) / (60 * 60 * 24) MIN_DAYS "
-        f"        FROM TIMELINES t "
-        f"        INNER JOIN ISSUES i ON t.KEY = i.KEY "
-        f"        WHERE "
-        f"            DATEFROM >= {interval.fromDate()} "
-        f"            AND DATETO < {interval.toDate()} "
-        f"            AND i.FIELDS:resolution IS {'NOT' if resolved else ''} NULL "
-        f'            {tickets} '
-        f"        GROUP BY 1, 2 "
-        f"        ORDER BY 1 "
-        f"    ) t ON t.STATUS = s.id; "
+        f"  s.id AS STATUS, "
+        f"  t.KEY TICKET_KEY, "
+        f'  "IssuePriority", '
+        f'  "UniqueIssues", '
+        f'  "Issues", '
+        f'  "Reassignments", '
+        f"  AVG_DAYS, "
+        f"  MAX_DAYS, "
+        f"  MIN_DAYS, "
+        f"  AVG_HOUR, "
+        f"  MAX_HOURS, "
+        f"  MIN_HOURS "
+        f"FROM STATUSES s "
+        f"LEFT JOIN ( "
+        f"    SELECT "
+        f"      t.KEY, "
+        f"      STATUS, "
+        f'      i.FIELDS:priority:name::string "IssuePriority" ,'
+        f'      COUNT(DISTINCT t.KEY)                "UniqueIssues", '
+        f'      COUNT(*)                             "Issues", '
+        f'      "Issues" - "UniqueIssues"            "Reassignments", '
+        f"      AVG(TIMEDELTA) / (60 * 60 * 24) AVG_DAYS, "
+        f"      MAX(TIMEDELTA) / (60 * 60 * 24) MAX_DAYS, "
+        f"      MIN(TIMEDELTA) / (60 * 60 * 24) MIN_DAYS, "
+        f"      AVG(TIMEDELTA) / (60 * 60) AVG_HOUR, "
+        f"      MAX(TIMEDELTA) / (60 * 60) MAX_HOURS, "
+        f"      MIN(TIMEDELTA) / (60 * 60) MIN_HOURS "
+        f"    FROM TIMELINES t "
+        f"    INNER JOIN ISSUES i ON t.KEY = i.KEY "
+        f"    WHERE "
+        f'      t.KEY IN (SELECT DISTINCT KEY FROM CHANGELOGS WHERE DATECREATED >= {interval.fromDate()} AND DATECREATED < {interval.toDate()}) '
+        f'      AND i.FIELDS:resolution IS {"NOT" if resolved else ""} NULL '
+        f"    GROUP BY 1, 2 "
+        f"    ORDER BY 1 "
+        f"  ) t ON t.STATUS = s.id; "
     )
     # print(sql)
     df = sw.fetch_df(sql)
-    df["AVG_DAY"] = df["AVG_DAY"].map(lambda x: np.nan if x is None else float(x))
+    df["AVG_HOUR"] = df["AVG_HOUR"].map(lambda x: np.nan if x is None else float(x))
+    df["AVG_DAYS"] = df["AVG_DAYS"].map(lambda x: np.nan if x is None else float(x))
     return df
 
 
-def get_tickets_by_status(sw: SnowflakeWrapper, interval: Interval, use_cached: bool = True) -> dict:
+def get_tickets_by_status(sw: SnowflakeWrapper, interval: Interval, use_cached: bool = False) -> dict:
     fname = f"{data_root}/tickets/by_status/tickets-{interval.fname()}.pkl"
     if use_cached and os.path.isfile(fname):
         with open(fname, 'rb') as file:

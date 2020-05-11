@@ -1,3 +1,4 @@
+backup_data/
 target/
 *.sc
 .classpath

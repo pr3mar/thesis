@@ -70,6 +70,10 @@ class Interval:
             return d.total_seconds()
 
 
+def convert_date(field):
+    return f'convert_timezone(\'UTC\', to_timestamp_tz({field}::string, \'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM\'))'
+
+
 def decode(field: str) -> str:
     return __data_schema[field]
 

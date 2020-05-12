@@ -1,17 +1,18 @@
 import os
 import pickle
 from datetime import date
-from typing import Union
 
 import numpy as np
 from pandas import DataFrame
 
-from src.compute.utils import mask_in, Interval, get_distinct_statuses
+from src.compute.utils import convert_date, Interval, get_distinct_statuses
 from src.config import data_root
 from src.db.utils import SnowflakeWrapper
 
 
 def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True) -> DataFrame:
+    resolution_date = f"{convert_date('i.FIELDS:resolutiondate')}"
+    where_resolution = f"{resolution_date} >= {interval.fromDate()} AND {resolution_date} < {interval.toDate()}" if resolved else ""
     sql = (
         f"SELECT "
         f"  s.id AS STATUS, "
@@ -47,7 +48,7 @@ def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True)
         f"    INNER JOIN ISSUES i ON t.KEY = i.KEY "
         f"    WHERE "
         f'      t.KEY IN (SELECT DISTINCT KEY FROM CHANGELOGS WHERE DATECREATED >= {interval.fromDate()} AND DATECREATED < {interval.toDate()}) '
-        f'      AND i.FIELDS:resolution IS {"NOT" if resolved else ""} NULL '
+        f'      AND {where_resolution}'
         f"    GROUP BY 1, 2, 3, 4 "
         f"    ORDER BY 1 "
         f"  ) t ON t.STATUS = s.id; "

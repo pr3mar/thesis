@@ -129,6 +129,12 @@ statuses_of_interest = [
 ]
 
 
+def map_statuses(statuses: pd.Series) -> pd.Series:
+    file_statuses = open(f"{config.data_root}/statuses/all.json")
+    status_map = json.load(file_statuses)
+    return statuses.map(status_map)
+
+
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)

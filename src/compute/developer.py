@@ -1,7 +1,7 @@
 import json
 import os
 import pickle
-from datetime import date
+from datetime import date, timedelta
 from typing import Union
 
 import pandas as pd
@@ -194,6 +194,32 @@ def get_avg_developer(sw: SnowflakeWrapper, interval: Interval, include_nans: bo
         return avg_dev_df
 
 
+def tickets_assigned_in_interval(sw: SnowflakeWrapper, developer_id: str, interval: Interval) -> pd.DataFrame:
+    sql = "SELECT KEY, SUM(1) DAYS_ASSIGNED FROM ("
+    days = []
+    for i in range((interval.toDate(raw=True) - interval.fromDate(raw=True)).days):
+        day = interval.fromDate(raw=True) + timedelta(days=i)
+        sql_date = Interval.strdate(day)
+        print(sql_date)
+        days.append(
+            f" SELECT "
+            f"   DISTINCT KEY "
+            f" FROM TIMELINES "
+            f" WHERE "
+            f"   ASSIGNEE IN ('{developer_id}') "
+            f"   AND ( "
+            f"     {sql_date} BETWEEN DATEFROM AND DATETO "
+            f"     OR ( "
+            f"       DATEDIFF('day', {sql_date}, DATEFROM) = 0 "
+            f"       AND DATEDIFF('day', {sql_date}, DATETO) > 1 "
+            f"     ) "
+            f"   ) "
+        )
+    sql += " UNION ".join(days) + ") GROUP BY 1;"
+    print(sql)
+    return sw.fetch_df(sql)
+
+
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
@@ -203,5 +229,7 @@ if __name__ == '__main__':
         # result.hist('status', bins=40)
         # plt.show()
         # dev = get_developer(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)), 'marko.prelevikj')
-        avg_dev = get_avg_developer(sw, interval, include_nans=False)
+        # avg_dev = get_avg_developer(sw, interval, include_nans=False)
         # avg_dev_nan = get_avg_developer(sw, include_nans=True)
+        assigned_interval = Interval(date(2019, 10, 1), date(2019, 11, 6))
+        assigned = tickets_assigned_in_interval(sw, 'marko.prelevikj', assigned_interval)

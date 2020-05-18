@@ -17,6 +17,8 @@ scipy = "*"
 snowflake-sqlalchemy = "*"
 plotly = "*"
 chart-studio = "*"
+xgboost = "*"
+scikit-learn = "*"
 
 [requires]
 python_version = "3.7"

@@ -50,7 +50,7 @@ def preprocess_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
 
     data = data.groupby("TICKETKEY").agg(agg_cols).reset_index().drop(columns=["TICKETKEY"])
 
-    data.to_csv(f'{fdir}/{output_name}')
+    data.to_csv(f'{fdir}/{output_name}', index=False)
     return data
 
 

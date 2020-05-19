@@ -39,6 +39,17 @@ def preprocess_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
 
     for col, min_entry in hot_encode_columns:
         data = hot_encode(data, col, min_entry)
+
+    # NOTE: we calculate the mean of the following values because they are the duplicated in the provided raw data
+    # with this change we get 1 row == 1 ticket, thus the lower number of rows in the output
+    # Additionally, we are filtering out rows which are associated with a low number of labels or components,
+    # as they are insignificant and cause noise in the data.
+    mean_cols = ["NUMBEROFCOMPONENTS", "NUMBEROFLABELS", "DEGREEOFCYCLING", "TIMETORESOLVE"]
+    agg_cols = {col: ('mean' if col in mean_cols else 'min') for col in list(data)}
+    del agg_cols["TICKETKEY"]
+
+    data = data.groupby("TICKETKEY").agg(agg_cols).reset_index().drop(columns=["TICKETKEY"])
+
     data.to_csv(f'{fdir}/{output_name}')
     return data
 

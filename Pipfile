@@ -19,6 +19,8 @@ plotly = "*"
 chart-studio = "*"
 xgboost = "*"
 scikit-learn = "*"
+graphviz = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.7"

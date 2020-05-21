@@ -76,9 +76,10 @@ def test_method(data: pd.DataFrame, method, method_name):
     print(f"[{method_name}] RMSE: {rmse}")
 
     bundle = data.copy().iloc[y_test.index]
-    bundle['TARGET'] = preds
-    bundle['DIFF'] = bundle['DAYSINDEVELOPMENT'] - bundle['TARGET']
-    bundle = bundle.sort_values(by='DIFF')
+    bundle['PREDICTED'] = preds
+    bundle['DIFF'] = bundle['DAYSINDEVELOPMENT'] - bundle['PREDICTED']
+    bundle['DIFFPERCENT'] = abs(bundle['DIFF']) / (bundle['DAYSINDEVELOPMENT'] + 1)
+    bundle = bundle.sort_values(by='DIFFPERCENT')
     bundle.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_{method_name}_predictions.csv', index=False)
 
     return bundle
@@ -88,7 +89,7 @@ if __name__ == '__main__':
     fname = f'{data_root}/prediction_data/hot_encoded_model_data_development.csv'
     # fname = f'{data_root}/prediction_data/hot_encoded_model_data.csv'
     model_data = pd.read_csv(fname)
-    boosted_generic = boost(model_data)
+    # boosted_generic = boost(model_data)
     boosted = test_method(model_data, xgb.XGBRegressor(
         objective='reg:squarederror',
         colsample_bytree=0.3,

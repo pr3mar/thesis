@@ -78,8 +78,10 @@ def test_method(data: pd.DataFrame, method, method_name):
     bundle = data.copy().iloc[y_test.index]
     bundle['TARGET'] = preds
     bundle['DIFF'] = bundle['DAYSINDEVELOPMENT'] - bundle['TARGET']
+    bundle = bundle.sort_values(by='DIFF')
+    bundle.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_{method_name}_predictions.csv', index=False)
 
-    return bundle.sort_values(by='DIFF')
+    return bundle
 
 
 if __name__ == '__main__':
@@ -96,9 +98,6 @@ if __name__ == '__main__':
         n_estimators=100,
         reg_lambda=30,
     ), 'boost')
-    boosted.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_boost_predictions.csv', index=False)
     # boosted[abs(boosted['DIFF']) < 2].shape[0] / boosted.shape[0]
     naive = test_method(model_data, GaussianNB(), 'naive')
-    boosted.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_naive_predictions.csv', index=False)
-    forest = test_method(model_data, RandomForestClassifier(max_depth=30, random_state=42), 'forest')
-    boosted.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_forest_predictions.csv', index=False)
+    forest = test_method(model_data, RandomForestClassifier(max_depth=50, random_state=42), 'forest')

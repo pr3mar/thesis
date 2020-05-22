@@ -17,10 +17,11 @@ scipy = "*"
 snowflake-sqlalchemy = "*"
 plotly = "*"
 chart-studio = "*"
-xgboost = "*"
+xgboost = "==1.0.0"
 scikit-learn = "*"
 graphviz = "*"
 seaborn = "*"
+shap = "*"
 
 [requires]
 python_version = "3.7"

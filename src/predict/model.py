@@ -1,5 +1,5 @@
 import xgboost as xgb
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
 import pandas as pd
@@ -73,7 +73,9 @@ def test_method(data: pd.DataFrame, method, method_name):
     preds = method.predict(X_test)
     preds = list(map(lambda x: round(x), preds))
     rmse = np.sqrt(mean_squared_error(y_test, preds))
+    mae = mean_absolute_error(y_test, preds)
     print(f"[{method_name}] RMSE: {rmse}")
+    print(f"[{method_name}] MAE: {mae}")
 
     bundle = data.copy().iloc[y_test.index]
     bundle['PREDICTED'] = preds
@@ -86,7 +88,7 @@ def test_method(data: pd.DataFrame, method, method_name):
 
 
 if __name__ == '__main__':
-    fname = f'{data_root}/prediction_data/hot_encoded_model_data_development.csv'
+    fname = f'{data_root}/prediction_data/  encoded_model_data_development.csv'
     # fname = f'{data_root}/prediction_data/hot_encoded_model_data.csv'
     model_data = pd.read_csv(fname)
     # boosted_generic = boost(model_data)

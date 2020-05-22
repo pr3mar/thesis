@@ -4,6 +4,14 @@ from pandas import DataFrame
 from src.config import data_root
 
 
+def enumerate_vals(data: DataFrame, column):
+    copy = data.copy()
+    vals = {val: (i + 1) for i, val in enumerate(set(data[column]))}
+    print(json.dumps(vals, indent=2))
+    copy[column] = copy[column].map(vals)
+    return copy
+
+
 def mergeAndOmitColumnValues(data: DataFrame, column: str, metaData: dict) -> DataFrame:
     copy = data.copy()
     copy = copy.loc[~copy[column].isin(metaData["omit"])]
@@ -35,9 +43,10 @@ def preprocess_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
     data = mergeAndOmitColumnValues(data, "LABEL", labels_metaData)
     data = mergeAndOmitColumnValues(data, "COMPONENT", components_metaData)
 
-    hot_encode_columns = [('COMPONENT', 50), ('LABEL', 50), ('ISSUETYPE', 0), ('ISSUEPRIORITY', 0)]
+    for col in ['ISSUETYPE', 'ISSUEPRIORITY']:
+        data = enumerate_vals(data, col)
 
-    for col, min_entry in hot_encode_columns:
+    for col, min_entry in [('COMPONENT', 50), ('LABEL', 50)]:
         data = hot_encode(data, col, min_entry)
 
     # NOTE: we calculate the mean of the following values because they are the duplicated in the provided raw data
@@ -56,7 +65,6 @@ def preprocess_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
 
 if __name__ == '__main__':
     fdir = f'{data_root}/prediction_data'
-    for mode in ['dev', 'ticket']:
-        input_name = f'raw_model_data_development.csv'
-        output_name = f'hot_encoded_model_data_development.csv'
-        out_data = preprocess_data(fdir, input_name, output_name)
+    input_name = f'raw_model_data_development.csv'
+    output_name = f'encoded_model_data_development.csv'
+    out_data = preprocess_data(fdir, input_name, output_name)

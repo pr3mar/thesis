@@ -88,7 +88,7 @@ def test_method(data: pd.DataFrame, method, method_name):
 
 
 if __name__ == '__main__':
-    fname = f'{data_root}/prediction_data/  encoded_model_data_development.csv'
+    fname = f'{data_root}/prediction_data/encoded_model_data_development_filtered.csv'
     # fname = f'{data_root}/prediction_data/hot_encoded_model_data.csv'
     model_data = pd.read_csv(fname)
     # boosted_generic = boost(model_data)

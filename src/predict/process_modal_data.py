@@ -65,6 +65,6 @@ def preprocess_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
 
 if __name__ == '__main__':
     fdir = f'{data_root}/prediction_data'
-    input_name = f'raw_model_data_development.csv'
-    output_name = f'encoded_model_data_development.csv'
+    input_name = f'raw_model_data_development_filtered.csv'
+    output_name = f'encoded_model_data_development_filtered.csv'
     out_data = preprocess_data(fdir, input_name, output_name)

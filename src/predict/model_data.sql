@@ -1,3 +1,4 @@
+-- ticket devtime forecasting model
 SELECT TicketKey,
        IssueType,
        IssuePriority,
@@ -6,18 +7,21 @@ SELECT TicketKey,
        Label,
        NumberOfLabels,
        DegreeOfCycling,
+       NumberOfComments,
        DaysInDevelopment
 -- SELECT COUNT( DISTINCT TicketKey)
+-- SELECT COUNT(*)
 FROM (SELECT i.KEY                                                                         TicketKey,
              i.FIELDS:issuetype: name::string                                              IssueType,
              i.FIELDS:priority: name::string                                               IssuePriority,
              component.VALUE: name::string                                                 Component,
              ARRAY_SIZE(i.FIELDS:components)                                               NumberOfComponents,
              label.VALUE::string                                                           Label,
+             C.NumberOfComments NumberOfComments,
              ARRAY_SIZE(i.FIELDS:labels)                                                   NumberOfLabels,
              d.DegreeOfCycling                                                             DegreeOfCycling,
-             ROUND(d.DaysInDevelopment) DaysInDevelopment,
-             ROUND(d.HoursInDevelopment) HoursInDevelopment,
+             ROUND(d.DaysInDevelopment)                                                    DaysInDevelopment,
+             ROUND(d.HoursInDevelopment)                                                   HoursInDevelopment,
              convert_timezone('UTC', to_timestamp_tz(i.FIELDS:created::string,
                                                      'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM')) DateCreated,
              convert_timezone('UTC', to_timestamp_tz(i.FIELDS:resolutiondate::string,
@@ -33,18 +37,24 @@ FROM (SELECT i.KEY                                                              
           GROUP BY 1
       ) t ON t.TicketKey = i.KEY
                INNER JOIN (
-          SELECT t.KEY                      TicketKey,
-                 COUNT(DISTINCT t.STATUS)   States,
-                 COUNT(*)                   Transitions,
-                 (Transitions / States) - 1 DegreeOfCycling,
-                 AVG(TIMEDELTA) / (60 * 60 * 24)   DaysInDevelopment,
-                 AVG(TIMEDELTA) / (60 * 60)   HoursInDevelopment
+          SELECT t.KEY                           TicketKey,
+                 COUNT(DISTINCT t.STATUS)        States,
+                 COUNT(*)                        Transitions,
+                 (Transitions / States) - 1      DegreeOfCycling,
+                 SUM(TIMEDELTA) / (60 * 60 * 24) DaysInDevelopment,
+                 SUM(TIMEDELTA) / (60 * 60)      HoursInDevelopment
           FROM TIMELINES t
           WHERE STATUS IN ('Development', 'Needs CR fixes', 'Needs QA fixes')
           GROUP BY 1
-      ) d ON d.TicketKey = i.KEY,
+      ) d ON d.TicketKey = i.KEY
+           INNER JOIN (
+                SELECT KEY,
+                       COUNT(*) NumberOfComments
+                FROM COMMENTS
+                GROUP BY 1
+          ) c ON c.KEY = i.KEY,
            LATERAL FLATTEN(FIELDS:components) component,
            LATERAL FLATTEN(FIELDS:labels) label
-      WHERE FIELDS:resolutiondate IS NOT NULL AND HoursInDevelopment > 0.5 AND DaysInDevelopment < 30)
---       WHERE FIELDS:resolutiondate IS NOT NULL AND HoursInDevelopment > 2)
+      WHERE FIELDS:resolutiondate IS NOT NULL
+        AND HoursInDevelopment > 0.5 AND DaysInDevelopment < 30)
 ORDER BY DaysInDevelopment DESC;

@@ -1,5 +1,5 @@
 import xgboost as xgb
-from sklearn.metrics import mean_squared_error, mean_absolute_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
 import pandas as pd
@@ -17,10 +17,12 @@ def boost_cv(data: pd.DataFrame):
     data_dmatrix = xgb.DMatrix(data=X, label=y)
     params = {
         "objective": "reg:squarederror",
-        'colsample_bytree': 0.4,
-        'learning_rate': 0.15,
-        'max_depth': 30,
-        'alpha': 30
+        "colsample_bytree": 0.3,
+        "learning_rate": 0.25,
+        "max_depth": 40,
+        "alpha": 50,
+        "n_estimators": 100,
+        "reg_lambda": 30,
     }
     cv_results = xgb.cv(
         dtrain=data_dmatrix,
@@ -74,24 +76,29 @@ def test_method(data: pd.DataFrame, method, method_name):
     preds = list(map(lambda x: round(x), preds))
     rmse = np.sqrt(mean_squared_error(y_test, preds))
     mae = mean_absolute_error(y_test, preds)
+    r2 = r2_score(y_test, preds)
     print(f"[{method_name}] RMSE: {rmse}")
     print(f"[{method_name}] MAE: {mae}")
+    print(f"[{method_name}] R2: {r2}")
 
     bundle = data.copy().iloc[y_test.index]
     bundle['PREDICTED'] = preds
     bundle['DIFF'] = bundle['DAYSINDEVELOPMENT'] - bundle['PREDICTED']
     bundle['DIFFPERCENT'] = abs(bundle['DIFF']) / (bundle['DAYSINDEVELOPMENT'] + 1)
     bundle = bundle.sort_values(by='DIFFPERCENT')
-    bundle.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_{method_name}_predictions.csv', index=False)
+    bundle.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_{method_name}_predictions.csv',
+                  index=False)
 
     return bundle
 
 
 if __name__ == '__main__':
+    # fname = f'{data_root}/prediction_data/encoded_model_data_development_summed.csv'
     fname = f'{data_root}/prediction_data/encoded_model_data_development_filtered.csv'
     # fname = f'{data_root}/prediction_data/hot_encoded_model_data.csv'
     model_data = pd.read_csv(fname)
     # boosted_generic = boost(model_data)
+    boost_cv(model_data)
     boosted = test_method(model_data, xgb.XGBRegressor(
         objective='reg:squarederror',
         colsample_bytree=0.3,

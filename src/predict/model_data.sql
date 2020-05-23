@@ -8,6 +8,7 @@ SELECT TicketKey,
        NumberOfLabels,
        DegreeOfCycling,
        NumberOfComments,
+       NumberOfLinkedIssues,
        DaysInDevelopment
 -- SELECT COUNT( DISTINCT TicketKey)
 -- SELECT COUNT(*)
@@ -17,7 +18,8 @@ FROM (SELECT i.KEY                                                              
              component.VALUE: name::string                                                 Component,
              ARRAY_SIZE(i.FIELDS:components)                                               NumberOfComponents,
              label.VALUE::string                                                           Label,
-             C.NumberOfComments NumberOfComments,
+             COALESCE(C.NumberOfComments, 0)                                               NumberOfComments,
+             COALESCE(l.LinkedIssues, 0)                                                   NumberOfLinkedIssues,
              ARRAY_SIZE(i.FIELDS:labels)                                                   NumberOfLabels,
              d.DegreeOfCycling                                                             DegreeOfCycling,
              ROUND(d.DaysInDevelopment)                                                    DaysInDevelopment,
@@ -41,20 +43,27 @@ FROM (SELECT i.KEY                                                              
                  COUNT(DISTINCT t.STATUS)        States,
                  COUNT(*)                        Transitions,
                  (Transitions / States) - 1      DegreeOfCycling,
-                 SUM(TIMEDELTA) / (60 * 60 * 24) DaysInDevelopment,
-                 SUM(TIMEDELTA) / (60 * 60)      HoursInDevelopment
+                 AVG(TIMEDELTA) / (60 * 60 * 24) DaysInDevelopment,
+                 AVG(TIMEDELTA) / (60 * 60)      HoursInDevelopment
           FROM TIMELINES t
           WHERE STATUS IN ('Development', 'Needs CR fixes', 'Needs QA fixes')
           GROUP BY 1
       ) d ON d.TicketKey = i.KEY
-           INNER JOIN (
-                SELECT KEY,
-                       COUNT(*) NumberOfComments
-                FROM COMMENTS
-                GROUP BY 1
-          ) c ON c.KEY = i.KEY,
+               LEFT JOIN (
+          SELECT KEY,
+                 COUNT(*) NumberOfComments
+          FROM COMMENTS
+          GROUP BY 1
+      ) c ON c.KEY = i.KEY
+               LEFT JOIN (
+          SELECT KEYFROM  KEY,
+                 COUNT(*) LinkedIssues
+          FROM ISSUE_LINKS
+          GROUP BY 1
+      ) l ON l.KEY = i.KEY,
            LATERAL FLATTEN(FIELDS:components) component,
            LATERAL FLATTEN(FIELDS:labels) label
       WHERE FIELDS:resolutiondate IS NOT NULL
-        AND HoursInDevelopment > 0.5 AND DaysInDevelopment < 30)
+        AND HoursInDevelopment > 0.5
+        AND DaysInDevelopment < 30)
 ORDER BY DaysInDevelopment DESC;

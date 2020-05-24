@@ -1,0 +1,200 @@
+------------------------------------ TICKET PRIORITY
+Trivial
+Minor
+Major
+Critical
+Blocker
+------------------------------------ TICKET TYPES
+Sub-task
+Prototype
+New Feature or Improvement
+Internal Improvement
+Improvement (Sub-task)
+Epic
+Bug (Sub-task)
+Bug
+------------------------------------ LABELS: 
+-- activation_request
+-- PMO_tracking
+update_ami
+ui_changes
+-- ts_feedback
+tag_change
+-- sumologic
+staging_issue
+devtest
+autotested
+-- public-metrics-dimensions
+pmm_check
+-- managed
+-- incident_report_improvements
+-- feeds_upgrades
+-- experimentation
+-- dco
+config_changes
+client
+----- GROUPED LABELS
+----
+-- video
+"video_team": "video",
+"video_pod": "video",
+"video-analytics": "video",
+"video": "video",
+----
+-- maintainers/upgraders
+"update_session_maintainer": "maintainers"
+"update_database_maintainer": "maintainers"
+"update_cubes_maintainer": "maintainers"
+"update_creative_upgrader": "maintainers"
+"update_analytics_maintainer": "maintainers"
+----
+-- deployment -- not needed
+"saturday_deploy": "deployment",
+"pre/post_deploy": "deployment",
+----
+-- qa
+"qa_reverted": "qa",
+"qa_before_deploy": "qa",
+"qa_approved": "qa",
+"qa_after_deploy": "qa",
+----
+-- devops_label
+"devops_monthly": "devops",
+"devops_cleanup": "devops",
+"devops": "devops",
+----- REMOVED LABELS
+-- "cleanup",
+-- "checked_2019",
+-- "backlog",
+-- "xmen",
+-- "wont_fix_now_maybe_later",
+-- "weekly_tracking",
+-- "cross_screen_pod",
+-- "cross_screen_beta",
+-- "cross_screen",
+-- "dynamic_content",
+-- "horizontal",
+-- "outstream",
+-- "projects_db",
+-- "product_pillar_builder",
+-- "spotify",
+-- "sorted",
+-- "unilever",
+-- "uber",
+------------------------------------ COMPONENTS: 
+-- analytics
+"api: analytics": "analytics",
+"pii-cleaner": "analytics",
+"services: analyzer": "analytics",
+"services: analyticsAsyncJob": "analytics",
+"services: analyticsOperationalTablesSync": "analytics",
+"services: analyticsStorageOptimization": "analytics",
+"services: bulkDataTransfer": "analytics",
+"services: cubeFiller": "analytics",
+"services: thompsonOptimizer": "analytics",
+"services: thompsonOptimizerTrainer": "analytics",
+"tools: databricks": "analytics",
+"services: logArchiver": "analytics",
+"services: millwardBrownSync": "analytics",
+"services: workflowOrchestration": "analytics",
+"services: executiveDashboardAnalyser": "analytics",
+----
+-- Production
+"runner: FLA - components, actions and events": "production",
+"runner: FLA - core": "production",
+"services: blob-transferrer": "production",
+"services: multipartUploadFinalizer": "production",
+"dashboard: feed editor": "production"
+"dashboard: production wizard": "production"
+----
+-- Pubs & Platforms
+"runner: RM - components actions and events": "pnp",
+"runner: RM - core": "pnp",
+"runner: RM - prototype": "pnp",
+"runner: video - core": "pnp",
+"services: runtime-data-collection": "pnp",
+"builder: RM - components actions and events": "pnp",
+"builder: RM - core": "pnp",
+"builder: video - core": "pnp",
+"dashboard: tag generator": "pnp"
+-- Distribution
+"hub": "distribution",
+"services: removeInactiveAccountMembership": "distribution",
+"services: copyCreatives": "distribution",
+"services: creativeDistribution": "distribution",
+"services: creativeDistributionAllocation": "distribution",
+"services: reportScheduler": "distribution",
+"services: sizmekReportGenerator": "distribution",
+"services: thumbnailUpdater": "distribution",
+"services: reportDelivery": "distribution",
+"dashboard: distribution page": "distribution",
+"dashboard: export page": "distribution",
+"dashboard: asset library": "distribution",
+"dashboard: account settings": "distribution",
+"dashboard: user settings": "distribution",
+"dashboard: analytics": "distribution"
+"dashboard: report builder": "distribution"
+"services: removeInactiveAccountMembership": "distribution"
+"services: reportDelivery": "distribution"
+"services: reportScheduler": "distribution"
+"services: tunePartnerImporter": "distribution"
+----
+-- Precision Marketing
+"services: ads": "precisionMarketing",
+"services: customAudiences": "precisionMarketing",
+"services: customAudiencesBackground": "precisionMarketing",
+"services: customFeedImporter": "precisionMarketing",
+"services: deviceinfo": "precisionMarketing",
+"services: externalAudiencesFileProcessor": "precisionMarketing",
+"services: externalAudiencesSync": "precisionMarketing",
+"services: geoip": "precisionMarketing",
+"services: identity-tracker": "precisionMarketing",
+"services: kinesis": "precisionMarketing",
+"services: locationTableImporter": "precisionMarketing",
+"services: ruleEvaluator": "precisionMarketing",
+"infrastructure: dynamodb": "precisionMarketing",
+"dashboard: strategy builder": "precisionMarketing",
+"dashboard: studies": "precisionMarketing",
+"services: weather": "precisionMarketing",
+----
+-- devops
+"infrastructure: aws":"devops",
+"services: cache":"devops",
+"services: devProxy":"devops",
+"services: vividcortex":"devops",
+"tools: aws deployment":"devops",
+"infrastructure: mongo":"devops",
+"infrastructure: monitoring":"devops",
+"infrastructure: snowflake":"devops",
+"infrastructure: spark":"devops",
+----
+-- Review
+"campaign explorer":"review",
+"dashboard: preview":"review",
+"services: entityNotifications":"review",
+"legacy campaign explorer":"review",
+"comments":"review",
+----
+-- Core UI
+"dashboard: design system":"coreUI"
+----
+-- Baking
+"api: video":"baking",
+"builder: RM - components actions and events":"baking",
+"builder: RM - core":"baking",
+"builder: video - core":"baking",
+"services: screenshotter":"baking",
+"services: video":"baking",
+----
+-- Release Eng
+"tools: build and test automation": "releng",
+"tools: development": "releng",
+"tools: docker": "releng",
+"tools: dwlib": "releng",
+
+----
+TICKETKEY
+NUMBEROFCOMPONENTS
+NUMBEROFLABELS
+DEGREEOFCYCLING
+TIMETORESOLVE

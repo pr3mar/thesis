@@ -6,7 +6,7 @@ from src.config import data_root
 
 def enumerate_vals(data: DataFrame, column):
     copy = data.copy()
-    vals = {val: (i + 1) for i, val in enumerate(set(data[column]))}
+    vals = {val: i for i, val in enumerate(set(data[column]))}
     print(json.dumps(vals, indent=2))
     copy[column] = copy[column].map(vals)
     return copy
@@ -35,7 +35,7 @@ def hot_encode(data: DataFrame, col: str, min_entries: int) -> DataFrame:
     return data_copy
 
 
-def preprocess_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
+def preprocess_ticket_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
     data = pd.read_csv(f'{fdir}/{input_name}')
     labels_metaData = json.load(open(f"{data_root}/merge/labels.json"))
     components_metaData = json.load(open(f"{data_root}/merge/components.json"))
@@ -53,7 +53,7 @@ def preprocess_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
     # with this change we get 1 row == 1 ticket, thus the lower number of rows in the output
     # Additionally, we are filtering out rows which are associated with a low number of labels or components,
     # as they are insignificant and cause noise in the data.
-    mean_cols = ["NUMBEROFCOMPONENTS", "NUMBEROFLABELS", "DEGREEOFCYCLING", "TIMETORESOLVE"]
+    mean_cols = ["NUMBEROFCOMPONENTS", "NUMBEROFLABELS", "NUMBEROFCOMMENTS", "NUMBEROFLINKEDISSUES", "DEGREEOFCYCLING", "DAYSINDEVELOPMENT"]
     agg_cols = {col: ('mean' if col in mean_cols else 'min') for col in list(data)}
     del agg_cols["TICKETKEY"]
 
@@ -63,8 +63,36 @@ def preprocess_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
     return data
 
 
+def preprocess_dev_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
+    data = pd.read_csv(f'{fdir}/{input_name}')
+    labels_metaData = json.load(open(f"{data_root}/merge/labels.json"))
+    data = mergeAndOmitColumnValues(data, "LABEL", labels_metaData)
+
+    for col, min_entry in [('LABEL', 50)]:
+        data = hot_encode(data, col, min_entry)
+
+    mean_cols = ["AUTHOREDACTIVITY", "NUMBEROFLABELS", "NUMBEROFCOMMENTS", "DEGREEOFCYCLING", "DAYSINDEVELOPMENT"]
+    agg_cols = {col: ('mean' if col in mean_cols else 'min') for col in list(data)}
+    del agg_cols["TICKETKEY"]
+    data = data.groupby("TICKETKEY").agg(agg_cols).reset_index().drop(columns=["TICKETKEY"])
+
+    v = data[['DEVELOPER']]
+    data = data[v.replace(v.apply(pd.Series.value_counts)).gt(10).all(1)]
+
+    for col in ['ISSUETYPE', 'ISSUEPRIORITY', "DEVELOPER"]:
+        data = enumerate_vals(data, col)
+
+    data.to_csv(f'{fdir}/{output_name}', index=False)
+    return data
+
+
 if __name__ == '__main__':
-    fdir = f'{data_root}/prediction_data'
-    input_name = f'raw_model_data_development_filtered.csv'
-    output_name = f'encoded_model_data_development_filtered.csv'
-    out_data = preprocess_data(fdir, input_name, output_name)
+    ticket_fdir = f'{data_root}/prediction_data/ticket_model'
+    ticket_input_name = f'raw_model_data_development_filtered.csv'
+    ticket_output_name = f'encoded_model_data_development_filtered.csv'
+    ticket_out_data = preprocess_ticket_data(ticket_fdir, ticket_input_name, ticket_output_name)
+
+    dev_fdir = f'{data_root}/prediction_data/dev_model'
+    dev_input_name = f'raw_model_data_unfiltered.csv'
+    dev_output_name = f'encoded_model_data_unfiltered.csv'
+    dev_out_data = preprocess_dev_data(dev_fdir, dev_input_name, dev_output_name)

@@ -1,0 +1,3714 @@
+ISSUETYPE,ISSUEPRIORITY,NUMBEROFCOMMENTS,AUTHOREDACTIVITY,DEGREEOFCYCLING,DAYSINDEVELOPMENT,DEVELOPER
+Internal Improvement,Minor,1,15,0.000000,30,viljem
+Bug,Major,3,8,0.000000,30,marko.cavdek
+Bug,Minor,2,9,0.000000,30,tomaz
+Bug,Minor,0,10,1.500000,30,matt
+New Feature or Improvement,Major,3,17,0.000000,30,miha.kavcic
+New Feature or Improvement,Minor,2,22,1.000000,30,marko.cavdek
+Improvement (Sub-task),Major,4,70,2.000000,30,aleksander
+New Feature or Improvement,Major,1,17,0.000000,29,anton
+Internal Improvement,Minor,3,12,1.000000,29,arjan
+Internal Improvement,Minor,3,14,0.333333,29,ziga.vucko
+Bug,Major,6,46,1.000000,29,martijn
+New Feature or Improvement,Major,8,33,0.666667,29,miha.kavcic
+New Feature or Improvement,Major,8,34,0.500000,29,matic.tribuson
+Internal Improvement,Major,0,28,0.333333,29,matic.balantic
+Bug,Minor,1,10,0.000000,29,matic.balantic
+Internal Improvement,Major,7,44,0.000000,29,anton
+Internal Improvement,Major,1,25,1.000000,29,tine
+Improvement (Sub-task),Minor,0,4,1.000000,29,iztokoder
+New Feature or Improvement,Major,5,73,4.000000,29,iztokoder
+Internal Improvement,Minor,0,1,1.000000,29,samo
+New Feature or Improvement,Major,0,0,0.000000,29,ales.kurent
+Bug,Major,4,18,0.000000,29,anze.brvar
+Bug,Major,15,25,1.000000,29,gasper
+Internal Improvement,Major,2,31,1.666667,29,matjaz.finzgar
+New Feature or Improvement,Major,2,26,0.666667,29,zan.kusterle
+New Feature or Improvement,Major,1,35,1.500000,29,mitja
+New Feature or Improvement,Minor,9,23,3.000000,29,jason
+Internal Improvement,Minor,6,22,0.333333,29,miha.rugelj
+Internal Improvement,Minor,0,12,0.500000,28,dejan
+Internal Improvement,Minor,3,33,0.500000,28,martijn
+New Feature or Improvement,Major,4,38,0.000000,28,jure.cotic
+New Feature or Improvement,Major,1,14,0.500000,28,marko.cavdek
+Internal Improvement,Major,5,12,0.333333,28,arjan
+Internal Improvement,Minor,10,18,1.500000,28,miha.rugelj
+New Feature or Improvement,Minor,3,39,0.000000,28,jernej
+New Feature or Improvement,Minor,1,28,0.000000,28,andrej.oblak
+Bug,Minor,1,18,0.500000,28,iztokoder
+New Feature or Improvement,Major,11,21,0.333333,28,anton
+Internal Improvement,Minor,3,29,0.000000,28,viljem
+New Feature or Improvement,Major,2,29,0.500000,28,miha.kavcic
+New Feature or Improvement,Major,1,30,0.000000,28,matjaz.ursic
+New Feature or Improvement,Major,0,29,0.666667,28,iztokoder
+New Feature or Improvement,Major,10,72,1.000000,28,ziga
+New Feature or Improvement,Major,1,6,0.500000,28,gasper
+Internal Improvement,Minor,2,14,1.000000,28,anze.brvar
+Improvement (Sub-task),Minor,1,6,1.000000,28,iztokoder
+Internal Improvement,Minor,0,9,0.000000,28,martijn
+Internal Improvement,Minor,0,10,1.000000,28,arjan
+Bug,Trivial,2,10,1.000000,28,anton
+Bug,Major,2,10,0.500000,28,marko.cavdek
+Internal Improvement,Critical,3,5,0.000000,28,domen.kosir
+Bug,Minor,1,9,0.000000,28,martijn
+New Feature or Improvement,Major,18,54,1.333333,28,matjaz.ursic
+Internal Improvement,Minor,0,8,0.000000,28,matt
+New Feature or Improvement,Major,7,47,2.000000,28,uros
+Internal Improvement,Major,0,8,0.000000,28,dejan
+Bug,Minor,2,12,0.666667,28,ziga
+New Feature or Improvement,Major,2,28,0.333333,28,rok.novosel
+Bug,Minor,2,16,0.000000,27,matjaz.ursic
+Bug,Major,7,22,1.000000,27,tomaz
+Bug,Minor,1,12,0.000000,27,matic.balantic
+Internal Improvement,Minor,4,24,0.333333,27,darko
+Bug,Minor,1,5,0.000000,27,mitja
+Bug,Minor,2,8,0.000000,27,arjan
+New Feature or Improvement,Minor,2,3,0.000000,27,arjan
+New Feature or Improvement,Major,7,46,0.500000,27,marko
+Bug,Major,2,0,0.000000,27,ashna
+New Feature or Improvement,Major,0,15,0.500000,27,svetlana
+Bug,Minor,0,13,0.666667,27,svetlana
+Internal Improvement,Major,1,21,0.500000,27,marko.cavdek
+Internal Improvement,Minor,6,24,0.000000,27,miha.rugelj
+Internal Improvement,Major,7,20,0.000000,27,viljem
+Internal Improvement,Major,5,27,1.333333,27,rok.novosel
+Internal Improvement,Minor,3,11,0.000000,27,matjaz.finzgar
+New Feature or Improvement,Major,0,10,0.000000,27,zan.kusterle
+Bug,Minor,0,18,1.000000,27,gasper.jeklin
+New Feature or Improvement,Minor,7,52,3.666667,26,rok.novosel
+New Feature or Improvement,Major,2,44,1.000000,26,marko.cavdek
+New Feature or Improvement,Major,3,35,0.000000,26,matic.tribuson
+Internal Improvement,Major,2,26,0.000000,26,anton
+New Feature or Improvement,Major,4,24,0.000000,26,matjaz.ursic
+Bug,Major,0,28,2.500000,26,marko.cavdek
+New Feature or Improvement,Major,6,26,1.000000,26,matic.tribuson
+Internal Improvement,Major,0,31,1.000000,26,rok
+Internal Improvement,Major,0,11,0.333333,26,zan.kusterle
+Internal Improvement,Minor,4,23,0.000000,26,uros
+Internal Improvement,Major,1,10,0.500000,26,arjan
+Bug,Minor,3,8,1.000000,26,anton
+Internal Improvement,Major,0,5,1.000000,26,jaka
+Prototype,Major,1,4,1.000000,26,jurij
+Bug,Minor,3,15,0.500000,26,ziga
+New Feature or Improvement,Minor,2,29,0.333333,26,mitja
+Internal Improvement,Minor,2,12,0.000000,26,miha.rugelj
+Internal Improvement,Major,6,26,0.000000,26,anton
+Sub-task,Minor,1,11,4.000000,26,iztokoder
+New Feature or Improvement,Major,1,25,0.000000,25,mitja
+New Feature or Improvement,Major,0,4,0.500000,25,rok.novosel
+Internal Improvement,Minor,0,16,0.000000,25,rok
+New Feature or Improvement,Major,0,27,0.000000,25,mitja
+New Feature or Improvement,Major,5,36,0.000000,25,andrej.oblak
+New Feature or Improvement,Minor,1,11,0.000000,25,uros
+New Feature or Improvement,Minor,3,5,0.000000,25,anze.brvar
+New Feature or Improvement,Major,2,45,0.500000,25,andrej.oblak
+Bug,Minor,0,7,2.000000,25,rok.novosel
+Bug,Major,3,17,0.000000,25,darko
+New Feature or Improvement,Minor,6,30,0.500000,25,marko.cavdek
+New Feature or Improvement,Major,1,16,0.500000,25,jure.malovrh
+Bug,Major,5,26,0.666667,25,jernej
+Internal Improvement,Major,2,0,0.000000,25,dejan
+Internal Improvement,Major,0,27,0.500000,25,sandi.rezonja
+Internal Improvement,Minor,2,26,0.666667,25,matic.balantic
+Bug,Major,1,8,0.500000,25,mitja
+Internal Improvement,Minor,0,24,0.000000,24,anze.brvar
+Internal Improvement,Minor,1,17,2.000000,24,matic.balantic
+Bug,Minor,0,1,0.000000,24,darko
+New Feature or Improvement,Major,0,19,0.500000,24,jakob
+New Feature or Improvement,Minor,3,13,0.500000,24,ziga
+Internal Improvement,Minor,4,24,0.000000,24,gregor.praprotnik
+Internal Improvement,Minor,2,25,1.500000,24,matt
+Internal Improvement,Major,7,27,1.500000,24,miha.rugelj
+New Feature or Improvement,Major,8,33,2.000000,24,matic.tribuson
+Internal Improvement,Minor,2,12,0.000000,24,marko.cavdek
+New Feature or Improvement,Minor,5,74,0.333333,24,jernej
+New Feature or Improvement,Major,22,54,2.000000,24,mitja
+Bug,Minor,3,21,0.500000,24,anze.brvar
+New Feature or Improvement,Minor,1,51,0.666667,24,marko.cavdek
+New Feature or Improvement,Major,1,32,1.000000,24,rok.novosel
+Internal Improvement,Minor,7,24,1.000000,24,viljem
+New Feature or Improvement,Major,14,90,0.000000,24,marko
+Bug,Major,3,11,0.500000,24,matic.tribuson
+Bug,Minor,0,3,0.000000,24,matt
+Bug,Major,5,7,0.000000,24,goran
+Internal Improvement,Minor,6,14,0.000000,24,marko.cavdek
+Internal Improvement,Major,2,2,0.000000,24,anita
+New Feature or Improvement,Major,4,22,1.500000,24,miha.rugelj
+New Feature or Improvement,Major,6,23,0.333333,24,jakob
+New Feature or Improvement,Major,4,22,1.500000,24,tomaz
+New Feature or Improvement,Minor,1,14,6.000000,24,iztokoder
+Bug,Minor,2,32,1.333333,24,jernej
+Improvement (Sub-task),Minor,1,15,0.000000,24,miha.rugelj
+Internal Improvement,Minor,1,40,1.000000,24,zan.kusterle
+New Feature or Improvement,Major,4,86,0.000000,24,gregor.praprotnik
+Improvement (Sub-task),Minor,0,16,1.000000,23,mitja
+Internal Improvement,Minor,1,6,0.000000,23,zan.kusterle
+New Feature or Improvement,Major,3,36,1.000000,23,anze.brvar
+Improvement (Sub-task),Major,0,41,0.500000,23,matic.balantic
+New Feature or Improvement,Major,9,43,0.000000,23,jernej
+Internal Improvement,Critical,0,23,0.000000,23,gregor.praprotnik
+New Feature or Improvement,Critical,12,53,0.666667,23,andrej.oblak
+Bug,Minor,5,18,1.333333,23,matt
+New Feature or Improvement,Major,0,47,1.333333,23,iztokoder
+New Feature or Improvement,Major,8,79,1.333333,23,miha.kavcic
+New Feature or Improvement,Major,1,14,0.000000,23,jure.malovrh
+New Feature or Improvement,Minor,3,33,0.000000,23,mitja
+New Feature or Improvement,Major,7,15,1.000000,23,arjan
+Internal Improvement,Critical,6,32,1.500000,23,darko
+New Feature or Improvement,Minor,5,23,2.000000,23,andrej.oblak
+Bug,Major,2,10,0.000000,23,gregor.cepin
+Internal Improvement,Minor,2,7,0.000000,23,matt
+New Feature or Improvement,Major,10,34,1.000000,23,jernej
+Internal Improvement,Major,3,16,0.500000,23,arjan
+Bug,Major,5,12,0.000000,23,domen.kosir
+New Feature or Improvement,Major,9,24,2.500000,22,ziga
+New Feature or Improvement,Minor,8,72,0.333333,22,matjaz.ursic
+Internal Improvement,Minor,1,22,0.000000,22,jason
+Improvement (Sub-task),Major,0,9,0.000000,22,alexander.vasilyev
+Internal Improvement,Minor,2,13,0.500000,22,miha.rugelj
+Improvement (Sub-task),Major,2,10,1.000000,22,mitja
+New Feature or Improvement,Minor,7,33,2.000000,22,marko.prelevikj
+Bug,Major,3,34,2.000000,22,gregor.praprotnik
+New Feature or Improvement,Critical,3,15,1.500000,22,jure.malovrh
+Bug,Major,4,21,0.000000,22,anton
+Sub-task,Minor,0,7,0.000000,22,iztokoder
+Internal Improvement,Minor,1,16,1.000000,22,anze.brvar
+Internal Improvement,Major,1,22,0.000000,22,ales.kurent
+New Feature or Improvement,Minor,2,22,0.000000,22,arjan
+Internal Improvement,Major,11,31,2.000000,22,gasper
+Bug,Minor,2,9,0.000000,22,ziga
+New Feature or Improvement,Minor,13,70,1.000000,22,mitja
+Internal Improvement,Minor,11,31,1.000000,22,aleksander
+Bug,Minor,3,7,0.000000,22,matjaz.ursic
+Internal Improvement,Minor,0,23,0.000000,22,sandi.rezonja
+New Feature or Improvement,Major,11,41,0.000000,22,ziga
+New Feature or Improvement,Major,14,57,3.000000,22,miha.kavcic
+Bug,Minor,3,26,1.666667,22,mitja
+Internal Improvement,Minor,2,29,0.000000,22,viljem
+Bug,Major,3,14,0.000000,22,domen.kosir
+New Feature or Improvement,Major,7,19,0.666667,22,jason
+Bug,Minor,1,32,0.500000,22,martijn
+New Feature or Improvement,Minor,6,18,0.000000,22,arjan
+New Feature or Improvement,Major,4,17,0.000000,21,miha.rugelj
+Bug,Critical,1,16,1.000000,21,dejan
+Internal Improvement,Major,1,8,0.000000,21,uros
+Internal Improvement,Major,1,36,1.333333,21,rok
+New Feature or Improvement,Major,2,29,1.000000,21,jakob
+New Feature or Improvement,Major,2,0,0.000000,21,jason
+Bug,Critical,5,16,1.000000,21,gregor.cepin
+New Feature or Improvement,Major,5,22,0.500000,21,miha.kavcic
+Internal Improvement,Major,5,42,1.333333,21,matic.tribuson
+New Feature or Improvement,Major,0,3,0.000000,21,marko.cavdek
+New Feature or Improvement,Major,1,14,0.000000,21,matej.sircelj
+New Feature or Improvement,Minor,3,31,0.000000,21,miha.kavcic
+New Feature or Improvement,Minor,0,19,0.000000,21,svetlana
+Bug,Minor,1,8,0.000000,21,matt
+Bug,Major,0,9,0.000000,21,andrej.oblak
+New Feature or Improvement,Critical,0,19,0.000000,21,ales.kurent
+New Feature or Improvement,Major,3,34,0.500000,21,ziga
+Internal Improvement,Minor,4,11,0.000000,21,dejan
+Bug,Major,0,10,0.000000,21,matej.sircelj
+New Feature or Improvement,Minor,1,9,1.000000,21,marko.cavdek
+New Feature or Improvement,Major,4,49,0.000000,21,rok
+Bug,Critical,3,10,2.000000,21,vuk
+New Feature or Improvement,Major,6,25,0.333333,21,matic.tribuson
+Internal Improvement,Minor,1,13,1.000000,21,ziga.vucko
+Bug,Minor,1,5,0.000000,21,domen.kosir
+New Feature or Improvement,Major,4,41,0.333333,21,rok
+New Feature or Improvement,Major,1,52,0.000000,21,matic.tribuson
+New Feature or Improvement,Major,6,40,2.000000,21,marko.prelevikj
+Bug,Major,5,9,1.000000,21,andrej.oblak
+Bug,Major,1,2,0.000000,20,perlavalentin
+New Feature or Improvement,Minor,2,10,0.000000,20,marko.prelevikj
+Bug,Major,4,6,0.000000,20,gasper
+Internal Improvement,Minor,2,15,1.000000,20,matt
+Internal Improvement,Major,3,8,0.000000,20,uros
+New Feature or Improvement,Major,10,5,1.500000,20,andrej.oblak
+New Feature or Improvement,Major,4,8,0.000000,20,jure.malovrh
+Internal Improvement,Major,1,6,0.000000,20,zan.kusterle
+Internal Improvement,Minor,1,9,0.000000,20,marko.cavdek
+Internal Improvement,Minor,2,23,0.000000,20,viljem
+Bug,Major,5,24,1.333333,20,gregor.cepin
+Bug,Minor,1,11,0.000000,20,marko.cavdek
+Bug,Major,2,18,1.000000,20,miha.kavcic
+New Feature or Improvement,Critical,1,31,0.333333,20,marko
+Bug,Major,1,15,0.000000,20,iztokoder
+Bug,Minor,2,11,1.000000,20,matic.tribuson
+Internal Improvement,Major,10,38,3.000000,20,mitja
+New Feature or Improvement,Major,7,83,0.333333,20,martijn
+New Feature or Improvement,Minor,5,39,1.500000,20,marko
+New Feature or Improvement,Minor,2,17,0.000000,20,anze.brvar
+New Feature or Improvement,Major,24,114,1.000000,20,marko
+Internal Improvement,Major,1,7,0.000000,20,svetlana
+Internal Improvement,Major,1,23,0.500000,20,anze.brvar
+New Feature or Improvement,Major,9,36,0.333333,20,marko.cavdek
+New Feature or Improvement,Critical,7,25,0.000000,20,andrej.oblak
+Internal Improvement,Major,0,13,0.333333,20,svetlana
+Internal Improvement,Major,2,52,1.000000,20,rok
+Bug,Major,4,25,1.000000,20,matej.sircelj
+New Feature or Improvement,Minor,2,15,1.000000,19,matic.balantic
+Bug,Major,14,85,1.666667,19,rok
+Sub-task,Major,1,8,2.000000,19,iztokoder
+New Feature or Improvement,Major,2,31,0.000000,19,matjaz.ursic
+New Feature or Improvement,Minor,16,45,0.500000,19,matjaz.ursic
+Internal Improvement,Minor,10,28,1.500000,19,martijn
+Internal Improvement,Major,2,16,2.000000,19,matt
+Internal Improvement,Major,0,22,1.000000,19,sandi.rezonja
+Improvement (Sub-task),Major,11,19,1.000000,19,alexander.vasilyev
+Internal Improvement,Minor,9,42,1.333333,19,andrej.oblak
+New Feature or Improvement,Major,1,19,2.500000,19,zan.kusterle
+Bug,Major,2,15,0.500000,19,miha.kavcic
+New Feature or Improvement,Major,5,61,0.000000,19,gregor.praprotnik
+Internal Improvement,Minor,1,30,3.000000,19,marko.cavdek
+Internal Improvement,Major,3,26,1.000000,19,matic.balantic
+Bug,Minor,1,10,0.000000,19,rok
+New Feature or Improvement,Major,21,31,2.333333,19,tomaz
+Internal Improvement,Minor,0,21,2.000000,19,matt
+Bug,Minor,2,7,0.000000,19,marko.cavdek
+Bug,Minor,0,5,0.000000,18,jaka
+Internal Improvement,Minor,1,13,0.000000,18,domen.kosir
+Internal Improvement,Minor,0,4,1.000000,18,gasper
+Bug,Minor,0,7,0.000000,18,rok.novosel
+Bug,Minor,0,10,0.000000,18,dejan
+Bug,Major,3,15,0.000000,18,matic.tribuson
+New Feature or Improvement,Minor,0,1,0.000000,18,matic.tribuson
+Bug,Critical,1,29,1.333333,18,uros
+Bug,Minor,0,15,0.000000,18,rok
+New Feature or Improvement,Major,4,36,1.666667,18,matic.balantic
+New Feature or Improvement,Minor,1,36,0.000000,18,rok
+Bug,Minor,5,14,0.500000,18,darko
+New Feature or Improvement,Major,8,36,1.000000,18,marko.cavdek
+New Feature or Improvement,Minor,5,29,1.000000,18,mitja
+New Feature or Improvement,Minor,1,23,1.000000,18,matej.sircelj
+New Feature or Improvement,Major,8,22,0.500000,18,arjan
+New Feature or Improvement,Major,2,17,0.500000,18,rok.pensek
+New Feature or Improvement,Major,1,75,2.500000,18,rok
+New Feature or Improvement,Major,0,28,0.000000,18,iztokoder
+New Feature or Improvement,Major,0,47,0.500000,18,rok
+New Feature or Improvement,Minor,8,20,0.000000,18,marko.cavdek
+New Feature or Improvement,Major,14,29,1.000000,18,jason
+Bug,Major,5,16,2.000000,18,darko
+Bug,Minor,3,13,0.000000,18,martijn
+New Feature or Improvement,Major,6,13,1.333333,18,uros
+Task,Critical,8,10,0.000000,18,jure.cotic
+Internal Improvement,Minor,2,9,0.000000,18,miha.rugelj
+Internal Improvement,Minor,2,15,0.000000,18,viljem
+Internal Improvement,Minor,0,16,1.000000,18,matjaz.finzgar
+Internal Improvement,Major,7,61,2.500000,18,marko
+New Feature or Improvement,Minor,4,32,0.000000,17,gregor.praprotnik
+Bug,Minor,1,7,0.000000,17,matjaz.ursic
+Internal Improvement,Minor,0,14,0.333333,17,zan.kusterle
+Bug,Minor,8,23,0.000000,17,arjan
+Bug,Critical,15,28,1.500000,17,marko
+Internal Improvement,Major,0,13,0.000000,17,sandi.rezonja
+Bug,Major,3,15,4.000000,17,jason
+New Feature or Improvement,Major,1,23,0.000000,17,ales.kurent
+Internal Improvement,Minor,4,6,0.000000,17,mitja
+Internal Improvement,Minor,0,13,1.000000,17,marko.cavdek
+Internal Improvement,Minor,0,4,0.000000,17,tine
+Bug,Minor,3,19,1.000000,17,marko
+New Feature or Improvement,Major,10,35,0.666667,17,tomaz
+Bug,Minor,0,22,1.000000,17,iztokoder
+Internal Improvement,Critical,2,14,0.000000,17,viljem
+Bug,Minor,0,22,0.333333,17,matej.sircelj
+New Feature or Improvement,Minor,12,30,0.500000,17,ziga
+Bug,Major,3,34,0.666667,17,marko
+Bug,Minor,0,33,1.000000,17,iztokoder
+Internal Improvement,Minor,0,49,0.000000,17,gregor.praprotnik
+New Feature or Improvement,Critical,11,49,0.666667,17,marko
+Bug,Major,1,8,1.000000,17,rok
+Bug,Major,2,12,0.000000,17,gregor.cepin
+New Feature or Improvement,Trivial,2,16,0.500000,17,miha.kavcic
+Bug,Minor,4,1,0.000000,17,jure.cotic
+Bug,Major,0,24,0.000000,17,jakob
+New Feature or Improvement,Major,8,36,1.333333,17,aleksander
+New Feature or Improvement,Major,2,38,0.000000,17,gregor.praprotnik
+New Feature or Improvement,Major,7,27,2.000000,17,andrej.oblak
+Bug,Major,2,20,2.000000,17,rok.novosel
+New Feature or Improvement,Minor,4,57,0.000000,17,gregor.praprotnik
+Bug,Major,7,18,2.000000,17,darko
+Internal Improvement,Major,0,10,0.000000,17,ales.kurent
+Internal Improvement,Minor,1,11,0.000000,17,arjan
+New Feature or Improvement,Minor,2,30,0.333333,17,mitja
+New Feature or Improvement,Major,20,96,2.000000,16,marko
+Bug,Major,0,27,0.000000,16,rok
+New Feature or Improvement,Major,3,36,1.000000,16,rok
+New Feature or Improvement,Major,0,77,0.000000,16,martijn
+Internal Improvement,Minor,5,16,0.000000,16,jaka
+New Feature or Improvement,Major,2,14,0.000000,16,miha.kavcic
+New Feature or Improvement,Major,1,41,0.666667,16,jakob
+New Feature or Improvement,Major,2,20,0.000000,16,gregor.praprotnik
+New Feature or Improvement,Minor,5,28,0.000000,16,matjaz.ursic
+Improvement (Sub-task),Major,2,14,2.000000,16,mattia
+New Feature or Improvement,Major,6,36,2.666667,16,zan.kusterle
+New Feature or Improvement,Major,1,28,1.000000,16,mattia
+Internal Improvement,Minor,2,20,1.000000,16,domen.kosir
+Internal Improvement,Trivial,1,22,0.000000,16,sandi.rezonja
+New Feature or Improvement,Major,7,17,2.000000,16,aleksander
+Internal Improvement,Major,0,2,0.000000,16,gregor.cepin
+Internal Improvement,Critical,3,15,0.500000,16,matjaz.ursic
+Internal Improvement,Major,7,5,0.000000,16,ziga
+New Feature or Improvement,Major,2,8,0.000000,16,anze.brvar
+Bug,Minor,2,3,0.000000,16,tomaz
+New Feature or Improvement,Major,4,12,0.500000,16,gregor.praprotnik
+New Feature or Improvement,Major,9,14,0.000000,16,rok.pensek
+Bug,Minor,1,10,0.000000,16,martijn
+Improvement (Sub-task),Major,0,5,0.000000,16,mitja
+New Feature or Improvement,Major,2,14,0.500000,16,iztokoder
+Internal Improvement,Minor,2,12,0.333333,16,tine
+Internal Improvement,Major,1,8,0.500000,16,blaz.snuderl
+New Feature or Improvement,Major,0,30,1.333333,16,rok.novosel
+New Feature or Improvement,Minor,11,25,3.000000,16,jason
+Bug,Minor,3,13,0.000000,15,rok
+Bug,Minor,3,8,0.000000,15,jernej
+New Feature or Improvement,Minor,1,16,1.000000,15,zan.kusterle
+Internal Improvement,Major,1,28,0.333333,15,matic.balantic
+Bug,Minor,0,15,0.500000,15,marko.cavdek
+New Feature or Improvement,Major,13,13,0.000000,15,ziga
+New Feature or Improvement,Minor,4,7,0.333333,15,anze.brvar
+New Feature or Improvement,Major,1,40,1.000000,15,uros
+Internal Improvement,Minor,0,13,0.000000,15,matic.balantic
+New Feature or Improvement,Minor,1,11,0.000000,15,gregor.fartek
+New Feature or Improvement,Major,4,63,0.000000,15,matjaz.ursic
+Bug,Major,2,6,1.000000,15,blaz.snuderl
+Prototype,Major,6,19,2.000000,15,mitja
+Bug,Major,1,20,0.000000,15,rok
+New Feature or Improvement,Minor,8,22,0.000000,15,anton
+Improvement (Sub-task),Minor,0,14,0.000000,15,tine
+Bug,Major,0,17,0.666667,15,jakob
+New Feature or Improvement,Major,0,18,0.333333,15,zan.kusterle
+Internal Improvement,Minor,3,17,1.000000,15,miha.rugelj
+New Feature or Improvement,Minor,1,29,1.000000,15,marko.cavdek
+Internal Improvement,Minor,2,44,1.000000,15,marko.cavdek
+Internal Improvement,Major,4,30,0.500000,15,miha.rugelj
+Bug,Minor,1,13,0.000000,15,iztokoder
+Internal Improvement,Major,2,9,1.000000,15,marko.cavdek
+New Feature or Improvement,Minor,5,32,0.500000,15,darko
+Bug,Critical,9,21,0.000000,15,domen.kosir
+Bug,Minor,5,14,0.666667,15,andrej.oblak
+Bug,Major,1,7,0.000000,15,aleksander
+Internal Improvement,Major,0,7,0.000000,15,bruno
+New Feature or Improvement,Critical,1,12,2.000000,15,miha.rugelj
+New Feature or Improvement,Major,4,11,1.000000,14,ziga
+Internal Improvement,Minor,0,0,1.000000,14,jaka
+Bug,Minor,2,12,1.000000,14,mitja
+New Feature or Improvement,Major,1,1,0.000000,14,viljem
+Internal Improvement,Major,2,13,1.000000,14,jure.malovrh
+Improvement (Sub-task),Minor,2,24,0.000000,14,dejan.lokar
+New Feature or Improvement,Minor,4,34,2.000000,14,marko
+New Feature or Improvement,Major,2,11,0.500000,14,anze.brvar
+Internal Improvement,Major,6,11,0.500000,14,ziga
+Internal Improvement,Major,6,12,0.000000,14,gasper.jeklin
+Internal Improvement,Major,2,15,0.000000,14,marko.cavdek
+New Feature or Improvement,Minor,2,40,0.000000,14,matjaz.ursic
+New Feature or Improvement,Major,0,33,0.666667,14,matej.sircelj
+Bug,Minor,1,17,0.500000,14,iztokoder
+Bug,Major,6,6,0.000000,14,matic.tribuson
+New Feature or Improvement,Minor,0,23,0.000000,14,mitja
+New Feature or Improvement,Major,6,23,0.000000,14,aleksander
+Internal Improvement,Major,0,21,0.000000,14,miha.rugelj
+Internal Improvement,Major,0,21,0.000000,14,tine
+New Feature or Improvement,Minor,9,25,1.333333,14,aleksander
+Improvement (Sub-task),Major,1,29,0.000000,14,rok.novosel
+Internal Improvement,Major,1,10,0.333333,14,jakob
+Internal Improvement,Major,0,8,0.000000,14,marko.cavdek
+Improvement (Sub-task),Minor,3,24,0.000000,14,mitja
+Internal Improvement,Major,2,10,0.000000,14,jakob
+Bug,Minor,0,10,0.333333,14,rok.novosel
+New Feature or Improvement,Major,5,74,0.500000,14,marko
+New Feature or Improvement,Major,0,12,0.500000,14,zan.kusterle
+New Feature or Improvement,Minor,4,12,0.000000,14,gregor.praprotnik
+Bug,Major,4,6,0.000000,14,tomaz
+New Feature or Improvement,Minor,1,8,0.000000,14,jason
+Bug,Minor,0,9,0.000000,14,iztokoder
+Internal Improvement,Critical,7,5,0.000000,14,domen.kosir
+New Feature or Improvement,Major,6,8,0.000000,14,ukovac
+Improvement (Sub-task),Minor,0,2,1.000000,14,alexander.vasilyev
+New Feature or Improvement,Major,0,0,0.000000,14,ales.kurent
+Improvement (Sub-task),Minor,0,4,0.000000,14,tine
+Bug,Minor,1,22,1.000000,14,miha.rugelj
+New Feature or Improvement,Major,1,14,0.000000,14,ales.kurent
+Internal Improvement,Minor,1,14,0.000000,14,ziga.vucko
+Internal Improvement,Minor,1,13,0.000000,14,anze.brvar
+Internal Improvement,Minor,2,20,0.333333,14,dejan
+Internal Improvement,Minor,5,33,1.000000,14,dejan
+New Feature or Improvement,Minor,7,55,0.000000,14,matjaz.ursic
+Improvement (Sub-task),Major,9,34,2.000000,14,matjaz.ursic
+New Feature or Improvement,Major,1,17,1.000000,14,matic.balantic
+Bug,Major,12,29,0.000000,14,mitja
+New Feature or Improvement,Major,4,22,0.666667,14,jure.malovrh
+New Feature or Improvement,Minor,3,50,2.000000,14,rok.pensek
+Bug,Major,6,23,3.000000,14,viljem
+New Feature or Improvement,Major,11,18,1.000000,14,tomaz
+New Feature or Improvement,Major,9,2,0.000000,14,gasper
+New Feature or Improvement,Major,0,0,0.000000,14,aleksander
+Improvement (Sub-task),Major,0,22,1.000000,14,mitja
+Internal Improvement,Minor,4,21,1.666667,14,ziga.vucko
+Bug,Minor,2,20,0.000000,14,iztokoder
+New Feature or Improvement,Major,0,31,2.000000,14,rok.pensek
+Improvement (Sub-task),Major,10,47,4.000000,14,mitja
+Bug,Major,9,26,0.000000,14,marko
+Bug,Minor,2,5,0.000000,13,rok.novosel
+Bug,Minor,1,11,0.000000,13,matjaz.ursic
+Internal Improvement,Minor,3,17,0.000000,13,viljem
+Internal Improvement,Minor,1,12,3.000000,13,matt
+Internal Improvement,Minor,1,7,1.000000,13,jure.malovrh
+Internal Improvement,Minor,2,21,0.000000,13,blaz.snuderl
+Internal Improvement,Minor,2,15,0.500000,13,dejan
+Bug,Minor,3,12,0.000000,13,anton
+Bug,Minor,8,19,1.000000,13,andrej.oblak
+New Feature or Improvement,Major,2,13,0.000000,13,anton
+Sub-task,Minor,0,13,0.000000,13,dejan
+Bug,Major,2,10,1.000000,13,rok
+Internal Improvement,Major,7,32,1.000000,13,tomaz
+New Feature or Improvement,Major,7,14,0.000000,13,miha.kavcic
+Internal Improvement,Major,1,9,0.000000,13,samo
+New Feature or Improvement,Minor,1,1,0.000000,13,uros
+Internal Improvement,Minor,2,20,0.000000,13,viljem
+Internal Improvement,Major,2,1,0.000000,13,jaka
+New Feature or Improvement,Major,3,16,1.000000,13,miha.kavcic
+New Feature or Improvement,Major,0,15,1.000000,13,svetlana
+Bug,Minor,3,9,0.500000,13,gregor.cepin
+Internal Improvement,Minor,2,9,1.000000,13,miha.kavcic
+New Feature or Improvement,Major,1,18,0.500000,13,ziga.vucko
+Internal Improvement,Minor,10,20,1.000000,13,blaz
+Internal Improvement,Major,3,35,0.000000,13,jason
+Bug,Minor,1,23,1.000000,13,iztokoder
+Sub-task,Critical,2,15,1.500000,13,matt
+Bug,Major,3,10,1.000000,13,marko
+New Feature or Improvement,Minor,1,20,0.000000,13,marko
+New Feature or Improvement,Major,3,27,0.000000,13,matjaz.ursic
+Bug,Minor,0,11,2.000000,13,iztokoder
+Internal Improvement,Minor,7,24,1.000000,13,anton
+New Feature or Improvement,Major,3,24,2.000000,13,arjan
+Bug,Minor,5,23,0.500000,13,ziga
+Internal Improvement,Minor,0,18,1.000000,13,jure.malovrh
+Internal Improvement,Minor,9,20,1.000000,13,anze.brvar
+Internal Improvement,Minor,2,15,0.000000,13,arjan
+Bug,Major,7,15,0.666667,13,ziga
+New Feature or Improvement,Critical,4,18,1.000000,13,matic.balantic
+Bug (Sub-task),Minor,1,6,0.000000,13,rok.novosel
+Internal Improvement,Minor,1,15,2.000000,13,zan.kusterle
+Improvement (Sub-task),Minor,0,6,0.000000,13,alexander.vasilyev
+Bug,Minor,1,20,0.000000,13,martijn
+Bug,Major,3,29,0.000000,13,anton
+New Feature or Improvement,Minor,4,3,1.000000,13,jaka
+Bug,Major,4,34,1.666667,13,mitja
+Internal Improvement,Major,0,8,0.000000,13,matevz.stinjek
+Bug,Minor,1,2,0.000000,13,jasanjot
+Bug,Minor,6,24,2.500000,13,darko
+Internal Improvement,Minor,3,31,0.000000,13,viljem
+New Feature or Improvement,Minor,3,32,1.000000,13,martijn
+Bug,Major,0,12,0.000000,13,marko.cavdek
+Internal Improvement,Minor,5,20,3.000000,13,jakob
+Bug,Minor,3,7,0.000000,13,gasper.jeklin
+New Feature or Improvement,Major,4,43,0.666667,12,matic.tribuson
+Internal Improvement,Minor,2,10,0.000000,12,miha.rugelj
+Bug,Major,0,7,0.000000,12,jakob
+Bug,Major,4,8,0.500000,12,andrej.oblak
+Internal Improvement,Minor,3,19,1.000000,12,arjan
+Bug,Major,0,9,0.000000,12,jakob
+Internal Improvement,Minor,0,10,0.000000,12,iztokoder
+Internal Improvement,Major,3,17,0.000000,12,marko.prelevikj
+New Feature or Improvement,Major,1,20,0.000000,12,ales.kurent
+Sub-task,Major,1,9,0.000000,12,alex.folkenflik
+New Feature or Improvement,Major,0,8,0.000000,12,aleksander
+New Feature or Improvement,Major,10,53,1.000000,12,matic.tribuson
+Bug,Minor,0,10,0.000000,12,arjan
+Internal Improvement,Minor,4,24,0.666667,12,dejan
+New Feature or Improvement,Major,5,60,2.000000,12,rok
+New Feature or Improvement,Major,1,19,0.000000,12,marko.cavdek
+Bug,Minor,1,21,0.000000,12,gasper.jeklin
+New Feature or Improvement,Major,4,25,0.000000,12,gregor.praprotnik
+New Feature or Improvement,Major,2,18,0.000000,12,marko
+Bug,Minor,4,17,0.500000,12,matic.tribuson
+Internal Improvement,Major,4,21,0.666667,12,marko.cavdek
+Internal Improvement,Minor,0,11,1.000000,12,arjan
+Internal Improvement,Minor,2,5,0.000000,12,arjan
+Bug,Minor,2,22,1.000000,12,anton
+Internal Improvement,Minor,3,12,1.000000,12,darko
+Internal Improvement,Major,0,11,0.500000,12,arjan
+New Feature or Improvement,Trivial,0,9,1.000000,12,matej.sircelj
+New Feature or Improvement,Minor,2,5,1.000000,12,gasper
+Bug,Critical,5,35,0.333333,12,rok
+New Feature or Improvement,Major,1,32,1.000000,12,miha.kavcic
+Internal Improvement,Minor,0,13,1.000000,12,tine
+Internal Improvement,Minor,2,3,0.000000,12,domen.kosir
+Sub-task,Critical,5,49,0.000000,12,ziga
+Bug,Minor,1,11,0.000000,12,matjaz.ursic
+Internal Improvement,Minor,3,13,1.000000,12,gregor.praprotnik
+New Feature or Improvement,Major,4,27,2.000000,12,mitja
+Bug,Major,1,5,0.000000,12,marko.cavdek
+Bug,Minor,0,13,0.333333,12,svetlana
+New Feature or Improvement,Minor,2,17,0.000000,12,gregor.praprotnik
+New Feature or Improvement,Major,0,1,0.000000,12,arjan
+New Feature or Improvement,Minor,3,18,0.000000,12,anze.brvar
+New Feature or Improvement,Minor,2,19,0.000000,12,marko.cavdek
+Internal Improvement,Minor,1,23,0.500000,12,jernej
+Internal Improvement,Minor,0,10,0.000000,12,zan.kusterle
+Internal Improvement,Trivial,0,10,0.000000,12,svetlana
+New Feature or Improvement,Critical,8,28,0.000000,12,miha.rugelj
+New Feature or Improvement,Minor,5,15,0.000000,12,matjaz.ursic
+Internal Improvement,Minor,2,22,1.000000,12,andrej.oblak
+Bug,Critical,5,28,1.500000,11,domen.kosir
+Bug,Minor,4,28,1.000000,11,andrej.oblak
+New Feature or Improvement,Major,0,25,1.000000,11,svetlana
+New Feature or Improvement,Major,5,22,1.000000,11,jakob
+Bug,Major,3,22,0.000000,11,darko
+Internal Improvement,Major,1,11,0.000000,11,uros
+New Feature or Improvement,Major,2,32,1.333333,11,rok.novosel
+Bug,Major,0,12,1.000000,11,iztokoder
+New Feature or Improvement,Major,3,13,0.500000,11,tomaz
+Internal Improvement,Minor,0,19,0.000000,11,jernej
+Bug,Minor,1,11,0.000000,11,iztokoder
+Internal Improvement,Major,0,2,0.000000,11,matevz.stinjek
+Bug,Critical,0,23,2.000000,11,iztokoder
+New Feature or Improvement,Major,0,15,0.500000,11,ales.kurent
+New Feature or Improvement,Major,4,38,1.000000,11,rok.novosel
+New Feature or Improvement,Minor,2,36,1.000000,11,marko.prelevikj
+Bug,Critical,4,15,0.000000,11,jakob
+New Feature or Improvement,Major,7,24,0.500000,11,jernej
+Internal Improvement,Minor,7,14,0.000000,11,arjan
+Improvement (Sub-task),Major,1,12,0.000000,11,miha.rugelj
+Bug,Minor,1,9,0.000000,11,marko.cavdek
+New Feature or Improvement,Major,2,14,0.000000,11,ziga
+Internal Improvement,Major,1,13,0.000000,11,viljem
+Internal Improvement,Minor,0,7,0.000000,11,tine
+Internal Improvement,Minor,2,7,0.000000,11,miha.rugelj
+Bug,Minor,0,8,0.000000,11,samo
+Internal Improvement,Minor,7,7,1.000000,11,jaka
+Internal Improvement,Critical,0,11,0.000000,11,matic.balantic
+Bug,Major,1,2,0.000000,11,ukovac
+Bug,Major,1,19,0.333333,11,iztokoder
+Bug,Major,3,19,0.500000,11,marko.prelevikj
+New Feature or Improvement,Major,1,6,0.000000,11,jure.cotic
+New Feature or Improvement,Major,1,17,0.000000,11,matic.balantic
+Internal Improvement,Major,0,5,0.000000,11,rok.pensek
+Bug,Minor,0,14,0.000000,11,jernej
+New Feature or Improvement,Critical,7,14,1.000000,11,gregor.praprotnik
+Internal Improvement,Major,0,25,1.000000,11,jakob
+Internal Improvement,Major,5,17,0.333333,11,jure.malovrh
+Internal Improvement,Minor,3,22,0.000000,11,gregor.praprotnik
+Internal Improvement,Critical,8,34,2.000000,11,darko
+Bug,Minor,1,14,0.000000,11,gasper.jeklin
+New Feature or Improvement,Major,6,21,0.500000,11,andrej.oblak
+Bug,Major,4,9,0.000000,11,tomaz
+Internal Improvement,Minor,2,29,1.000000,11,rok
+Internal Improvement,Major,3,10,0.000000,11,jure.cotic
+Internal Improvement,Major,2,15,0.500000,11,jure.malovrh
+Internal Improvement,Minor,10,10,0.000000,11,goran
+Bug,Minor,1,27,0.333333,11,marko.cavdek
+Internal Improvement,Minor,6,12,1.000000,11,miha.rugelj
+New Feature or Improvement,Major,9,21,1.000000,10,tomaz
+Internal Improvement,Major,1,35,0.000000,10,sandi.rezonja
+New Feature or Improvement,Minor,2,4,0.000000,10,anze.brvar
+Internal Improvement,Major,3,22,0.333333,10,marko.cavdek
+New Feature or Improvement,Major,13,59,0.000000,10,marko
+Bug,Minor,1,14,0.000000,10,rok.novosel
+Bug,Minor,1,6,0.000000,10,matic.tribuson
+New Feature or Improvement,Minor,1,22,0.000000,10,mitja
+Bug,Major,6,10,0.000000,10,darko
+Improvement (Sub-task),Minor,0,7,0.000000,10,mitja
+New Feature or Improvement,Major,5,22,0.000000,10,miha.rugelj
+New Feature or Improvement,Critical,4,7,0.000000,10,aleksander
+Bug,Minor,1,3,0.000000,10,ziga
+Bug,Minor,0,3,0.000000,10,miha.kavcic
+New Feature or Improvement,Major,8,9,1.000000,10,anita
+New Feature or Improvement,Minor,1,10,0.000000,10,gasper
+Bug,Minor,1,2,0.000000,10,aleksander
+Bug,Minor,4,13,2.000000,10,uros
+Bug,Minor,1,10,1.000000,10,rok.novosel
+Bug,Minor,17,20,2.000000,10,darko
+New Feature or Improvement,Major,16,9,0.000000,10,gasper
+Improvement (Sub-task),Minor,3,17,1.000000,10,marko.cavdek
+Internal Improvement,Minor,1,13,1.000000,10,marko.prelevikj
+New Feature or Improvement,Major,2,23,1.000000,10,arjan
+New Feature or Improvement,Major,0,30,0.000000,10,ales.kurent
+New Feature or Improvement,Major,5,22,0.500000,10,jason
+New Feature or Improvement,Major,5,11,0.000000,10,marko.cavdek
+New Feature or Improvement,Major,6,19,0.000000,10,marko.cavdek
+New Feature or Improvement,Major,4,17,0.500000,10,uros
+New Feature or Improvement,Major,1,16,0.000000,10,jurij.bajzelj
+Internal Improvement,Minor,1,17,0.333333,10,iztokoder
+New Feature or Improvement,Major,4,23,0.500000,10,anze.brvar
+New Feature or Improvement,Major,1,8,1.000000,10,anze.brvar
+Bug,Minor,1,15,1.000000,10,svetlana
+Internal Improvement,Major,5,19,0.500000,10,domen.kosir
+Internal Improvement,Minor,2,21,1.000000,10,anze.brvar
+Bug,Minor,0,17,0.000000,10,gasper.jeklin
+New Feature or Improvement,Minor,6,42,1.000000,10,rok.pensek
+New Feature or Improvement,Minor,10,20,0.000000,10,gregor.praprotnik
+Internal Improvement,Minor,2,22,0.500000,10,ziga
+Internal Improvement,Minor,2,26,1.000000,10,marko.prelevikj
+Bug,Major,3,11,0.000000,10,matic.tribuson
+New Feature or Improvement,Major,4,43,0.000000,10,miha.kavcic
+New Feature or Improvement,Major,2,11,0.666667,10,blaz.snuderl
+Bug,Minor,2,11,1.000000,10,marko
+Internal Improvement,Minor,1,21,0.000000,10,tine
+New Feature or Improvement,Major,5,39,0.000000,10,gregor.praprotnik
+New Feature or Improvement,Minor,5,44,0.333333,10,gregor.praprotnik
+Internal Improvement,Major,0,13,1.000000,10,arjan
+New Feature or Improvement,Major,11,25,0.000000,10,arjan
+New Feature or Improvement,Major,7,12,3.000000,10,jason
+Internal Improvement,Critical,3,22,0.000000,10,rok
+New Feature or Improvement,Major,7,32,1.000000,10,jakob
+Bug,Minor,3,16,0.000000,9,jernej
+Bug,Critical,0,13,0.000000,9,miha.kavcic
+New Feature or Improvement,Critical,0,4,0.000000,9,andrej.oblak
+Bug,Minor,0,13,0.333333,9,svetlana
+Sub-task,Minor,0,10,1.000000,9,iztokoder
+New Feature or Improvement,Major,3,9,0.000000,9,kyle
+New Feature or Improvement,Major,21,66,2.000000,9,matic.tribuson
+Internal Improvement,Minor,6,13,0.000000,9,miha.kavcic
+New Feature or Improvement,Major,6,22,0.333333,9,jakob
+Improvement (Sub-task),Major,0,11,0.000000,9,rok.novosel
+Bug,Major,3,10,0.000000,9,ziga
+Bug,Critical,0,11,0.000000,9,jakob
+Internal Improvement,Minor,3,14,0.000000,9,ziga
+New Feature or Improvement,Critical,1,10,0.500000,9,svetlana
+Internal Improvement,Minor,3,8,0.000000,9,ziga
+Internal Improvement,Major,1,2,0.000000,9,gasper.jeklin
+Bug,Minor,4,12,1.000000,9,matic.tribuson
+New Feature or Improvement,Minor,2,25,1.000000,9,matej.sircelj
+Bug,Major,2,19,0.000000,9,andrej.oblak
+Internal Improvement,Minor,2,13,0.500000,9,marko.cavdek
+New Feature or Improvement,Minor,0,15,0.000000,9,rok.novosel
+New Feature or Improvement,Minor,3,20,0.000000,9,marko.cavdek
+Bug,Major,0,9,0.000000,9,jakob
+New Feature or Improvement,Major,0,17,0.000000,9,jakob
+Internal Improvement,Major,3,14,0.000000,9,blaz
+Internal Improvement,Minor,2,23,0.666667,9,tine
+Internal Improvement,Minor,1,5,0.000000,9,jure.cotic
+Internal Improvement,Major,4,42,2.000000,9,ziga
+Internal Improvement,Minor,1,13,0.500000,9,arjan
+Internal Improvement,Minor,6,10,0.000000,9,viljem
+Bug,Major,4,22,1.000000,9,ziga.vucko
+Internal Improvement,Minor,3,25,0.500000,9,matic.balantic
+Bug,Major,3,4,1.000000,9,martijn
+Internal Improvement,Minor,4,15,1.000000,9,arjan
+New Feature or Improvement,Major,1,4,0.000000,9,goran
+Bug,Minor,2,11,0.000000,9,darko
+Internal Improvement,Minor,1,11,0.000000,9,miha.rugelj
+Bug,Minor,2,20,0.500000,9,marko.cavdek
+New Feature or Improvement,Minor,15,47,1.500000,9,tomaz
+Internal Improvement,Major,0,30,0.666667,9,marko.cavdek
+New Feature or Improvement,Major,0,11,0.500000,9,zan.kusterle
+Internal Improvement,Major,6,78,1.500000,9,martijn
+Internal Improvement,Minor,12,74,1.000000,9,marko
+Bug,Minor,2,22,0.000000,9,martijn
+Internal Improvement,Major,9,24,0.333333,9,tomaz
+New Feature or Improvement,Major,3,40,0.000000,9,ziga
+Internal Improvement,Major,7,17,1.000000,9,uros
+New Feature or Improvement,Major,3,16,0.000000,9,matic.balantic
+Bug,Minor,1,10,0.000000,9,tine
+Bug,Major,0,10,0.000000,9,miha.kavcic
+Bug,Major,0,10,0.000000,9,iztokoder
+Internal Improvement,Critical,3,18,1.500000,9,mitja
+Bug,Minor,4,9,0.000000,9,marko
+Internal Improvement,Critical,0,1,0.000000,9,aleksander
+New Feature or Improvement,Minor,2,14,1.000000,9,rok.pensek
+New Feature or Improvement,Critical,3,54,0.000000,9,gregor.praprotnik
+Internal Improvement,Minor,3,19,0.000000,9,martijn
+New Feature or Improvement,Major,1,12,0.000000,9,matic.balantic
+Bug,Critical,12,8,0.000000,9,carl
+Internal Improvement,Minor,0,13,1.000000,9,bruno
+Bug,Minor,4,19,0.500000,9,ziga
+Internal Improvement,Minor,1,12,0.500000,8,tine
+Internal Improvement,Minor,2,6,0.000000,8,arjan
+Internal Improvement,Major,9,6,0.000000,8,gasper
+Bug,Major,0,13,0.500000,8,marko.cavdek
+Bug,Minor,2,5,0.000000,8,matej.sircelj
+Internal Improvement,Minor,0,8,0.000000,8,viljem
+Bug,Minor,1,11,0.000000,8,dejan
+Internal Improvement,Minor,0,6,0.000000,8,matt
+Bug,Minor,2,7,0.000000,8,anton
+Bug,Major,1,10,0.000000,8,dejan
+New Feature or Improvement,Minor,6,45,2.500000,8,ziga
+Internal Improvement,Minor,2,12,0.000000,8,anton
+Internal Improvement,Major,1,18,0.333333,8,matevz.stinjek
+New Feature or Improvement,Minor,3,8,0.000000,8,goran
+Bug,Major,4,15,1.000000,8,miha.kavcic
+New Feature or Improvement,Minor,1,17,0.333333,8,jakob
+Bug,Minor,0,13,0.000000,8,rok.pensek
+New Feature or Improvement,Minor,1,7,0.000000,8,anton
+Bug,Minor,2,8,0.000000,8,ziga
+Bug,Minor,0,14,0.333333,8,zan.kusterle
+Internal Improvement,Minor,1,8,0.000000,8,matic.balantic
+New Feature or Improvement,Major,0,13,1.000000,8,svetlana
+New Feature or Improvement,Major,0,15,0.666667,8,zan.kusterle
+New Feature or Improvement,Minor,0,13,0.500000,8,marko.prelevikj
+New Feature or Improvement,Minor,1,16,0.000000,8,denis
+Bug,Major,1,14,0.000000,8,marko
+Internal Improvement,Critical,2,13,0.000000,8,jaka
+Internal Improvement,Minor,3,13,1.000000,8,blaz.snuderl
+Internal Improvement,Minor,3,7,0.000000,8,miha.rugelj
+Internal Improvement,Minor,0,16,1.000000,8,jost
+Bug,Minor,0,12,1.000000,8,matej.sircelj
+Internal Improvement,Major,7,12,0.500000,8,arjan
+Bug,Major,1,12,0.333333,8,jakob
+Bug,Major,1,15,0.000000,8,anton
+Bug,Critical,3,0,0.000000,8,ales
+Internal Improvement,Major,0,19,0.333333,8,zan.kusterle
+Bug,Major,6,20,0.500000,8,matjaz.ursic
+Bug,Critical,0,19,0.000000,8,blaz
+Internal Improvement,Major,0,20,1.000000,8,blaz.snuderl
+New Feature or Improvement,Minor,1,23,0.666667,8,marko.prelevikj
+New Feature or Improvement,Major,9,26,1.000000,8,ziga
+New Feature or Improvement,Minor,9,26,0.000000,8,anton
+New Feature or Improvement,Minor,3,49,1.000000,8,mitja
+New Feature or Improvement,Major,3,23,0.500000,8,mitja
+New Feature or Improvement,Minor,2,32,0.000000,8,mitja
+Bug,Critical,6,59,0.000000,8,rok
+Bug,Minor,1,11,0.000000,8,mitja
+Bug,Minor,3,17,0.666667,8,rok.novosel
+New Feature or Improvement,Major,12,23,1.000000,8,tomaz
+Internal Improvement,Major,3,26,0.000000,8,viljem
+Bug,Minor,4,38,1.000000,8,aleksander
+New Feature or Improvement,Major,4,46,1.666667,8,matic.tribuson
+New Feature or Improvement,Major,3,52,0.000000,8,viljem
+Bug,Critical,5,16,0.000000,8,matej.sircelj
+Internal Improvement,Critical,0,18,1.000000,8,matic.balantic
+Bug,Critical,5,17,0.500000,8,blaz
+New Feature or Improvement,Major,17,27,0.000000,8,ziga
+Bug,Critical,2,12,0.000000,8,rok.pensek
+New Feature or Improvement,Critical,16,18,0.000000,8,miha.kavcic
+Internal Improvement,Minor,0,19,1.000000,8,dejan.lokar
+New Feature or Improvement,Major,5,19,0.000000,8,anton
+Internal Improvement,Major,2,26,0.000000,8,mattia
+Internal Improvement,Critical,0,13,0.000000,8,viljem
+Internal Improvement,Major,2,14,0.000000,8,arjan
+Bug,Minor,3,15,1.500000,8,iztokoder
+New Feature or Improvement,Major,7,22,0.000000,8,miha.rugelj
+New Feature or Improvement,Major,2,80,0.000000,8,rok
+Internal Improvement,Major,3,11,0.000000,8,tomaz
+Prototype,Blocker,4,16,0.000000,8,ziga
+New Feature or Improvement,Major,3,18,0.500000,8,rok.novosel
+Internal Improvement,Major,4,21,0.500000,8,uros
+Bug,Major,11,21,0.000000,8,marko
+New Feature or Improvement,Major,2,24,0.000000,8,zan.kusterle
+New Feature or Improvement,Blocker,0,36,0.000000,8,matic.tribuson
+New Feature or Improvement,Minor,7,38,0.000000,8,miha.kavcic
+Sub-task,Minor,2,24,1.000000,8,rok.novosel
+New Feature or Improvement,Major,3,30,0.000000,8,simon
+Internal Improvement,Major,0,3,0.000000,8,matjaz.finzgar
+Internal Improvement,Major,6,9,1.000000,8,uros
+Internal Improvement,Major,2,9,0.000000,8,matic.tribuson
+Internal Improvement,Minor,0,10,0.000000,8,dejan
+Internal Improvement,Major,2,10,0.000000,8,miha.kavcic
+Internal Improvement,Major,0,10,0.000000,8,marko
+Internal Improvement,Minor,0,9,0.000000,8,svetlana
+Bug,Major,2,9,0.000000,8,matic.nezic
+Bug,Minor,2,9,0.000000,8,marko.cavdek
+Internal Improvement,Minor,0,9,0.000000,8,matevz.stinjek
+Internal Improvement,Minor,0,8,0.000000,8,tine
+Bug,Minor,4,3,0.000000,8,gasper
+Sub-task,Critical,2,3,0.000000,8,goran
+New Feature or Improvement,Minor,2,3,0.000000,8,anze.brvar
+New Feature or Improvement,Major,1,4,0.000000,8,miha.kavcic
+New Feature or Improvement,Major,0,4,0.000000,8,anton
+New Feature or Improvement,Major,0,4,0.000000,8,anton
+Bug,Minor,2,6,0.000000,8,aleksander
+Bug,Minor,3,6,0.000000,8,miha.kavcic
+New Feature or Improvement,Minor,13,28,0.666667,7,ziga
+New Feature or Improvement,Major,0,1,0.000000,7,ashna
+Bug,Blocker,0,26,1.000000,7,andrej.oblak
+Internal Improvement,Major,1,16,0.000000,7,darko
+Bug,Major,0,18,1.000000,7,svetlana
+New Feature or Improvement,Major,3,1,0.000000,7,matic.balantic
+Bug,Critical,1,14,0.000000,7,darko
+Internal Improvement,Minor,5,14,1.000000,7,aleksander
+New Feature or Improvement,Minor,0,15,0.500000,7,matt
+Bug,Major,9,7,0.000000,7,aleksander
+New Feature or Improvement,Major,6,35,0.000000,7,matjaz.ursic
+New Feature or Improvement,Major,8,33,0.000000,7,anton
+Bug,Minor,0,9,0.000000,7,matej.sircelj
+New Feature or Improvement,Critical,1,6,0.333333,7,zan.kusterle
+New Feature or Improvement,Major,2,6,0.000000,7,blaz
+Internal Improvement,Major,0,2,2.000000,7,iztokoder
+Improvement (Sub-task),Major,1,12,0.000000,7,arif
+New Feature or Improvement,Critical,7,36,1.500000,7,mitja
+Internal Improvement,Major,3,7,1.000000,7,arjan
+Bug,Major,3,11,0.000000,7,arjan
+Internal Improvement,Minor,1,10,0.000000,7,viljem
+Bug,Major,4,14,0.500000,7,martijn
+Bug,Critical,2,12,0.000000,7,matic.balantic
+Bug,Minor,2,14,0.000000,7,marko.cavdek
+Bug,Critical,3,13,0.000000,7,anton
+Internal Improvement,Minor,0,12,0.000000,7,jure.malovrh
+Bug,Minor,3,14,0.000000,7,darko
+Improvement (Sub-task),Major,3,5,0.000000,7,andrej.oblak
+Internal Improvement,Minor,1,20,1.000000,7,dejan
+Internal Improvement,Minor,0,14,0.500000,7,dejan.lokar
+Internal Improvement,Blocker,3,11,0.500000,7,jakob
+Bug,Major,0,11,0.000000,7,matej.sircelj
+Bug,Major,2,11,1.000000,7,jason
+New Feature or Improvement,Minor,5,11,0.500000,7,gasper
+Bug,Minor,0,3,0.000000,7,jaka
+New Feature or Improvement,Major,1,5,0.000000,7,aleksander
+Internal Improvement,Minor,4,13,0.500000,7,anze.brvar
+Bug,Major,1,1,0.000000,7,gasper
+Internal Improvement,Major,0,67,1.000000,7,martijn
+Bug,Major,5,10,0.500000,7,anze.brvar
+New Feature or Improvement,Minor,8,50,2.000000,7,marko
+Internal Improvement,Minor,20,44,1.000000,7,ziga
+New Feature or Improvement,Minor,11,42,0.500000,7,marko
+Bug,Major,3,9,0.500000,7,gregor.cepin
+Internal Improvement,Minor,10,26,2.000000,7,jaka
+Internal Improvement,Minor,9,24,0.666667,7,dejan
+Bug,Major,0,10,0.000000,7,iztokoder
+New Feature or Improvement,Minor,0,13,0.000000,7,gregor.fartek
+Bug,Minor,0,12,0.000000,7,matjaz.ursic
+Bug,Major,0,5,0.000000,7,blaz.snuderl
+New Feature or Improvement,Major,3,22,1.000000,7,matic.balantic
+New Feature or Improvement,Major,0,22,0.000000,7,iztokoder
+Bug,Minor,4,11,0.333333,7,jernej
+Bug,Critical,1,11,0.000000,7,uros
+Bug,Minor,0,9,0.000000,7,gregor.praprotnik
+Internal Improvement,Minor,1,11,0.000000,7,jost
+Bug,Minor,4,19,3.000000,7,darko
+New Feature or Improvement,Minor,1,10,0.000000,7,jernej
+New Feature or Improvement,Minor,3,9,0.000000,7,matjaz.ursic
+New Feature or Improvement,Major,6,39,0.500000,7,mitja
+Bug,Major,1,8,0.000000,7,svetlana
+Bug,Minor,2,8,0.000000,7,rok.novosel
+Internal Improvement,Major,2,10,0.000000,7,jure.malovrh
+New Feature or Improvement,Minor,11,17,3.000000,7,ziga
+Internal Improvement,Minor,0,17,0.000000,7,denis
+Improvement (Sub-task),Major,5,8,0.000000,7,marko.cavdek
+Bug,Minor,0,8,0.000000,7,jernej
+Bug,Minor,3,12,0.500000,7,tomaz
+New Feature or Improvement,Minor,2,12,0.000000,7,anton
+Bug,Major,0,20,0.500000,7,tine
+Bug,Major,0,3,1.000000,7,svetlana
+New Feature or Improvement,Major,2,15,0.000000,7,matjaz.ursic
+Bug,Minor,2,3,0.000000,7,rok.pensek
+Bug,Minor,0,7,0.000000,7,rok.novosel
+New Feature or Improvement,Critical,6,16,0.000000,7,marko.cavdek
+Internal Improvement,Major,2,12,0.000000,7,matic.balantic
+Bug,Major,2,10,0.500000,7,marko
+Bug,Major,2,14,0.500000,7,rok.novosel
+Bug,Minor,1,10,0.000000,7,jure.malovrh
+Bug,Minor,1,9,0.000000,7,gasper.jeklin
+New Feature or Improvement,Major,1,4,0.500000,7,uros
+Bug,Major,2,8,0.000000,7,andrej.oblak
+Internal Improvement,Minor,2,10,1.000000,7,miha.rugelj
+Bug,Major,2,7,0.000000,7,jason
+New Feature or Improvement,Major,4,30,0.333333,7,blaz
+Bug,Trivial,2,11,0.000000,7,matic.tribuson
+New Feature or Improvement,Major,1,40,1.666667,7,iztokoder
+Internal Improvement,Minor,2,50,1.500000,7,martijn
+New Feature or Improvement,Major,0,12,0.000000,7,marko.cavdek
+Internal Improvement,Minor,2,12,0.000000,7,viljem
+New Feature or Improvement,Major,3,20,0.000000,7,anton
+Internal Improvement,Minor,0,13,0.000000,7,viljem
+Internal Improvement,Trivial,3,17,0.000000,7,marko.prelevikj
+Bug,Major,0,11,0.000000,7,iztokoder
+Bug,Critical,1,18,0.000000,7,martijn
+Bug,Major,1,10,0.000000,7,uros
+New Feature or Improvement,Minor,1,14,0.500000,7,rok.pensek
+Bug,Critical,8,14,0.000000,7,rok
+Internal Improvement,Minor,0,10,0.000000,7,jure.malovrh
+New Feature or Improvement,Major,1,3,0.000000,7,marko
+New Feature or Improvement,Major,8,9,0.000000,7,darko
+New Feature or Improvement,Major,4,20,0.000000,7,miha.rugelj
+Bug,Major,0,22,1.000000,7,jakob
+New Feature or Improvement,Major,1,26,0.000000,7,gregor.praprotnik
+Internal Improvement,Major,0,21,0.000000,7,sandi.rezonja
+Bug,Major,1,4,0.000000,7,gregor.cepin
+Sub-task,Minor,0,4,0.000000,7,rok.pensek
+Bug,Major,2,3,1.000000,7,gasper
+New Feature or Improvement,Major,6,31,0.500000,7,ziga
+Bug,Major,0,17,0.000000,7,matevz.stinjek
+Improvement (Sub-task),Minor,0,2,0.000000,7,rok.novosel
+New Feature or Improvement,Major,0,0,0.000000,7,kyle
+Bug,Critical,1,18,0.000000,7,matic.balantic
+Bug,Minor,2,3,0.000000,7,simon
+New Feature or Improvement,Major,14,77,0.000000,7,martijn
+New Feature or Improvement,Major,0,23,0.000000,7,miha.rugelj
+Internal Improvement,Minor,2,5,0.000000,7,matt
+New Feature or Improvement,Critical,3,20,0.000000,7,rok.pensek
+Internal Improvement,Minor,3,9,0.000000,7,viljem
+Internal Improvement,Minor,0,15,0.000000,6,jost
+New Feature or Improvement,Minor,2,23,0.000000,6,uros
+New Feature or Improvement,Major,1,28,0.000000,6,gregor.praprotnik
+New Feature or Improvement,Minor,2,16,0.000000,6,marko.cavdek
+New Feature or Improvement,Major,5,16,0.000000,6,matic.tribuson
+Bug,Trivial,9,15,1.000000,6,jason
+Internal Improvement,Minor,1,4,0.000000,6,matt
+Bug,Major,6,14,3.000000,6,miha.kavcic
+Bug,Minor,1,11,0.000000,6,marko.cavdek
+Bug (Sub-task),Critical,0,4,0.000000,6,tomaz
+New Feature or Improvement,Major,3,14,0.333333,6,darko
+Bug,Critical,6,12,1.000000,6,blaz
+Bug,Minor,2,16,0.500000,6,tomaz
+Internal Improvement,Minor,0,13,0.000000,6,jure.malovrh
+New Feature or Improvement,Minor,7,15,1.000000,6,ziga
+New Feature or Improvement,Major,3,13,2.000000,6,arjan
+Bug,Major,0,10,0.000000,6,miha.kavcic
+New Feature or Improvement,Major,6,29,1.000000,6,matic.tribuson
+Bug,Critical,7,21,1.000000,6,jason
+Bug,Major,0,3,0.000000,6,tine
+Bug,Critical,2,9,0.000000,6,jason
+New Feature or Improvement,Major,4,26,0.500000,6,uros
+New Feature or Improvement,Major,13,46,0.500000,6,ziga
+Internal Improvement,Major,1,16,0.000000,6,miha.rugelj
+Bug,Minor,4,18,2.000000,6,jakob
+Bug,Major,1,8,0.000000,6,marko.cavdek
+New Feature or Improvement,Critical,5,22,0.000000,6,marko
+New Feature or Improvement,Minor,7,23,0.000000,6,martijn
+Bug,Major,4,24,0.500000,6,goran
+New Feature or Improvement,Major,1,15,0.000000,6,matjaz.ursic
+Internal Improvement,Minor,1,2,0.000000,6,aleksander
+Internal Improvement,Minor,1,2,0.000000,6,anze.brvar
+New Feature or Improvement,Major,0,0,0.000000,6,gregor.praprotnik
+New Feature or Improvement,Minor,8,13,1.000000,6,aleksander
+Internal Improvement,Minor,1,14,0.000000,6,gregor.cepin
+Internal Improvement,Minor,6,11,0.000000,6,arjan
+Internal Improvement,Minor,0,6,0.000000,6,matjaz.finzgar
+New Feature or Improvement,Major,1,14,0.000000,6,ukovac
+Internal Improvement,Minor,2,7,0.000000,6,gasper
+Bug,Minor,1,6,0.000000,6,marko.cavdek
+Bug,Major,2,7,0.000000,6,jason
+New Feature or Improvement,Major,9,6,2.000000,6,ziga
+New Feature or Improvement,Major,1,6,0.000000,6,uros
+Bug,Major,0,12,0.000000,6,dejan
+New Feature or Improvement,Minor,0,1,0.000000,6,iztokoder
+Bug,Minor,0,7,0.000000,6,marko
+Bug,Major,1,6,0.000000,6,matic.tribuson
+Bug,Major,1,7,0.000000,6,ziga.vucko
+Internal Improvement,Major,0,6,0.000000,6,jakob
+Bug,Minor,2,8,0.000000,6,arjan
+Internal Improvement,Major,4,9,0.000000,6,matic.tribuson
+Bug,Minor,0,5,1.000000,6,anze.brvar
+Improvement (Sub-task),Major,1,9,0.000000,6,marko.cavdek
+Bug,Major,1,0,0.000000,6,matic.tribuson
+Internal Improvement,Major,3,4,0.000000,6,miha.kavcic
+New Feature or Improvement,Minor,1,8,0.000000,6,jurij.bajzelj
+New Feature or Improvement,Major,1,14,1.000000,6,ziga
+Internal Improvement,Minor,2,13,0.500000,6,matjaz.ursic
+Improvement (Sub-task),Major,3,5,1.000000,6,rok.pensek
+Bug,Major,1,1,0.000000,6,gasper
+New Feature or Improvement,Major,7,13,0.000000,6,marko
+Bug,Minor,0,11,0.000000,6,dejan
+New Feature or Improvement,Major,11,20,1.000000,6,gregor.praprotnik
+Internal Improvement,Major,0,15,0.000000,6,zan.kusterle
+New Feature or Improvement,Major,0,21,1.500000,6,zan.kusterle
+Internal Improvement,Minor,3,22,0.333333,6,matic.balantic
+Internal Improvement,Major,3,24,1.000000,6,simon
+New Feature or Improvement,Minor,5,26,2.500000,6,ziga
+New Feature or Improvement,Major,6,27,2.000000,6,matic.tribuson
+Bug,Major,6,15,0.000000,6,ziga
+Bug,Major,4,14,0.000000,6,anze.brvar
+Internal Improvement,Major,0,13,0.000000,6,matjaz.finzgar
+Internal Improvement,Minor,1,1,0.000000,6,jaka
+Prototype,Minor,1,11,0.000000,6,mitja
+Internal Improvement,Minor,1,12,0.000000,6,blaz.snuderl
+Bug,Major,2,11,0.000000,6,mitja
+Internal Improvement,Minor,0,11,0.000000,6,dejan
+Internal Improvement,Minor,9,11,1.000000,6,domen.kosir
+Internal Improvement,Major,1,11,0.000000,6,denis
+New Feature or Improvement,Minor,1,14,0.000000,6,mitja
+Bug,Major,0,6,0.000000,6,marko
+Bug,Major,7,5,0.000000,6,gasper
+Bug,Minor,0,19,0.333333,6,mitja
+New Feature or Improvement,Critical,2,32,0.000000,6,gregor.praprotnik
+New Feature or Improvement,Major,3,9,0.000000,6,gregor.praprotnik
+New Feature or Improvement,Major,5,33,0.000000,6,uros
+Bug,Critical,1,17,0.000000,6,matic.balantic
+New Feature or Improvement,Critical,8,42,0.000000,6,rok
+Internal Improvement,Major,0,13,0.000000,6,anze.brvar
+New Feature or Improvement,Minor,0,57,0.666667,6,iztokoder
+Internal Improvement,Major,0,80,0.000000,6,ales.kurent
+New Feature or Improvement,Minor,0,9,0.000000,6,alexander.vasilyev
+Bug,Major,0,16,0.500000,6,svetlana
+Bug,Minor,2,19,0.000000,6,martijn
+Bug,Minor,0,22,4.000000,6,domen.kosir
+Bug,Minor,3,15,0.666667,6,mitja
+New Feature or Improvement,Minor,7,8,0.000000,6,jason
+New Feature or Improvement,Major,3,27,0.000000,6,uros
+Bug,Major,3,21,0.000000,6,natalija
+Internal Improvement,Minor,0,10,0.000000,6,anze.brvar
+New Feature or Improvement,Critical,1,12,0.000000,6,marko.cavdek
+New Feature or Improvement,Major,2,18,0.000000,6,anze.brvar
+Internal Improvement,Major,1,25,1.000000,6,marko.cavdek
+Bug,Minor,1,13,0.000000,6,mitja
+Internal Improvement,Minor,3,24,2.000000,6,marko.cavdek
+Bug,Critical,5,25,0.000000,6,darko
+New Feature or Improvement,Minor,7,20,0.000000,6,aleksander
+Internal Improvement,Minor,2,9,0.000000,6,matic.tribuson
+Internal Improvement,Major,3,16,0.500000,6,matic.balantic
+Bug,Minor,0,8,0.000000,6,svetlana
+Internal Improvement,Major,1,28,2.000000,6,mitja
+Internal Improvement,Minor,0,9,0.000000,6,jakob
+Bug,Major,2,13,0.333333,6,iztokoder
+New Feature or Improvement,Major,11,9,1.000000,6,gasper
+Internal Improvement,Minor,2,18,0.500000,6,marko
+New Feature or Improvement,Major,5,20,0.000000,6,aleksander
+New Feature or Improvement,Major,11,30,2.000000,6,anze.brvar
+Bug,Major,3,10,0.000000,6,jason
+New Feature or Improvement,Major,4,23,0.500000,5,tomaz
+Internal Improvement,Minor,1,7,0.000000,5,arjan
+Bug,Minor,0,11,1.000000,5,miha.kavcic
+Internal Improvement,Major,4,22,0.000000,5,miha.kavcic
+Internal Improvement,Minor,8,21,0.000000,5,viljem
+Bug,Blocker,1,6,0.000000,5,ales.kurent
+Bug,Minor,1,8,1.000000,5,jernej
+Internal Improvement,Major,2,10,0.000000,5,anze.brvar
+Bug,Minor,3,10,0.500000,5,marko.cavdek
+Bug,Blocker,2,15,0.000000,5,matic.balantic
+New Feature or Improvement,Critical,0,6,0.000000,5,marko.cavdek
+New Feature or Improvement,Major,1,7,0.000000,5,uros
+Internal Improvement,Minor,0,8,0.000000,5,bruno
+New Feature or Improvement,Major,0,13,0.000000,5,rok
+Internal Improvement,Minor,0,11,0.000000,5,gregor.praprotnik
+New Feature or Improvement,Critical,3,16,0.500000,5,miha.kavcic
+New Feature or Improvement,Minor,1,14,0.000000,5,marko.cavdek
+Bug,Minor,1,19,0.333333,5,matevz.stinjek
+New Feature or Improvement,Major,0,7,0.333333,5,zan.kusterle
+Internal Improvement,Minor,4,6,1.000000,5,ukovac
+Bug,Major,7,6,2.000000,5,aleksander
+Bug,Major,0,12,0.500000,5,jakob
+New Feature or Improvement,Minor,3,17,0.000000,5,bruno
+Bug,Critical,5,16,1.000000,5,mitja
+Internal Improvement,Minor,2,7,0.000000,5,ziga.vucko
+New Feature or Improvement,Minor,9,44,0.500000,5,gregor.praprotnik
+Bug,Major,6,14,1.000000,5,ziga
+Internal Improvement,Critical,0,5,0.000000,5,jakob
+Improvement (Sub-task),Minor,1,34,1.000000,5,dejan.lokar
+Bug,Major,0,13,0.333333,5,rok.pensek
+Internal Improvement,Major,2,13,0.000000,5,mitja
+New Feature or Improvement,Major,0,2,0.000000,5,iztokoder
+Bug,Minor,0,3,0.000000,5,denis
+New Feature or Improvement,Minor,1,54,2.000000,5,gasper.jeklin
+Bug,Minor,1,4,0.000000,5,ziga
+Bug,Major,14,4,1.000000,5,jure.cotic
+Internal Improvement,Critical,1,3,0.000000,5,darko
+Internal Improvement,Minor,2,4,1.000000,5,iztokoder
+Internal Improvement,Major,1,1,0.000000,5,gasper
+Bug,Major,2,1,0.000000,5,kyle
+Internal Improvement,Major,11,31,1.000000,5,uros
+Bug,Major,1,2,0.000000,5,uros
+New Feature or Improvement,Major,0,3,0.000000,5,matic.balantic
+New Feature or Improvement,Major,2,27,0.000000,5,matic.tribuson
+New Feature or Improvement,Major,0,8,0.000000,5,rok
+Bug,Minor,0,8,0.000000,5,matjaz.ursic
+New Feature or Improvement,Minor,5,27,0.000000,5,jost
+Bug (Sub-task),Major,3,3,0.000000,5,rok.novosel
+Bug,Major,2,24,0.000000,5,darko
+New Feature or Improvement,Major,8,8,0.500000,5,ziga
+New Feature or Improvement,Major,2,3,1.000000,5,gregor.praprotnik
+Bug,Minor,0,8,0.000000,5,svetlana
+Internal Improvement,Major,0,2,0.000000,5,tine
+Bug,Major,7,16,0.500000,5,darko
+Internal Improvement,Major,2,20,0.500000,5,matjaz.finzgar
+Bug,Major,0,10,0.000000,5,matjaz.finzgar
+New Feature or Improvement,Minor,4,10,0.500000,5,jason
+Internal Improvement,Major,2,15,0.000000,5,rok.novosel
+Internal Improvement,Minor,0,10,0.000000,5,dejan
+Bug,Major,0,15,0.000000,5,viljem
+Internal Improvement,Minor,8,18,0.000000,5,arjan
+New Feature or Improvement,Critical,3,19,0.333333,5,marko
+Bug,Major,3,10,0.000000,5,gregor.cepin
+Internal Improvement,Major,0,5,0.000000,5,svetlana
+Bug,Minor,0,20,1.000000,5,zan.kusterle
+Internal Improvement,Minor,4,19,1.000000,5,anze.brvar
+Internal Improvement,Minor,1,6,0.000000,5,anze.brvar
+Internal Improvement,Minor,2,18,0.000000,5,anze.brvar
+Internal Improvement,Major,2,5,0.000000,5,matjaz.finzgar
+New Feature or Improvement,Major,1,6,0.000000,5,anze.brvar
+Bug,Major,0,1,0.000000,5,jure.cotic
+Bug,Minor,2,1,0.000000,5,uros
+New Feature or Improvement,Major,2,11,1.000000,5,uros
+Internal Improvement,Major,0,1,0.000000,5,jaka
+Bug,Major,0,9,0.000000,5,matjaz.ursic
+Bug,Major,9,26,1.500000,5,gregor.cepin
+New Feature or Improvement,Major,0,17,0.000000,5,marko
+New Feature or Improvement,Minor,1,17,0.500000,5,ziga.vucko
+Bug,Critical,6,18,0.500000,5,marko
+Internal Improvement,Minor,3,19,0.000000,5,natalija
+Internal Improvement,Major,3,20,0.000000,5,gregor.praprotnik
+Internal Improvement,Minor,0,17,0.500000,5,rok.pensek
+Internal Improvement,Major,1,34,0.000000,5,gregor.praprotnik
+Bug,Minor,0,21,0.000000,5,rok
+Internal Improvement,Minor,5,32,0.000000,5,martijn
+Bug,Major,1,10,0.000000,5,miha.kavcic
+New Feature or Improvement,Major,1,23,0.000000,5,jakob
+Internal Improvement,Minor,6,10,1.000000,5,dejan
+Internal Improvement,Minor,3,8,0.000000,5,marko.cavdek
+New Feature or Improvement,Major,3,36,0.500000,5,mitja
+New Feature or Improvement,Major,5,47,3.000000,5,blaz
+Internal Improvement,Major,10,19,0.000000,5,matic.tribuson
+Bug,Major,3,10,1.000000,5,jason
+Bug,Major,12,14,0.000000,5,arjan
+Bug (Sub-task),Minor,4,15,1.000000,5,anton
+Bug,Major,6,11,0.500000,5,jason
+Internal Improvement,Minor,1,14,0.000000,5,saso
+Bug,Minor,0,9,0.000000,5,marko.cavdek
+New Feature or Improvement,Minor,13,29,4.000000,5,matic.tribuson
+Bug,Minor,2,10,0.333333,5,matej.sircelj
+Bug,Major,10,22,1.000000,5,matic.tribuson
+Internal Improvement,Minor,2,25,0.500000,5,gregor.praprotnik
+Bug,Critical,7,26,1.500000,5,tomaz
+Internal Improvement,Major,3,32,0.000000,5,martijn
+Bug,Major,0,37,0.666667,5,zan.kusterle
+Bug,Critical,6,8,0.000000,5,marko
+Internal Improvement,Major,3,10,0.000000,5,uros
+New Feature or Improvement,Major,11,23,0.500000,5,darko
+Bug,Major,7,20,1.500000,5,matic.tribuson
+New Feature or Improvement,Minor,10,31,1.000000,5,miha.rugelj
+New Feature or Improvement,Blocker,2,10,0.000000,5,jure.malovrh
+Internal Improvement,Minor,6,42,1.500000,5,marko
+Bug,Major,1,16,0.666667,5,rok.pensek
+Internal Improvement,Critical,0,16,0.000000,5,viljem
+New Feature or Improvement,Minor,0,8,0.000000,5,jure.cotic
+Bug,Critical,0,0,0.000000,5,darko
+Bug,Critical,6,15,1.000000,5,darko
+New Feature or Improvement,Major,0,17,0.000000,5,mitja
+Bug,Minor,0,14,0.333333,5,matej.sircelj
+Internal Improvement,Critical,0,10,0.000000,5,jure.malovrh
+New Feature or Improvement,Major,7,31,0.333333,5,darko
+Internal Improvement,Major,1,15,0.000000,5,anze.brvar
+New Feature or Improvement,Major,1,100,1.000000,5,martijn
+New Feature or Improvement,Minor,1,16,0.000000,5,uros
+Bug,Minor,4,16,0.500000,5,marko.cavdek
+Bug,Minor,2,13,0.000000,5,matjaz.ursic
+Bug,Minor,2,15,0.000000,5,martijn
+Internal Improvement,Minor,3,14,0.000000,5,dejan
+Bug,Major,1,14,0.500000,5,anze.brvar
+Internal Improvement,Minor,0,13,0.000000,5,miha.kavcic
+Bug,Major,3,15,0.000000,5,miha.rugelj
+Bug,Major,3,18,1.333333,5,tomaz
+Bug,Major,1,25,1.000000,5,matjaz.ursic
+Bug,Minor,2,19,1.000000,5,ziga
+Bug,Minor,0,9,1.000000,5,matt
+Internal Improvement,Major,0,23,1.000000,5,jakob
+Internal Improvement,Minor,0,7,0.000000,5,samo
+New Feature or Improvement,Major,13,58,2.000000,5,marko
+New Feature or Improvement,Minor,0,8,0.000000,5,simon
+Internal Improvement,Major,1,13,0.000000,5,arjan
+Bug,Minor,0,14,0.000000,5,arjan
+Internal Improvement,Major,1,10,0.000000,5,anze.brvar
+Bug,Minor,0,14,0.000000,5,zan.kusterle
+Bug,Minor,2,10,0.000000,5,matic.tribuson
+New Feature or Improvement,Major,3,12,0.000000,5,perlavalentin
+New Feature or Improvement,Major,0,15,0.000000,5,miha.kavcic
+Bug,Major,3,3,0.000000,4,gregor.cepin
+Bug,Trivial,1,2,0.000000,4,matt
+New Feature or Improvement,Major,5,10,0.000000,4,domen.kosir
+Internal Improvement,Major,0,10,0.000000,4,matevz.stinjek
+Internal Improvement,Major,1,2,0.000000,4,aleksander
+Bug,Major,4,7,0.000000,4,ziga
+New Feature or Improvement,Critical,2,3,0.000000,4,blaz
+Bug,Major,2,9,0.000000,4,matic.tribuson
+Internal Improvement,Major,2,9,3.000000,4,dejan
+Bug,Major,7,3,0.000000,4,jure.cotic
+Internal Improvement,Major,2,9,0.000000,4,jure.malovrh
+Bug,Major,2,10,0.000000,4,rok.pensek
+New Feature or Improvement,Major,0,10,0.000000,4,miha.kavcic
+Bug,Minor,1,15,0.000000,4,mitja
+Bug,Major,1,15,0.000000,4,anze.brvar
+Bug,Critical,5,10,0.000000,4,uros
+Bug,Minor,1,10,1.000000,4,mitja
+Bug,Major,5,3,0.000000,4,rok.novosel
+New Feature or Improvement,Minor,0,15,0.000000,4,arjan
+Bug,Major,2,9,0.000000,4,anze.brvar
+Bug,Major,1,3,0.000000,4,uros
+New Feature or Improvement,Major,11,82,0.000000,4,matjaz.ursic
+Internal Improvement,Minor,2,13,0.000000,4,anze.brvar
+Internal Improvement,Critical,1,16,0.000000,4,miha.kavcic
+New Feature or Improvement,Major,0,8,0.000000,4,ales.kurent
+Bug,Minor,1,13,0.000000,4,jernej
+Bug,Critical,3,13,0.000000,4,jure.malovrh
+New Feature or Improvement,Minor,2,12,0.000000,4,jurij
+Internal Improvement,Major,4,14,0.000000,4,gregor.praprotnik
+Bug,Major,3,16,0.000000,4,anze.brvar
+Internal Improvement,Minor,4,9,0.000000,4,viljem
+New Feature or Improvement,Minor,0,10,0.000000,4,rok.novosel
+New Feature or Improvement,Major,0,2,0.000000,4,darko
+Internal Improvement,Minor,1,13,0.000000,4,gasper.jeklin
+Bug,Minor,2,9,0.000000,4,marko.cavdek
+Internal Improvement,Minor,2,12,0.000000,4,jure.malovrh
+Internal Improvement,Major,0,14,0.000000,4,sandi.rezonja
+Internal Improvement,Major,3,13,0.500000,4,miha.kavcic
+Bug,Major,5,12,1.000000,4,gregor.cepin
+New Feature or Improvement,Minor,6,12,0.000000,4,gregor.praprotnik
+Prototype,Major,2,13,0.000000,4,mitja
+New Feature or Improvement,Major,1,9,1.000000,4,matic.tribuson
+New Feature or Improvement,Minor,0,13,0.000000,4,svetlana
+Bug,Minor,2,9,0.000000,4,rok
+Bug,Minor,3,9,0.000000,4,matic.tribuson
+Internal Improvement,Minor,1,16,0.000000,4,miha.rugelj
+Internal Improvement,Minor,2,15,0.000000,4,viljem
+New Feature or Improvement,Major,6,16,0.000000,4,ukovac
+New Feature or Improvement,Major,7,16,0.000000,4,mitja
+Bug,Minor,0,7,0.000000,4,rok.novosel
+Bug,Critical,7,19,1.000000,4,matic.tribuson
+Internal Improvement,Minor,0,18,0.000000,4,dejan.lokar
+New Feature or Improvement,Minor,6,24,0.000000,4,marko
+Internal Improvement,Major,7,22,1.000000,4,aleksander
+Bug,Minor,5,22,0.666667,4,tomaz
+New Feature or Improvement,Critical,7,21,0.000000,4,matic.tribuson
+New Feature or Improvement,Minor,1,21,0.666667,4,zan.kusterle
+New Feature or Improvement,Minor,4,20,0.000000,4,matic.tribuson
+New Feature or Improvement,Minor,5,20,0.500000,4,gregor.praprotnik
+Internal Improvement,Major,4,22,1.000000,4,ukovac
+Internal Improvement,Minor,4,15,0.000000,4,dejan
+Bug,Major,3,17,0.000000,4,gregor.cepin
+Internal Improvement,Major,12,17,0.500000,4,arjan
+Internal Improvement,Minor,3,17,0.500000,4,darko
+New Feature or Improvement,Major,4,16,0.333333,4,jakob
+New Feature or Improvement,Major,5,32,0.666667,4,marko.prelevikj
+Improvement (Sub-task),Minor,3,25,1.000000,4,jason
+Bug,Minor,0,13,0.000000,4,sandi.rezonja
+Internal Improvement,Major,9,35,0.000000,4,uros
+New Feature or Improvement,Blocker,1,18,0.000000,4,marko.cavdek
+Internal Improvement,Major,0,16,1.000000,4,samo
+Internal Improvement,Major,3,7,0.000000,4,miha.kavcic
+New Feature or Improvement,Major,2,2,0.000000,4,uros
+New Feature or Improvement,Major,6,1,0.000000,4,jaka
+Bug,Minor,1,4,0.000000,4,rok.pensek
+New Feature or Improvement,Major,1,20,0.000000,4,ales.kurent
+Internal Improvement,Minor,5,17,0.000000,4,gregor.praprotnik
+Bug,Major,1,13,0.000000,4,anton
+Internal Improvement,Minor,1,27,2.000000,4,sandi.rezonja
+Internal Improvement,Minor,0,25,0.000000,4,sandi.rezonja
+Internal Improvement,Minor,7,21,1.000000,4,darko
+Internal Improvement,Critical,4,20,1.000000,4,miha.kavcic
+Bug,Major,7,20,1.000000,4,marko
+New Feature or Improvement,Minor,1,33,0.000000,4,jernej
+Internal Improvement,Minor,3,24,0.666667,4,marko.prelevikj
+Bug,Critical,1,16,0.000000,4,ales.kurent
+Bug,Major,11,50,0.000000,4,anton
+New Feature or Improvement,Minor,9,25,1.000000,4,uros
+New Feature or Improvement,Minor,8,22,0.000000,4,anton
+New Feature or Improvement,Major,2,21,0.000000,4,matic.tribuson
+New Feature or Improvement,Major,4,19,0.000000,4,tomaz
+Bug,Major,0,19,1.000000,4,jakob
+Internal Improvement,Minor,0,19,0.000000,4,gasper.jeklin
+New Feature or Improvement,Major,1,18,0.000000,4,blaz
+Bug,Critical,5,16,2.000000,4,jason
+Internal Improvement,Minor,7,24,0.333333,4,dejan
+New Feature or Improvement,Major,10,23,0.000000,4,marko.cavdek
+Internal Improvement,Major,14,22,1.000000,4,miha.kavcic
+New Feature or Improvement,Minor,5,17,0.000000,4,marko.cavdek
+Internal Improvement,Minor,0,16,0.333333,4,bruno
+Internal Improvement,Minor,1,22,0.333333,4,marko.prelevikj
+Bug,Major,3,21,0.666667,4,jakob
+Internal Improvement,Major,0,12,0.000000,4,rok.novosel
+Bug,Minor,3,13,0.000000,4,matic.tribuson
+Internal Improvement,Major,0,13,0.000000,4,martijn
+Bug,Major,1,13,0.500000,4,jakob
+Bug,Minor,1,15,0.000000,4,anze.brvar
+Internal Improvement,Major,1,14,1.000000,4,tine
+Bug,Critical,1,14,0.000000,4,dejan
+New Feature or Improvement,Major,2,13,2.000000,4,arjan
+Bug,Major,2,13,0.500000,4,gregor.cepin
+Bug,Major,3,20,0.500000,4,andrej.oblak
+New Feature or Improvement,Major,6,94,0.000000,4,martijn
+Internal Improvement,Major,0,33,3.000000,4,uros
+Bug,Minor,4,32,0.500000,4,martijn
+New Feature or Improvement,Major,12,30,1.000000,4,gregor.praprotnik
+Internal Improvement,Major,5,18,0.000000,4,marko.cavdek
+New Feature or Improvement,Major,3,18,0.000000,4,tomaz
+Internal Improvement,Major,0,18,1.000000,4,matevz.stinjek
+Bug (Sub-task),Major,3,10,0.000000,4,gasper.jeklin
+New Feature or Improvement,Major,1,1,0.000000,4,goran
+New Feature or Improvement,Major,1,4,0.000000,4,miha.rugelj
+Bug,Minor,0,5,0.000000,4,rok.novosel
+Internal Improvement,Major,4,5,0.000000,4,martijn
+Bug,Major,2,5,0.500000,4,martijn
+Bug,Minor,1,5,0.000000,4,jure.cotic
+Internal Improvement,Minor,0,5,0.000000,4,jurij.bajzelj
+Internal Improvement,Minor,5,6,0.000000,4,jurij
+Task,Critical,1,1,0.000000,4,ziga
+Internal Improvement,Critical,0,10,0.000000,4,viljem
+Bug,Major,6,9,0.000000,4,andrej.oblak
+Bug,Critical,3,9,1.000000,4,martijn
+Bug,Minor,0,10,0.000000,4,jernej
+New Feature or Improvement,Minor,2,8,0.000000,4,jason
+New Feature or Improvement,Minor,4,7,0.000000,4,viljem
+Internal Improvement,Major,3,7,0.000000,4,samo
+Bug,Major,1,8,0.000000,4,marko
+Bug,Critical,1,2,0.000000,4,domen.kosir
+New Feature or Improvement,Critical,0,0,0.000000,4,zan.kusterle
+Bug,Minor,0,0,0.000000,4,natalija
+New Feature or Improvement,Major,4,0,0.000000,4,arjan
+Bug,Major,4,8,0.000000,4,jure.cotic
+Internal Improvement,Minor,1,8,0.000000,4,dejan
+Bug,Minor,3,8,1.000000,4,gregor.cepin
+Bug,Minor,0,7,0.000000,4,miha.rugelj
+New Feature or Improvement,Critical,0,6,1.000000,4,zan.kusterle
+Bug,Major,1,8,0.000000,4,marko.cavdek
+New Feature or Improvement,Minor,3,4,0.000000,4,marko
+Prototype,Minor,0,4,0.000000,4,mitja
+Bug,Major,2,4,0.000000,4,miha.kavcic
+New Feature or Improvement,Major,1,3,0.000000,4,goran
+New Feature or Improvement,Major,1,4,0.000000,4,arjan
+Internal Improvement,Minor,0,1,0.000000,4,samo
+New Feature or Improvement,Major,2,13,0.000000,4,andrej.oblak
+Bug,Major,8,18,1.000000,4,gregor.praprotnik
+Bug,Minor,2,14,1.000000,4,marko.prelevikj
+New Feature or Improvement,Major,8,15,5.000000,4,gregor.praprotnik
+Improvement (Sub-task),Major,1,14,0.000000,4,andrej.oblak
+Internal Improvement,Minor,1,14,0.000000,4,jakob
+Bug,Major,5,14,0.500000,4,ziga
+Bug,Minor,1,13,0.000000,4,matej.sircelj
+Bug,Minor,1,13,0.000000,4,iztokoder
+Bug,Major,4,20,0.500000,4,rok
+Bug,Major,0,12,0.000000,4,domen.kosir
+Internal Improvement,Minor,0,12,0.000000,4,anze.brvar
+Internal Improvement,Major,2,11,0.333333,4,marko.cavdek
+Bug,Minor,2,11,0.500000,4,jason
+Bug,Major,0,11,0.000000,4,jakob
+Bug,Major,4,19,3.000000,4,matic.tribuson
+New Feature or Improvement,Major,5,48,0.500000,4,jernej
+Bug,Major,2,11,0.000000,4,darko
+Internal Improvement,Major,1,6,0.000000,4,uros
+New Feature or Improvement,Minor,0,6,0.000000,4,rok.novosel
+Bug,Major,5,6,0.000000,4,anton
+Bug,Minor,0,7,1.000000,4,matej.sircelj
+New Feature or Improvement,Minor,0,7,0.000000,4,matej.sircelj
+Bug,Minor,0,6,0.000000,4,rok.pensek
+Internal Improvement,Major,4,11,0.000000,4,jakob
+Internal Improvement,Major,6,11,0.000000,4,sandi.rezonja
+Bug,Major,2,10,0.000000,4,anton
+Bug,Minor,1,11,1.000000,4,marko.cavdek
+Internal Improvement,Minor,0,11,0.000000,4,zan.kusterle
+New Feature or Improvement,Major,21,107,0.000000,4,marko
+Bug,Major,1,13,0.000000,4,marko.cavdek
+Internal Improvement,Major,0,29,0.000000,4,marko
+Bug (Sub-task),Major,0,29,0.000000,4,tomaz
+Internal Improvement,Major,2,28,1.000000,4,miha.kavcic
+Bug,Major,1,13,1.000000,3,iztokoder
+Bug,Major,5,9,0.000000,3,rok
+Bug,Minor,3,9,0.000000,3,matt
+New Feature or Improvement,Minor,1,39,0.000000,3,martijn
+Bug,Major,6,9,0.000000,3,anton
+Bug,Minor,1,9,1.000000,3,arjan
+Bug,Major,0,8,0.000000,3,jakob
+Bug,Minor,11,24,0.000000,3,marko
+Internal Improvement,Major,2,14,0.000000,3,rok
+New Feature or Improvement,Major,4,13,1.000000,3,gasper.jeklin
+Bug,Minor,3,11,2.000000,3,marko
+Improvement (Sub-task),Minor,0,11,1.000000,3,alexander.vasilyev
+Bug,Minor,2,7,0.000000,3,aleksander
+Internal Improvement,Major,2,12,1.000000,3,tomaz
+Internal Improvement,Minor,5,12,1.000000,3,arjan
+Improvement (Sub-task),Minor,0,13,0.000000,3,rok.novosel
+Internal Improvement,Major,0,9,0.000000,3,dejan
+Internal Improvement,Major,1,14,0.333333,3,tomaz
+Bug,Minor,6,11,2.000000,3,darko
+Bug,Minor,4,15,1.000000,3,andrej.oblak
+Bug,Major,1,15,0.000000,3,marko
+Internal Improvement,Major,4,15,0.333333,3,anze.brvar
+Internal Improvement,Minor,4,12,0.000000,3,jaka
+Bug,Minor,1,12,0.000000,3,gregor.praprotnik
+New Feature or Improvement,Minor,0,13,1.000000,3,matt
+New Feature or Improvement,Major,2,13,0.000000,3,miha.kavcic
+Bug,Critical,6,14,0.000000,3,matic.tribuson
+New Feature or Improvement,Minor,1,14,1.000000,3,arjan
+New Feature or Improvement,Major,0,14,0.000000,3,gregor.praprotnik
+Bug,Critical,3,14,0.000000,3,miha.kavcic
+Internal Improvement,Minor,1,13,0.000000,3,arjan
+Internal Improvement,Minor,2,22,1.000000,3,miha.kavcic
+New Feature or Improvement,Minor,10,24,1.000000,3,andrej.oblak
+New Feature or Improvement,Minor,4,25,0.000000,3,gregor.praprotnik
+Internal Improvement,Minor,0,14,1.000000,3,dejan
+New Feature or Improvement,Major,2,33,0.500000,3,miha.kavcic
+Bug,Major,1,13,0.333333,3,marko.cavdek
+New Feature or Improvement,Major,0,16,0.000000,3,ales.kurent
+Bug,Minor,4,13,0.500000,3,tomaz
+Bug,Minor,0,12,0.000000,3,matt
+New Feature or Improvement,Minor,3,17,1.000000,3,marko.cavdek
+New Feature or Improvement,Minor,0,17,0.000000,3,anze.brvar
+Internal Improvement,Minor,1,12,0.000000,3,dejan
+New Feature or Improvement,Major,4,19,0.000000,3,uros
+Internal Improvement,Minor,3,19,0.500000,3,jason
+Internal Improvement,Minor,5,21,1.000000,3,blaz.snuderl
+Sub-task,Major,1,21,0.000000,3,tomaz
+Bug,Minor,0,26,0.000000,3,jakob
+New Feature or Improvement,Major,1,29,1.000000,3,uros
+Internal Improvement,Major,2,1,0.000000,3,goran
+Bug,Minor,0,2,0.000000,3,matjaz.ursic
+Internal Improvement,Critical,1,12,0.000000,3,viljem
+New Feature or Improvement,Major,0,16,0.000000,3,ales.kurent
+Internal Improvement,Minor,4,14,0.000000,3,miha.rugelj
+Internal Improvement,Major,22,17,0.000000,3,gasper
+Internal Improvement,Minor,0,17,1.000000,3,gasper.jeklin
+Sub-task,Major,1,17,0.000000,3,rok
+Bug,Major,5,19,0.000000,3,martijn
+Prototype,Blocker,3,14,0.000000,3,matic.tribuson
+New Feature or Improvement,Major,8,23,0.500000,3,ziga
+Internal Improvement,Major,5,15,2.000000,3,arjan
+Internal Improvement,Critical,0,30,0.000000,3,martijn
+Bug,Critical,2,5,0.000000,3,matic.tribuson
+Internal Improvement,Major,0,7,0.000000,3,jure.malovrh
+Bug,Critical,0,7,0.000000,3,dejan
+Bug,Critical,4,8,1.000000,3,miha.kavcic
+New Feature or Improvement,Major,1,1,0.000000,3,gasper
+New Feature or Improvement,Major,0,9,0.000000,3,rok.novosel
+Bug,Minor,1,9,0.000000,3,samo
+Bug,Major,2,1,0.000000,3,jason
+New Feature or Improvement,Major,2,1,0.000000,3,denis
+Internal Improvement,Minor,0,1,0.000000,3,jaka
+Internal Improvement,Minor,1,10,0.000000,3,arjan
+Bug,Major,0,4,0.000000,3,ales.kurent
+Bug,Minor,1,7,0.000000,3,samo
+New Feature or Improvement,Major,4,4,1.000000,3,uros
+New Feature or Improvement,Major,2,4,0.000000,3,uros
+Bug,Major,1,4,0.000000,3,darko
+Internal Improvement,Minor,0,7,0.000000,3,miha.kavcic
+Internal Improvement,Major,1,5,0.000000,3,matevz.stinjek
+Bug,Blocker,0,5,0.000000,3,uros
+New Feature or Improvement,Minor,0,4,0.000000,3,marko.prelevikj
+New Feature or Improvement,Major,0,5,0.000000,3,zan.kusterle
+Bug,Minor,2,3,0.000000,3,gregor.cepin
+Internal Improvement,Major,0,4,0.000000,3,jure.cotic
+New Feature or Improvement,Critical,0,6,0.500000,3,tine
+New Feature or Improvement,Critical,0,3,0.000000,3,jakob
+Bug,Critical,4,3,0.000000,3,gasper
+Bug,Critical,2,1,0.000000,3,gasper
+New Feature or Improvement,Minor,0,1,0.000000,3,uros
+New Feature or Improvement,Major,0,3,0.000000,3,jakob
+Bug,Minor,1,3,0.000000,3,matic.balantic
+New Feature or Improvement,Major,0,1,0.000000,3,rok
+New Feature or Improvement,Trivial,0,11,0.000000,3,rok.novosel
+Bug,Minor,0,13,0.500000,3,marko.cavdek
+Bug,Minor,4,31,1.000000,3,natalija
+Bug,Minor,0,8,0.000000,3,bruno
+Internal Improvement,Minor,0,0,0.000000,3,aleksander
+Bug,Minor,1,3,0.000000,3,simon
+New Feature or Improvement,Minor,1,0,0.000000,3,perlavalentin
+Internal Improvement,Minor,4,11,1.000000,3,ziga
+New Feature or Improvement,Minor,3,11,0.000000,3,uros
+Bug,Minor,3,11,0.000000,3,marko.cavdek
+Bug,Minor,1,11,0.000000,3,svetlana
+Internal Improvement,Major,3,2,0.000000,3,blaz
+Bug,Major,0,11,0.000000,3,zan.kusterle
+New Feature or Improvement,Major,4,11,0.000000,3,marko.cavdek
+New Feature or Improvement,Major,1,11,0.000000,3,ziga
+Bug,Critical,0,2,0.000000,3,darko
+Internal Improvement,Minor,3,4,0.000000,3,martijn
+Bug,Minor,1,2,1.000000,3,darko
+New Feature or Improvement,Minor,2,6,0.000000,3,jason
+Bug,Minor,0,6,0.000000,3,marko.cavdek
+Improvement (Sub-task),Major,2,8,0.000000,3,anze.brvar
+Improvement (Sub-task),Major,2,6,0.000000,3,matjaz.finzgar
+Bug,Trivial,1,6,0.000000,3,rok.novosel
+Improvement (Sub-task),Minor,0,6,0.000000,3,mitja
+Internal Improvement,Minor,2,8,0.000000,3,viljem
+Internal Improvement,Minor,1,6,0.000000,3,marko.prelevikj
+Bug,Minor,1,7,0.000000,3,matjaz.ursic
+New Feature or Improvement,Minor,13,8,0.000000,3,rok.pensek
+New Feature or Improvement,Major,2,6,0.000000,3,anton
+Internal Improvement,Minor,0,7,0.000000,3,gasper.jeklin
+Internal Improvement,Major,5,6,0.000000,3,miha.kavcic
+Internal Improvement,Critical,3,12,1.000000,3,blaz
+New Feature or Improvement,Minor,1,16,0.000000,3,mitja
+Bug,Major,1,14,0.666667,3,iztokoder
+Bug,Minor,2,14,1.000000,3,matic.tribuson
+Bug,Major,0,10,0.000000,3,matej.sircelj
+Internal Improvement,Major,1,14,0.500000,3,tine
+New Feature or Improvement,Major,0,20,0.000000,3,ales.kurent
+New Feature or Improvement,Minor,0,20,0.333333,3,iztokoder
+Bug,Minor,2,9,0.000000,3,anze.brvar
+Bug,Major,1,10,0.000000,3,jure.malovrh
+Internal Improvement,Minor,3,16,0.000000,3,matic.tribuson
+Bug,Major,0,10,0.000000,3,gregor.praprotnik
+Bug,Minor,3,9,0.000000,3,jaka
+Internal Improvement,Minor,0,12,0.000000,3,sandi.rezonja
+Bug,Critical,1,9,0.000000,3,jure.malovrh
+Bug,Major,1,9,0.000000,3,marko.cavdek
+Bug,Minor,1,12,0.000000,3,mitja
+Bug,Major,3,12,0.000000,3,darko
+New Feature or Improvement,Minor,5,44,0.000000,3,marko
+Internal Improvement,Minor,1,9,0.000000,3,arjan
+Internal Improvement,Minor,3,9,0.000000,3,aleksander
+Bug,Minor,0,9,0.000000,3,svetlana
+Internal Improvement,Minor,0,10,0.000000,3,matic.balantic
+Internal Improvement,Minor,0,13,0.000000,3,tine
+Bug,Major,3,16,0.000000,3,miha.kavcic
+Improvement (Sub-task),Minor,2,10,0.000000,3,marko.cavdek
+Internal Improvement,Major,11,22,0.000000,3,ziga
+Bug,Major,8,17,1.000000,3,martijn
+New Feature or Improvement,Major,0,10,1.000000,3,uros
+New Feature or Improvement,Major,9,28,0.000000,3,miha.rugelj
+New Feature or Improvement,Major,4,15,0.000000,3,miha.kavcic
+Bug,Minor,6,18,0.333333,3,tomaz
+New Feature or Improvement,Major,3,18,1.000000,3,gasper
+Bug,Critical,3,10,0.000000,3,marko.cavdek
+Internal Improvement,Minor,0,26,0.000000,3,martijn
+Internal Improvement,Major,5,10,0.000000,3,gasper
+Bug,Major,4,22,0.000000,3,rok
+Bug,Major,4,8,0.000000,3,marko.cavdek
+New Feature or Improvement,Major,15,25,1.000000,3,ziga
+New Feature or Improvement,Major,4,12,0.000000,3,arjan
+Internal Improvement,Major,0,10,0.000000,3,miha.rugelj
+Internal Improvement,Minor,8,9,0.000000,3,jaka
+Bug,Minor,1,9,0.000000,3,dejan
+New Feature or Improvement,Major,9,9,0.000000,3,anton
+New Feature or Improvement,Major,2,25,0.000000,3,rok.novosel
+Internal Improvement,Minor,1,2,0.000000,3,goran
+Bug (Sub-task),Minor,0,13,0.000000,3,rok
+Internal Improvement,Minor,2,13,1.000000,3,denis
+New Feature or Improvement,Critical,2,14,0.000000,3,matjaz.ursic
+Internal Improvement,Minor,1,15,0.000000,3,sandi.rezonja
+Improvement (Sub-task),Minor,0,24,0.000000,3,mitja
+Internal Improvement,Minor,2,20,0.000000,3,matic.balantic
+New Feature or Improvement,Minor,2,13,0.000000,3,mitja
+New Feature or Improvement,Major,0,12,0.666667,3,zan.kusterle
+Internal Improvement,Minor,5,20,0.000000,3,ziga
+Internal Improvement,Major,4,24,1.000000,3,uros
+Internal Improvement,Major,1,13,1.000000,3,samo
+Internal Improvement,Major,4,12,0.000000,3,domen.kosir
+Internal Improvement,Minor,4,12,2.000000,3,tomaz
+Internal Improvement,Critical,5,21,0.000000,3,anton
+New Feature or Improvement,Major,2,13,0.000000,3,kyle
+Internal Improvement,Critical,1,12,0.000000,3,ziga
+Bug,Major,1,14,0.000000,3,matevz.stinjek
+Bug,Major,2,8,0.000000,3,matic.tribuson
+New Feature or Improvement,Major,9,29,0.000000,3,gregor.praprotnik
+New Feature or Improvement,Minor,2,46,0.000000,3,matjaz.ursic
+Bug,Major,3,8,0.000000,3,marko.cavdek
+Bug,Minor,0,25,0.000000,3,iztokoder
+Bug,Minor,2,11,0.000000,3,blaz.snuderl
+Improvement (Sub-task),Minor,0,17,0.000000,3,mitja
+Internal Improvement,Minor,0,20,0.000000,3,sandi.rezonja
+New Feature or Improvement,Major,3,15,0.000000,3,jure.cotic
+Bug,Minor,0,14,0.000000,3,ziga
+Bug,Minor,1,10,0.000000,3,marko.cavdek
+Internal Improvement,Major,3,28,0.000000,3,saso
+Bug,Minor,1,8,0.000000,3,mitja
+Bug,Major,3,9,0.000000,3,rok.novosel
+New Feature or Improvement,Minor,14,48,0.500000,3,matjaz.ursic
+Internal Improvement,Minor,0,11,0.000000,3,anze.brvar
+Internal Improvement,Major,6,27,0.000000,3,anze.brvar
+New Feature or Improvement,Major,1,25,2.000000,3,iztokoder
+Bug,Major,1,9,0.000000,3,darko
+Bug,Minor,3,10,0.000000,3,arjan
+Bug,Minor,3,12,0.000000,3,darko
+Internal Improvement,Minor,3,13,0.000000,3,viljem
+Internal Improvement,Minor,0,9,0.000000,3,gasper.jeklin
+New Feature or Improvement,Minor,4,9,0.000000,3,martijn
+New Feature or Improvement,Minor,4,19,0.000000,3,ziga
+Internal Improvement,Blocker,5,14,0.000000,3,miha.rugelj
+Internal Improvement,Minor,4,41,0.000000,3,tine
+Internal Improvement,Minor,3,14,1.500000,3,ziga
+Bug,Minor,3,13,1.000000,3,aleksander
+Bug,Minor,1,9,0.000000,2,aleksander
+New Feature or Improvement,Critical,0,10,0.000000,2,marko.cavdek
+New Feature or Improvement,Minor,0,3,0.000000,2,jakob
+Internal Improvement,Major,3,7,0.000000,2,rok
+New Feature or Improvement,Major,0,8,0.000000,2,matic.tribuson
+Internal Improvement,Trivial,1,10,1.000000,2,ziga
+Internal Improvement,Minor,0,10,0.000000,2,arjan
+Internal Improvement,Minor,1,9,0.500000,2,uros
+Bug,Minor,0,3,0.000000,2,tomaz
+Bug (Sub-task),Minor,0,4,1.000000,2,jason
+Internal Improvement,Minor,4,10,0.000000,2,rok
+Bug,Major,1,4,0.000000,2,denis
+Bug,Minor,1,4,0.000000,2,anton
+New Feature or Improvement,Major,1,4,0.000000,2,ales.kurent
+Bug,Minor,0,4,0.000000,2,denis
+Internal Improvement,Minor,0,9,0.000000,2,jure.malovrh
+Bug (Sub-task),Minor,1,7,2.000000,2,jason
+Bug,Minor,0,1,0.000000,2,rok
+Internal Improvement,Minor,1,8,0.000000,2,ziga
+New Feature or Improvement,Major,1,1,0.000000,2,marko.cavdek
+Improvement (Sub-task),Major,1,1,0.000000,2,perlavalentin
+Bug,Major,2,1,0.000000,2,jason
+Improvement (Sub-task),Major,1,8,0.000000,2,alexander.vasilyev
+Bug,Minor,7,7,0.000000,2,goran
+Internal Improvement,Major,1,7,0.000000,2,matic.balantic
+Bug,Major,0,9,0.000000,2,iztokoder
+Internal Improvement,Minor,1,10,0.000000,2,matic.balantic
+Internal Improvement,Minor,0,10,0.000000,2,sandi.rezonja
+Bug,Minor,1,7,0.000000,2,arjan
+New Feature or Improvement,Minor,2,10,0.000000,2,arjan
+Internal Improvement,Minor,0,8,0.000000,2,simon
+Bug,Major,0,7,0.000000,2,rok.novosel
+Bug,Major,3,8,0.000000,2,aleksander
+Bug,Critical,5,8,0.000000,2,matjaz.ursic
+Bug,Major,3,8,0.000000,2,darko
+Bug,Major,2,8,0.000000,2,marko.cavdek
+Bug,Major,2,9,0.000000,2,matic.tribuson
+New Feature or Improvement,Major,2,9,0.000000,2,mitja
+Bug,Minor,0,10,0.000000,2,ales.kurent
+Bug,Major,1,10,0.000000,2,matic.tribuson
+New Feature or Improvement,Major,3,10,0.000000,2,ziga.vucko
+Bug,Minor,1,14,1.000000,2,martijn
+Internal Improvement,Major,3,16,1.000000,2,tomaz
+Bug,Major,0,9,1.000000,2,svetlana
+Bug,Blocker,2,12,0.000000,2,matic.tribuson
+Internal Improvement,Major,11,12,0.500000,2,darko
+Internal Improvement,Trivial,0,12,0.000000,2,sandi.rezonja
+New Feature or Improvement,Major,1,13,0.000000,2,aleksander
+Bug,Major,3,13,0.000000,2,jure.malovrh
+Bug,Minor,1,14,0.666667,2,ziga
+Internal Improvement,Minor,2,9,0.000000,2,tine
+Internal Improvement,Minor,1,15,0.000000,2,viljem
+New Feature or Improvement,Critical,4,15,0.000000,2,jure.malovrh
+Bug,Major,0,3,0.000000,2,matic.tribuson
+Bug,Major,0,8,0.500000,2,svetlana
+Bug,Major,2,8,0.000000,2,darko
+New Feature or Improvement,Minor,2,9,0.000000,2,kyle
+Bug,Major,0,10,0.000000,2,andrej.oblak
+Bug,Critical,0,2,0.000000,2,rok.pensek
+Bug,Trivial,2,9,0.000000,2,aleksander
+Internal Improvement,Minor,2,2,0.000000,2,gasper.jeklin
+Sub-task,Major,1,2,0.000000,2,rok.pensek
+Bug,Major,0,8,0.000000,2,arjan
+Internal Improvement,Minor,1,8,0.000000,2,dejan
+Bug,Critical,1,2,0.000000,2,vuk
+Internal Improvement,Major,7,10,2.000000,2,ziga
+Improvement (Sub-task),Major,2,10,0.000000,2,jure.malovrh
+Bug,Minor,0,7,0.000000,2,marko
+Bug,Major,2,10,0.000000,2,jason
+New Feature or Improvement,Minor,1,3,0.000000,2,aleksander
+New Feature or Improvement,Major,1,3,0.000000,2,gasper
+Bug,Major,0,9,0.000000,2,jernej
+New Feature or Improvement,Minor,3,3,0.000000,2,ziga
+Bug,Minor,7,15,1.000000,2,marko
+New Feature or Improvement,Major,4,10,1.000000,2,vince
+New Feature or Improvement,Major,2,9,0.000000,2,gregor.fartek
+Bug,Major,0,14,0.000000,2,matic.tribuson
+New Feature or Improvement,Major,2,9,0.000000,2,jurij
+Internal Improvement,Minor,2,14,0.500000,2,matjaz.finzgar
+New Feature or Improvement,Minor,1,16,1.000000,2,jernej
+Internal Improvement,Minor,1,16,0.500000,2,dejan
+New Feature or Improvement,Major,6,29,0.000000,2,ziga
+Improvement (Sub-task),Minor,0,11,0.000000,2,dejan.lokar
+Internal Improvement,Major,0,11,0.000000,2,matic.balantic
+Bug,Minor,6,15,1.000000,2,domen.kosir
+Bug,Major,5,14,0.000000,2,tomaz
+Task,Critical,1,14,0.000000,2,jernej
+Bug,Minor,1,13,0.000000,2,marko.cavdek
+Bug,Critical,6,12,0.000000,2,ziga
+Improvement (Sub-task),Minor,4,12,2.000000,2,andrej.oblak
+New Feature or Improvement,Major,4,40,0.000000,2,anton
+New Feature or Improvement,Critical,2,39,0.000000,2,mitja
+New Feature or Improvement,Major,2,12,0.000000,2,anze.brvar
+Internal Improvement,Minor,3,13,0.000000,2,miha.kavcic
+Internal Improvement,Major,2,12,0.000000,2,jakob
+Bug,Major,1,12,0.500000,2,marko.cavdek
+Internal Improvement,Major,0,11,0.000000,2,uros
+New Feature or Improvement,Minor,6,16,0.000000,2,anze.brvar
+Bug,Major,0,16,1.000000,2,ziga.vucko
+Bug,Minor,0,15,0.000000,2,iztokoder
+Bug,Critical,7,14,0.000000,2,rok
+New Feature or Improvement,Critical,3,14,0.000000,2,marko.cavdek
+Internal Improvement,Minor,1,30,1.000000,2,martijn
+Improvement (Sub-task),Major,0,0,0.000000,2,rok.ivansek
+New Feature or Improvement,Major,1,0,1.000000,2,kyle
+New Feature or Improvement,Minor,5,19,0.500000,2,ziga
+New Feature or Improvement,Minor,0,17,0.000000,2,rok.pensek
+Bug,Major,1,17,0.500000,2,gregor.praprotnik
+New Feature or Improvement,Major,15,65,1.000000,2,ziga
+New Feature or Improvement,Major,2,61,1.000000,2,matic.nezic
+Bug,Major,0,28,1.000000,2,natalija
+Internal Improvement,Major,2,32,1.000000,2,martijn
+Internal Improvement,Major,3,13,0.000000,2,marko.cavdek
+Internal Improvement,Minor,4,26,1.000000,2,gregor.praprotnik
+New Feature or Improvement,Major,10,24,0.000000,2,aleksander
+New Feature or Improvement,Major,5,22,1.000000,2,anze.brvar
+Improvement (Sub-task),Major,4,22,0.000000,2,marko.cavdek
+Task,Major,0,16,0.000000,2,mitja
+Internal Improvement,Major,1,35,1.000000,2,ziga.vucko
+Internal Improvement,Minor,0,14,0.333333,2,bruno
+Bug,Minor,3,13,0.500000,2,aleksander
+Bug,Minor,4,13,1.000000,2,dejan
+Internal Improvement,Minor,0,16,0.000000,2,dejan.lokar
+New Feature or Improvement,Major,4,19,1.000000,2,darko
+Bug,Major,1,18,0.000000,2,ales.kurent
+Internal Improvement,Blocker,5,18,0.000000,2,miha.rugelj
+Internal Improvement,Minor,3,18,0.000000,2,anze.brvar
+New Feature or Improvement,Minor,4,17,0.000000,2,gregor.praprotnik
+New Feature or Improvement,Major,2,15,0.000000,2,gregor.praprotnik
+New Feature or Improvement,Major,3,25,0.500000,2,jason
+Internal Improvement,Minor,6,23,0.000000,2,jaka
+New Feature or Improvement,Critical,2,19,0.000000,2,miha.rugelj
+Internal Improvement,Minor,4,18,0.500000,2,dejan
+Bug,Critical,2,20,0.000000,2,matjaz.ursic
+Bug,Major,1,16,0.500000,2,marko.cavdek
+New Feature or Improvement,Major,9,41,2.000000,2,andrej.oblak
+Bug,Major,1,19,0.000000,2,martijn
+Internal Improvement,Major,3,31,3.500000,2,zan.kusterle
+New Feature or Improvement,Minor,8,30,2.500000,2,matic.tribuson
+New Feature or Improvement,Major,3,19,0.500000,2,uros
+Improvement (Sub-task),Minor,1,18,0.000000,2,dejan.lokar
+New Feature or Improvement,Major,1,41,0.000000,2,martijn
+New Feature or Improvement,Minor,4,22,0.000000,2,miha.rugelj
+Internal Improvement,Minor,2,17,1.000000,2,tine
+Internal Improvement,Minor,2,13,0.500000,2,arjan
+Bug,Minor,0,13,0.000000,2,andrej.oblak
+New Feature or Improvement,Minor,1,13,0.000000,2,marko.cavdek
+Bug,Critical,2,13,0.000000,2,jure.malovrh
+Bug,Critical,1,12,0.000000,2,anze.brvar
+Internal Improvement,Minor,1,15,0.000000,2,matic.tribuson
+Internal Improvement,Major,3,15,1.500000,2,arjan
+New Feature or Improvement,Major,2,15,0.333333,2,perlavalentin
+Internal Improvement,Minor,1,19,0.000000,2,matic.balantic
+New Feature or Improvement,Major,0,0,0.000000,2,kyle
+Internal Improvement,Major,0,17,0.000000,2,andrej.oblak
+Internal Improvement,Major,3,17,2.000000,2,arjan
+New Feature or Improvement,Minor,2,38,0.000000,2,matjaz.ursic
+New Feature or Improvement,Major,2,30,0.333333,2,mitja
+Internal Improvement,Major,1,28,0.000000,2,marko.cavdek
+New Feature or Improvement,Minor,6,27,0.000000,2,gregor.praprotnik
+Bug,Critical,17,22,0.000000,2,darko
+Internal Improvement,Major,4,27,3.000000,2,uros
+Bug,Minor,3,21,0.000000,2,natalija
+Bug,Minor,0,7,0.000000,2,bruno
+Internal Improvement,Major,2,8,0.000000,2,miha.rugelj
+Bug,Minor,0,7,1.000000,2,marko.cavdek
+Improvement (Sub-task),Minor,2,8,0.000000,2,andrej.oblak
+Internal Improvement,Minor,0,8,0.000000,2,arjan
+New Feature or Improvement,Minor,2,8,0.000000,2,viljem
+Bug,Major,0,7,0.000000,2,samo
+Internal Improvement,Major,0,6,0.000000,2,matej.sircelj
+New Feature or Improvement,Major,0,6,0.000000,2,ziga.vucko
+New Feature or Improvement,Major,0,6,0.000000,2,matej.sircelj
+Internal Improvement,Major,1,6,0.000000,2,arjan
+Internal Improvement,Critical,1,4,0.000000,2,tomaz
+Improvement (Sub-task),Minor,3,6,0.000000,2,andrej.oblak
+New Feature or Improvement,Major,2,5,0.000000,2,rok
+Bug,Critical,4,5,0.000000,2,jurij
+Internal Improvement,Minor,0,5,0.000000,2,anze.brvar
+Bug,Major,0,6,0.000000,2,ziga.vucko
+New Feature or Improvement,Major,1,6,0.000000,2,anton
+Internal Improvement,Blocker,0,11,0.000000,2,samo
+Internal Improvement,Minor,2,11,0.000000,2,anze.brvar
+Bug,Major,1,11,0.000000,2,mitja
+New Feature or Improvement,Major,1,8,0.000000,2,jakob
+Bug,Trivial,2,3,0.000000,2,rok
+Improvement (Sub-task),Major,0,3,0.000000,2,matic.tribuson
+Bug,Minor,5,3,0.000000,2,marko
+Internal Improvement,Major,13,6,0.000000,2,domen.kosir
+Bug,Minor,0,5,0.000000,2,svetlana
+Bug,Major,2,6,0.000000,2,darko
+Bug,Major,0,6,0.000000,2,iztokoder
+Internal Improvement,Critical,0,5,0.000000,2,dejan.lokar
+Internal Improvement,Major,0,5,0.000000,2,matevz.stinjek
+Bug,Minor,0,11,0.000000,2,dejan
+Bug,Major,0,6,0.000000,2,rok.pensek
+New Feature or Improvement,Minor,1,10,0.000000,2,tomaz
+Bug,Minor,2,10,0.000000,2,gregor.praprotnik
+New Feature or Improvement,Major,4,10,0.500000,2,anze.brvar
+Internal Improvement,Minor,3,10,0.000000,2,dejan
+Bug,Major,1,9,0.000000,2,iztokoder
+Internal Improvement,Minor,1,9,0.000000,2,jernej
+Internal Improvement,Major,0,8,0.000000,2,miha.kavcic
+Internal Improvement,Minor,0,10,0.000000,2,dejan.lokar
+Bug,Major,4,17,0.500000,2,matic.tribuson
+Internal Improvement,Minor,5,12,0.000000,2,martijn
+Bug,Minor,5,11,0.500000,2,ziga.vucko
+New Feature or Improvement,Major,4,11,0.000000,2,arjan
+Bug,Minor,1,11,0.000000,2,marko.cavdek
+Bug,Major,0,11,0.000000,2,samo
+Internal Improvement,Major,3,11,0.000000,2,jakob
+Internal Improvement,Major,7,25,0.000000,2,gasper
+Internal Improvement,Minor,9,22,2.000000,2,marko
+Internal Improvement,Minor,0,18,0.000000,2,dejan
+Internal Improvement,Minor,5,17,2.000000,2,viljem
+New Feature or Improvement,Major,1,12,0.000000,2,marko.cavdek
+New Feature or Improvement,Major,7,50,1.500000,2,ziga
+Bug,Major,1,39,0.000000,2,jason
+New Feature or Improvement,Major,7,36,0.000000,2,matic.balantic
+New Feature or Improvement,Major,3,35,0.000000,2,matjaz.ursic
+Internal Improvement,Major,0,35,1.000000,2,mitja
+New Feature or Improvement,Major,4,23,0.000000,2,matjaz.ursic
+Internal Improvement,Major,2,21,0.000000,2,jason
+Improvement (Sub-task),Minor,0,19,1.000000,2,dejan.lokar
+Internal Improvement,Critical,0,7,0.000000,2,matjaz.finzgar
+New Feature or Improvement,Minor,4,25,0.000000,2,gregor.praprotnik
+Bug,Major,1,11,0.000000,2,anton
+Internal Improvement,Minor,0,11,0.000000,2,arjan
+Bug,Minor,3,14,0.666667,2,ziga
+Bug,Major,0,11,0.000000,2,ales.kurent
+Bug,Minor,0,0,0.000000,2,rok
+New Feature or Improvement,Major,7,66,1.000000,2,marko
+New Feature or Improvement,Major,6,38,0.666667,2,uros
+New Feature or Improvement,Major,0,32,0.333333,2,iztokoder
+New Feature or Improvement,Major,2,28,0.000000,2,anton
+Bug,Minor,1,3,0.000000,2,anton
+New Feature or Improvement,Major,1,23,0.000000,2,andrej.oblak
+Bug,Critical,6,11,0.000000,2,darko
+Internal Improvement,Minor,2,14,0.000000,2,anze.brvar
+New Feature or Improvement,Major,1,14,0.000000,2,arjan
+Internal Improvement,Minor,3,12,1.000000,2,andrej.oblak
+Internal Improvement,Major,5,12,1.000000,2,miha.kavcic
+New Feature or Improvement,Major,1,12,2.000000,2,rok
+Internal Improvement,Minor,0,15,0.000000,2,ales.kurent
+New Feature or Improvement,Critical,1,15,0.000000,2,mitja
+New Feature or Improvement,Major,1,3,0.000000,1,uros
+Bug,Minor,1,4,0.000000,1,jernej
+New Feature or Improvement,Minor,4,4,0.000000,1,jaka
+Bug,Major,0,4,0.000000,1,ales.kurent
+Bug,Critical,2,4,0.000000,1,uros
+Bug,Minor,0,4,0.000000,1,uros
+Bug,Minor,1,3,0.000000,1,arjan
+Internal Improvement,Minor,1,3,0.000000,1,matej.skrlep
+New Feature or Improvement,Minor,2,4,0.000000,1,jason
+Bug,Major,5,4,0.000000,1,ziga
+Bug,Major,1,4,0.000000,1,gregor.praprotnik
+Bug,Critical,1,4,0.000000,1,jason
+Bug (Sub-task),Minor,1,3,0.000000,1,jason
+Bug,Minor,1,3,0.000000,1,jure.malovrh
+Bug,Major,0,4,0.000000,1,rok
+New Feature or Improvement,Minor,0,1,0.000000,1,uros
+Internal Improvement,Minor,7,1,0.000000,1,jaka
+Internal Improvement,Major,1,1,0.000000,1,blaz.snuderl
+New Feature or Improvement,Major,0,3,0.000000,1,rok.pensek
+Bug,Major,0,3,0.000000,1,mitja
+Bug (Sub-task),Critical,0,3,0.000000,1,anton
+Bug,Major,3,3,0.000000,1,gasper
+Bug,Minor,0,3,1.000000,1,gasper
+Bug,Major,2,3,0.000000,1,jason
+Sub-task,Minor,0,3,0.000000,1,iztokoder
+Bug,Major,1,3,1.000000,1,ziga
+New Feature or Improvement,Minor,3,4,1.000000,1,rok
+Bug,Critical,0,6,0.000000,1,marko.cavdek
+New Feature or Improvement,Minor,1,7,0.000000,1,martijn
+Bug,Major,1,2,0.000000,1,uros
+Bug,Major,1,2,0.000000,1,uros
+Internal Improvement,Major,8,2,0.000000,1,viljem
+Bug,Critical,3,8,1.000000,1,marko
+Bug,Major,0,8,0.000000,1,dejan.lokar
+Bug,Minor,1,8,0.000000,1,marko.cavdek
+Bug,Major,1,8,0.000000,1,tomaz
+Bug,Major,2,8,0.000000,1,ziga
+Bug,Minor,0,8,0.000000,1,rok.novosel
+Internal Improvement,Minor,1,8,0.000000,1,arjan
+Internal Improvement,Minor,2,8,0.000000,1,dejan
+Internal Improvement,Major,1,5,0.000000,1,anze.brvar
+Bug,Major,0,7,0.000000,1,anton
+Bug (Sub-task),Critical,1,5,1.000000,1,blaz
+Bug,Major,5,8,0.500000,1,anze.brvar
+Bug,Major,2,8,0.000000,1,ukovac
+Bug,Major,0,8,0.000000,1,jakob
+Bug,Major,4,8,0.000000,1,darko
+Bug,Critical,1,8,0.000000,1,anton
+Bug,Trivial,4,7,0.000000,1,aleksander
+Bug,Blocker,2,7,0.000000,1,jason
+Improvement (Sub-task),Minor,0,8,0.000000,1,dejan.lokar
+Bug,Critical,2,8,0.000000,1,gregor.praprotnik
+Bug,Major,2,8,0.000000,1,darko
+Bug,Minor,3,7,0.000000,1,viljem
+Bug,Minor,0,8,0.000000,1,svetlana
+Bug,Major,2,7,0.000000,1,ziga
+New Feature or Improvement,Major,1,6,0.000000,1,jakob
+Bug,Minor,1,7,0.000000,1,ziga.vucko
+Internal Improvement,Minor,3,7,0.000000,1,gasper
+Internal Improvement,Minor,0,7,1.000000,1,arjan
+Bug,Minor,1,7,0.000000,1,uros
+Bug,Minor,2,7,0.000000,1,darko
+Bug,Minor,3,7,0.000000,1,rok.pensek
+New Feature or Improvement,Major,1,7,0.000000,1,uros
+Bug,Minor,1,6,0.000000,1,blaz.snuderl
+Internal Improvement,Critical,1,6,0.000000,1,matt
+Bug,Major,2,7,0.000000,1,rok.novosel
+Bug,Major,0,5,0.000000,1,matej.sircelj
+Bug,Minor,1,7,0.000000,1,miha.kavcic
+Bug,Critical,1,7,0.000000,1,gregor.praprotnik
+Internal Improvement,Critical,1,7,0.000000,1,denis
+Bug,Major,0,7,0.000000,1,matej.sircelj
+Internal Improvement,Minor,1,7,0.000000,1,viljem
+New Feature or Improvement,Major,0,7,0.000000,1,marko.cavdek
+Internal Improvement,Major,0,7,0.000000,1,samo
+Internal Improvement,Major,0,0,0.000000,1,miha.rugelj
+New Feature or Improvement,Major,0,0,0.000000,1,matevz.stinjek
+Bug,Blocker,1,0,0.000000,1,arjan
+New Feature or Improvement,Major,0,6,0.000000,1,iztokoder
+Internal Improvement,Critical,2,6,0.000000,1,matic.balantic
+Bug,Minor,1,5,0.000000,1,marko.cavdek
+Bug,Minor,2,7,0.000000,1,martijn
+Internal Improvement,Major,1,6,0.000000,1,uros
+Bug,Minor,0,6,0.000000,1,marko.cavdek
+New Feature or Improvement,Major,0,6,0.000000,1,zan.kusterle
+Bug,Blocker,2,6,0.000000,1,uros
+Bug,Trivial,2,6,0.000000,1,marko
+Bug,Major,7,6,0.000000,1,jaka
+Bug,Critical,1,6,0.000000,1,jure.cotic
+Bug,Major,1,6,0.000000,1,darko
+Bug,Minor,3,6,1.000000,1,miha.kavcic
+Bug,Minor,0,6,0.000000,1,saso
+Internal Improvement,Minor,0,6,0.000000,1,matjaz.finzgar
+Internal Improvement,Minor,0,7,0.000000,1,matt
+Bug,Minor,1,6,0.000000,1,mitja
+Bug,Major,0,6,0.000000,1,jakob
+Bug (Sub-task),Critical,0,2,1.000000,1,blaz
+Internal Improvement,Major,1,6,2.000000,1,tine
+Internal Improvement,Minor,1,5,0.000000,1,ales.kurent
+New Feature or Improvement,Critical,3,6,0.000000,1,miha.rugelj
+Bug,Major,1,6,0.000000,1,anton
+Bug,Major,3,6,1.000000,1,aleksander
+Bug,Major,0,6,0.000000,1,viljem
+Bug,Critical,3,5,0.000000,1,jure.cotic
+Bug,Major,2,5,0.000000,1,darko
+Bug,Minor,2,5,0.000000,1,aleksander
+Internal Improvement,Critical,1,5,0.000000,1,dejan
+Bug,Major,0,5,0.000000,1,zan.kusterle
+Bug,Major,1,7,0.000000,1,anze.brvar
+New Feature or Improvement,Minor,2,4,0.000000,1,jaka
+New Feature or Improvement,Minor,0,5,0.000000,1,rok.novosel
+Bug,Minor,0,4,0.000000,1,rok.novosel
+New Feature or Improvement,Major,0,5,0.000000,1,jakob
+Bug,Minor,0,5,0.000000,1,rok.novosel
+New Feature or Improvement,Major,1,5,3.000000,1,marko.cavdek
+Bug,Critical,2,5,0.000000,1,marko
+Internal Improvement,Major,4,5,0.000000,1,ziga
+Bug,Critical,1,5,0.000000,1,miha.kavcic
+Bug,Blocker,1,5,0.000000,1,arjan
+Bug,Critical,1,5,0.000000,1,svetlana
+Bug (Sub-task),Major,2,5,0.000000,1,andrej.oblak
+New Feature or Improvement,Major,5,4,0.000000,1,rok.pensek
+Bug,Major,0,10,0.000000,1,gregor.praprotnik
+Bug,Minor,4,8,0.000000,1,darko
+New Feature or Improvement,Major,1,0,0.000000,1,uros
+Internal Improvement,Major,2,10,0.000000,1,anze.brvar
+Internal Improvement,Minor,8,10,0.000000,1,jason
+Internal Improvement,Major,3,9,0.500000,1,dejan
+Bug,Major,2,9,0.000000,1,marko.cavdek
+Internal Improvement,Major,0,9,0.000000,1,samo
+New Feature or Improvement,Minor,1,9,0.000000,1,matjaz.ursic
+Bug,Minor,0,9,0.000000,1,marko.cavdek
+Bug,Major,1,8,0.000000,1,matic.tribuson
+Internal Improvement,Minor,3,10,0.000000,1,arjan
+New Feature or Improvement,Major,4,10,0.000000,1,ales.kurent
+Bug,Minor,3,10,0.000000,1,rok
+Bug,Major,1,4,0.000000,1,gregor.cepin
+Internal Improvement,Minor,1,10,0.000000,1,natalija
+Bug,Major,1,10,0.000000,1,miha.kavcic
+Internal Improvement,Critical,2,9,0.000000,1,anze.brvar
+Bug,Major,17,10,1.000000,1,arjan
+Bug,Critical,3,10,0.000000,1,tomaz
+Internal Improvement,Minor,0,10,0.000000,1,gasper.jeklin
+Internal Improvement,Major,4,10,0.000000,1,ziga
+Internal Improvement,Minor,7,10,0.000000,1,marko.cavdek
+Bug,Major,1,10,0.000000,1,matic.tribuson
+Bug,Minor,0,9,0.000000,1,matjaz.finzgar
+Bug,Minor,1,9,0.000000,1,marko.cavdek
+Bug,Minor,1,9,0.000000,1,andrej.oblak
+Internal Improvement,Minor,0,8,0.000000,1,matt
+Bug,Minor,0,4,0.000000,1,rok.pensek
+Bug,Major,4,7,0.000000,1,darko
+Bug,Major,1,10,0.000000,1,jakob
+Internal Improvement,Minor,9,10,0.000000,1,jaka
+Bug,Minor,0,10,1.000000,1,rok.novosel
+Bug,Critical,0,10,0.000000,1,arjan
+Bug,Critical,2,9,0.000000,1,ziga
+Internal Improvement,Minor,1,9,1.000000,1,matic.tribuson
+New Feature or Improvement,Major,1,9,0.000000,1,marko.cavdek
+Bug,Major,1,9,0.000000,1,samo
+Internal Improvement,Major,0,8,0.000000,1,marko.cavdek
+Internal Improvement,Critical,0,10,0.000000,1,miha.kavcic
+Internal Improvement,Minor,1,9,0.000000,1,dejan
+Bug,Minor,0,10,0.000000,1,matjaz.ursic
+New Feature or Improvement,Major,1,10,0.000000,1,gregor.fartek
+Internal Improvement,Major,0,10,0.000000,1,uros
+Internal Improvement,Minor,1,10,0.000000,1,anze.brvar
+Bug,Major,1,10,1.000000,1,iztokoder
+Bug,Critical,0,10,0.500000,1,zan.kusterle
+Bug,Minor,0,8,0.000000,1,marko.cavdek
+Improvement (Sub-task),Minor,0,10,0.000000,1,dejan.lokar
+Bug,Major,6,10,0.000000,1,anton
+Internal Improvement,Minor,2,10,0.000000,1,arjan
+Bug,Major,2,10,0.000000,1,marko.cavdek
+Bug,Major,1,9,0.000000,1,anton
+New Feature or Improvement,Major,1,9,0.000000,1,samo
+Bug,Major,0,7,0.000000,1,tine
+Internal Improvement,Minor,3,10,0.000000,1,marko.prelevikj
+Bug,Major,4,10,1.000000,1,jason
+Internal Improvement,Major,7,10,1.000000,1,arjan
+Bug,Major,2,10,0.333333,1,marko
+Internal Improvement,Minor,4,10,0.000000,1,jurij
+Bug,Minor,0,9,0.000000,1,blaz.snuderl
+Bug,Major,1,9,0.000000,1,marko.cavdek
+Internal Improvement,Minor,3,8,0.000000,1,miha.kavcic
+Bug,Minor,1,8,0.000000,1,marko.cavdek
+Internal Improvement,Minor,1,8,1.000000,1,viljem
+Bug,Blocker,2,8,0.000000,1,matic.tribuson
+Bug,Minor,1,7,0.000000,1,dejan.lokar
+Bug,Major,10,7,0.000000,1,anton
+Internal Improvement,Minor,2,9,0.000000,1,martijn
+Internal Improvement,Minor,1,13,0.000000,1,tine
+Internal Improvement,Minor,0,8,0.000000,1,jernej
+Bug,Minor,5,8,0.000000,1,matic.tribuson
+Bug,Minor,1,8,0.000000,1,martijn
+Bug,Critical,1,7,0.000000,1,jure.malovrh
+New Feature or Improvement,Minor,3,7,0.000000,1,rok
+Bug,Minor,2,8,0.000000,1,miha.kavcic
+Internal Improvement,Minor,4,8,0.000000,1,dejan
+Internal Improvement,Minor,2,8,0.000000,1,viljem
+Bug,Minor,0,8,0.000000,1,svetlana
+New Feature or Improvement,Minor,1,8,0.500000,1,blaz.snuderl
+New Feature or Improvement,Major,9,16,1.000000,1,jason
+New Feature or Improvement,Major,3,10,0.000000,1,aleksander
+Internal Improvement,Major,5,15,0.000000,1,anton
+Internal Improvement,Minor,0,12,0.000000,1,arjan
+Bug,Critical,3,13,0.000000,1,jason
+New Feature or Improvement,Major,1,12,0.000000,1,jakob
+Bug,Major,5,12,0.000000,1,simon
+New Feature or Improvement,Minor,0,12,0.000000,1,zan.kusterle
+Internal Improvement,Critical,1,12,0.000000,1,ales.kurent
+New Feature or Improvement,Critical,2,16,0.000000,1,marko.cavdek
+New Feature or Improvement,Major,2,16,0.000000,1,miha.rugelj
+Internal Improvement,Minor,0,16,0.000000,1,jure.cotic
+Bug,Minor,0,16,0.000000,1,mitja
+New Feature or Improvement,Major,1,15,0.000000,1,aleksander
+Internal Improvement,Major,10,15,0.000000,1,gregor.praprotnik
+Bug,Major,2,16,0.333333,1,matic.tribuson
+New Feature or Improvement,Minor,6,15,0.000000,1,rok.pensek
+Bug,Major,3,14,0.000000,1,marko
+Bug,Major,2,13,0.000000,1,anton
+Bug,Major,1,13,1.000000,1,marko.cavdek
+New Feature or Improvement,Major,0,12,0.000000,1,marko.cavdek
+Bug,Major,0,12,0.000000,1,iztokoder
+Internal Improvement,Major,4,12,0.000000,1,dejan
+Internal Improvement,Minor,4,12,1.000000,1,martijn
+Bug,Major,3,12,0.000000,1,denis
+New Feature or Improvement,Major,1,12,0.000000,1,miha.rugelj
+Bug,Minor,3,11,0.000000,1,tomaz
+Internal Improvement,Major,1,16,0.000000,1,gregor.praprotnik
+Internal Improvement,Major,1,15,0.500000,1,jure.malovrh
+New Feature or Improvement,Critical,5,14,0.000000,1,matic.tribuson
+New Feature or Improvement,Minor,2,15,0.000000,1,jurij.bajzelj
+Bug,Minor,3,14,0.000000,1,ziga
+Internal Improvement,Minor,0,14,0.000000,1,sandi.rezonja
+Bug,Major,2,14,0.000000,1,denis
+New Feature or Improvement,Major,1,13,0.000000,1,jure.malovrh
+Bug,Major,0,12,0.000000,1,jakob
+Bug,Major,3,12,0.000000,1,darko
+Bug,Major,1,11,0.000000,1,martijn
+New Feature or Improvement,Major,3,16,0.000000,1,rok.pensek
+Bug,Major,6,15,1.000000,1,gregor.cepin
+Internal Improvement,Minor,0,15,0.000000,1,sandi.rezonja
+Bug,Major,5,15,0.000000,1,anton
+New Feature or Improvement,Major,3,15,0.000000,1,anze.brvar
+Internal Improvement,Major,0,15,0.000000,1,jakob
+Bug,Critical,1,15,0.000000,1,matic.tribuson
+Bug,Minor,4,14,1.000000,1,martijn
+Bug,Critical,6,13,0.000000,1,natalija
+Bug,Minor,1,13,0.000000,1,matic.balantic
+Internal Improvement,Major,1,13,0.000000,1,martijn
+Bug,Minor,2,13,0.500000,1,ziga
+Internal Improvement,Minor,0,13,0.000000,1,miha.rugelj
+New Feature or Improvement,Major,9,13,1.000000,1,miha.rugelj
+New Feature or Improvement,Major,0,13,0.000000,1,anze.brvar
+Internal Improvement,Minor,2,12,0.000000,1,viljem
+Bug,Major,2,12,0.333333,1,marko.cavdek
+New Feature or Improvement,Critical,0,12,0.000000,1,anton
+Internal Improvement,Major,1,16,0.000000,1,gregor.praprotnik
+Bug,Minor,2,15,0.000000,1,anze.brvar
+Improvement (Sub-task),Major,3,19,0.000000,1,jakob
+Internal Improvement,Minor,0,14,0.000000,1,mitja
+Internal Improvement,Minor,2,13,0.000000,1,mitja
+Internal Improvement,Major,3,12,0.000000,1,matic.tribuson
+Internal Improvement,Minor,1,12,0.000000,1,marko.prelevikj
+Internal Improvement,Minor,3,12,0.000000,1,dejan
+Internal Improvement,Minor,2,12,1.000000,1,martijn
+Internal Improvement,Minor,0,11,0.000000,1,zan.kusterle
+New Feature or Improvement,Minor,0,15,0.000000,1,jernej
+Bug,Critical,1,15,0.000000,1,anton
+Bug,Minor,1,15,0.000000,1,blaz
+Bug,Major,4,14,0.333333,1,ziga
+New Feature or Improvement,Minor,4,13,0.000000,1,ziga
+New Feature or Improvement,Minor,2,18,0.500000,1,gregor.fartek
+Internal Improvement,Minor,0,13,0.000000,1,sandi.rezonja
+Internal Improvement,Minor,2,13,0.000000,1,miha.rugelj
+Bug,Major,5,12,1.000000,1,gasper.jeklin
+Bug,Critical,0,12,0.000000,1,tine
+Bug,Minor,4,12,0.000000,1,arjan
+Bug,Minor,4,11,1.000000,1,darko
+New Feature or Improvement,Blocker,1,35,0.000000,1,gregor.praprotnik
+Internal Improvement,Minor,5,25,1.000000,1,ziga
+Internal Improvement,Minor,2,24,3.000000,1,sandi.rezonja
+Bug,Critical,2,23,0.500000,1,matic.tribuson
+Internal Improvement,Major,7,22,0.000000,1,simon
+Bug,Major,1,20,0.500000,1,matjaz.ursic
+New Feature or Improvement,Major,3,19,1.000000,1,ukovac
+Internal Improvement,Minor,0,13,0.000000,1,dejan.lokar
+Bug,Minor,0,18,1.000000,1,gasper.jeklin
+Internal Improvement,Minor,2,18,0.000000,1,matjaz.ursic
+New Feature or Improvement,Major,0,18,0.000000,1,marko.prelevikj
+New Feature or Improvement,Minor,2,18,0.000000,1,miha.rugelj
+Internal Improvement,Minor,5,17,0.000000,1,jurij
+Internal Improvement,Major,16,49,0.000000,1,miha.rugelj
+New Feature or Improvement,Major,1,38,0.000000,1,martijn
+New Feature or Improvement,Major,6,29,0.000000,1,anton
+Internal Improvement,Major,3,24,0.000000,1,darko
+New Feature or Improvement,Minor,1,21,0.000000,1,matjaz.ursic
+New Feature or Improvement,Major,3,20,0.000000,1,matjaz.ursic
+New Feature or Improvement,Critical,10,20,1.000000,1,ziga
+Bug,Critical,2,17,0.000000,1,jernej
+New Feature or Improvement,Major,6,19,0.000000,1,andrej.oblak
+Internal Improvement,Minor,0,19,0.000000,1,iztokoder
+Internal Improvement,Major,1,19,0.000000,1,marko.cavdek
+New Feature or Improvement,Major,1,18,0.000000,1,marko
+New Feature or Improvement,Major,5,17,0.000000,1,miha.kavcic
+Bug,Major,6,17,0.000000,1,matic.tribuson
+Internal Improvement,Minor,2,17,0.000000,1,dejan
+Improvement (Sub-task),Critical,0,16,0.000000,1,dejan.lokar
+Internal Improvement,Minor,7,39,0.000000,1,matjaz.ursic
+New Feature or Improvement,Major,5,28,1.000000,1,jakob
+Internal Improvement,Critical,1,21,0.500000,1,marko.prelevikj
+New Feature or Improvement,Minor,2,13,0.000000,1,darko
+New Feature or Improvement,Major,4,18,0.000000,1,anton
+Internal Improvement,Minor,3,23,0.000000,1,rok.pensek
+New Feature or Improvement,Major,0,16,0.000000,1,mitja
+Internal Improvement,Major,9,41,0.000000,1,martijn
+Internal Improvement,Minor,0,27,0.000000,1,martijn
+Bug (Sub-task),Minor,0,22,0.000000,1,iztokoder
+New Feature or Improvement,Minor,19,21,0.000000,1,gregor.praprotnik
+Internal Improvement,Major,5,21,0.000000,1,anze.brvar
+Bug,Minor,5,20,4.000000,1,marko.cavdek
+Bug,Major,2,18,0.000000,1,martijn
+Bug,Blocker,1,17,0.000000,1,denis
+Internal Improvement,Minor,3,17,0.000000,1,marko.prelevikj
+Bug,Critical,2,15,0.333333,1,matic.balantic
+Internal Improvement,Critical,0,19,0.500000,1,dejan
+Bug,Critical,7,15,0.500000,1,martijn
+Bug,Major,3,14,0.000000,1,darko
+Bug,Major,3,14,0.333333,1,ziga
+Internal Improvement,Major,6,14,0.000000,1,marko.cavdek
+Bug,Minor,0,13,0.000000,1,iztokoder
+New Feature or Improvement,Critical,4,13,0.000000,1,mitja
+Bug,Minor,1,13,0.000000,1,marko
+Bug,Major,3,13,0.000000,1,aleksander
+Internal Improvement,Major,2,13,0.000000,1,matic.tribuson
+Bug,Minor,1,12,0.000000,1,dejan
+Internal Improvement,Minor,3,12,0.000000,1,marko.cavdek
+Bug,Critical,2,12,0.500000,1,matic.tribuson
+Bug,Major,3,12,1.000000,1,matjaz.ursic
+Internal Improvement,Minor,7,15,0.000000,1,viljem
+New Feature or Improvement,Minor,9,15,0.000000,1,miha.rugelj
+Internal Improvement,Minor,0,15,0.000000,1,gasper.jeklin
+New Feature or Improvement,Major,1,15,0.333333,1,jakob
+Internal Improvement,Major,1,14,0.000000,1,gasper.jeklin
+New Feature or Improvement,Minor,2,13,0.000000,1,jurij.bajzelj
+New Feature or Improvement,Minor,1,13,0.500000,1,matjaz.ursic
+Bug,Minor,1,13,0.000000,1,marko.cavdek
+Internal Improvement,Minor,2,13,0.000000,1,martijn
+Internal Improvement,Minor,0,12,0.000000,1,samo
+New Feature or Improvement,Minor,1,12,0.000000,1,uros
+Internal Improvement,Major,5,12,0.000000,1,anton
+Bug,Major,3,12,0.000000,1,matjaz.ursic
+Internal Improvement,Major,6,12,0.000000,1,goran
+Internal Improvement,Minor,1,11,0.000000,1,denis
+Internal Improvement,Major,5,11,0.000000,1,anze.brvar
+Bug,Critical,3,11,0.000000,1,miha.kavcic
+Internal Improvement,Minor,0,11,0.000000,1,sandi.rezonja
+Improvement (Sub-task),Minor,2,11,0.000000,1,andrej.oblak
+Bug,Minor,2,11,0.000000,1,miha.kavcic
+Internal Improvement,Major,0,11,0.000000,1,mitja
+Bug,Minor,3,11,0.000000,1,darko
+Internal Improvement,Major,4,11,1.000000,1,uros
+New Feature or Improvement,Critical,4,11,0.000000,1,andrej.oblak
+Internal Improvement,Minor,1,11,0.000000,1,jure.malovrh
+New Feature or Improvement,Major,1,11,0.000000,1,ales.kurent
+New Feature or Improvement,Minor,8,15,0.500000,1,ziga
+Bug,Major,4,11,0.000000,1,marko.cavdek
+Prototype,Major,2,18,1.000000,1,mitja
+Bug,Minor,2,11,0.000000,1,marko.cavdek
+Bug,Minor,1,11,0.000000,1,marko.cavdek
+New Feature or Improvement,Major,1,11,0.000000,1,matic.balantic
+New Feature or Improvement,Minor,2,11,0.000000,1,miha.kavcic
+Bug,Major,0,11,0.000000,1,jakob
+New Feature or Improvement,Major,0,11,0.000000,1,rok.novosel
+Bug,Major,1,11,0.000000,1,rok.pensek
+Internal Improvement,Major,3,11,0.000000,1,jakob
+Bug,Major,3,11,0.000000,1,tomaz
+Internal Improvement,Minor,1,11,0.000000,1,gasper.jeklin
+Bug,Minor,2,11,0.000000,1,rok
+New Feature or Improvement,Major,0,11,0.000000,1,rok
+New Feature or Improvement,Major,6,23,1.500000,1,marko.cavdek
+Internal Improvement,Critical,4,40,0.000000,1,saso
+Internal Improvement,Critical,5,26,3.000000,1,jure.malovrh
+New Feature or Improvement,Major,1,24,0.000000,1,uros
+New Feature or Improvement,Major,1,23,0.000000,1,gregor.praprotnik
+Internal Improvement,Major,0,19,0.500000,1,ales.kurent
+Internal Improvement,Major,0,18,0.000000,1,iztokoder
+Bug,Minor,8,18,1.000000,1,ziga
+New Feature or Improvement,Minor,1,17,0.000000,1,denis
+Bug,Minor,4,16,0.000000,1,martijn
+Internal Improvement,Critical,3,38,0.333333,1,martijn
+New Feature or Improvement,Minor,3,31,0.000000,1,martijn
+New Feature or Improvement,Minor,0,24,1.000000,1,rok.pensek
+Bug,Minor,3,19,0.000000,1,sandi.rezonja
+Internal Improvement,Major,1,44,0.000000,1,denis
+Internal Improvement,Major,0,23,0.500000,1,marko.cavdek
+New Feature or Improvement,Major,0,20,0.000000,1,gregor.praprotnik
+Bug,Major,3,20,0.000000,1,darko
+New Feature or Improvement,Major,1,19,0.000000,1,martin
+Internal Improvement,Major,1,18,0.000000,1,anze.brvar
+New Feature or Improvement,Major,4,18,0.000000,1,jakob
+New Feature or Improvement,Major,2,16,0.000000,1,goran
+New Feature or Improvement,Minor,5,29,0.000000,1,anton
+Bug,Minor,2,26,0.000000,1,ziga
+Bug,Critical,1,22,1.000000,1,jakob
+New Feature or Improvement,Major,1,21,0.000000,1,gregor.praprotnik
+Internal Improvement,Minor,0,19,0.000000,1,miha.kavcic
+New Feature or Improvement,Minor,1,17,0.000000,1,matic.tribuson
+Internal Improvement,Minor,6,18,1.000000,1,jurij
+New Feature or Improvement,Critical,2,17,0.000000,1,matic.tribuson
+New Feature or Improvement,Major,18,71,0.000000,1,ziga
+New Feature or Improvement,Minor,8,53,0.000000,1,martijn
+Bug,Critical,4,32,1.500000,1,mitja
+New Feature or Improvement,Minor,7,31,2.000000,1,matic.tribuson
+New Feature or Improvement,Major,8,29,0.000000,1,martijn
+New Feature or Improvement,Major,3,25,0.000000,1,matic.tribuson
+New Feature or Improvement,Minor,10,23,0.500000,1,arjan
+New Feature or Improvement,Minor,1,18,0.000000,1,mitja
+Internal Improvement,Blocker,0,18,0.000000,1,domen.kosir
+New Feature or Improvement,Critical,3,11,0.000000,1,miha.rugelj
+Internal Improvement,Minor,3,18,1.000000,1,matic.tribuson
+New Feature or Improvement,Minor,2,20,0.000000,1,marko
+New Feature or Improvement,Minor,0,16,0.000000,1,matjaz.ursic
+New Feature or Improvement,Minor,3,16,0.000000,1,miha.rugelj
+Bug,Major,2,7,0.000000,1,matic.tribuson
+Bug,Major,3,0,0.000000,1,anita
+Bug,Minor,3,2,0.000000,1,gasper
+Bug,Minor,0,2,0.000000,1,arjan
+New Feature or Improvement,Minor,0,2,0.000000,1,ziga
+Bug,Minor,2,1,0.000000,1,blaz
+New Feature or Improvement,Minor,4,4,0.000000,1,anton
+Bug,Major,1,2,0.000000,1,matic.tribuson
+New Feature or Improvement,Minor,0,1,0.000000,1,perlavalentin
+Internal Improvement,Major,1,18,0.000000,1,darko
+New Feature or Improvement,Major,0,6,2.000000,1,marko.cavdek
+New Feature or Improvement,Critical,0,6,0.000000,1,svetlana
+Bug,Critical,2,6,0.000000,1,dejan.lokar
+Bug,Minor,1,7,0.500000,1,rok.pensek
+Bug,Major,2,7,0.000000,1,aleksander
+Improvement (Sub-task),Major,0,0,0.000000,1,mitja
+Internal Improvement,Minor,4,6,0.000000,1,viljem
+Bug,Blocker,1,6,0.000000,1,uros
+Internal Improvement,Minor,1,5,0.000000,1,matic.tribuson
+Bug,Minor,1,6,0.000000,1,ziga.vucko
+Bug,Minor,2,7,0.000000,1,mitja
+Internal Improvement,Minor,1,7,0.000000,1,arjan
+Internal Improvement,Major,0,8,0.500000,1,jakob
+Bug,Minor,1,8,0.000000,1,matt
+Bug,Major,0,8,0.000000,1,marko.cavdek
+Internal Improvement,Minor,11,6,0.000000,1,marko
+Internal Improvement,Minor,2,7,0.000000,1,ziga
+Bug,Minor,0,7,0.000000,1,jakob
+Internal Improvement,Minor,1,7,0.000000,1,anze.brvar
+Internal Improvement,Minor,2,6,0.000000,1,arjan
+Bug,Major,2,1,0.000000,1,gasper
+Bug,Major,1,4,0.000000,1,rok.novosel
+Internal Improvement,Minor,2,4,0.000000,1,viljem
+Bug,Minor,1,4,0.000000,1,denis
+Bug,Major,1,4,0.000000,1,ukovac
+New Feature or Improvement,Minor,1,3,0.000000,1,jure.malovrh
+New Feature or Improvement,Major,0,3,0.000000,1,zan.kusterle
+New Feature or Improvement,Minor,1,1,0.000000,1,ziga
+Bug,Critical,1,1,0.000000,1,jason
+Internal Improvement,Minor,0,1,0.000000,1,jaka
+Internal Improvement,Minor,7,13,0.000000,1,arjan
+Bug,Major,1,1,0.000000,1,uros
+Internal Improvement,Critical,1,0,0.000000,1,tomaz
+Bug,Critical,2,3,0.000000,1,jaka
+Bug,Critical,0,3,0.000000,1,ales.kurent
+New Feature or Improvement,Major,1,3,0.000000,1,marko.cavdek
+New Feature or Improvement,Major,1,3,0.000000,1,denis
+New Feature or Improvement,Major,3,7,0.000000,1,tomaz
+Bug,Blocker,0,7,0.000000,1,jakob
+New Feature or Improvement,Major,4,7,0.000000,1,matic.balantic
+Bug,Minor,0,20,0.000000,1,iztokoder
+New Feature or Improvement,Critical,7,12,0.000000,1,miha.kavcic
+Internal Improvement,Minor,0,11,0.000000,1,arjan
+Internal Improvement,Minor,0,15,0.000000,1,samo
+Internal Improvement,Major,2,15,0.000000,1,martijn
+Bug,Minor,6,13,0.000000,1,ziga
+Bug,Minor,2,16,0.500000,1,tomaz
+Internal Improvement,Major,4,60,0.000000,1,martijn
+New Feature or Improvement,Minor,6,23,0.000000,1,gregor.praprotnik
+Bug,Major,12,20,1.000000,1,matic.tribuson
+Bug,Minor,8,12,1.000000,1,zan.kusterle
+Bug,Major,0,19,0.333333,1,jakob
+Internal Improvement,Major,0,17,0.000000,1,dejan
+Bug,Critical,3,17,0.000000,1,anton
+Internal Improvement,Minor,1,17,1.000000,1,dejan
+Bug,Major,2,43,0.000000,1,martijn
+Internal Improvement,Minor,0,11,0.000000,1,sandi.rezonja
+Bug,Minor,5,22,0.000000,1,martijn
+Improvement (Sub-task),Major,0,21,0.000000,1,anton
+New Feature or Improvement,Blocker,2,2,0.000000,1,arjan
+New Feature or Improvement,Minor,4,21,0.000000,1,matic.tribuson
+Internal Improvement,Minor,12,13,1.000000,1,matic.tribuson
+Internal Improvement,Minor,0,12,0.000000,1,tine
+Bug,Minor,1,11,0.500000,1,jernej
+Internal Improvement,Minor,0,11,0.000000,1,dejan
+Bug,Major,2,11,0.000000,1,ales.kurent
+Internal Improvement,Minor,0,11,0.000000,1,sandi.rezonja
+Bug,Major,0,11,0.000000,1,dejan.lokar
+New Feature or Improvement,Major,5,11,0.000000,1,anton
+New Feature or Improvement,Minor,0,11,0.000000,1,gregor.praprotnik
+New Feature or Improvement,Major,5,4,0.000000,1,miha.kavcic
+Internal Improvement,Minor,2,18,0.000000,1,arjan
+Internal Improvement,Major,1,18,0.500000,1,anze.brvar
+Internal Improvement,Major,0,17,0.000000,1,matic.tribuson
+Bug,Minor,0,17,1.000000,1,mitja
+Internal Improvement,Minor,6,16,0.000000,1,gasper
+Internal Improvement,Critical,0,14,0.000000,1,domen.kosir
+Internal Improvement,Minor,3,13,0.000000,1,martijn
+Bug,Major,10,13,0.000000,1,mitja
+Bug,Minor,0,5,0.000000,1,miha.kavcic
+Bug,Major,0,6,0.000000,1,ziga.vucko
+Bug,Major,0,5,0.000000,1,svetlana
+New Feature or Improvement,Major,2,4,0.000000,1,matjaz.ursic
+Bug,Trivial,1,5,0.000000,1,darko
+Internal Improvement,Major,2,5,1.000000,1,jaka
+Internal Improvement,Minor,0,5,0.000000,1,arjan
+Internal Improvement,Minor,2,5,0.000000,1,arjan
+Bug,Minor,1,5,0.000000,1,jernej
+Bug,Minor,3,5,0.000000,1,rok.pensek
+Bug,Major,1,5,0.000000,1,rok
+Bug (Sub-task),Minor,2,4,1.000000,1,jason
+Bug,Minor,1,5,0.000000,1,uros
+Internal Improvement,Major,4,10,0.000000,1,jure.malovrh
+Internal Improvement,Minor,3,10,0.000000,1,marko.cavdek
+Internal Improvement,Critical,1,10,0.000000,1,marko.cavdek
+Bug,Minor,0,8,0.000000,1,marko.cavdek
+Bug,Blocker,1,8,0.000000,1,jure.malovrh
+Bug,Major,1,8,0.000000,1,gregor.praprotnik
+Bug,Minor,2,8,0.000000,1,matic.tribuson
+Bug,Major,3,10,1.000000,1,rok.pensek
+Bug,Major,1,10,0.000000,1,jason
+Internal Improvement,Minor,0,10,0.000000,1,tine
+Internal Improvement,Major,6,10,0.000000,1,arjan
+Bug,Critical,2,10,0.000000,1,matjaz.finzgar
+Bug,Major,1,10,0.000000,1,gregor.cepin
+Bug,Major,3,9,0.000000,1,ziga
+Bug,Critical,1,9,0.000000,1,samo
+Bug,Major,3,9,0.000000,1,arjan
+New Feature or Improvement,Critical,0,10,0.000000,1,jakob
+New Feature or Improvement,Major,1,7,0.000000,1,miha.kavcic
+Bug,Minor,4,10,0.000000,1,aleksander
+Bug,Minor,1,10,1.000000,1,ziga
+New Feature or Improvement,Minor,1,10,0.000000,1,kenneth
+Internal Improvement,Major,1,9,0.000000,1,martin
+Bug,Major,2,9,0.000000,1,anton
+Internal Improvement,Major,1,8,0.000000,1,rok.novosel
+Bug,Major,2,5,0.000000,1,gasper
+Bug,Blocker,1,6,0.000000,1,jakob
+Bug,Major,1,5,0.000000,1,miha.kavcic
+New Feature or Improvement,Major,0,2,0.000000,1,mitja
+New Feature or Improvement,Major,3,9,0.000000,1,miha.kavcic
+Bug,Minor,1,10,0.000000,1,rok.novosel
+Internal Improvement,Critical,1,10,0.000000,1,rok.novosel
+New Feature or Improvement,Major,2,3,0.000000,1,goran
+Internal Improvement,Trivial,2,3,0.000000,1,jurij
+New Feature or Improvement,Major,1,2,0.000000,1,ukovac
+Internal Improvement,Minor,1,2,0.000000,1,dejan
+New Feature or Improvement,Major,2,2,0.000000,1,gasper
+Bug,Minor,0,2,0.000000,1,rok
+Bug,Minor,1,9,0.000000,1,matic.balantic
+Internal Improvement,Major,0,8,0.000000,1,matevz.stinjek
+Bug,Major,0,8,0.000000,1,zan.kusterle
+Bug,Minor,2,8,0.000000,1,jakob
+Bug,Minor,1,8,0.000000,1,matic.tribuson
+Bug,Major,0,8,0.000000,1,marko.cavdek
+Bug,Minor,0,7,0.000000,1,iztokoder
+New Feature or Improvement,Major,2,7,0.000000,1,darko
+Bug,Critical,4,4,0.000000,1,andrej.oblak
+Internal Improvement,Minor,2,4,0.000000,1,ukovac
+Bug,Major,0,10,0.000000,1,jakob
+Bug,Major,1,7,0.000000,1,gregor.cepin
+Bug,Minor,2,7,0.000000,1,rok.novosel
+Bug,Minor,0,7,0.000000,1,jure.malovrh
+Bug,Minor,4,7,0.000000,1,darko
+Internal Improvement,Minor,3,8,0.000000,1,dejan
+Internal Improvement,Minor,0,8,0.500000,1,blaz.snuderl
+Internal Improvement,Minor,0,10,0.000000,1,ziga.vucko
+Internal Improvement,Minor,1,9,0.000000,1,ukovac
+Bug,Critical,2,10,0.000000,1,miha.kavcic
+Internal Improvement,Major,0,22,0.000000,1,martijn
+Bug,Minor,0,9,0.000000,1,svetlana
+Bug,Minor,3,10,0.000000,1,matic.tribuson
+Bug,Minor,1,9,0.000000,1,matjaz.ursic
+Bug,Minor,3,9,0.000000,1,andrej.oblak
+Bug,Major,0,10,0.000000,1,gasper.jeklin
+Bug,Major,1,9,0.000000,1,marko.cavdek
+Bug,Major,0,9,0.000000,1,iztokoder
+Internal Improvement,Minor,2,9,0.000000,1,anze.brvar
+Bug,Minor,0,7,0.000000,1,zan.kusterle
+Bug,Major,4,20,0.500000,1,martijn
+Bug,Minor,7,15,0.000000,1,ziga
+New Feature or Improvement,Major,8,15,0.000000,1,jakob
+Bug,Minor,3,15,0.000000,1,tomaz
+Bug,Critical,3,12,0.000000,1,ales.kurent
+New Feature or Improvement,Major,8,14,0.000000,1,jure.malovrh
+New Feature or Improvement,Critical,5,8,0.000000,1,ales.kurent
+New Feature or Improvement,Minor,0,21,0.333333,1,marko.cavdek
+Internal Improvement,Blocker,1,17,0.000000,1,matic.tribuson
+Bug,Minor,2,12,0.000000,1,tomaz
+Bug,Major,1,13,0.000000,1,matic.tribuson
+New Feature or Improvement,Minor,8,24,0.000000,1,matic.tribuson
+Internal Improvement,Minor,0,25,1.000000,1,sandi.rezonja
+Bug,Minor,2,12,0.000000,1,aleksander
+New Feature or Improvement,Major,5,12,0.000000,1,ziga
+Bug,Blocker,1,26,0.000000,1,dejan
+New Feature or Improvement,Major,5,26,0.000000,1,jakob
+Bug,Major,3,7,0.000000,1,dejan.lokar
+New Feature or Improvement,Major,2,20,1.000000,1,jakob
+Bug,Minor,1,15,0.000000,1,ziga
+Bug,Minor,1,2,0.000000,1,jernej
+Bug,Major,5,31,0.000000,1,jason
+Bug,Minor,2,14,0.000000,1,darko
+Internal Improvement,Minor,0,14,0.000000,1,marko.prelevikj
+Bug,Major,7,23,0.000000,1,gregor.praprotnik
+New Feature or Improvement,Major,5,25,0.000000,1,matjaz.ursic
+Bug,Major,1,13,0.333333,1,mitja
+Bug,Major,4,12,0.000000,1,jason
+New Feature or Improvement,Critical,1,22,0.000000,1,jurij.bajzelj
+New Feature or Improvement,Major,0,13,0.000000,1,matic.nezic
+Bug,Critical,0,12,0.000000,1,iztokoder
+Bug,Minor,1,18,0.000000,1,arjan
+Bug,Minor,0,8,0.000000,1,rok.novosel
+Internal Improvement,Major,4,37,0.000000,1,jure.cotic
+Internal Improvement,Major,3,17,0.000000,1,arjan
+Bug,Minor,0,15,0.000000,1,dejan
+Bug,Minor,2,12,0.500000,1,tomaz
+Internal Improvement,Critical,3,17,0.000000,1,anze.brvar
+New Feature or Improvement,Minor,0,21,0.000000,1,marko.cavdek
+Bug,Major,0,18,0.000000,1,jakob
+Internal Improvement,Major,7,17,0.000000,1,jurij
+New Feature or Improvement,Major,1,20,0.000000,1,gasper
+Internal Improvement,Minor,0,23,0.000000,1,denis
+Internal Improvement,Major,2,12,0.000000,1,anze.brvar
+Bug,Critical,0,14,0.666667,1,iztokoder
+Bug,Minor,0,21,1.000000,1,jernej
+New Feature or Improvement,Minor,8,15,0.000000,1,aleksander
+New Feature or Improvement,Major,3,25,0.000000,1,mitja
+New Feature or Improvement,Critical,0,24,0.000000,1,matic.tribuson
+Sub-task,Critical,0,32,0.000000,1,ziga
+New Feature or Improvement,Minor,2,42,0.000000,1,rok.novosel
+Bug,Critical,0,0,0.000000,1,matevz.stinjek
+New Feature or Improvement,Major,2,12,0.000000,1,goran
+Internal Improvement,Major,4,15,2.000000,1,ziga
+New Feature or Improvement,Major,10,42,0.000000,1,aleksander
+Internal Improvement,Major,3,16,0.000000,1,jakob
+New Feature or Improvement,Major,6,30,0.000000,1,gregor.praprotnik
+New Feature or Improvement,Major,5,24,0.000000,1,uros
+Bug,Minor,4,18,0.000000,1,martijn
+Internal Improvement,Minor,0,15,1.000000,1,anze.brvar
+New Feature or Improvement,Major,6,29,1.000000,1,jason
+Bug,Minor,2,17,0.000000,1,anze.brvar
+Bug,Critical,0,12,0.000000,1,ales.kurent
+Internal Improvement,Major,9,14,1.000000,1,arjan
+Bug,Minor,1,14,0.000000,1,anze.brvar
+New Feature or Improvement,Minor,4,19,0.000000,1,miha.rugelj
+New Feature or Improvement,Major,3,40,0.000000,1,anton
+Internal Improvement,Major,0,14,0.000000,1,anton
+Bug,Major,1,16,0.000000,1,jan.vodopivec
+New Feature or Improvement,Major,1,8,0.000000,1,kyle
+Internal Improvement,Minor,4,16,0.000000,1,andrej.oblak
+Bug,Minor,3,18,1.000000,1,blaz
+Bug,Minor,1,14,0.000000,1,jernej
+New Feature or Improvement,Major,4,15,0.000000,1,anze.brvar
+New Feature or Improvement,Minor,8,18,0.000000,1,andrej.oblak
+Internal Improvement,Major,1,15,0.000000,1,svetlana
+Bug,Minor,1,13,0.000000,1,tine
+Internal Improvement,Minor,1,13,0.000000,1,miha.rugelj
+New Feature or Improvement,Major,1,13,0.000000,1,gregor.praprotnik
+Bug,Minor,4,10,0.000000,0,viljem
+Bug,Major,2,10,0.000000,0,jakob
+Bug,Critical,5,19,0.000000,0,tomaz
+Internal Improvement,Minor,0,9,0.000000,0,marko.prelevikj
+Internal Improvement,Minor,1,9,0.000000,0,arjan
+Bug,Minor,0,9,0.000000,0,marko.cavdek
+Bug,Minor,0,3,0.000000,0,matt
+Bug,Blocker,0,10,0.500000,0,mitja
+Internal Improvement,Minor,4,19,1.000000,0,viljem
+Bug,Blocker,3,10,0.000000,0,samo
+Bug,Minor,1,3,0.000000,0,matej.sircelj
+Bug,Major,3,12,0.000000,0,anton
+Bug,Minor,0,8,0.000000,0,dejan.lokar
+Internal Improvement,Minor,1,12,0.000000,0,matic.tribuson
+New Feature or Improvement,Major,3,12,0.000000,0,uros
+Bug,Major,0,5,0.000000,0,miha.kavcic
+Internal Improvement,Minor,2,2,0.000000,0,blaz.snuderl
+Bug,Major,1,2,0.000000,0,jason
+Bug,Minor,0,2,0.000000,0,vuk
+Internal Improvement,Minor,0,14,0.000000,0,zan.kusterle
+Bug (Sub-task),Minor,1,3,0.000000,0,jason
+Bug,Major,1,3,0.000000,0,tomaz
+Internal Improvement,Minor,0,2,0.000000,0,miha.rugelj
+Bug,Major,0,9,0.000000,0,dejan.lokar
+New Feature or Improvement,Critical,0,9,0.000000,0,svetlana
+Internal Improvement,Minor,4,3,0.000000,0,gasper
+Bug (Sub-task),Blocker,0,3,1.000000,0,blaz
+Bug,Blocker,1,9,0.000000,0,matic.balantic
+Internal Improvement,Minor,1,13,0.000000,0,viljem
+Bug,Critical,2,8,0.000000,0,anton
+Internal Improvement,Major,2,8,0.000000,0,uros
+New Feature or Improvement,Blocker,0,16,0.000000,0,matic.tribuson
+New Feature or Improvement,Major,2,32,0.000000,0,gasper.jeklin
+Internal Improvement,Minor,4,31,0.500000,0,martijn
+Bug,Minor,4,9,0.000000,0,andrej.oblak
+Bug,Blocker,0,9,0.000000,0,matic.tribuson
+Bug,Major,3,6,0.000000,0,marko.cavdek
+Bug,Critical,1,14,0.000000,0,ales.kurent
+Internal Improvement,Major,0,10,0.000000,0,samo
+Bug,Critical,0,6,0.000000,0,zan.kusterle
+Bug,Major,1,5,0.000000,0,marko.cavdek
+Bug,Major,2,6,0.000000,0,miha.rugelj
+Bug,Major,0,11,0.000000,0,jakob
+Bug (Sub-task),Major,3,6,0.000000,0,anton
+Internal Improvement,Minor,1,6,0.000000,0,jure.cotic
+Internal Improvement,Minor,0,10,0.000000,0,jurij.bajzelj
+Bug,Minor,1,6,0.000000,0,matic.tribuson
+Bug,Blocker,2,5,0.000000,0,matic.tribuson
+Bug,Minor,0,12,0.000000,0,miha.rugelj
+Bug,Major,0,12,1.000000,0,jakob
+Bug,Major,1,13,0.000000,0,martijn
+New Feature or Improvement,Major,0,13,0.000000,0,iztokoder
+Bug,Blocker,2,5,0.000000,0,dejan.lokar
+Bug,Major,1,10,0.000000,0,jakob
+New Feature or Improvement,Major,5,4,0.000000,0,ziga
+Bug,Minor,0,0,0.000000,0,marko.cavdek
+Internal Improvement,Minor,1,10,0.000000,0,tine
+New Feature or Improvement,Critical,1,10,0.000000,0,matic.balantic
+Internal Improvement,Minor,0,10,0.000000,0,zan.kusterle
+New Feature or Improvement,Major,6,37,0.000000,0,kyle
+Bug,Major,3,10,1.000000,0,gasper.jeklin
+Bug,Major,0,10,0.000000,0,andrej.oblak
+Bug,Critical,2,5,0.000000,0,rok.pensek
+Bug (Sub-task),Minor,1,2,1.000000,0,jason
+Bug,Minor,2,9,0.000000,0,martijn
+Internal Improvement,Critical,6,13,0.000000,0,gasper
+Improvement (Sub-task),Minor,3,9,0.000000,0,miha.rugelj
+Internal Improvement,Minor,1,13,1.000000,0,matt
+New Feature or Improvement,Critical,1,14,0.000000,0,blaz
+Bug,Blocker,0,10,0.000000,0,viljem
+Internal Improvement,Major,4,8,0.000000,0,arjan
+Internal Improvement,Minor,1,8,0.000000,0,dejan
+Bug,Blocker,0,9,0.000000,0,matic.tribuson
+Internal Improvement,Minor,0,8,0.000000,0,matjaz.finzgar
+Bug (Sub-task),Minor,2,8,1.000000,0,anton
+Bug,Critical,1,8,0.000000,0,miha.kavcic
+Internal Improvement,Minor,1,8,0.000000,0,tine
+New Feature or Improvement,Major,4,16,0.500000,0,matic.tribuson
+Internal Improvement,Minor,5,8,0.000000,0,arjan
+Bug,Major,2,9,0.000000,0,ziga
+Internal Improvement,Minor,1,21,0.000000,0,matic.balantic
+Bug,Major,4,23,1.000000,0,dejan
+New Feature or Improvement,Minor,1,24,0.000000,0,mitja
+Bug,Major,1,7,0.000000,0,matjaz.ursic
+New Feature or Improvement,Major,0,27,1.000000,0,kyle
+Internal Improvement,Minor,0,15,0.000000,0,martijn
+Internal Improvement,Major,0,8,0.000000,0,blaz.snuderl
+Bug,Minor,1,10,0.000000,0,arjan
+Bug,Major,1,5,0.000000,0,matjaz.ursic
+Internal Improvement,Minor,4,5,0.000000,0,jaka
+Internal Improvement,Critical,1,14,0.000000,0,darko
+New Feature or Improvement,Minor,1,14,0.000000,0,aleksander
+Internal Improvement,Minor,2,15,0.000000,0,gasper.jeklin
+Internal Improvement,Major,0,5,0.000000,0,darko
+Improvement (Sub-task),Major,5,22,1.000000,0,marko
+New Feature or Improvement,Minor,2,5,0.000000,0,rok
+Internal Improvement,Major,0,10,0.000000,0,jure.malovrh
+New Feature or Improvement,Major,1,23,0.000000,0,blaz
+Bug,Minor,0,10,0.000000,0,anton
+Internal Improvement,Major,0,10,0.000000,0,arjan
+Internal Improvement,Minor,0,10,0.000000,0,gasper.jeklin
+Internal Improvement,Major,1,26,0.000000,0,martijn
+Internal Improvement,Minor,1,10,0.000000,0,darko
+Internal Improvement,Major,2,9,0.000000,0,marko.cavdek
+Bug,Minor,0,11,0.000000,0,marko.prelevikj
+Bug,Minor,1,8,0.000000,0,jakob
+Bug,Major,6,11,0.000000,0,rok
+Bug,Critical,2,11,0.000000,0,tomaz
+Bug,Critical,1,11,0.000000,0,marko.cavdek
+Bug,Minor,2,19,0.000000,0,anze.brvar
+Bug,Major,0,11,0.000000,0,marko.cavdek
+Bug,Minor,1,11,0.000000,0,jakob
+Bug,Minor,1,11,0.000000,0,jure.cotic
+Bug,Critical,0,11,0.000000,0,dejan
+Bug,Major,4,11,0.000000,0,miha.kavcic
+Internal Improvement,Major,1,11,0.000000,0,matic.tribuson
+Bug,Minor,0,11,0.000000,0,blaz.snuderl
+New Feature or Improvement,Major,4,22,0.000000,0,rok
+Internal Improvement,Minor,1,11,1.000000,0,dejan
+Bug,Major,5,23,0.000000,0,martijn
+Bug,Minor,1,17,0.000000,0,matic.tribuson
+Bug,Critical,4,17,0.000000,0,natalija
+New Feature or Improvement,Major,0,12,0.000000,0,kyle
+Internal Improvement,Minor,2,7,0.000000,0,gasper
+Bug,Major,2,7,0.000000,0,miha.kavcic
+Bug,Minor,0,15,0.000000,0,iztokoder
+Bug,Major,1,7,0.000000,0,martijn
+Internal Improvement,Minor,0,16,2.000000,0,zan.kusterle
+New Feature or Improvement,Major,0,6,0.000000,0,zan.kusterle
+Bug,Critical,1,11,0.000000,0,martijn
+Bug,Minor,2,7,0.000000,0,viljem
+Bug,Blocker,0,16,0.000000,0,jakob
+Bug,Minor,2,13,1.000000,0,martijn
+Bug,Major,1,12,0.000000,0,rok.pensek
+Bug,Minor,1,11,0.000000,0,dejan
+Bug,Critical,3,11,0.000000,0,anze.brvar
+Bug,Minor,0,11,0.000000,0,matjaz.ursic
+Bug,Blocker,1,17,0.000000,0,marko.cavdek
+Bug,Critical,1,11,0.000000,0,miha.rugelj
+Bug,Minor,0,11,0.000000,0,marko.cavdek
+Bug,Major,5,23,0.000000,0,tomaz
+Bug,Major,0,16,0.000000,0,iztokoder
+New Feature or Improvement,Critical,8,94,0.000000,0,marko
+Internal Improvement,Minor,0,25,0.000000,0,sandi.rezonja
+New Feature or Improvement,Critical,2,21,0.500000,0,matic.tribuson
+Internal Improvement,Minor,0,21,0.000000,0,gasper.jeklin
+Internal Improvement,Major,2,23,0.000000,0,anze.brvar
+Internal Improvement,Critical,0,0,0.000000,0,gregor
+Bug,Blocker,2,0,0.000000,0,martijn
+New Feature or Improvement,Minor,2,20,0.000000,0,martijn
+Bug,Major,0,0,0.000000,0,dejan
+Bug,Blocker,0,4,1.000000,0,rok
+Bug,Major,9,18,0.500000,0,tomaz
+Bug,Major,4,17,0.000000,0,darko
+Bug,Critical,0,17,0.000000,0,jakob
+Bug,Major,4,7,0.000000,0,ziga
+Bug,Minor,2,0,0.000000,0,marko.cavdek
+Internal Improvement,Minor,0,0,0.000000,0,marko.cavdek
+New Feature or Improvement,Major,1,12,0.000000,0,gregor.praprotnik
+New Feature or Improvement,Minor,1,28,0.000000,0,ziga
+New Feature or Improvement,Critical,1,14,0.000000,0,marko.cavdek
+Internal Improvement,Minor,9,14,1.000000,0,dejan
+Internal Improvement,Minor,1,14,0.000000,0,viljem
+New Feature or Improvement,Blocker,0,14,0.000000,0,rok.novosel
+New Feature or Improvement,Major,9,33,0.000000,0,jurij
+Bug,Major,0,13,1.000000,0,rok
+Bug,Minor,3,13,0.000000,0,anton
+Bug,Minor,1,7,0.000000,0,matic.tribuson
+New Feature or Improvement,Major,2,12,0.000000,0,anze.brvar
+Bug,Major,4,11,0.000000,0,ziga
+Bug,Major,4,18,0.000000,0,matic.tribuson
+New Feature or Improvement,Major,6,15,0.000000,0,miha.kavcic
+New Feature or Improvement,Major,2,15,0.000000,0,kyle
+Bug,Major,1,19,0.500000,0,martijn
+Bug,Minor,1,13,0.000000,0,uros
+Bug,Major,0,19,0.500000,0,rok
+Internal Improvement,Major,0,11,0.000000,0,gregor.praprotnik
+Internal Improvement,Major,1,8,0.000000,0,matic.tribuson
+Internal Improvement,Minor,1,1,0.000000,0,goran
+Bug,Critical,0,8,0.000000,0,jakob
+Bug,Major,4,3,0.000000,0,uros
+Bug,Critical,6,15,0.000000,0,darko
+Bug,Minor,2,11,0.000000,0,dejan
+New Feature or Improvement,Major,2,3,0.000000,0,tomaz
+New Feature or Improvement,Major,0,3,0.000000,0,gasper
+Bug,Critical,0,7,0.000000,0,miha.kavcic
+Internal Improvement,Major,1,0,0.000000,0,arjan
+Bug,Critical,2,6,0.000000,0,mitja
+Internal Improvement,Critical,0,7,0.000000,0,marko.prelevikj
+Bug,Minor,2,12,0.000000,0,matic.balantic
+New Feature or Improvement,Major,5,13,0.000000,0,matic.tribuson
+New Feature or Improvement,Minor,3,14,0.000000,0,marko.cavdek
+Internal Improvement,Minor,1,7,0.000000,0,jernej
+Internal Improvement,Critical,0,7,0.000000,0,uros
+New Feature or Improvement,Major,0,13,0.000000,0,jakob
+Bug,Major,2,13,0.000000,0,marko.cavdek
+New Feature or Improvement,Minor,1,13,0.000000,0,ziga
+Internal Improvement,Minor,1,7,0.000000,0,dejan
+Bug,Minor,1,13,0.000000,0,mitja
+Internal Improvement,Major,2,7,0.000000,0,jason
+New Feature or Improvement,Minor,2,7,0.000000,0,ziga
+New Feature or Improvement,Minor,2,13,0.000000,0,matjaz.ursic
+New Feature or Improvement,Minor,1,2,0.000000,0,rok
+Bug,Minor,2,7,0.000000,0,darko
+Bug,Major,2,4,0.000000,0,miha.kavcic
+Bug,Major,1,4,0.000000,0,rok
+New Feature or Improvement,Minor,1,14,0.000000,0,jernej
+Bug,Minor,1,4,0.000000,0,miha.kavcic
+New Feature or Improvement,Minor,1,7,0.000000,0,gasper.jeklin
+New Feature or Improvement,Minor,0,4,0.000000,0,matic.tribuson
+New Feature or Improvement,Critical,3,4,0.000000,0,jaka
+Internal Improvement,Major,2,3,0.000000,0,rok
+Bug,Blocker,1,14,0.500000,0,matej.sircelj
+Bug,Major,2,7,0.000000,0,marko.cavdek
+Bug,Critical,0,7,0.000000,0,zan.kusterle
+Bug,Major,0,8,0.000000,0,matic.tribuson
+Bug,Major,5,8,0.000000,0,ziga
+Bug,Minor,1,7,0.000000,0,ziga
+Bug,Minor,2,7,0.000000,0,marko.cavdek
+Bug,Major,1,8,0.000000,0,anze.brvar
+Bug,Minor,3,8,0.000000,0,marko.cavdek
+Bug,Minor,1,8,0.000000,0,mitja
+Bug,Major,1,14,0.000000,0,rok.novosel
+Bug (Sub-task),Major,8,14,0.000000,0,andrej.oblak
+Bug,Blocker,0,7,0.000000,0,uros
+Bug,Critical,5,8,0.000000,0,darko
+Bug,Major,0,8,0.000000,0,svetlana
+Bug,Minor,0,8,0.000000,0,rok.novosel
+Bug,Minor,3,8,0.000000,0,matic.tribuson
+Internal Improvement,Minor,1,8,0.000000,0,arjan
+Internal Improvement,Major,2,13,0.000000,0,ziga
+Bug,Minor,1,6,0.000000,0,marko.cavdek
+Bug,Blocker,1,7,0.000000,0,miha.kavcic
+Bug,Minor,1,7,0.000000,0,matic.tribuson
+Bug,Minor,1,7,0.000000,0,darko
+Internal Improvement,Minor,2,14,0.000000,0,martijn
+Bug,Critical,0,6,0.000000,0,miha.kavcic
+Internal Improvement,Major,0,6,0.000000,0,jakob
+Internal Improvement,Major,1,21,1.000000,0,gasper.jeklin
+Bug,Major,6,13,0.000000,0,tomaz
+Bug,Critical,0,13,0.000000,0,miha.kavcic
+Improvement (Sub-task),Major,2,5,0.000000,0,martijn
+Bug,Critical,4,6,0.000000,0,rok
+Bug,Minor,0,6,0.000000,0,jakob
+Bug,Blocker,0,6,0.000000,0,tine
+Bug,Critical,1,7,0.000000,0,simon
+Internal Improvement,Minor,0,7,0.000000,0,matt
+New Feature or Improvement,Major,0,4,0.000000,0,rok.novosel
+Internal Improvement,Minor,2,4,0.000000,0,marko.cavdek
+Bug,Major,5,4,0.000000,0,gasper
+Bug,Major,1,4,0.000000,0,anze.brvar
+Bug,Major,0,4,0.000000,0,matjaz.finzgar
+Bug,Minor,2,4,0.000000,0,darko
+Internal Improvement,Critical,2,4,0.000000,0,blaz
+Bug,Blocker,1,4,0.000000,0,ziga
+Bug,Major,1,4,0.000000,0,darko
+Internal Improvement,Minor,3,4,1.000000,0,andrej.oblak
+Bug,Minor,1,4,0.000000,0,viljem
+Bug,Minor,0,3,0.000000,0,natalija
+Internal Improvement,Minor,0,4,0.000000,0,tomaz
+Bug,Minor,0,4,0.000000,0,simon
+Internal Improvement,Major,5,3,0.000000,0,blaz
+New Feature or Improvement,Major,3,2,0.000000,0,rok
+Bug,Major,2,3,0.000000,0,andrej.oblak
+Bug,Major,1,3,0.000000,0,jakob
+Improvement (Sub-task),Minor,0,2,0.000000,0,rok.novosel
+Internal Improvement,Minor,0,1,0.000000,0,arjan
+Bug,Major,1,1,0.000000,0,anton
+Internal Improvement,Minor,0,1,0.000000,0,anze.brvar
+Internal Improvement,Minor,1,1,0.000000,0,uros
+Bug,Critical,1,1,0.000000,0,gregor.praprotnik
+Internal Improvement,Minor,3,1,0.000000,0,jaka
+Bug (Sub-task),Minor,0,3,0.000000,0,andrej.oblak
+Internal Improvement,Major,1,3,0.000000,0,matic.tribuson
+Bug,Critical,2,3,0.000000,0,darko
+Bug,Critical,1,3,0.000000,0,uros
+Bug,Major,1,2,0.000000,0,rok
+Internal Improvement,Minor,1,3,0.000000,0,arjan
+Internal Improvement,Major,3,3,0.000000,0,jason
+Bug (Sub-task),Minor,0,3,0.000000,0,zan.kusterle
+New Feature or Improvement,Major,2,3,0.000000,0,rok.novosel
+Internal Improvement,Minor,1,3,0.000000,0,goran
+Bug,Major,0,3,0.000000,0,marko.cavdek
+Bug,Minor,0,3,0.000000,0,matevz.stinjek
+Bug,Minor,3,3,0.000000,0,gasper
+Bug,Major,1,3,0.000000,0,andrej.oblak
+Bug,Major,0,2,0.000000,0,tine
+Bug,Minor,0,3,0.000000,0,dejan
+New Feature or Improvement,Major,0,2,0.000000,0,uros
+New Feature or Improvement,Major,0,0,0.000000,0,jakob
+Internal Improvement,Critical,1,6,0.000000,0,matic.tribuson
+Bug,Major,1,2,0.000000,0,matic.tribuson
+Improvement (Sub-task),Minor,0,2,0.000000,0,rok.novosel
+Bug,Critical,0,2,0.000000,0,uros
+Internal Improvement,Minor,0,0,0.000000,0,miha.rugelj
+Bug,Major,0,8,0.000000,0,marko.cavdek
+Bug,Critical,1,8,0.000000,0,viljem
+Improvement (Sub-task),Minor,2,8,0.000000,0,jure.malovrh
+New Feature or Improvement,Major,1,8,0.000000,0,matic.balantic
+Bug,Minor,0,7,0.000000,0,jakob
+Internal Improvement,Major,0,7,0.000000,0,samo
+Bug,Major,1,7,0.000000,0,ales.kurent
+Bug,Major,0,7,0.000000,0,marko.cavdek
+Bug,Minor,1,7,0.000000,0,matic.tribuson
+Internal Improvement,Major,0,8,0.000000,0,miha.kavcic
+Bug,Minor,1,7,0.000000,0,svetlana
+Internal Improvement,Minor,2,7,0.000000,0,jakob
+Bug,Blocker,0,7,0.000000,0,marko.cavdek
+New Feature or Improvement,Major,1,8,0.000000,0,kyle
+Bug,Major,2,8,0.000000,0,tomaz
+Bug,Major,1,7,0.000000,0,darko
+Bug,Critical,0,7,0.000000,0,svetlana
+Bug,Major,0,7,0.000000,0,anze.brvar
+Bug,Critical,1,7,0.000000,0,matic.tribuson
+Bug,Minor,1,7,0.000000,0,ziga
+Internal Improvement,Minor,1,8,0.000000,0,jaka
+Bug,Minor,0,8,0.000000,0,rok.novosel
+Internal Improvement,Minor,2,8,0.000000,0,viljem
+New Feature or Improvement,Major,0,8,0.000000,0,jakob
+Bug,Major,0,7,0.000000,0,marko.cavdek
+Internal Improvement,Minor,1,6,0.000000,0,arjan
+Bug,Major,1,8,0.000000,0,marko.cavdek
+Internal Improvement,Blocker,0,8,0.000000,0,miha.kavcic
+Internal Improvement,Minor,0,8,0.000000,0,bruno
+New Feature or Improvement,Major,0,8,0.000000,0,svetlana
+Internal Improvement,Major,0,8,0.000000,0,miha.kavcic
+Bug,Blocker,2,7,0.000000,0,anze.brvar
+Internal Improvement,Major,6,7,0.000000,0,gasper
+Bug,Major,2,7,0.000000,0,aleksander
+Bug,Critical,2,7,0.000000,0,miha.rugelj
+Bug,Critical,0,7,0.000000,0,matic.tribuson
+Internal Improvement,Minor,2,7,0.000000,0,mitja
+Bug,Minor,1,6,0.000000,0,matjaz.ursic
+Bug,Major,2,7,0.000000,0,dejan
+Bug,Minor,1,6,0.000000,0,matic.tribuson
+Bug,Critical,4,6,0.000000,0,goran
+Bug,Blocker,2,7,0.000000,0,matic.tribuson
+Bug,Critical,8,7,0.000000,0,jure.cotic
+Bug,Minor,3,7,0.000000,0,darko
+Internal Improvement,Minor,3,7,0.000000,0,ukovac
+Internal Improvement,Minor,0,6,0.000000,0,tine
+Bug,Major,2,6,0.000000,0,uros
+Internal Improvement,Minor,1,6,0.000000,0,jaka
+Bug,Minor,1,7,0.000000,0,ziga
+Bug,Major,1,7,0.000000,0,tomaz
+Bug,Major,0,7,0.000000,0,miha.kavcic
+Bug,Major,0,7,0.000000,0,jakob
+Internal Improvement,Minor,1,6,0.000000,0,viljem
+Bug,Minor,0,8,0.000000,0,samo
+Bug,Major,0,10,0.000000,0,miha.kavcic
+Internal Improvement,Critical,3,6,0.000000,0,arjan
+Bug,Minor,1,7,0.000000,0,arjan
+Internal Improvement,Major,2,6,0.000000,0,matic.tribuson
+Bug,Major,1,6,0.000000,0,andrej.oblak
+Bug,Minor,1,6,0.000000,0,rok.pensek
+Internal Improvement,Minor,2,5,0.000000,0,tine
+Bug,Major,0,5,0.000000,0,mitja
+Internal Improvement,Minor,1,6,0.000000,0,matic.balantic
+Bug,Major,3,6,0.000000,0,mitja
+Bug,Minor,1,5,0.000000,0,marko.cavdek
+Bug,Major,4,5,0.000000,0,ziga
+Bug,Minor,1,5,0.000000,0,dejan
+Bug,Minor,0,6,0.000000,0,jakob
+Bug,Minor,1,6,0.000000,0,marko.cavdek
+Bug,Major,1,5,0.000000,0,jernej
+New Feature or Improvement,Major,4,5,1.000000,0,jason
+Bug,Minor,1,6,1.000000,0,martijn
+Bug (Sub-task),Minor,1,6,0.000000,0,martijn
+Internal Improvement,Critical,1,6,0.000000,0,tomaz
+Bug,Blocker,0,6,0.000000,0,miha.kavcic
+Internal Improvement,Major,0,5,0.000000,0,arjan
+Bug,Major,0,6,0.000000,0,mitja
+Bug,Critical,0,6,0.000000,0,zan.kusterle
+Bug,Minor,0,6,0.000000,0,jakob
+Internal Improvement,Minor,2,6,0.000000,0,matt
+Internal Improvement,Major,0,6,0.000000,0,arjan
+Bug,Major,0,6,0.000000,0,rok
+Bug,Minor,1,5,0.000000,0,matic.tribuson
+Bug,Minor,5,4,0.000000,0,jaka
+Bug,Major,3,5,0.000000,0,ziga
+Bug (Sub-task),Critical,1,5,1.000000,0,anton
+Internal Improvement,Major,1,6,0.000000,0,arjan
+Bug,Major,1,6,0.000000,0,denis
+Internal Improvement,Major,1,6,0.000000,0,anze.brvar
+Internal Improvement,Critical,5,6,0.333333,0,miha.kavcic
+Bug,Critical,2,5,0.000000,0,jernej
+Bug (Sub-task),Major,0,5,0.000000,0,blaz
+Bug,Major,3,5,0.000000,0,miha.kavcic
+Internal Improvement,Minor,1,5,0.000000,0,ziga
+Bug (Sub-task),Critical,3,5,0.000000,0,dejan
+New Feature or Improvement,Major,0,5,0.000000,0,matic.balantic
+Bug,Major,2,5,0.000000,0,darko
+Internal Improvement,Minor,1,4,0.000000,0,jaka
+Bug,Minor,2,5,0.000000,0,rok.pensek
+Bug,Blocker,2,5,0.000000,0,gasper
+Bug,Major,0,5,0.000000,0,ziga.vucko
+Bug,Major,2,5,0.000000,0,tomaz
+Bug,Major,0,5,0.000000,0,jakob
+Internal Improvement,Minor,1,5,0.000000,0,matt
+Internal Improvement,Minor,0,5,1.000000,0,jason
+Internal Improvement,Minor,3,5,0.000000,0,jason
+Bug,Major,2,5,0.000000,0,ziga
+Internal Improvement,Major,6,5,0.000000,0,gasper
+Internal Improvement,Minor,1,5,0.000000,0,dejan
+Bug (Sub-task),Major,1,5,1.000000,0,jason
+Bug (Sub-task),Minor,3,5,0.000000,0,andrej.oblak
+Bug,Major,3,4,0.000000,0,jure.malovrh
+New Feature or Improvement,Major,0,6,0.000000,0,denis
+Bug,Major,0,6,0.000000,0,anze.brvar
+Internal Improvement,Critical,1,10,0.000000,0,miha.rugelj
+Bug,Major,2,10,0.000000,0,marko.cavdek
+Bug,Blocker,0,10,0.000000,0,dejan
+Bug,Major,1,10,0.000000,0,matic.tribuson
+Bug,Critical,0,9,0.000000,0,rok.pensek
+Internal Improvement,Minor,1,10,0.000000,0,miha.rugelj
+Bug,Critical,0,10,0.000000,0,miha.kavcic
+Bug,Major,2,9,0.000000,0,anze.brvar
+Internal Improvement,Minor,1,9,0.000000,0,ziga
+Bug,Major,1,9,0.000000,0,marko.cavdek
+New Feature or Improvement,Major,3,9,0.000000,0,joshua joice
+Internal Improvement,Blocker,0,9,0.000000,0,iztokoder
+Bug,Major,3,10,0.000000,0,uros
+Internal Improvement,Minor,1,8,0.000000,0,dejan.lokar
+Bug,Critical,0,10,0.000000,0,marko.cavdek
+Bug,Major,0,10,0.000000,0,rok.novosel
+Internal Improvement,Minor,0,10,0.000000,0,viljem
+Bug,Minor,1,10,0.000000,0,jernej
+Bug,Blocker,1,9,0.000000,0,marko.cavdek
+Internal Improvement,Minor,2,9,0.000000,0,viljem
+Internal Improvement,Major,0,9,0.000000,0,viljem
+Bug,Minor,1,9,1.000000,0,marko
+Bug,Minor,2,9,0.000000,0,dejan
+Bug,Minor,0,9,2.000000,0,rok.pensek
+Bug,Major,3,9,0.000000,0,ziga
+Bug,Minor,1,8,0.000000,0,gasper.jeklin
+Bug,Critical,4,10,0.000000,0,goran
+Bug,Critical,0,10,0.000000,0,uros
+Internal Improvement,Minor,0,10,0.000000,0,ziga
+Bug,Major,1,10,0.000000,0,andrej.oblak
+Bug,Minor,1,10,0.000000,0,martijn
+Bug,Minor,2,9,0.000000,0,aleksander
+Bug,Major,0,9,0.000000,0,arjan
+Bug,Minor,0,9,0.500000,0,zan.kusterle
+Bug,Blocker,1,8,0.000000,0,matic.tribuson
+Bug,Major,0,10,0.000000,0,goran
+New Feature or Improvement,Major,1,10,0.000000,0,mitja
+Bug,Major,2,10,0.000000,0,tomaz
+Bug,Minor,1,10,0.000000,0,viljem
+Bug,Blocker,2,10,0.000000,0,anton
+Bug,Major,1,10,0.000000,0,gregor.praprotnik
+New Feature or Improvement,Major,1,10,0.000000,0,gregor.praprotnik
+Bug,Minor,1,10,0.000000,0,mitja
+Internal Improvement,Minor,2,9,0.000000,0,arjan
+Bug,Critical,0,9,0.000000,0,martijn
+Bug,Major,1,9,0.000000,0,matic.tribuson
+Bug,Minor,1,9,0.000000,0,marko.cavdek
+Bug,Critical,3,10,0.000000,0,rok
+Internal Improvement,Minor,1,9,0.000000,0,arjan
+Bug,Major,0,9,0.500000,0,jernej
+Bug,Major,1,9,0.000000,0,miha.kavcic
+Internal Improvement,Critical,3,9,0.000000,0,ziga
+Bug,Minor,2,9,0.000000,0,miha.rugelj
+Bug,Minor,1,8,0.000000,0,gregor.cepin
+Internal Improvement,Minor,0,10,0.000000,0,jure.cotic
+Bug,Major,2,9,0.000000,0,gregor.praprotnik
+Bug,Major,2,7,1.000000,0,darko
+Bug,Minor,0,9,0.000000,0,marko.cavdek
+Bug,Major,3,9,1.000000,0,darko
+Bug,Major,1,9,0.000000,0,tomaz
+Bug,Major,1,9,0.000000,0,jakob
+Bug,Major,0,9,0.000000,0,blaz
+Internal Improvement,Minor,1,9,0.000000,0,viljem
+Internal Improvement,Minor,2,9,0.000000,0,matic.tribuson
+Bug,Critical,2,10,0.000000,0,marko.cavdek
+Internal Improvement,Minor,18,10,0.000000,0,jure.cotic
+Bug,Critical,1,10,0.000000,0,marko.cavdek
+Bug,Minor,0,10,0.000000,0,rok.novosel
+Bug,Minor,0,10,0.000000,0,blaz
+Bug,Major,2,10,0.000000,0,gregor.cepin
+New Feature or Improvement,Major,1,7,0.000000,0,ziga
+Internal Improvement,Minor,2,9,0.000000,0,martijn
+Bug,Major,2,9,0.500000,0,matic.tribuson
+Bug,Major,1,9,0.000000,0,rok
+Bug,Minor,1,9,0.000000,0,iztokoder
+Bug,Major,1,8,0.000000,0,marko.cavdek
+Bug,Major,2,8,0.000000,0,ziga
+Bug,Major,1,8,0.000000,0,matjaz.ursic
+Internal Improvement,Minor,1,8,0.000000,0,arjan
+Internal Improvement,Major,0,8,0.000000,0,dejan.lokar
+Internal Improvement,Major,0,8,0.000000,0,jakob
+Bug,Minor,2,8,0.000000,0,ziga
+Bug,Critical,2,7,0.000000,0,jurij
+Bug,Critical,2,7,1.000000,0,miha.kavcic
+Bug,Minor,0,7,0.000000,0,svetlana
+Bug,Major,0,12,0.000000,0,tomaz
+Internal Improvement,Blocker,0,8,0.000000,0,miha.kavcic
+Internal Improvement,Minor,1,8,0.000000,0,blaz
+Bug (Sub-task),Minor,1,8,0.000000,0,jason
+Bug,Minor,1,8,0.000000,0,rok.pensek
+Bug,Minor,2,8,0.000000,0,ziga
+Internal Improvement,Major,2,8,0.000000,0,gregor.praprotnik
+Internal Improvement,Minor,3,7,0.000000,0,aleksander
+Bug,Major,1,8,0.000000,0,anze.brvar
+Bug,Critical,0,8,0.000000,0,marko.cavdek
+Bug,Major,0,8,0.000000,0,miha.kavcic
+Bug,Minor,3,8,0.000000,0,natalija
+Bug,Blocker,2,8,0.000000,0,gregor.cepin
+Bug,Minor,1,7,0.000000,0,iztokoder
+Bug,Minor,1,16,0.000000,0,marko.cavdek
+Internal Improvement,Major,3,16,0.000000,0,darko
+Internal Improvement,Major,2,16,0.000000,0,marko.prelevikj
+Bug,Major,3,15,0.000000,0,martijn
+Bug,Major,0,15,0.000000,0,rok
+Bug,Major,4,14,0.000000,0,anton
+Internal Improvement,Major,0,14,0.000000,0,gregor.praprotnik
+Internal Improvement,Major,0,14,0.000000,0,aleksander
+New Feature or Improvement,Blocker,0,13,0.000000,0,matic.tribuson
+Bug,Critical,2,13,0.000000,0,matic.tribuson
+Bug,Minor,2,13,0.000000,0,jurij
+Internal Improvement,Minor,2,13,0.000000,0,jakob
+Internal Improvement,Minor,1,12,1.000000,0,jaka
+New Feature or Improvement,Major,3,12,0.000000,0,gasper
+New Feature or Improvement,Minor,3,34,0.000000,0,andrej.oblak
+New Feature or Improvement,Major,0,7,0.000000,0,zan.kusterle
+Internal Improvement,Minor,1,16,0.000000,0,marko.prelevikj
+New Feature or Improvement,Critical,0,15,0.000000,0,mitja
+Internal Improvement,Minor,2,15,0.000000,0,uros
+New Feature or Improvement,Major,6,15,0.000000,0,anton
+Bug,Blocker,0,14,0.000000,0,ales.kurent
+New Feature or Improvement,Minor,1,14,0.000000,0,miha.kavcic
+New Feature or Improvement,Major,2,13,0.000000,0,kyle
+Internal Improvement,Minor,1,13,0.000000,0,viljem
+Bug,Major,0,13,0.000000,0,andrej.oblak
+Bug,Minor,1,11,0.000000,0,matjaz.ursic
+New Feature or Improvement,Minor,4,16,0.000000,0,gregor.praprotnik
+Internal Improvement,Minor,1,14,0.000000,0,tine
+Bug,Blocker,2,14,0.000000,0,tomaz
+New Feature or Improvement,Minor,3,15,0.000000,0,anton
+Bug,Major,2,14,0.000000,0,darko
+Bug,Major,1,13,0.000000,0,anton
+Internal Improvement,Minor,2,12,0.000000,0,ziga
+New Feature or Improvement,Major,7,16,0.666667,0,kyle
+New Feature or Improvement,Major,2,15,0.000000,0,gregor.praprotnik
+Internal Improvement,Minor,1,15,0.000000,0,martijn
+New Feature or Improvement,Critical,1,14,0.500000,0,jure.malovrh
+Internal Improvement,Minor,0,13,0.000000,0,dejan
+New Feature or Improvement,Major,0,13,0.000000,0,jason
+Bug,Major,1,13,0.000000,0,matic.tribuson
+New Feature or Improvement,Major,1,13,0.000000,0,domen.kosir
+Bug,Major,0,12,0.000000,0,iztokoder
+New Feature or Improvement,Minor,11,16,0.000000,0,arjan
+Internal Improvement,Major,2,13,0.000000,0,anze.brvar
+New Feature or Improvement,Minor,2,26,0.000000,0,natalija
+Internal Improvement,Blocker,2,14,0.000000,0,jure.malovrh
+Internal Improvement,Critical,3,14,0.000000,0,anze.brvar
+Bug,Major,1,14,0.000000,0,gasper.jeklin
+New Feature or Improvement,Minor,2,14,0.000000,0,matic.tribuson
+New Feature or Improvement,Major,0,13,0.000000,0,jakob
+Bug,Critical,5,12,1.000000,0,rok
+Internal Improvement,Minor,1,12,0.000000,0,jure.malovrh
+Bug,Major,1,12,0.000000,0,iztokoder
+Internal Improvement,Minor,0,15,0.000000,0,sandi.rezonja
+Internal Improvement,Minor,0,13,0.000000,0,blaz.snuderl
+Internal Improvement,Major,3,13,1.000000,0,dejan
+New Feature or Improvement,Critical,1,13,0.000000,0,ziga
+Bug,Critical,0,13,0.000000,0,marko.prelevikj
+New Feature or Improvement,Minor,4,23,0.000000,0,marko
+Internal Improvement,Minor,2,12,0.000000,0,jakob
+Internal Improvement,Major,2,12,0.000000,0,arjan
+Internal Improvement,Major,0,12,0.000000,0,miha.rugelj
+Internal Improvement,Minor,5,12,0.000000,0,marko
+New Feature or Improvement,Major,7,37,0.000000,0,marko
+New Feature or Improvement,Major,2,24,0.000000,0,uros
+Internal Improvement,Minor,2,21,0.000000,0,martijn
+Internal Improvement,Minor,2,20,0.000000,0,martijn
+Bug,Critical,1,17,0.000000,0,matjaz.ursic
+Bug,Major,2,16,0.000000,0,marko.cavdek
+New Feature or Improvement,Major,13,97,1.000000,0,martijn
+New Feature or Improvement,Minor,3,82,0.000000,0,martijn
+New Feature or Improvement,Major,9,37,0.000000,0,gregor.praprotnik
+Bug,Major,1,14,0.000000,0,miha.kavcic
+New Feature or Improvement,Major,6,18,1.000000,0,miha.kavcic
+Internal Improvement,Major,0,21,0.000000,0,ales.kurent
+Bug,Critical,5,19,0.000000,0,anton
+Internal Improvement,Minor,2,18,0.000000,0,marko.cavdek
+Internal Improvement,Minor,4,17,0.000000,0,blaz
+Internal Improvement,Major,6,52,0.000000,0,martijn
+New Feature or Improvement,Major,11,28,0.000000,0,mitja
+Internal Improvement,Minor,0,22,0.500000,0,martijn
+Bug,Critical,5,20,0.000000,0,martijn
+New Feature or Improvement,Critical,3,20,0.000000,0,marko.cavdek
+New Feature or Improvement,Major,4,20,0.000000,0,marko
+New Feature or Improvement,Minor,5,19,0.000000,0,tomaz
+Internal Improvement,Major,2,18,0.333333,0,marko.cavdek
+Internal Improvement,Minor,0,17,0.000000,0,tine
+Bug,Minor,0,15,0.000000,0,matjaz.ursic
+New Feature or Improvement,Major,11,34,0.000000,0,miha.kavcic
+New Feature or Improvement,Major,5,26,0.500000,0,matic.tribuson
+Bug,Major,7,25,1.000000,0,matic.tribuson
+Internal Improvement,Major,3,25,0.000000,0,gregor.praprotnik
+Bug,Critical,1,22,0.000000,0,natalija
+Bug,Major,3,21,1.000000,0,martijn
+New Feature or Improvement,Critical,3,19,0.000000,0,rok
+New Feature or Improvement,Critical,4,19,0.000000,0,rok
+Bug,Critical,1,18,0.000000,0,matic.tribuson
+Bug,Minor,2,18,0.000000,0,miha.kavcic
+Internal Improvement,Minor,3,17,0.500000,0,marko
+New Feature or Improvement,Minor,2,17,0.000000,0,matjaz.ursic
+Bug,Minor,0,16,0.500000,0,iztokoder
+Bug,Critical,2,12,0.000000,0,jason
+Bug,Blocker,2,12,0.000000,0,darko
+Internal Improvement,Major,1,14,0.000000,0,uros
+Internal Improvement,Minor,0,14,0.000000,0,sandi.rezonja
+Internal Improvement,Minor,5,14,0.000000,0,anze.brvar
+Bug,Major,5,14,0.000000,0,miha.rugelj
+New Feature or Improvement,Critical,2,13,0.000000,0,ziga
+New Feature or Improvement,Major,3,13,0.000000,0,jakob
+New Feature or Improvement,Major,4,13,0.000000,0,andrej.oblak
+Bug,Major,0,13,0.500000,0,matevz.stinjek
+Internal Improvement,Minor,11,13,0.000000,0,arjan
+Internal Improvement,Minor,1,12,0.000000,0,jure.cotic
+Internal Improvement,Minor,0,12,0.000000,0,zan.kusterle
+Internal Improvement,Minor,3,12,0.000000,0,dejan
+New Feature or Improvement,Minor,3,12,0.000000,0,darko
+Bug,Minor,0,12,0.000000,0,blaz
+Internal Improvement,Major,1,11,0.000000,0,jakob
+Internal Improvement,Minor,0,11,0.500000,0,matjaz.finzgar
+Bug,Minor,1,15,0.000000,0,matjaz.ursic
+Internal Improvement,Minor,2,14,0.000000,0,martijn
+Bug,Minor,1,14,0.000000,0,martijn
+Improvement (Sub-task),Major,1,14,0.000000,0,mitja
+Bug,Critical,0,13,0.000000,0,andrej.oblak
+Bug,Major,3,13,0.000000,0,matic.tribuson
+Internal Improvement,Minor,2,13,0.000000,0,aleksander
+Internal Improvement,Major,2,13,0.000000,0,goran
+Internal Improvement,Minor,0,13,0.000000,0,matic.balantic
+New Feature or Improvement,Major,1,12,1.000000,0,blaz
+New Feature or Improvement,Critical,0,12,0.000000,0,matic.tribuson
+Bug,Critical,0,9,0.000000,0,svetlana
+Bug,Blocker,0,16,0.000000,0,ales.kurent
+Internal Improvement,Minor,0,12,0.000000,0,sandi.rezonja
+New Feature or Improvement,Critical,2,11,0.000000,0,miha.kavcic
+Bug,Major,0,11,0.000000,0,matic.tribuson
+Internal Improvement,Minor,0,11,1.000000,0,miha.rugelj
+New Feature or Improvement,Major,6,11,0.000000,0,gasper
+Internal Improvement,Minor,0,11,0.000000,0,tine
+Bug,Minor,0,11,0.000000,0,rok.novosel
+Bug,Minor,0,11,0.000000,0,alexander.vasilyev
+Bug,Major,2,11,0.000000,0,matic.tribuson
+New Feature or Improvement,Major,8,11,0.000000,0,jure.cotic
+Internal Improvement,Minor,0,11,0.000000,0,tine
+Bug,Major,0,11,0.000000,0,rok.novosel
+Bug,Major,7,11,0.000000,0,ziga
+Internal Improvement,Minor,1,17,0.000000,0,sandi.rezonja
+Bug,Critical,1,11,0.000000,0,matic.tribuson
+Internal Improvement,Major,1,11,0.000000,0,darko
+Bug,Critical,1,11,0.000000,0,darko
+Internal Improvement,Minor,0,11,0.000000,0,dejan.lokar
+New Feature or Improvement,Major,1,11,0.000000,0,ziga
+Internal Improvement,Minor,1,11,0.000000,0,goran
+Bug,Major,2,11,0.000000,0,matic.tribuson
+Bug,Minor,3,11,0.000000,0,ziga
+Bug,Major,1,25,0.000000,0,martijn
+Internal Improvement,Minor,0,23,0.000000,0,mitja
+New Feature or Improvement,Minor,4,22,2.000000,0,rok
+Internal Improvement,Minor,1,19,0.000000,0,dejan
+New Feature or Improvement,Minor,8,18,0.000000,0,uros
+Internal Improvement,Major,3,21,0.000000,0,mitja
+Bug,Blocker,1,18,0.000000,0,dejan
+Internal Improvement,Blocker,0,16,1.000000,0,dejan.lokar
+Bug,Critical,3,16,0.000000,0,tomaz
+New Feature or Improvement,Minor,15,51,0.500000,0,marko
+Internal Improvement,Major,4,32,1.000000,0,martijn
+Bug,Major,4,30,0.000000,0,martijn
+Internal Improvement,Minor,10,30,0.000000,0,miha.kavcic
+Internal Improvement,Minor,0,25,0.000000,0,martijn
+New Feature or Improvement,Critical,6,22,0.000000,0,ziga
+Bug,Minor,1,22,0.000000,0,martijn
+Internal Improvement,Major,4,19,0.000000,0,darko
+New Feature or Improvement,Minor,6,19,0.000000,0,matic.tribuson
+Bug,Major,4,17,0.000000,0,simon
+Internal Improvement,Minor,0,21,0.000000,0,martijn
+New Feature or Improvement,Critical,2,17,1.000000,0,marko.cavdek
+Internal Improvement,Minor,5,20,0.000000,0,miha.rugelj
+New Feature or Improvement,Major,2,20,0.000000,0,jason
+Internal Improvement,Minor,4,18,0.500000,0,martijn
+Bug,Minor,3,18,0.000000,0,matic.tribuson
+Internal Improvement,Minor,2,16,0.000000,0,dejan
+Improvement (Sub-task),Major,3,60,2.000000,0,ziga
+Bug,Major,1,29,0.500000,0,martijn
+New Feature or Improvement,Major,2,26,0.000000,0,mitja
+New Feature or Improvement,Major,6,25,0.000000,0,denis
+New Feature or Improvement,Minor,4,22,0.500000,0,matic.tribuson
+New Feature or Improvement,Major,3,22,1.000000,0,denis
+Bug,Minor,2,21,0.500000,0,martijn
+New Feature or Improvement,Major,8,20,0.000000,0,ziga
+Bug,Major,1,11,0.000000,0,anton
+Internal Improvement,Minor,0,15,0.000000,0,matt
+New Feature or Improvement,Critical,2,16,0.000000,0,darko
+Bug (Sub-task),Minor,1,7,0.000000,0,andrej.oblak
+Bug,Blocker,1,7,0.000000,0,matic.tribuson
+Bug,Critical,0,0,0.000000,0,ales.kurent
+Bug,Minor,1,0,0.000000,0,arjan
+Internal Improvement,Major,2,2,0.000000,0,arif
+New Feature or Improvement,Critical,2,1,0.000000,0,gasper
+Bug,Major,0,1,0.000000,0,gasper
+New Feature or Improvement,Major,0,0,0.000000,0,iztokoder
+Internal Improvement,Minor,0,0,0.000000,0,simon
+Bug,Blocker,0,0,0.000000,0,uros
+Bug,Minor,0,1,0.000000,0,goran
+Bug,Minor,0,1,0.000000,0,zan.kusterle
+New Feature or Improvement,Major,5,3,0.000000,0,uros
+Internal Improvement,Major,0,1,0.000000,0,blaz.snuderl
+New Feature or Improvement,Major,1,1,0.000000,0,denis
+Bug,Minor,0,0,0.000000,0,simon
+Bug,Minor,1,4,0.000000,0,goran
+Bug,Major,0,4,0.000000,0,arjan
+Bug,Minor,1,4,0.000000,0,samo
+Bug,Major,1,4,0.000000,0,marko.cavdek
+Internal Improvement,Major,2,4,0.000000,0,marko.cavdek
+New Feature or Improvement,Minor,0,4,0.000000,0,miha.rugelj
+Bug,Major,0,4,0.000000,0,matjaz.ursic
+Bug,Minor,1,4,0.000000,0,tomaz
+Bug,Blocker,2,4,0.000000,0,anton
+Bug,Major,0,4,0.000000,0,rok
+Bug,Blocker,1,4,0.000000,0,marko.cavdek
+Bug,Minor,1,3,0.000000,0,arjan
+Bug,Blocker,1,2,0.000000,0,matic.tribuson
+Internal Improvement,Minor,0,4,0.000000,0,anze.brvar
+Bug,Major,2,4,0.000000,0,ziga
+Bug,Minor,2,4,0.000000,0,martijn
+Bug,Critical,1,4,0.000000,0,ziga
+Bug,Major,0,3,0.000000,0,iztokoder
+Bug,Minor,0,4,0.000000,0,marko.cavdek
+Internal Improvement,Critical,0,4,0.000000,0,matjaz.finzgar
+New Feature or Improvement,Major,1,4,0.000000,0,matic.tribuson
+Bug,Minor,3,4,1.000000,0,rok
+New Feature or Improvement,Major,0,3,0.000000,0,matej.sircelj
+Internal Improvement,Major,1,4,0.000000,0,tomaz
+Internal Improvement,Minor,0,3,0.000000,0,miha.rugelj
+Improvement (Sub-task),Minor,0,3,0.000000,0,rok.novosel
+Internal Improvement,Minor,0,3,0.000000,0,blaz
+Bug,Major,1,6,0.000000,0,matic.balantic
+Bug,Major,2,3,0.000000,0,goran
+Bug,Major,1,1,0.000000,0,marko
+Bug,Minor,0,1,0.000000,0,miha.kavcic
+Internal Improvement,Minor,1,3,0.000000,0,jaka
+New Feature or Improvement,Minor,0,3,0.000000,0,uros
+New Feature or Improvement,Major,2,3,0.000000,0,gasper
+New Feature or Improvement,Major,0,3,0.000000,0,gasper
+New Feature or Improvement,Major,1,3,0.000000,0,miha.kavcic
+Improvement (Sub-task),Minor,2,3,0.000000,0,andrej.oblak
+Bug,Minor,1,3,0.000000,0,rok
+Internal Improvement,Minor,0,3,0.000000,0,arjan
+New Feature or Improvement,Minor,5,3,0.000000,0,domen.kosir
+Bug,Minor,0,3,0.000000,0,tine
+Bug,Major,0,3,0.000000,0,matjaz.finzgar
+Internal Improvement,Critical,1,4,0.000000,0,martijn
+Bug,Minor,1,3,0.000000,0,ziga
+New Feature or Improvement,Minor,1,2,0.000000,0,iztokoder
+Bug,Major,0,2,0.000000,0,marko
+Internal Improvement,Major,2,2,0.000000,0,jure.cotic
+New Feature or Improvement,Major,0,0,0.000000,0,gregor
+New Feature or Improvement,Major,1,2,0.000000,0,uros
+Bug,Minor,1,2,0.000000,0,rok.pensek
+Internal Improvement,Minor,1,2,0.000000,0,ziga
+Bug,Minor,0,2,0.000000,0,gasper
+Internal Improvement,Critical,0,2,0.000000,0,matic.balantic
+Internal Improvement,Major,2,2,0.000000,0,rok
+Bug,Minor,0,2,0.000000,0,darko
+Bug,Major,2,8,0.000000,0,marko.cavdek
+Bug,Major,1,8,0.000000,0,marko.cavdek
+Bug,Minor,2,8,0.000000,0,matic.tribuson
+Bug,Critical,2,7,0.000000,0,uros
+Bug,Critical,1,7,0.000000,0,jason
+Internal Improvement,Major,2,8,0.000000,0,marko
+Internal Improvement,Minor,2,8,0.500000,0,arjan
+Internal Improvement,Major,0,8,0.000000,0,rok.novosel
+Bug,Blocker,2,8,0.000000,0,jure.malovrh
+Bug,Blocker,0,7,0.000000,0,goran
+Internal Improvement,Major,0,7,0.000000,0,samo
+Internal Improvement,Major,0,8,0.000000,0,arjan
+Internal Improvement,Major,3,8,0.000000,0,miha.rugelj
+Bug,Major,2,8,0.000000,0,jakob
+Internal Improvement,Minor,7,8,0.000000,0,matjaz.ursic
+Internal Improvement,Major,2,8,0.000000,0,miha.rugelj
+Bug,Minor,4,8,0.000000,0,rok.pensek
+Bug,Minor,2,7,0.000000,0,marko.cavdek
+Bug,Major,0,6,0.000000,0,ziga
+Bug,Major,1,8,0.000000,0,miha.kavcic
+Bug,Major,2,7,0.000000,0,aleksander
+Internal Improvement,Minor,1,7,0.000000,0,jurij.bajzelj
+New Feature or Improvement,Minor,2,8,0.000000,0,jernej
+Internal Improvement,Minor,0,7,0.000000,0,uros
+Bug,Major,1,8,0.000000,0,marko.cavdek
+Bug,Minor,0,8,0.000000,0,rok
+Bug,Major,0,8,0.000000,0,jure.malovrh
+Bug,Minor,1,8,0.000000,0,rok.novosel
+Internal Improvement,Critical,1,8,0.500000,0,jurij.bajzelj
+Bug,Critical,4,8,0.000000,0,arjan
+Bug,Critical,4,8,0.000000,0,gasper
+Bug,Minor,0,8,0.000000,0,miha.kavcic
+Bug,Critical,0,8,0.500000,0,jakob
+Bug,Major,3,8,0.000000,0,darko
+Bug (Sub-task),Minor,0,7,0.000000,0,jason
+Bug,Major,0,6,0.000000,0,matej.sircelj
+Bug,Minor,1,6,0.000000,0,marko.cavdek
+Internal Improvement,Major,1,7,0.000000,0,matic.balantic
+Bug,Minor,0,7,0.000000,0,matic.tribuson
+Bug,Minor,1,7,0.000000,0,matjaz.ursic
+Internal Improvement,Major,1,7,0.000000,0,matic.tribuson
+Bug,Major,2,7,0.000000,0,anton
+Internal Improvement,Minor,2,7,0.000000,0,arjan
+Internal Improvement,Minor,1,6,0.000000,0,marko.cavdek
+Internal Improvement,Minor,0,7,0.000000,0,viljem
+Bug,Minor,0,7,0.000000,0,tine
+Bug,Minor,1,7,0.000000,0,natalija
+Internal Improvement,Major,1,6,0.000000,0,marko.cavdek
+Bug,Critical,0,9,0.500000,0,svetlana
+New Feature or Improvement,Major,11,7,0.000000,0,ziga
+Bug,Critical,2,7,0.000000,0,simon
+Internal Improvement,Major,0,7,0.000000,0,jakob
+Bug,Minor,2,6,0.500000,0,marko
+Bug,Major,0,7,0.000000,0,rok.novosel
+Bug,Minor,2,7,0.000000,0,marko.cavdek
+Bug,Major,1,6,0.000000,0,gasper
+Bug,Minor,0,6,0.000000,0,ziga.vucko
+Bug,Major,1,6,0.000000,0,miha.kavcic
+Bug,Blocker,0,5,0.000000,0,rok.novosel
+New Feature or Improvement,Major,0,6,0.000000,0,gasper
+Bug,Minor,0,5,0.000000,0,ales.kurent
+Bug,Major,2,5,0.000000,0,gasper
+Bug,Critical,1,6,0.000000,0,marko.cavdek
+Bug,Major,1,6,0.000000,0,arjan
+Bug,Minor,2,5,0.000000,0,andrej.oblak
+Bug,Critical,0,5,0.000000,0,matic.tribuson
+Internal Improvement,Minor,3,6,0.000000,0,darko
+Bug,Major,4,6,0.000000,0,ziga
+Internal Improvement,Minor,2,6,0.000000,0,viljem
+New Feature or Improvement,Major,2,6,0.000000,0,miha.kavcic
+Internal Improvement,Critical,1,6,0.000000,0,matic.tribuson
+Bug,Minor,0,5,0.000000,0,jakob
+Bug (Sub-task),Critical,1,5,1.000000,0,anton
+Bug,Major,0,5,0.000000,0,matej.sircelj
+Internal Improvement,Minor,0,6,0.000000,0,marko.cavdek
+Bug,Blocker,0,6,0.000000,0,jakob
+Bug,Major,1,6,0.000000,0,denis
+Bug,Major,1,6,0.000000,0,matic.tribuson
+Bug,Minor,2,5,0.000000,0,ziga
+Bug,Minor,0,10,1.000000,0,iztokoder
+Bug,Minor,3,6,0.000000,0,jason
+Bug,Major,0,5,0.000000,0,jakob
+Bug,Minor,0,5,0.000000,0,dejan
+Bug,Critical,0,6,0.000000,0,miha.kavcic
+Internal Improvement,Minor,0,6,0.000000,0,tine
+Bug,Minor,1,5,0.000000,0,darko
+Bug,Minor,2,5,0.000000,0,matic.tribuson
+Bug,Major,5,5,0.000000,0,anton
+Bug,Major,3,5,0.000000,0,matjaz.ursic
+Bug,Minor,2,5,0.000000,0,tomaz
+Bug,Minor,2,5,0.000000,0,jernej
+Bug,Minor,1,5,0.000000,0,darko
+Bug,Minor,0,5,0.000000,0,ales.kurent
+Improvement (Sub-task),Major,3,5,0.000000,0,andrej.oblak
+Bug,Major,2,2,1.000000,0,gasper
+New Feature or Improvement,Critical,0,5,0.000000,0,matic.tribuson
+Bug,Major,8,5,0.000000,0,rok.pensek
+Bug,Major,1,5,0.000000,0,matic.tribuson
+Bug,Blocker,2,5,0.000000,0,ales.kurent
+Internal Improvement,Major,0,5,0.000000,0,dejan
+Bug,Major,0,5,0.000000,0,marko.cavdek
+New Feature or Improvement,Major,2,5,0.000000,0,matic.tribuson
+Bug,Critical,0,4,0.000000,0,miha.kavcic
+Internal Improvement,Minor,2,4,0.000000,0,ukovac
+Bug,Major,1,7,0.000000,0,miha.kavcic
+Bug,Minor,1,10,0.000000,0,marko.cavdek
+Bug,Minor,4,10,0.000000,0,ziga
+Internal Improvement,Major,2,10,0.000000,0,uros
+Internal Improvement,Minor,8,10,1.000000,0,arjan
+Internal Improvement,Critical,0,5,0.000000,0,iztokoder
+Bug,Minor,0,10,0.000000,0,marko.cavdek
+New Feature or Improvement,Minor,0,10,0.000000,0,jakob
+Bug,Major,2,10,0.000000,0,gregor.cepin
+Bug,Minor,3,9,0.000000,0,arjan
+Bug,Minor,3,9,0.000000,0,jason
+Internal Improvement,Minor,0,9,0.000000,0,dejan
+Bug,Trivial,1,8,1.000000,0,jurij
+Bug,Blocker,2,10,0.000000,0,jurij
+New Feature or Improvement,Major,3,10,0.000000,0,jason
+Internal Improvement,Minor,0,10,0.000000,0,natalija
+Bug,Critical,3,10,0.000000,0,gasper
+Bug,Major,0,10,0.000000,0,jakob
+Internal Improvement,Minor,0,10,0.000000,0,ukovac
+Internal Improvement,Critical,1,10,0.000000,0,marko.cavdek
+Bug,Major,1,10,0.000000,0,marko.cavdek
+Internal Improvement,Minor,5,9,1.000000,0,arjan
+Bug,Minor,1,9,0.000000,0,matic.tribuson
+New Feature or Improvement,Minor,2,9,0.000000,0,goran
+Bug,Critical,3,9,1.500000,0,tomaz
+Bug,Minor,0,10,0.000000,0,marko.cavdek
+New Feature or Improvement,Major,1,10,0.000000,0,matic.tribuson
+New Feature or Improvement,Minor,2,10,0.000000,0,blaz
+Bug,Critical,1,10,0.000000,0,matic.tribuson
+Bug,Minor,0,10,0.000000,0,dejan
+Bug,Trivial,1,9,0.000000,0,aleksander
+Bug,Major,0,9,0.000000,0,arjan
+Bug,Minor,1,9,0.000000,0,anze.brvar
+Bug,Major,1,9,0.000000,0,matic.tribuson
+Bug,Blocker,2,9,0.000000,0,matic.tribuson
+Bug,Major,1,10,0.000000,0,ziga
+Bug,Major,3,10,0.000000,0,matic.tribuson
+Bug,Minor,0,10,0.000000,0,marko.prelevikj
+Bug,Minor,3,10,0.000000,0,aleksander
+Bug,Minor,4,10,0.000000,0,aleksander
+Internal Improvement,Critical,1,10,0.000000,0,matic.balantic
+Bug,Blocker,0,9,0.000000,0,jakob
+Bug,Minor,0,9,0.000000,0,jakob
+Bug,Trivial,1,9,0.000000,0,rok.pensek
+New Feature or Improvement,Major,2,9,0.000000,0,jason
+Bug,Major,1,9,0.000000,0,gregor.praprotnik
+Bug,Major,3,9,0.000000,0,miha.rugelj
+Bug,Major,0,9,0.000000,0,marko.cavdek
+Bug,Minor,0,9,0.000000,0,rok.pensek
+Internal Improvement,Major,1,8,0.000000,0,samo
+Bug,Critical,1,10,0.000000,0,rok.pensek
+New Feature or Improvement,Minor,0,10,0.000000,0,jakob
+New Feature or Improvement,Minor,4,10,0.000000,0,aleksander
+Internal Improvement,Minor,0,10,0.000000,0,ukovac
+Internal Improvement,Major,1,10,0.000000,0,uros
+Internal Improvement,Minor,2,10,0.000000,0,arjan
+Internal Improvement,Major,1,9,0.000000,0,darko
+Bug,Minor,0,9,0.000000,0,martijn
+Bug,Blocker,1,9,0.000000,0,jakob
+Bug,Major,1,9,0.000000,0,matjaz.ursic
+Bug,Critical,4,9,0.000000,0,gregor.praprotnik
+Internal Improvement,Critical,4,8,0.000000,0,darko
+Bug,Minor,0,8,0.000000,0,martijn
+Bug,Blocker,0,10,0.000000,0,iztokoder
+Internal Improvement,Minor,0,10,0.000000,0,matevz.stinjek
+Internal Improvement,Minor,1,10,0.000000,0,viljem
+Bug,Major,1,8,0.000000,0,matjaz.ursic
+Internal Improvement,Minor,0,10,0.000000,0,arjan
+New Feature or Improvement,Critical,2,9,1.000000,0,uros
+Bug,Major,1,9,2.000000,0,arjan
+Bug,Major,3,9,0.000000,0,mitja
+New Feature or Improvement,Critical,0,9,0.000000,0,matic.tribuson
+New Feature or Improvement,Minor,0,9,0.000000,0,jernej
+Bug,Critical,4,9,0.000000,0,uros
+Bug,Minor,0,9,0.000000,0,blaz.snuderl
+New Feature or Improvement,Critical,0,10,0.000000,0,jakob
+Internal Improvement,Minor,1,10,0.000000,0,anton
+Bug,Major,2,9,0.000000,0,darko
+Bug,Minor,0,9,0.000000,0,rok.pensek
+Bug,Critical,1,9,0.000000,0,rok.novosel
+Bug (Sub-task),Critical,1,9,1.000000,0,anton
+Internal Improvement,Major,4,7,0.000000,0,ziga
+Bug,Minor,1,8,0.000000,0,miha.kavcic
+Bug,Major,1,10,0.000000,0,andrej.oblak
+New Feature or Improvement,Major,8,10,0.000000,0,marko.cavdek
+Bug,Critical,1,10,0.000000,0,anze.brvar
+Internal Improvement,Minor,1,9,0.000000,0,ziga
+Bug,Major,6,9,0.000000,0,miha.kavcic
+Improvement (Sub-task),Minor,2,9,0.000000,0,marko.cavdek
+Bug,Blocker,0,9,0.000000,0,rok
+Internal Improvement,Critical,4,8,0.000000,0,ziga
+Bug,Major,0,8,0.000000,0,miha.kavcic
+Bug,Major,0,8,0.000000,0,zan.kusterle
+Bug,Critical,0,7,0.000000,0,zan.kusterle
+Bug,Critical,0,8,0.000000,0,marko
+Bug,Major,4,8,0.000000,0,jakob
+Prototype,Major,2,12,0.000000,0,mitja
+Internal Improvement,Critical,0,12,0.000000,0,rok.novosel
+Bug,Critical,2,8,0.000000,0,gasper.jeklin
+Internal Improvement,Minor,0,8,0.000000,0,zan.kusterle
+Bug,Major,1,8,0.000000,0,matic.tribuson
+Bug,Major,1,7,0.000000,0,marko.cavdek
+Bug,Critical,2,16,0.000000,0,darko
+Bug,Minor,0,16,0.000000,0,andrej.oblak
+Bug,Minor,3,15,0.000000,0,matjaz.ursic
+Internal Improvement,Major,5,15,0.000000,0,darko
+Bug,Blocker,0,15,0.000000,0,ales.kurent
+Bug,Critical,3,15,0.000000,0,matic.tribuson
+Bug,Minor,0,13,0.000000,0,arjan
+Bug,Major,1,13,0.000000,0,jost
+Internal Improvement,Minor,2,13,0.000000,0,matic.tribuson
+New Feature or Improvement,Minor,1,12,0.000000,0,marko.cavdek
+Internal Improvement,Minor,1,26,0.000000,0,martijn
+Bug,Critical,1,12,0.000000,0,marko.cavdek
+Bug,Major,1,11,0.000000,0,matic.tribuson
+Bug,Minor,3,16,0.000000,0,andrej.oblak
+Internal Improvement,Major,1,15,1.000000,0,dejan
+Internal Improvement,Minor,1,15,0.000000,0,martijn
+Internal Improvement,Major,2,15,0.000000,0,viljem
+Internal Improvement,Major,6,15,0.000000,0,matic.tribuson
+Bug,Minor,1,15,0.000000,0,martijn
+Internal Improvement,Major,1,14,0.000000,0,mitja
+Bug,Minor,0,13,0.000000,0,tine
+Bug,Major,0,12,0.000000,0,miha.kavcic
+Internal Improvement,Blocker,0,12,0.000000,0,dejan
+Bug,Major,0,12,0.000000,0,dejan
+Bug,Minor,1,12,0.000000,0,tomaz
+Internal Improvement,Minor,1,7,0.000000,0,matic.tribuson
+Internal Improvement,Major,4,12,0.000000,0,marko.cavdek
+Internal Improvement,Major,7,15,0.000000,0,aleksander
+Bug,Minor,0,15,0.000000,0,iztokoder
+New Feature or Improvement,Major,5,12,0.000000,0,ziga
+Internal Improvement,Major,1,11,0.000000,0,rok.pensek
+Bug,Major,1,16,1.000000,0,martijn
+Bug,Critical,4,14,0.000000,0,rok.pensek
+Internal Improvement,Minor,0,14,0.000000,0,jure.malovrh
+Internal Improvement,Minor,1,14,0.000000,0,jernej
+Bug,Minor,1,14,0.000000,0,jernej
+Bug,Major,2,13,0.000000,0,miha.rugelj
+Internal Improvement,Minor,0,13,0.000000,0,dejan
+Bug,Major,2,13,1.000000,0,martijn
+Internal Improvement,Minor,1,13,0.000000,0,dejan
+Bug,Minor,0,12,0.500000,0,marko.cavdek
+Internal Improvement,Minor,7,12,0.000000,0,viljem
+Internal Improvement,Major,3,12,0.000000,0,darko
+Bug,Critical,3,12,0.000000,0,rok
+New Feature or Improvement,Critical,3,16,0.000000,0,matic.tribuson
+New Feature or Improvement,Minor,4,15,1.000000,0,matic.tribuson
+Bug,Minor,3,14,1.000000,0,martijn
+New Feature or Improvement,Major,3,14,0.000000,0,kyle
+Internal Improvement,Minor,1,14,0.000000,0,gasper
+Bug,Blocker,1,14,0.000000,0,denis
+Bug,Critical,1,13,0.000000,0,darko
+New Feature or Improvement,Major,2,13,0.500000,0,kyle
+Bug,Minor,2,13,0.000000,0,marko.cavdek
+Internal Improvement,Major,7,13,0.000000,0,arjan
+Internal Improvement,Minor,5,13,0.000000,0,viljem
+Bug,Blocker,0,12,0.000000,0,anze.brvar
+Bug,Minor,7,31,0.000000,0,marko
+New Feature or Improvement,Major,0,12,0.000000,0,jurij
+Bug,Blocker,0,12,0.000000,0,jakob
+New Feature or Improvement,Minor,3,12,0.000000,0,aleksander
+Improvement (Sub-task),Major,0,12,1.000000,0,alexander.vasilyev
+New Feature or Improvement,Major,0,15,0.000000,0,jakob
+Bug,Major,2,15,0.000000,0,anze.brvar
+New Feature or Improvement,Minor,1,15,0.000000,0,matjaz.ursic
+Bug,Minor,3,14,1.000000,0,tomaz
+Internal Improvement,Minor,0,14,0.000000,0,dejan
+Bug,Major,5,14,0.000000,0,martijn
+Bug,Critical,4,14,0.000000,0,darko
+New Feature or Improvement,Critical,1,13,0.000000,0,jure.malovrh
+Internal Improvement,Minor,1,13,0.000000,0,martijn
+Bug,Major,1,13,0.000000,0,jurij
+Bug,Major,3,12,0.000000,0,anton
+Bug,Blocker,0,12,0.000000,0,tine
+Bug,Critical,0,12,0.000000,0,miha.kavcic
+Internal Improvement,Critical,4,12,0.000000,0,miha.rugelj
+Bug,Major,0,12,0.000000,0,rok
+Bug,Minor,1,12,0.000000,0,matt
+Internal Improvement,Major,3,31,0.000000,0,ziga
+New Feature or Improvement,Major,5,31,0.000000,0,saso
+New Feature or Improvement,Minor,5,23,1.000000,0,matjaz.ursic
+Bug,Major,1,22,0.333333,0,rok
+Bug,Major,4,21,0.000000,0,marko
+New Feature or Improvement,Major,5,19,0.000000,0,marko.cavdek
+Bug,Major,4,17,0.000000,0,marko.cavdek
+Internal Improvement,Major,3,33,1.000000,0,dejan
+Bug,Major,1,32,0.000000,0,rok.pensek
+New Feature or Improvement,Major,3,32,0.000000,0,matic.tribuson
+New Feature or Improvement,Major,2,25,0.000000,0,anton
+New Feature or Improvement,Major,8,24,0.000000,0,goran
+Bug,Blocker,2,24,0.000000,0,mitja
+New Feature or Improvement,Critical,0,20,0.000000,0,matic.tribuson
+Internal Improvement,Major,3,20,0.000000,0,gregor.cepin
+Bug,Critical,6,19,2.000000,0,matic.tribuson
+New Feature or Improvement,Minor,4,18,0.000000,0,jurij
+New Feature or Improvement,Critical,2,17,0.000000,0,miha.kavcic
+Bug,Critical,0,17,1.000000,0,gasper.jeklin
+Internal Improvement,Minor,1,16,1.000000,0,martijn
+New Feature or Improvement,Major,10,41,0.000000,0,rok
+Bug,Major,2,27,0.000000,0,martijn
+Bug,Minor,2,27,1.000000,0,martijn
+Bug,Minor,1,26,0.000000,0,martijn
+Bug,Major,13,18,0.000000,0,darko
+Internal Improvement,Minor,6,26,0.000000,0,marko.cavdek
+New Feature or Improvement,Critical,4,24,0.000000,0,andrej.oblak
+New Feature or Improvement,Minor,2,21,0.000000,0,matic.tribuson
+Bug,Minor,0,20,0.000000,0,jernej
+New Feature or Improvement,Minor,2,20,0.000000,0,marko.cavdek
+Bug,Minor,0,18,0.333333,0,iztokoder
+Internal Improvement,Major,0,17,0.000000,0,viljem
+Internal Improvement,Minor,4,17,0.000000,0,ukovac
+Internal Improvement,Major,3,16,0.000000,0,andrej.oblak
+New Feature or Improvement,Major,7,16,0.000000,0,kyle
+Bug,Major,3,51,0.000000,0,mattia
+New Feature or Improvement,Major,2,22,0.000000,0,rok
+Bug,Critical,2,20,0.000000,0,rok
+Internal Improvement,Critical,2,19,0.000000,0,martijn
+New Feature or Improvement,Minor,0,12,0.000000,0,rok.novosel
+Bug,Minor,0,11,0.000000,0,rok
+Internal Improvement,Minor,0,18,0.000000,0,dejan.lokar
+Internal Improvement,Minor,4,18,0.000000,0,dejan
+New Feature or Improvement,Minor,0,17,0.000000,0,marko
+Bug,Minor,5,17,1.000000,0,martijn
+New Feature or Improvement,Minor,0,17,0.000000,0,marko
+Bug,Major,0,16,0.500000,0,marko
+Bug,Critical,2,15,0.000000,0,jurij
+Bug,Critical,3,14,0.000000,0,ziga
+New Feature or Improvement,Major,0,14,2.000000,0,gasper.jeklin
+Bug,Major,3,14,0.000000,0,jason
+Internal Improvement,Minor,0,14,0.000000,0,natalija
+Bug,Major,2,13,0.000000,0,marko.cavdek
+Improvement (Sub-task),Major,0,12,1.000000,0,mitja
+Bug,Critical,11,12,0.000000,0,gasper
+New Feature or Improvement,Minor,1,8,0.000000,0,marko.cavdek
+New Feature or Improvement,Minor,0,11,0.000000,0,jakob
+Bug,Minor,0,15,0.000000,0,anze.brvar
+Internal Improvement,Minor,0,15,0.000000,0,zan.kusterle
+Internal Improvement,Minor,1,15,0.000000,0,dejan
+New Feature or Improvement,Minor,3,15,0.000000,0,jernej
+Internal Improvement,Minor,0,14,0.000000,0,dejan.lokar
+Internal Improvement,Major,0,13,1.000000,0,sandi.rezonja
+Bug,Minor,2,13,0.000000,0,ziga
+Bug,Major,0,13,1.000000,0,denis
+Bug,Critical,1,12,0.000000,0,natalija
+Internal Improvement,Minor,2,12,1.000000,0,matic.tribuson
+Internal Improvement,Minor,0,12,0.000000,0,arjan
+Internal Improvement,Minor,2,12,0.000000,0,marko
+Bug,Major,4,12,0.000000,0,ziga
+Bug,Minor,5,18,0.000000,0,gasper.jeklin
+Bug,Minor,0,11,0.000000,0,rok
+New Feature or Improvement,Minor,1,11,0.000000,0,jurij
+Bug,Major,2,11,0.000000,0,ziga
+Bug,Major,3,11,1.000000,0,rok.pensek
+Bug,Critical,6,11,0.000000,0,darko
+Bug,Critical,2,11,0.000000,0,darko
+Bug,Major,1,11,0.000000,0,arjan
+Bug,Major,1,11,0.000000,0,marko.cavdek
+Internal Improvement,Minor,4,11,0.000000,0,marko.cavdek
+Internal Improvement,Minor,0,11,0.000000,0,dejan
+Internal Improvement,Minor,2,11,0.000000,0,tine
+Internal Improvement,Minor,2,11,0.000000,0,domen.kosir
+Bug,Minor,1,11,0.000000,0,darko
+Internal Improvement,Major,0,11,0.000000,0,matic.balantic
+Internal Improvement,Minor,3,31,1.000000,0,martijn
+Bug,Critical,10,11,0.000000,0,matjaz.ursic
+Bug,Minor,1,11,0.000000,0,matjaz.ursic
+Bug,Critical,0,11,0.000000,0,matic.tribuson
+Bug,Minor,0,11,0.000000,0,dejan
+Bug,Minor,0,11,0.000000,0,gasper.jeklin
+Internal Improvement,Minor,3,11,1.000000,0,gregor.praprotnik
+Internal Improvement,Minor,0,11,0.000000,0,sandi.rezonja
+Internal Improvement,Minor,2,11,1.000000,0,viljem
+Bug (Sub-task),Critical,0,0,0.000000,0,gasper.jeklin
+New Feature or Improvement,Major,9,88,0.000000,0,martijn
+Internal Improvement,Minor,3,44,0.000000,0,viljem
+Internal Improvement,Minor,8,44,1.000000,0,matic.tribuson
+Bug,Major,5,37,0.000000,0,ukovac
+New Feature or Improvement,Major,9,33,0.000000,0,martijn
+New Feature or Improvement,Major,7,17,0.000000,0,rok.pensek
+New Feature or Improvement,Major,1,35,0.000000,0,gregor.praprotnik
+Bug,Major,8,30,0.000000,0,simon
+Bug,Critical,3,27,0.000000,0,martijn
+New Feature or Improvement,Major,9,24,0.000000,0,anton
+Bug,Major,0,23,0.500000,0,martijn
+Bug,Blocker,2,18,0.000000,0,andrej.oblak
+Internal Improvement,Minor,1,16,0.000000,0,arjan
+New Feature or Improvement,Major,13,53,0.000000,0,martijn
+New Feature or Improvement,Major,5,50,0.000000,0,marko
+New Feature or Improvement,Major,3,23,0.000000,0,ziga
+New Feature or Improvement,Major,3,20,0.500000,0,jakob
+New Feature or Improvement,Blocker,5,20,0.000000,0,rok
+New Feature or Improvement,Minor,1,19,0.000000,0,tomaz
+Internal Improvement,Critical,1,18,0.000000,0,miha.kavcic
+Internal Improvement,Major,0,17,0.000000,0,gasper.jeklin
+Bug,Major,1,11,0.000000,0,rok
+Bug,Minor,3,16,0.000000,0,marko
+Internal Improvement,Major,4,53,0.000000,0,saso
+New Feature or Improvement,Major,1,46,0.000000,0,denis
+New Feature or Improvement,Minor,5,33,0.000000,0,andrej.oblak
+Bug,Critical,5,31,0.000000,0,darko
+Bug,Major,0,28,0.000000,0,matic.tribuson
+Bug,Critical,6,26,0.500000,0,aleksander
+Bug,Minor,0,22,0.500000,0,dejan
+Internal Improvement,Minor,3,18,0.000000,0,miha.kavcic
+New Feature or Improvement,Minor,4,18,0.500000,0,marko.cavdek
+Bug,Minor,0,16,0.000000,0,uros
+Bug,Minor,0,16,0.500000,0,rok
+Internal Improvement,Major,3,44,1.000000,0,gregor.praprotnik
+New Feature or Improvement,Critical,3,39,0.000000,0,martijn
+New Feature or Improvement,Critical,0,12,0.000000,0,matic.balantic
+Sub-task,Major,4,29,1.000000,0,andrej.oblak
+Internal Improvement,Minor,5,27,0.666667,0,ziga
+Internal Improvement,Major,1,24,0.500000,0,martijn
+New Feature or Improvement,Major,5,20,0.000000,0,matjaz.ursic
+Bug,Major,1,17,0.000000,0,natalija
+Bug,Minor,1,7,1.000000,0,matic.tribuson
+Bug,Minor,0,0,0.000000,0,nejc.klepac
+Bug,Major,1,2,0.000000,0,gasper
+Internal Improvement,Minor,0,2,0.000000,0,denis
+New Feature or Improvement,Minor,1,0,0.000000,0,ziga
+Internal Improvement,Minor,0,4,0.000000,0,zan.kusterle
+Bug,Major,2,0,0.000000,0,john.goodhead
+Bug,Blocker,0,1,0.000000,0,jakob
+Internal Improvement,Major,0,0,0.000000,0,denis

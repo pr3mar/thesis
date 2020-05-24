@@ -68,19 +68,24 @@ def preprocess_dev_data(fdir: str, input_name: str, output_name: str) -> DataFra
     labels_metaData = json.load(open(f"{data_root}/merge/labels.json"))
     data = mergeAndOmitColumnValues(data, "LABEL", labels_metaData)
 
-    for col, min_entry in [('LABEL', 50)]:
+    for col, min_entry in [('LABEL', 50), ('COMPONENT', 50)]:
         data = hot_encode(data, col, min_entry)
 
     mean_cols = ["AUTHOREDACTIVITY", "NUMBEROFLABELS", "NUMBEROFCOMMENTS", "DEGREEOFCYCLING", "DAYSINDEVELOPMENT"]
     agg_cols = {col: ('mean' if col in mean_cols else 'min') for col in list(data)}
     del agg_cols["TICKETKEY"]
-    data = data.groupby("TICKETKEY").agg(agg_cols).reset_index().drop(columns=["TICKETKEY"])
+    del agg_cols["DEVELOPER"]
+    data = data.groupby(by=["TICKETKEY", "DEVELOPER"]).agg(agg_cols).reset_index().drop(columns=["TICKETKEY"])
 
     v = data[['DEVELOPER']]
     data = data[v.replace(v.apply(pd.Series.value_counts)).gt(200).all(1)]
 
     for col in ['ISSUETYPE', 'ISSUEPRIORITY', "DEVELOPER"]:
         data = enumerate_vals(data, col)
+
+    dev_data = data["DEVELOPER"]
+    data = data.drop(columns=["DEVELOPER"])
+    data["DEVELOPER"] = dev_data
 
     data.to_csv(f'{fdir}/{output_name}', index=False)
     return data

@@ -130,7 +130,7 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+   \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -140,12 +140,12 @@
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
   % driver is specified.
-  % \usepackage[dvips]{graphicx}
+%   \usepackage[dvips]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../eps/}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
+%   \DeclareGraphicsExtensions{.eps}
 \fi
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
@@ -409,10 +409,7 @@ Subsubsection text here.
 %
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{myfigure}
- where an .eps filename suffix will be assumed under latex, 
- and a .pdf suffix will be assumed for pdflatex; or what has been declared
- via \DeclareGraphicsExtensions.
+\includegraphics[width=2.5in]{feature_correlation.png}
 \caption{Simulation results for the network.}
 \label{fig_sim}
 \end{figure}

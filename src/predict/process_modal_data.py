@@ -77,7 +77,7 @@ def preprocess_dev_data(fdir: str, input_name: str, output_name: str) -> DataFra
     data = data.groupby("TICKETKEY").agg(agg_cols).reset_index().drop(columns=["TICKETKEY"])
 
     v = data[['DEVELOPER']]
-    data = data[v.replace(v.apply(pd.Series.value_counts)).gt(10).all(1)]
+    data = data[v.replace(v.apply(pd.Series.value_counts)).gt(200).all(1)]
 
     for col in ['ISSUETYPE', 'ISSUEPRIORITY', "DEVELOPER"]:
         data = enumerate_vals(data, col)

@@ -1,4 +1,6 @@
 import json
+from typing import Union
+
 import pandas as pd
 from pandas import DataFrame
 from src.config import data_root
@@ -35,10 +37,14 @@ def hot_encode(data: DataFrame, col: str, min_entries: int) -> DataFrame:
     return data_copy
 
 
-def preprocess_ticket_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
+def preprocess_ticket_data(fdir: str, input_name: str, output_name: str, drop: Union[list, None] = None) -> DataFrame:
+    if drop is None:
+        drop = list()
     data = pd.read_csv(f'{fdir}/{input_name}')
     labels_metaData = json.load(open(f"{data_root}/merge/labels.json"))
     components_metaData = json.load(open(f"{data_root}/merge/components.json"))
+
+    data = data.drop(columns=drop)
 
     data = mergeAndOmitColumnValues(data, "LABEL", labels_metaData)
     data = mergeAndOmitColumnValues(data, "COMPONENT", components_metaData)
@@ -63,10 +69,14 @@ def preprocess_ticket_data(fdir: str, input_name: str, output_name: str) -> Data
     return data
 
 
-def preprocess_dev_data(fdir: str, input_name: str, output_name: str) -> DataFrame:
+def preprocess_dev_data(fdir: str, input_name: str, output_name: str, drop=None) -> DataFrame:
+    if drop is None:
+        drop = list()
     data = pd.read_csv(f'{fdir}/{input_name}')
     labels_metaData = json.load(open(f"{data_root}/merge/labels.json"))
     data = mergeAndOmitColumnValues(data, "LABEL", labels_metaData)
+
+    data = data.drop(columns=drop)
 
     for col, min_entry in [('LABEL', 50), ('COMPONENT', 50)]:
         data = hot_encode(data, col, min_entry)
@@ -93,11 +103,13 @@ def preprocess_dev_data(fdir: str, input_name: str, output_name: str) -> DataFra
 
 if __name__ == '__main__':
     ticket_fdir = f'{data_root}/prediction_data/ticket_model'
-    ticket_input_name = f'raw_model_data_development_filtered.csv'
-    ticket_output_name = f'encoded_model_data_development_filtered.csv'
-    ticket_out_data = preprocess_ticket_data(ticket_fdir, ticket_input_name, ticket_output_name)
+    mode = "model_data_development_filtered_hours_10-days"
+    ticket_input_name = f'raw_{mode}.csv'
+    fname = f"encoded_{mode}"
+    ticket_out_data = preprocess_ticket_data(ticket_fdir, ticket_input_name, f'{fname}.csv')
+    ticket_out_data = preprocess_ticket_data(ticket_fdir, ticket_input_name, f'{fname}_real-data.csv', drop=["NUMBEROFCOMMENTS", "DEGREEOFCYCLING"])
 
-    dev_fdir = f'{data_root}/prediction_data/dev_model'
-    dev_input_name = f'raw_model_data_unfiltered.csv'
-    dev_output_name = f'encoded_model_data_unfiltered.csv'
-    dev_out_data = preprocess_dev_data(dev_fdir, dev_input_name, dev_output_name)
+    # dev_fdir = f'{data_root}/prediction_data/dev_model'
+    # dev_input_name = f'raw_model_data_unfiltered.csv'
+    # dev_output_name = f'encoded_model_data_unfiltered_real-data.csv'
+    # dev_out_data = preprocess_dev_data(dev_fdir, dev_input_name, dev_output_name, drop=["NUMBEROFCOMMENTS", "DEGREEOFCYCLING"])

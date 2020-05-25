@@ -75,11 +75,11 @@ def boost(data: pd.DataFrame):
 
     bundle = data.copy().iloc[y_test.index]
     bundle['TARGET'] = preds
-    bundle['DIFF'] = abs(bundle['TARGET'] - bundle['DAYSINDEVELOPMENT'])
+    bundle['DIFF'] = abs(bundle['TARGET'] - bundle['HOURSINDEVELOPMENT'])
     return bundle.sort_values(by='DIFF')
 
 
-def test_ticket_method(data: pd.DataFrame, method, method_name):
+def test_ticket_method(data: pd.DataFrame, method, method_name, target_feature):
     X, y = data.iloc[:, :-1], data.iloc[:, -1]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -95,8 +95,8 @@ def test_ticket_method(data: pd.DataFrame, method, method_name):
 
     bundle = data.copy().iloc[y_test.index]
     bundle['PREDICTED'] = preds
-    bundle['DIFF'] = bundle['DAYSINDEVELOPMENT'] - bundle['PREDICTED']
-    bundle['DIFFPERCENT'] = abs(bundle['DIFF']) / (bundle['DAYSINDEVELOPMENT'] + 1)
+    bundle['DIFF'] = bundle[target_feature] - bundle['PREDICTED']
+    bundle['DIFFPERCENT'] = abs(bundle['DIFF']) / (bundle[target_feature] + 1)
     bundle = bundle.sort_values(by='DIFFPERCENT')
     bundle.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_{method_name}_predictions.csv',
                   index=False)
@@ -139,29 +139,46 @@ def test_dev_method(data, method, method_name):
 
 
 if __name__ == '__main__':
-    # # ticket_fname = f'{data_root}/prediction_data/ticket_model/encoded_model_data_development_summed.csv'
-    # # ticket_fname = f'{data_root}/prediction_data/ticket_model/encoded_model_data_development_filtered.csv'
-    # # ticket_fname = f'{data_root}/prediction_data/ticket_model/hot_encoded_model_data.csv'
-    # ticket_model_data = pd.read_csv(ticket_fname)
-    # # boosted_generic = boost(ticket_model_data)
-    # boost_cv(ticket_model_data)
-    # boosted = test_ticket_method(ticket_model_data, xgb.XGBRegressor(
-    #     objective='reg:squarederror',
-    #     colsample_bytree=0.3,
-    #     learning_rate=0.25,
-    #     max_depth=40,
-    #     alpha=50,
-    #     n_estimators=100,
-    #     reg_lambda=30,
-    # ), 'boost')
-    # # boosted[abs(boosted['DIFF']) < 2].shape[0] / boosted.shape[0]
-    # naive = test_ticket_method(ticket_model_data, GaussianNB(), 'naive')
-    # forest = test_ticket_method(ticket_model_data, RandomForestClassifier(max_depth=50, random_state=42), 'forest')
+    # ticket_fname = f'{data_root}/prediction_data/ticket_model/encoded_model_data_development_summed.csv'
+    base_fname = f'{data_root}/prediction_data/ticket_model'
+    atts = [
+        ('encoded_model_data_development_filtered.csv', "DAYSINDEVELOPMENT"),
+        ('encoded_model_data_development_filtered_real-data.csv', "DAYSINDEVELOPMENT"),
+        ('encoded_model_data_development_filtered_hours.csv', "HOURSINDEVELOPMENT"),
+        ('encoded_model_data_development_filtered_hours_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('encoded_model_data_development_filtered_hours_10-days.csv', "HOURSINDEVELOPMENT"),
+        ('encoded_model_data_development_filtered_hours_10-days_real-data.csv', "HOURSINDEVELOPMENT"),
+    ]
+    for ticket_fname, target_feature in atts:
+        print(ticket_fname)
+        fname = f'{base_fname}/{ticket_fname}'
+        # ticket_fname = f'{data_root}/prediction_data/ticket_model/hot_encoded_model_data.csv'
+        ticket_model_data = pd.read_csv(fname)
+        print(ticket_model_data[target_feature].describe())
+        # boosted_generic = boost(ticket_model_data)
+        # boost_cv(ticket_model_data)
+        boosted = test_ticket_method(
+            data=ticket_model_data,
+            method=xgb.XGBRegressor(
+                objective='reg:squarederror',
+                colsample_bytree=0.3,
+                learning_rate=0.25,
+                max_depth=40,
+                alpha=50,
+                n_estimators=100,
+                reg_lambda=30,
+            ),
+            method_name='boost',
+            target_feature=target_feature
+        )
+        # boosted[abs(boosted['DIFF']) < 2].shape[0] / boosted.shape[0]
+        naive = test_ticket_method(ticket_model_data, GaussianNB(), 'naive', target_feature)
+        forest = test_ticket_method(ticket_model_data, RandomForestClassifier(max_depth=50, random_state=42), 'forest', target_feature)
 
-    dev_fname = f'{data_root}/prediction_data/dev_model/encoded_model_data_unfiltered.csv'
-    dev_model_data = pd.read_csv(dev_fname)
-    dev_boosted, boosted_cm = test_dev_boost_method(dev_model_data)
-    forest_acc, forest_cm = test_dev_method(dev_model_data, RandomForestClassifier(max_depth=50, random_state=42), 'RandomForest')
-    svm_acc, svm_cm = test_dev_method(dev_model_data, SVC(kernel='rbf', gamma=0.1, C=1000), 'SVM')
-    knn_acc, knn_cm = test_dev_method(dev_model_data, KNeighborsClassifier(n_neighbors=10), 'kNN')
-    naive_acc, naivi_cm = test_dev_method(dev_model_data, GaussianNB(), 'naive')
+    # dev_fname = f'{data_root}/prediction_data/dev_model/encoded_model_data_unfiltered.csv'
+    # dev_model_data = pd.read_csv(dev_fname)
+    # dev_boosted, boosted_cm = test_dev_boost_method(dev_model_data)
+    # forest_acc, forest_cm = test_dev_method(dev_model_data, RandomForestClassifier(max_depth=50, random_state=42), 'RandomForest')
+    # svm_acc, svm_cm = test_dev_method(dev_model_data, SVC(kernel='rbf', gamma=0.1, C=1000), 'SVM')
+    # knn_acc, knn_cm = test_dev_method(dev_model_data, KNeighborsClassifier(n_neighbors=10), 'kNN')
+    # naive_acc, naivi_cm = test_dev_method(dev_model_data, GaussianNB(), 'naive')

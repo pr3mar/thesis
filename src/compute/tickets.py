@@ -14,29 +14,42 @@ def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True,
     resolution_date = f"{convert_date('i.FIELDS:resolutiondate')}"
     where_resolution = f"{resolution_date} >= {interval.fromDate()} AND {resolution_date} < {interval.toDate()}" if resolved else ""
     sql = (
-        f"SELECT "
-        f"   t.KEY TICKET_KEY, "
-        f"   STATUS, "
-        f'   i.FIELDS:issuetype:name::string "IssueType", '
-        f'   i.FIELDS:priority:name::string "IssuePriority" ,'
-        f'   COUNT(DISTINCT t.STATUS)             "States", '
-        f'   COUNT(*)                             "Transitions", '
-        f'   ("Transitions"/"States") - 1 "DegreeOfCycling", '
-        f"   AVG(TIMEDELTA) / (60 * 60 * 24) AVG_DAYS, "
-        f"   MAX(TIMEDELTA) / (60 * 60 * 24) MAX_DAYS, "
-        f"   MIN(TIMEDELTA) / (60 * 60 * 24) MIN_DAYS, "
-        f"   AVG(TIMEDELTA) / (60 * 60) AVG_HOUR, "
-        f"   MAX(TIMEDELTA) / (60 * 60) MAX_HOURS, "
-        f"   MIN(TIMEDELTA) / (60 * 60) MIN_HOURS "
-        f" FROM TIMELINES t "
-        f" INNER JOIN ISSUES i ON t.KEY = i.KEY "
-        f" WHERE "
-        f'   t.KEY IN (SELECT DISTINCT KEY FROM CHANGELOGS WHERE DATECREATED >= {interval.fromDate()} AND DATECREATED < {interval.toDate()}) '
-        f'   AND {where_resolution}'
-        f" GROUP BY 1, 2, 3, 4 "
-        f" ORDER BY 1; "
+        f'SELECT TICKET_KEY, '
+        f'       STATUS, '
+        f'       "IssueType", '
+        f'       "IssuePriority", '
+        f'       "States", '
+        f'       "Transitions", '
+        f'       "DegreeOfCycling", '
+        f'       AVG_DAYS, '
+        f'       MAX_DAYS, '
+        f'       MIN_DAYS, '
+        f'       AVG_HOUR, '
+        f'       MAX_HOURS, '
+        f'       MIN_HOURS '
+        f'FROM (SELECT t.KEY                            TICKET_KEY, '
+        f'             STATUS, '
+        f'             i.FIELDS:issuetype: name::string "IssueType", '
+        f'             i.FIELDS:priority: name::string  "IssuePriority", '
+        f'             COUNT(DISTINCT t.STATUS)         "States", '
+        f'             COUNT(*)                         "Transitions", '
+        f'             ("Transitions" / "States") - 1   "DegreeOfCycling", '
+        f'             AVG(TIMEDELTA) / (60 * 60 * 24)  AVG_DAYS, '
+        f'             MAX(TIMEDELTA) / (60 * 60 * 24)  MAX_DAYS, '
+        f'             MIN(TIMEDELTA) / (60 * 60 * 24)  MIN_DAYS, '
+        f'             AVG(TIMEDELTA) / (60 * 60)       AVG_HOUR, '
+        f'             MAX(TIMEDELTA) / (60 * 60)       MAX_HOURS, '
+        f'             MIN(TIMEDELTA) / (60 * 60)       MIN_HOURS '
+        f'      FROM TIMELINES t '
+        f'               INNER JOIN ISSUES i ON t.KEY = i.KEY '
+        f'      WHERE t.KEY IN '
+        f'            (SELECT DISTINCT KEY FROM CHANGELOGS WHERE DATECREATED >= {interval.fromDate()} AND DATECREATED < {interval.toDate()}) '
+        f'          AND {where_resolution}'
+        f'      GROUP BY 1, 2, 3, 4) '
+        f'WHERE AVG_HOUR > 2.5 AND AVG_HOUR <= 10 '  # fixme: Add an option for more than > 1 day, this is just a single business day (~8h)
+        f'ORDER BY 1; '
     )
-    # print(sql)
+    print(sql)
     df = sw.fetch_df(sql)
     df["AVG_HOUR"] = df["AVG_HOUR"].map(lambda x: np.nan if x is None else float(x))
     df["AVG_DAYS"] = df["AVG_DAYS"].map(lambda x: np.nan if x is None else float(x))

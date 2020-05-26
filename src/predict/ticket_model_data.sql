@@ -9,6 +9,7 @@ SELECT TicketKey,
        DegreeOfCycling,
        NumberOfComments,
        NumberOfLinkedIssues,
+       HoursInDevelopment,
        DaysInDevelopment
 -- SELECT COUNT( DISTINCT TicketKey)
 -- SELECT COUNT(*)
@@ -64,6 +65,6 @@ FROM (SELECT i.KEY                                                              
            LATERAL FLATTEN(FIELDS:components) component,
            LATERAL FLATTEN(FIELDS:labels) label
       WHERE FIELDS:resolutiondate IS NOT NULL
-        AND HoursInDevelopment > 0.5
-        AND DaysInDevelopment < 30)
-ORDER BY DaysInDevelopment DESC;
+        AND HoursInDevelopment >= 2
+     AND DaysInDevelopment < 10)
+ORDER BY HoursInDevelopment;

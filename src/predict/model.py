@@ -1,7 +1,7 @@
 import xgboost as xgb
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from sklearn.svm import SVC
+from sklearn.svm import SVC, SVR
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split, GridSearchCV
@@ -89,19 +89,18 @@ def test_ticket_method(data: pd.DataFrame, method, method_name, target_feature):
     rmse = np.sqrt(mean_squared_error(y_test, preds))
     mae = mean_absolute_error(y_test, preds)
     r2 = r2_score(y_test, preds)
-    print(f"[{method_name}] RMSE: {rmse}")
-    print(f"[{method_name}] MAE: {mae}")
-    print(f"[{method_name}] R2: {r2}")
-
-    bundle = data.copy().iloc[y_test.index]
-    bundle['PREDICTED'] = preds
-    bundle['DIFF'] = bundle[target_feature] - bundle['PREDICTED']
-    bundle['DIFFPERCENT'] = abs(bundle['DIFF']) / (bundle[target_feature] + 1)
-    bundle = bundle.sort_values(by='DIFFPERCENT')
-    bundle.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_{method_name}_predictions.csv',
-                  index=False)
-
-    return bundle
+    # print(f"[{method_name}] RMSE: {rmse}")
+    # print(f"[{method_name}] MAE: {mae}")
+    # print(f"[{method_name}] R2: {r2}")
+    return rmse, mae, r2
+    # leftover from analysis of the predictions
+    # bundle = data.copy().iloc[y_test.index]
+    # bundle['PREDICTED'] = preds
+    # bundle['DIFF'] = bundle[target_feature] - bundle['PREDICTED']
+    # bundle['DIFFPERCENT'] = abs(bundle['DIFF']) / (bundle[target_feature] + 1)
+    # bundle = bundle.sort_values(by='DIFFPERCENT')
+    # bundle.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_{method_name}_predictions.csv', index=False)
+    # return bundle
 
 
 def test_dev_boost_method(data: pd.DataFrame):  # , method, method_name):
@@ -141,40 +140,53 @@ def test_dev_method(data, method, method_name):
 if __name__ == '__main__':
     # ticket_fname = f'{data_root}/prediction_data/ticket_model/encoded_model_data_development_summed.csv'
     base_fname = f'{data_root}/prediction_data/ticket_model'
-    atts = [
-        ('encoded_model_data_development_filtered.csv', "DAYSINDEVELOPMENT"),
-        ('encoded_model_data_development_filtered_real-data.csv', "DAYSINDEVELOPMENT"),
-        ('encoded_model_data_development_filtered_hours.csv', "HOURSINDEVELOPMENT"),
-        ('encoded_model_data_development_filtered_hours_real-data.csv', "HOURSINDEVELOPMENT"),
-        ('encoded_model_data_development_filtered_hours_10-days.csv', "HOURSINDEVELOPMENT"),
-        ('encoded_model_data_development_filtered_hours_10-days_real-data.csv', "HOURSINDEVELOPMENT"),
+    methods = [
+        (xgb.XGBRegressor(
+            objective='reg:squarederror',
+            colsample_bytree=0.3,
+            learning_rate=0.25,
+            max_depth=40,
+            alpha=50,
+            n_estimators=100,
+            reg_lambda=30,
+        ), "boost"),
+        (GaussianNB(), "naive"),
+        (RandomForestClassifier(max_depth=50, random_state=42), 'forest'),
+        (SVR(C=1.0, epsilon=0.2), 'SVM')
     ]
-    for ticket_fname, target_feature in atts:
-        print(ticket_fname)
+    atts = [
+        ('days', 'encoded_model_data_development_filtered_2.csv', "DAYSINDEVELOPMENT"),  # _2 => min value is 2
+        # ('days', 'encoded_model_data_development_filtered.csv', "DAYSINDEVELOPMENT"),
+        ('days-real', 'encoded_model_data_development_filtered_2_real-data.csv', "DAYSINDEVELOPMENT"),
+        # ('days-real', 'encoded_model_data_development_filtered_real-data.csv', "DAYSINDEVELOPMENT"),
+        # ('hours', 'encoded_model_data_development_filtered_hours.csv', "HOURSINDEVELOPMENT"),
+        ('hours', 'encoded_model_data_development_filtered_hours_2.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-real', 'encoded_model_data_development_filtered_hours_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('hours-real', 'encoded_model_data_development_filtered_hours_2_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('hours-filtered-30', 'encoded_model_data_development_filtered_hours_30-days.csv', "HOURSINDEVELOPMENT"),
+        ('hours-filtered-30-real', 'encoded_model_data_development_filtered_hours_30-days_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('hours-filtered-10', 'encoded_model_data_development_filtered_hours_10-days.csv', "HOURSINDEVELOPMENT"),
+        ('hours-filtered-10-real', 'encoded_model_data_development_filtered_hours_10-days_real-data.csv', "HOURSINDEVELOPMENT"),
+    ]
+    print("RMSE & MAE & R2 \\\\")
+    data_descriptions = {}
+    for data_type, ticket_fname, target_feature in atts:
+        print(data_type)
         fname = f'{base_fname}/{ticket_fname}'
-        # ticket_fname = f'{data_root}/prediction_data/ticket_model/hot_encoded_model_data.csv'
-        ticket_model_data = pd.read_csv(fname)
-        print(ticket_model_data[target_feature].describe())
-        # boosted_generic = boost(ticket_model_data)
-        # boost_cv(ticket_model_data)
-        boosted = test_ticket_method(
-            data=ticket_model_data,
-            method=xgb.XGBRegressor(
-                objective='reg:squarederror',
-                colsample_bytree=0.3,
-                learning_rate=0.25,
-                max_depth=40,
-                alpha=50,
-                n_estimators=100,
-                reg_lambda=30,
-            ),
-            method_name='boost',
-            target_feature=target_feature
-        )
-        # boosted[abs(boosted['DIFF']) < 2].shape[0] / boosted.shape[0]
-        naive = test_ticket_method(ticket_model_data, GaussianNB(), 'naive', target_feature)
-        forest = test_ticket_method(ticket_model_data, RandomForestClassifier(max_depth=50, random_state=42), 'forest', target_feature)
-
+        data = pd.read_csv(fname)
+        data_descriptions[data_type] = data[target_feature].describe()
+        # boosted_generic = boost(data)
+        # boost_cv(data)
+        for method, name in methods:
+            rmse, mae, r2 = test_ticket_method(
+                data=data,
+                method=method,
+                method_name=name,
+                target_feature=target_feature
+            )
+            print(f"& {name} & {rmse:.3f} & {mae:.3f} & {r2:.3f} \\\\")
+        print("\\hline")
+    description = pd.DataFrame(data_descriptions)
     # dev_fname = f'{data_root}/prediction_data/dev_model/encoded_model_data_unfiltered.csv'
     # dev_model_data = pd.read_csv(dev_fname)
     # dev_boosted, boosted_cm = test_dev_boost_method(dev_model_data)

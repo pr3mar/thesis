@@ -103,7 +103,7 @@ def preprocess_dev_data(fdir: str, input_name: str, output_name: str, drop=None)
 
 if __name__ == '__main__':
     ticket_fdir = f'{data_root}/prediction_data/ticket_model'
-    mode = "model_data_development_filtered_hours_30-days"
+    mode = "model_data_development_hours"
     ticket_input_name = f'raw_{mode}.csv'
     fname = f"encoded_{mode}"
     ticket_out_data = preprocess_ticket_data(ticket_fdir, ticket_input_name, f'{fname}.csv')

@@ -41,7 +41,7 @@
 \section{Introduction}
 
 %Project managers are faced with time estimation on a daily basis.
-The project manager's (PM) main task is to break down the project they manage into tasks which are manageable, not very complex and make a round unit which can be executed with the knowledge of a single person. All tasks are described by their \textit{type}, \textit{priority}, \textit{components} of the project they affect and \textit{labels} which are specific for the project which we consider as meta information. 
+The project manager's (PM) main task is to break down the project they manage into tasks which are manageable, not very complex and make a round unit which can be executed with the knowledge of a single person.
 Once the project is broken down into pieces the PM needs to answer the following questions for each task:
 \begin{enumerate}
 	\item how much time the task is going to take to develop; and
@@ -56,7 +56,13 @@ In this paper we are focusing on the task of estimating the time required to dev
 %Project managers (PMs) need to assess each piece of the project they manage so they can delegate the pieces to the rest of the project members to be executed. The project pieces can be referred to with multiple terms, such as tasks, tickets, issues; and we are going to use these terms interchangeably. The task is a unit which (generally) cannot be broken down into subunits and it should be addressed as a whole. 
 
 \section{Model data}
-JIRA data briefly and what the model is consisted of
+The available information used to build the model has been extracted from a company's JIRA portal~\cite{JIRA}. All tasks are described by their categorical features: \textit{type}, \textit{priority}, \textit{components} of the project they affect, and \textit{labels} which are specific for the project. Due to their high cardinality, the values of the \textit{components} and \textit{labels} features have been filtered such that there are only left values which have at least 50 entries in the dataset. The filtered values are used in their one-hot-encoded form to reduce the complexity of the model. Additionally, we used the following discrete features: the \textit{number of comments} each task has, the \textit{number of linked issues}, and their \textit{degree of cycling}.
+
+% noise reduction
+Due to improper usage of JIRA, there is some noise in the data, which causes a strong bias toward low values of the predicted time to develop. To reduce this effect we have filtered out all tasks which have development time lower than $2h$. To further reduce the variance in our dataset we have decided to limit the upper bound of the development time. We have done so in 3 different stages to measure the effect of the variance on our model: 1) there is no upper bound, 2) the upper bound is 30 days, and 3) the upper bound is 10 days. The summary of the datasets is shown in Table~\ref{dataset_description}.
+
+% model features, TODO: write about real vs ideal model, why we omit #comments and degreeOfCycling
+
 
 
 
@@ -165,7 +171,7 @@ DataSet & Method & RMSE & MAE & $R^2$ \\
 \end{tabular}
 \renewcommand{\arraystretch}{1.3}
 \caption{Performance of different methods on the variations of the dataset. The $*$ symbol indicates that the dataset does not contain all the initial attributes, thus it is more realistic.}
-\label{table_example}
+\label{model_performance}
 \end{table}
 
 \bibliographystyle{IEEEtran}

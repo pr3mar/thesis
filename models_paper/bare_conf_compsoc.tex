@@ -6,6 +6,7 @@
 \usepackage{multirow}
 \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 \usepackage{amsmath}
+\usepackage{hyperref}
 \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
 \usepackage{url}
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -18,7 +19,7 @@
 \makeatother
 
 \begin{document}
-\title{Data Driven Project Management \\ Predicting the Development Time}
+\title{Data Driven Project Management: \\ Predicting the Development Time}
 
 
 \author{\IEEEauthorblockN{Marko Prelevikj}
@@ -31,13 +32,29 @@
 \maketitle
 
 \begin{abstract}
-Predicting development time is hard. In this paper we are trying to explain all the difficulties encountered on the journey to predicting time with as low 
+%Predicting development time is hard. In this paper we are trying to explain all the difficulties encountered on the journey to predicting time with as low 
+
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
-explain PMO's problems
+
+%Project managers are faced with time estimation on a daily basis.
+The project manager's (PM) main task is to break down the project they manage into tasks which are manageable, not very complex and make a round unit which can be executed with the knowledge of a single person. All tasks are described by their \textit{type}, \textit{priority}, \textit{components} of the project they affect and \textit{labels} which are specific for the project which we consider as meta information. 
+Once the project is broken down into pieces the PM needs to answer the following questions for each task:
+\begin{enumerate}
+	\item how much time the task is going to take to develop; and
+	\item which project member is the best fit for the task
+\end{enumerate}
+% ^ can be omitted if needed
+In this paper we are focusing on the task of estimating the time required to develop a given task. We use data provided from a company's JIRA portal~\cite{JIRA}, which keeps record of the project's tasks. We made 4 different models of the time required to develop a task, where we changed the unit we are forecasting in: days or hours, and the time span of development time, ranging from all time down to a maximum of 10 days. We evaluated the variations of the model using 4 distinct methods: Naive Bayes, Random Forests, XGBoost~\cite{chen2016xgboost} and SVM. In the end we uncover which are the most important features of the task which should be considered when estimating the development time for which we used the SHAP~\cite{lundberg2020local2global} method.
+
+%In this paper, we are addressing the problem of time estimation because it is very often that PMs do know who to assign the tasks to, based on project member's skill set, availability and other information that is not tracked by any software, which makes the problem much more difficult to address. On the other hand, time estimation is a problem which can be addressed because PMs keep record of all the tasks which can be processed. 
+%With some preprocessing of the available historical task information we were able to build a model of the time required to develop a task. Along the way we 
+
+%Project managers (PMs) need to assess each piece of the project they manage so they can delegate the pieces to the rest of the project members to be executed. The project pieces can be referred to with multiple terms, such as tasks, tickets, issues; and we are going to use these terms interchangeably. The task is a unit which (generally) cannot be broken down into subunits and it should be addressed as a whole. 
+
 \section{Model data}
 JIRA data briefly and what the model is consisted of
 
@@ -46,13 +63,14 @@ JIRA data briefly and what the model is consisted of
 \section{Testing model quality}
 Present different the results (MAE, RMSE, R2) obtained by different regressors.
 As the variance lowers, so do the metrics of quality of the models.
+
 \section{Model Explainability}
 Write about feature importance and how to explain the made decisions.
 
 
 \section{Conclusion}
 Quick recap of the problem and how we solved it.
-XGBoost~\cite{chen2016xgXGBoost}, SHAP~\cite{lundberg2020local2global}.
+XGBoost~\cite{chen2016xgboost}, SHAP~\cite{lundberg2020local2global}.
 
 \begin{figure}[!t]
 \centering
@@ -75,7 +93,7 @@ XGBoost~\cite{chen2016xgXGBoost}, SHAP~\cite{lundberg2020local2global}.
 \begin{table}[!t]
 	\centering
 	\begin{tabular}{c|r|r|r|r}
-	Statistic &  dayss & hours & hours-filtered-30 &  hours-filtered-10 \\
+	Statistic &  1 & 2 & 3 &  4 \\
 	\hline
 	unit & days & hours & hours & hours \\
 	count &  2935.000 &   2935.000 & 2771.000 & 2472.000 \\

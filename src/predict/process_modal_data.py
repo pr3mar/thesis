@@ -126,6 +126,7 @@ if __name__ == '__main__':
         "model_data_development_filtered_hours_all",
         "model_data_development_filtered_hours_1-quarter",
         "model_data_development_filtered_hours_1-month",
+        "model_data_development_filtered_hours_1-day",
         "model_data_development_filtered_hours_10-days",
     ]
     for mode in modes:

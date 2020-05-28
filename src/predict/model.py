@@ -167,6 +167,8 @@ if __name__ == '__main__':
         ('hours-1-month-real', 'encoded_model_data_development_filtered_hours_1-month_real-data.csv', "HOURSINDEVELOPMENT"),
         ('hours-10-days', 'encoded_model_data_development_filtered_hours_10-days.csv', "HOURSINDEVELOPMENT"),
         ('hours-10-days-real', 'encoded_model_data_development_filtered_hours_10-days_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('hours-1-day', 'encoded_model_data_development_filtered_hours_1-day.csv', "HOURSINDEVELOPMENT"),
+        ('hours-1-day-real', 'encoded_model_data_development_filtered_hours_1-day_real-data.csv', "HOURSINDEVELOPMENT"),
     ]
     print("RMSE & MAE & R2 \\\\")
     data_descriptions = {}

@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+\documentclass[conference,compsoc]{IEEEtran}
 \usepackage{cite}
 \usepackage[english]{babel}
 \usepackage[pdftex]{graphicx}
@@ -33,22 +33,14 @@
 \maketitle
 
 \begin{abstract}
-%Predicting development time is hard. In this paper we are trying to explain all the difficulties encountered on the journey to predicting time with as low 
-
+We are helping project managers with a problem they encounter daily. We modelled the development time based on data about project tasks from a real-world case. We applied several ML methods on the model out of which SVM delivered the best results. We explored the model with the SHAP local explainability method to rank the model features by their importance. With the feature ranking, we helped the project managers with their time estimation task.
 \end{abstract}
-
-\IEEEpeerreviewmaketitle
 
 \section{Introduction}
 
 %Project managers are faced with time estimation on a daily basis.
-The project manager's (PM) main task is to break down the project they manage into tasks which are manageable, not very complex and make a round unit which can be executed with the knowledge of a single person.
-Once the project is broken down into pieces the PM needs to answer the following questions for each task:
-\begin{enumerate}
-	\item how much time the task is going to take to develop; and
-	\item which project member is the best fit for the task
-\end{enumerate}
-% ^ can be omitted if needed
+The project manager's (PM) main task is to break down the project they oversee into smaller tasks which are not very complex. Once the project is broken down into pieces the PM needs to answer the following questions for each task: (1) how much time the task is going to take to develop; and (2) which project member is the best fit for the task.
+
 In this paper we are focusing on the task of estimating the time required to develop a given task. We use data provided from a company's JIRA portal~\cite{JIRA}, which keeps record of the project's tasks. We made 4 different models of the time required to develop a task, where we changed the time span of development time, ranging from all time down to a maximum of 10 days. We evaluated the variations of the model using 4 distinct methods: Naive Bayes, Random Forests, SVM, all provided by Scikit-Learn~\cite{scikit-learn}, and additionally XGBoost~\cite{chen2016xgboost}. In the end we uncover which are the most important features of the task which should be considered when estimating the development time for which we used the SHAP~\cite{lundberg2020local2global} method.
 
 %In this paper, we are addressing the problem of time estimation because it is very often that PMs do know who to assign the tasks to, based on project member's skill set, availability and other information that is not tracked by any software, which makes the problem much more difficult to address. On the other hand, time estimation is a problem which can be addressed because PMs keep record of all the tasks which can be processed. 
@@ -60,35 +52,12 @@ In this paper we are focusing on the task of estimating the time required to dev
 The available information used to build the model was extracted from a company's JIRA portal~\cite{JIRA}. We are taking into account all the tasks which have been resolved and have at some point been in development. The total number of such tasks amounts to $2935$. All of the tasks are described by their categorical features: \textit{type}, \textit{priority}, \textit{components} of the project they affect, and \textit{labels} which are specific for the project. Due to their high cardinality, the values of the \textit{components} and \textit{labels} features have been filtered such that there are only left values which have at least 50 entries in the dataset. The filtered values are used in their one-hot-encoded form to reduce the complexity of the model. Additionally, we take into account the \textit{number of linked issues} which is a discrete feature denoting the number of tasks which are in a relation with the observed task.
 
 % noise reduction
-Due to improper usage of JIRA, there is some noise in the data which causes a strong bias towards low values of the predicted time to develop. To reduce this effect we have filtered out all tasks which have development time lower than $2h$. To further reduce the variance in our dataset we have decided to limit the upper bound of the development time. We have done so in 4 different stages to measure the effect of the variance on our model: 1) there is no upper bound, 2) the upper bound is 1 quarter ($\approx 90$ days), 3) the upper bound is 1 month ($\approx 30$ days), and 4) the upper bound is 10 days. The summary of the datasets is shown in Table~\ref{dataset_description}, where the first column associates to the general statics of all the data at our disposal. From Table~\ref{dataset_description} we can observe that the majority of the tasks ($\approx 83\%$ of them) had their development done in less than 10 days.
+Due to improper usage of JIRA, there is some noise in the data which causes a strong bias towards low values of the predicted time to develop. To reduce this effect we have filtered out all tasks which have development time lower than $2h$. To further reduce the variance in our dataset we have decided to limit the upper bound of the development time. We have done so in 4 different stages to measure the effect of the variance on our model: 1) there is no upper bound, 2) the upper bound is 1 quarter ($\approx 90$ days), 3) the upper bound is 1 month ($\approx 30$ days), and 4) the upper bound is 10 days. The summary of the datasets is shown in Table~\ref{dataset-description}, where the first column associates to the general statics of all the data at our disposal. From Table~\ref{dataset-description} we can observe that the majority of the tasks ($\approx 83\%$ of them) had their development done in less than 10 days.
 
-\section{Quality evaluation}
-We evaluated the variations of the model data using 4 distinct methods: Naive Bayes, Random Forests, SVM, and XGBoost. For each of these methods we did not tune any of the available parameters in order to improve the performance, but rather used recommended parameters available in the online documentation of the method implementations~\cite{chen2016xgboost, scikit-learn}. The observed statistics of model quality are Mean Squared Error (MAE), Root Mean Squared Error (RMSE) and $R^2$. The evaluations of the listed methods are shown in Table~\ref{model_performance}.
-
-Our goal is to reduce the MAE and RMSE measures which express the fitness of the predicted values to the target values. We can observe this as the measures decrease as the variance in the data decreases. For each of the dataset variants we had at least one method which has a lower MAE value than the mean value of the data. And both of the measures are monotonously decreasing as the variance in the data decreases, which implies that they are correlated.
-
-The $R^2$ measure expresses how much we have improved over the mean value of the model. The built model has failed to show that there are any improvement over the mean model. This can be seen from Table~\ref{model_performance} where the $R^2$ model is either very close to $0$ or even negative in some of the cases. This suggests that we cannot get a very accurate prediction of the target variable, \textit{hours of development}. However, the low $R^2$ value does not prevent us from exploring which features are the most important.
-
-\section{Model Explainability}
-Write about feature importance and how to explain the made decisions.
-
-\section{Conclusion}
-Quick recap of the problem and how we solved it.
-XGBoost~\cite{chen2016xgboost}, SHAP~\cite{lundberg2020local2global}.
-
-\begin{figure}[!t]
-	\renewcommand{\arraystretch}{1.3}
-	\centering
-	\caption{Figure}
-	\subfloat[]{\includegraphics[width=0.5\textwidth]{./figures/example_force-1.png}} \\
-	\subfloat[]{\includegraphics[width=0.5\textwidth]{./figures/example_force-2.png}}
-	\label{f7}
-\end{figure}
 
 \begin{table}[!t]
-	\renewcommand{\arraystretch}{1.3}
 	\caption{Dataset characteristics. }
-	\label{dataset_description}
+	\label{dataset-description}
 	\centering
 	\begin{tabular}{c|r|r|r|r}
 		Statistic &        All  & 1Q & 1M & 10D \\
@@ -101,60 +70,67 @@ XGBoost~\cite{chen2016xgboost}, SHAP~\cite{lundberg2020local2global}.
 		50\%   &    49.000  &       48.000  &     44.000 &     33.000 \\
 		75\%   &   148.000  &      143.000  &    121.000 &     83.000 \\
 		max   & 15003.000  &     2260.000  &    754.000 &    228.000 \\
-
 	\end{tabular}
 \end{table}
 
+
+\section{Quality evaluation}
+We evaluated the variations of the model data using 4 distinct methods: Naive Bayes, Random Forests, SVM, and XGBoost. For each of these methods we did not tune any of the available parameters in order to improve the performance, but rather used recommended parameters available in the online documentation of the method implementations~\cite{chen2016xgboost, scikit-learn}. The observed statistics of model quality are Mean Squared Error (MAE), Root Mean Squared Error (RMSE) and $R^2$. The evaluations of the listed methods are shown in Table~\ref{model-performance}.
+
+Our goal is to reduce the MAE and RMSE measures which express the fitness of the predicted values to the target values. We can observe this as the measures decrease as the variance in the data decreases. For each of the dataset variants we had at least one method which has a lower MAE value than the mean value of the data. And both of the measures are monotonously decreasing as the variance in the data decreases, which implies that they are correlated.
+
+The $R^2$ measure expresses how much we have improved over the mean value of the model. The built model has failed to show that there are any improvement over the mean model. This can be seen from Table~\ref{model-performance} where the $R^2$ model is either very close to $0$ or even negative in some of the cases. This suggests that we cannot get a very accurate prediction of the target variable, \textit{hours of development}. One of the reasons why is the low number of samples we have at our disposal for training and testing. However, the low $R^2$ value does not prevent us from exploring which features are the most important.
+
+
+
 \begin{table}[!t]
-	
-	\renewcommand{\arraystretch}{1.3}
-	\label{model_performance}
+	\label{model-performance}
 	\centering
 	\caption{Performance of the listed methods on the variations of the dataset. The results are ordered by decreasing amount of variance in the data.}
 	\begin{tabular}{c|c|c|c|c}
 		Dataset & Method & RMSE & MAE & $R^2$ \\
-%		\hline
-%		\multirow{4}{*}{All} % all data
-%		&XGBoost& 807.362 & 279.128 & -0.085 \\
-%		&Naive Bayes& 896.482 & 387.358 & -0.337 \\
-%		&Random Forest& 1028.401 & 286.985 & -0.760 \\
-%		& SVM & \textbf{792.794} & \textbf{192.552} & -0.046 \\
+		%		\hline
+		%		\multirow{4}{*}{All} % all data
+		%		&XGBoost& 807.362 & 279.128 & -0.085 \\
+		%		&Naive Bayes& 896.482 & 387.358 & -0.337 \\
+		%		&Random Forest& 1028.401 & 286.985 & -0.760 \\
+		%		& SVM & \textbf{792.794} & \textbf{192.552} & -0.046 \\
 		\hline
 		\multirow{4}{*}{All}
 		&XGBoost& \textbf{791.428} & 254.770 & -0.042 \\
 		&Naive Bayes& 948.649 & 420.036 & -0.498 \\
 		&Random Forest& 840.027 & 256.399 & -0.174 \\
 		& SVM & 792.344 & \textbf{191.267} & -0.045 \\
-%		\hline
-%		\multirow{4}{*}{1Q} % all data
-%		&XGBoost& \textbf{282.812} & 161.298 & 0.045 \\
-%		&Naive Bayes& 521.056 & 340.146 & -2.242 \\
-%		&Random Forest& 339.457 & 165.115 & -0.376 \\
-%		& SVM & 303.855 & \textbf{125.127} & -0.102 \\
+		%		\hline
+		%		\multirow{4}{*}{1Q} % all data
+		%		&XGBoost& \textbf{282.812} & 161.298 & 0.045 \\
+		%		&Naive Bayes& 521.056 & 340.146 & -2.242 \\
+		%		&Random Forest& 339.457 & 165.115 & -0.376 \\
+		%		& SVM & 303.855 & \textbf{125.127} & -0.102 \\
 		\hline
 		\multirow{4}{*}{1Q}
 		&XGBoost& \textbf{286.835} & 160.587 & 0.018 \\
 		&Naive Bayes& 577.520 & 389.602 & -2.982 \\
 		&Random Forest& 361.223 & 179.258 & -0.558 \\
 		& SVM & 302.772 & \textbf{124.272} & -0.095 \\
-%		\hline
-%		\multirow{4}{*}{1M} % all data
-%		&XGBoost& \textbf{139.968} & 95.641 & -0.078 \\
-%		&Naive Bayes& 242.789 & 202.094 & -2.242 \\
-%		&Random Forest& 181.735 & 110.973 & -0.817 \\
-%		& SVM & 144.071 & \textbf{78.272} & -0.142 \\
+		%		\hline
+		%		\multirow{4}{*}{1M} % all data
+		%		&XGBoost& \textbf{139.968} & 95.641 & -0.078 \\
+		%		&Naive Bayes& 242.789 & 202.094 & -2.242 \\
+		%		&Random Forest& 181.735 & 110.973 & -0.817 \\
+		%		& SVM & 144.071 & \textbf{78.272} & -0.142 \\
 		\hline
 		\multirow{4}{*}{1M}
 		&XGBoost& \textbf{138.034} & 92.616 & -0.048 \\
 		&Naive Bayes& 255.083 & 213.834 & -2.579 \\
 		&Random Forest& 178.280 & 109.402 & -0.748 \\
 		& SVM & 143.368 & \textbf{78.249} & -0.131 \\
-%		\hline
-%		\multirow{4}{*}{10D} % all data
-%		&XGBoost& \textbf{56.809} & 44.098 & 0.028 \\
-%		&Naive Bayes& 112.730 & 99.071 & -2.828 \\
-%		&Random Forest& 74.592 & 53.483 & -0.676 \\
-%		& SVM & 61.194 & 42.053 & -0.128 \\
+		%		\hline
+		%		\multirow{4}{*}{10D} % all data
+		%		&XGBoost& \textbf{56.809} & 44.098 & 0.028 \\
+		%		&Naive Bayes& 112.730 & 99.071 & -2.828 \\
+		%		&Random Forest& 74.592 & 53.483 & -0.676 \\
+		%		& SVM & 61.194 & 42.053 & -0.128 \\
 		\hline
 		\multirow{4}{*}{10D}
 		&XGBoost& \textbf{56.406} & 43.847 & 0.041 \\
@@ -163,6 +139,25 @@ XGBoost~\cite{chen2016xgboost}, SHAP~\cite{lundberg2020local2global}.
 		& SVM & 60.460 & \textbf{41.976} & -0.101 \\
 	\end{tabular}
 \end{table}
+
+\section{Model Explainability}
+We inspected the feature importance using a local explainability method which provides a clear explanation of the model output to the end user, i.e. which of the features contributed to the final decision and to what extent. In our case, we used the SHAP~\cite{lundberg2020local2global} method, which visualizes the decisions the underlying model has made using force plots presented in Figure~\ref{force-plots}.
+
+The force plots visualize the magnitude of the forces of each feature values which combined together provide the final output of the model. For an example, we can take the visualization from Figure~\ref{force-2} where the \texttt{issueType=1} is the main force for extending the duration, whereas the \texttt{numberOfLabels=0} is the main force for reducing it. We can observe that \texttt{analytics=1} is consistently extending the duration the development time in both of the cases. This kind of information is very insightful for PMs and it makes their job much easier.
+
+By combining all instances of the model together (e.g. averaging them) we can calculate the global impact of each feature. In our case the most impactful features based on thee model trained by the SVM method are: \textit{number of linked issues}, \textit{issue type}, \textit{number of labels} and \textit{issue priority}. In combination with individual observations, these are the main pieces of information which PMs need to account for when estimating the development time of a particular task.
+
+\begin{figure}[!t]
+	\centering
+	\subfloat[]{\includegraphics[width=0.5\textwidth]{./figures/example_force-1.png}\label{force-1}} \\
+	\subfloat[]{\includegraphics[width=0.5\textwidth]{./figures/example_force-2.png}\label{force-2}}
+	\label{force-plots}
+	\caption{Force plots visualizing the decision of the model. The red arrows visualize the forces driving the decision towards a higher value, and the blue arrows try to lower the final value. The visualized values are log-probabilities.}
+\end{figure}
+
+\section{Conclusion}
+In conclusion, we addressed one of the biggest problems PMs are facing on a daily basis. To do so, we built a model based on the data stored in JIRA, which consists of the the task priority, type, the components of the product it affects, their meta labels and the number of other tasks it depends on. The original data has a lot of noise, which we reduced by limiting the maximum development time we were taking into account. We trained a number of different methods on the purified model, out of which SVM provided the best results. Using the built model we were able to identify the most important features of the underlying tasks and therefore ease the task of time estimation for the PMs.
+
 
 \bibliographystyle{IEEEtran}
 \bibliography{./references}

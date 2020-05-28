@@ -97,81 +97,82 @@ XGBoost~\cite{chen2016xgboost}, SHAP~\cite{lundberg2020local2global}.
 \end{figure*}
 
 \begin{table}[!t]
-	\centering
-	\begin{tabular}{c|r|r|r|r}
-	Statistic &  1 & 2 & 3 &  4 \\
-	\hline
-	unit & days & hours & hours & hours \\
-	count &  2935.000 &   2935.000 & 2771.000 & 2472.000 \\
-	mean  &     8.536 &    205.252 &   95.229 &   57.273 \\
-	std   &    28.265 &    678.103 &  130.036 &   59.080 \\
-	min   &     0.000 &      2.000 &    2.000 &    2.000 \\
-	25\%   &     1.000 &     15.000 &   13.000 &   12.000 \\
-	50\%   &     2.000 &     49.000 &   44.000 &   33.000 \\
-	75\%   &     6.000 &    148.000 &  121.000 &   86.000 \\
-	max   &   625.000 &  15003.000 &  719.000 &  240.000 \\
-	\end{tabular}
 	\renewcommand{\arraystretch}{1.3}
 	\caption{Dataset characteristics. }
 	\label{dataset_description}
+	\centering
+	\begin{tabular}{c|r|r|r|r}
+		Statistic &        All  & 1 Q & 1 M & 10 D \\
+		\hline
+		count &  2935.000  &     2902.000  &   2775.000 &   2451.000 \\
+		mean  &   205.252  &      149.210  &     96.165 &     55.762 \\
+		std   &   678.103  &      293.573  &    132.257 &     57.019 \\
+		min   &     2.000  &        2.000  &      2.000 &      2.000 \\
+		25\%   &    15.000  &       15.000  &     13.000 &     11.000 \\
+		50\%   &    49.000  &       48.000  &     44.000 &     33.000 \\
+		75\%   &   148.000  &      143.000  &    121.000 &     83.000 \\
+		max   & 15003.000  &     2260.000  &    754.000 &    228.000 \\
+
+	\end{tabular}
 \end{table}
 
 \begin{table}[!t]
-\centering
-\begin{tabular}{c|c|c|c|c}
-DataSet & Method & RMSE & MAE & $R^2$ \\
-\hline
-\multirow{4}{*}{1}
-& boost & 33.476 & 11.307 & -0.073 \\
-& naive & 53.129 & 40.126 & -1.702 \\
-& forest & 41.136 & 10.392 & -0.620 \\
-& SVM & \textbf{33.079} & \textbf{7.988} & -0.047 \\
-\hline
-\multirow{4}{*}{1*}
-& boost & \textbf{32.974} & 10.581 & -0.041 \\
-& naive & 69.530 & 48.106 & -3.628 \\
-& forest & 34.364 & 9.683 & -0.130 \\
-& SVM & 33.020 & \textbf{7.961} & -0.044 \\
-\hline
-\multirow{4}{*}{2}
-& XGBoost & 809.712 & 281.738 & -0.091 \\
-& GaussianNB & 890.796 & 381.685 & -0.321 \\
-& RandomForest & 1021.232 & 280.129 & -0.736 \\
-& SVM & \textbf{792.962} & \textbf{193.070} & -0.046 \\
-\hline
-\multirow{4}{*}{2*}
-& XGBoost & \textbf{792.284} & 255.451 & -0.045 \\
-& GaussianNB & 941.595 & 411.579 & -0.475 \\
-& RandomForest & 897.283 & 267.935 & -0.340 \\
-& SVM & 792.589 & \textbf{191.877} & -0.045 \\
-\hline
-\multirow{4}{*}{3}
-& boost & \textbf{135.966} & 89.841 & -0.026 \\
-& naive & 263.943 & 209.445 & -2.865 \\
-& forest & 170.992 & 103.386 & -0.622 \\
-& SVM & 144.008 & \textbf{79.159} & -0.150 \\
-\hline
-\multirow{4}{*}{3*}
-& boost & \textbf{135.020} & 90.459 & -0.011 \\
-& naive & 279.474 & 232.818 & -3.333 \\
-& forest & 180.686 & 113.533 & -0.811 \\
-& SVM & 143.295 & \textbf{79.605} & -0.139 \\
-\hline
-\multirow{4}{*}{4}
-& XGBoost & \textbf{54.720} & 41.941 & 0.050 \\
-& GaussianNB & 122.290 & 105.834 & -3.744 \\
-& RandomForest & 75.167 & 54.669 & -0.792 \\
-& SVM & 59.238 & \textbf{40.390} & -0.113 \\
-\hline
-\multirow{4}{*}{4*}
-& XGBoost & \textbf{53.706} & 42.230 & 0.085 \\
-& GaussianNB & 124.868 & 109.788 & -3.946 \\
-& RandomForest & 78.889 & 56.857 & -0.974 \\
-& SVM & 58.114 & \textbf{39.974} & -0.071 \\
-\end{tabular}
-\renewcommand{\arraystretch}{1.3}
-\caption{Performance of different methods on the variations of the dataset. The $*$ symbol indicates that the dataset does not contain all the initial attributes, thus it is more realistic.}
-\label{model_performance}
+	
+	\renewcommand{\arraystretch}{1.3}
+	\label{model_performance}
+	\centering
+	\caption{Performance of different methods on the variations of the dataset. The $*$ symbol indicates that the dataset does not contain all the initial attributes, thus it is more realistic.}
+	\begin{tabular}{c|c|c|c|c}
+		DataSet & Method & RMSE & MAE & $R^2$ \\
+%		\hline
+%		\multirow{4}{*}{All}
+%		& boost & 807.362 & 279.128 & -0.085 \\
+%		& naive & 896.482 & 387.358 & -0.337 \\
+%		& forest & 1028.401 & 286.985 & -0.760 \\
+%		& SVM & \textbf{792.794} & \textbf{192.552} & -0.046 \\
+		\hline
+		\multirow{4}{*}{All*}
+		& boost & \textbf{791.428} & 254.770 & -0.042 \\
+		& naive & 948.649 & 420.036 & -0.498 \\
+		& forest & 840.027 & 256.399 & -0.174 \\
+		& SVM & 792.344 & \textbf{191.267} & -0.045 \\
+%		\hline
+%		\multirow{4}{*}{1Q}
+%		& boost & \textbf{282.812} & 161.298 & 0.045 \\
+%		& naive & 521.056 & 340.146 & -2.242 \\
+%		& forest & 339.457 & 165.115 & -0.376 \\
+%		& SVM & 303.855 & \textbf{125.127} & -0.102 \\
+		\hline
+		\multirow{4}{*}{1Q*}
+		& boost & \textbf{286.835} & 160.587 & 0.018 \\
+		& naive & 577.520 & 389.602 & -2.982 \\
+		& forest & 361.223 & 179.258 & -0.558 \\
+		& SVM & 302.772 & \textbf{124.272} & -0.095 \\
+%		\hline
+%		\multirow{4}{*}{1M}
+%		& boost & \textbf{139.968} & 95.641 & -0.078 \\
+%		& naive & 242.789 & 202.094 & -2.242 \\
+%		& forest & 181.735 & 110.973 & -0.817 \\
+%		& SVM & 144.071 & \textbf{78.272} & -0.142 \\
+		\hline
+		\multirow{4}{*}{1M*}
+		& boost & \textbf{138.034} & 92.616 & -0.048 \\
+		& naive & 255.083 & 213.834 & -2.579 \\
+		& forest & 178.280 & 109.402 & -0.748 \\
+		& SVM & 143.368 & \textbf{78.249} & -0.131 \\
+%		\hline
+%		\multirow{4}{*}{10D}
+%		& boost & \textbf{56.809} & 44.098 & 0.028 \\
+%		& naive & 112.730 & 99.071 & -2.828 \\
+%		& forest & 74.592 & 53.483 & -0.676 \\
+%		& SVM & 61.194 & 42.053 & -0.128 \\
+		\hline
+		\multirow{4}{*}{10D*}
+		& boost & \textbf{56.406} & 43.847 & 0.041 \\
+		& naive & 120.824 & 106.642 & -3.398 \\
+		& forest & 77.243 & 56.629 & -0.797 \\
+		& SVM & 60.460 & \textbf{41.976} & -0.101 \\
+	\end{tabular}
 \end{table}
 
 \bibliographystyle{IEEEtran}

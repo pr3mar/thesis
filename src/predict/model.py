@@ -14,6 +14,10 @@ from sklearn.ensemble import RandomForestClassifier
 plt.rcParams['figure.figsize'] = 20, 10
 from src.config import data_root
 
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+
 
 def plot_confusion_matrix(cm, classes, normalized=True, cmap='bone', title=""):
     norm_cm = cm
@@ -155,20 +159,14 @@ if __name__ == '__main__':
         (SVR(C=1.0, epsilon=0.2), 'SVM')
     ]
     atts = [
-        ('days', 'encoded_model_data_development_hours.csv', "HOURSINDEVELOPMENT"),  # _2 => min value is 2
-        ('days', 'encoded_model_data_development_hours_real-data.csv', "HOURSINDEVELOPMENT"),  # _2 => min value is 2
-        # ('days', 'encoded_model_data_development_filtered_2.csv', "DAYSINDEVELOPMENT"),  # _2 => min value is 2
-        # # ('days', 'encoded_model_data_development_filtered.csv', "DAYSINDEVELOPMENT"),
-        # ('days-real', 'encoded_model_data_development_filtered_2_real-data.csv', "DAYSINDEVELOPMENT"),
-        # # ('days-real', 'encoded_model_data_development_filtered_real-data.csv', "DAYSINDEVELOPMENT"),
-        # # ('hours', 'encoded_model_data_development_filtered_hours.csv', "HOURSINDEVELOPMENT"),
-        # ('hours', 'encoded_model_data_development_filtered_hours_2.csv', "HOURSINDEVELOPMENT"),
-        # # ('hours-real', 'encoded_model_data_development_filtered_hours_real-data.csv', "HOURSINDEVELOPMENT"),
-        # ('hours-real', 'encoded_model_data_development_filtered_hours_2_real-data.csv', "HOURSINDEVELOPMENT"),
-        # ('hours-filtered-30', 'encoded_model_data_development_filtered_hours_30-days.csv', "HOURSINDEVELOPMENT"),
-        # ('hours-filtered-30-real', 'encoded_model_data_development_filtered_hours_30-days_real-data.csv', "HOURSINDEVELOPMENT"),
-        # ('hours-filtered-10', 'encoded_model_data_development_filtered_hours_10-days.csv', "HOURSINDEVELOPMENT"),
-        # ('hours-filtered-10-real', 'encoded_model_data_development_filtered_hours_10-days_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('hours', 'encoded_model_data_development_filtered_hours_all.csv', "HOURSINDEVELOPMENT"),
+        ('hours-real', 'encoded_model_data_development_filtered_hours_all_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('hours-1-quarter', 'encoded_model_data_development_filtered_hours_1-quarter.csv', "HOURSINDEVELOPMENT"),
+        ('hours-1-quarter-real', 'encoded_model_data_development_filtered_hours_1-quarter_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('hours-1-month', 'encoded_model_data_development_filtered_hours_1-month.csv', "HOURSINDEVELOPMENT"),
+        ('hours-1-month-real', 'encoded_model_data_development_filtered_hours_1-month_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('hours-10-days', 'encoded_model_data_development_filtered_hours_10-days.csv', "HOURSINDEVELOPMENT"),
+        ('hours-10-days-real', 'encoded_model_data_development_filtered_hours_10-days_real-data.csv', "HOURSINDEVELOPMENT"),
     ]
     print("RMSE & MAE & R2 \\\\")
     data_descriptions = {}
@@ -189,6 +187,7 @@ if __name__ == '__main__':
             print(f"& {name} & {rmse:.3f} & {mae:.3f} & {r2:.3f} \\\\")
         print("\\hline")
     description = pd.DataFrame(data_descriptions)
+    print(description)
     # dev_fname = f'{data_root}/prediction_data/dev_model/encoded_model_data_unfiltered.csv'
     # dev_model_data = pd.read_csv(dev_fname)
     # dev_boosted, boosted_cm = test_dev_boost_method(dev_model_data)

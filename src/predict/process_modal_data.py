@@ -5,6 +5,25 @@ import pandas as pd
 from pandas import DataFrame
 from src.config import data_root
 
+priority_order = {
+    "Blocker": 4,
+    "Critical": 3,
+    "Major": 2,
+    "Minor": 1,
+    "Trivial": 0,
+}
+
+type_order = {
+    "Bug": 0,
+    "Bug (Sub-task)": 1,
+    "Epic": 2,
+    "Improvement (Sub-task)": 3,
+    "Internal Improvement": 4,
+    "New Feature or Improvement": 5,
+    "Prototype": 6,
+    "Sub-task": 7
+}
+
 
 def enumerate_vals(data: DataFrame, column):
     copy = data.copy()
@@ -49,8 +68,8 @@ def preprocess_ticket_data(fdir: str, input_name: str, output_name: str, drop: U
     data = mergeAndOmitColumnValues(data, "LABEL", labels_metaData)
     data = mergeAndOmitColumnValues(data, "COMPONENT", components_metaData)
 
-    for col in ['ISSUETYPE', 'ISSUEPRIORITY']:
-        data = enumerate_vals(data, col)
+    for column, ordering in [('ISSUETYPE', type_order), ('ISSUEPRIORITY', priority_order)]:
+        data[column] = data[column].map(ordering)
 
     for col, min_entry in [('COMPONENT', 50), ('LABEL', 50)]:
         data = hot_encode(data, col, min_entry)
@@ -103,11 +122,18 @@ def preprocess_dev_data(fdir: str, input_name: str, output_name: str, drop=None)
 
 if __name__ == '__main__':
     ticket_fdir = f'{data_root}/prediction_data/ticket_model'
-    mode = "model_data_development_hours"
-    ticket_input_name = f'raw_{mode}.csv'
-    fname = f"encoded_{mode}"
-    ticket_out_data = preprocess_ticket_data(ticket_fdir, ticket_input_name, f'{fname}.csv')
-    ticket_out_data = preprocess_ticket_data(ticket_fdir, ticket_input_name, f'{fname}_real-data.csv', drop=["NUMBEROFCOMMENTS", "DEGREEOFCYCLING"])
+    modes = [
+        "model_data_development_filtered_hours_all",
+        "model_data_development_filtered_hours_1-quarter",
+        "model_data_development_filtered_hours_1-month",
+        "model_data_development_filtered_hours_10-days",
+    ]
+    for mode in modes:
+        print(mode)
+        ticket_input_name = f'raw_{mode}.csv'
+        fname = f"encoded_{mode}"
+        preprocess_ticket_data(ticket_fdir, ticket_input_name, f'{fname}.csv')
+        preprocess_ticket_data(ticket_fdir, ticket_input_name, f'{fname}_real-data.csv', drop=["NUMBEROFCOMMENTS", "DEGREEOFCYCLING"])
 
     # dev_fdir = f'{data_root}/prediction_data/dev_model'
     # dev_input_name = f'raw_model_data_unfiltered.csv'

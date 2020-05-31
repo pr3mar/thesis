@@ -292,3 +292,4 @@ venv/
 .Rhistory
 .env
 .ipynb_checkpoints/
+misc/

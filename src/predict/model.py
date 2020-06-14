@@ -102,7 +102,7 @@ def test_ticket_method(data: pd.DataFrame, method, method_name, target_feature):
     # bundle['PREDICTED'] = preds
     # bundle['DIFF'] = bundle[target_feature] - bundle['PREDICTED']
     # bundle['DIFFPERCENT'] = abs(bundle['DIFF']) / (bundle[target_feature] + 1)
-    # bundle = bundle.sort_values(by='DIFFPERCENT')
+    # bundle = bundle.sort_values(breakdowns='DIFFPERCENT')
     # bundle.to_csv(f'{data_root}/prediction_data/hot_encoded_model_data_development_{method_name}_predictions.csv', index=False)
     # return bundle
 

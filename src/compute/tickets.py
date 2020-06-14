@@ -1,6 +1,7 @@
 import os
 import pickle
 from datetime import date
+from typing import Union
 
 import numpy as np
 from pandas import DataFrame
@@ -8,6 +9,29 @@ from pandas import DataFrame
 from src.compute.utils import convert_date, Interval, get_distinct_statuses, map_statuses
 from src.config import data_root
 from src.db.utils import SnowflakeWrapper
+
+
+def get_ticket_counts(sw: SnowflakeWrapper, breakdowns: Union[list, None] = None) -> DataFrame:
+    if breakdowns is None:
+        breakdowns = ["issueType", "issuePriority", "resolved"]
+    breakedown = {
+        "issueType": "i.fields:issuetype:name::string issueType",
+        "issuePriority": "i.fields:priority:name::string issuePriority",
+        "resolved": "IFF(i.fields:resolutiondate IS NULL, 'No', 'Yes') Resolved"
+    }
+    dimensions = [breakedown[by] for by in breakdowns]
+    group_by = ','.join([str(i + 1) for i, _ in enumerate(dimensions)])
+
+    sql = (
+        f"SELECT "
+        f"    {','.join(dimensions)}, "
+        f"    count(*) Count "
+        f"FROM "
+        f"    ISSUES i "
+        f"GROUP BY {group_by} "
+        f"ORDER BY {len(dimensions) + 1}, {group_by} DESC; ")
+    print(sql)
+    return sw.fetch_df(sql)
 
 
 def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True, merge: bool = True) -> DataFrame:
@@ -77,4 +101,5 @@ if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
         interval = Interval(date(2019, 10, 1), date(2020, 1, 1))
-        data = get_tickets(sw, interval)
+        # data = get_tickets(sw, interval)
+        data = get_ticket_counts(sw, breakdowns=["issuePriority", "resolved"])

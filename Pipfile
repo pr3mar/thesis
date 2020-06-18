@@ -22,6 +22,8 @@ scikit-learn = "*"
 graphviz = "*"
 seaborn = "*"
 shap = "*"
+cufflinks = "*"
+hide-code = "*"
 
 [requires]
 python_version = "3.7"

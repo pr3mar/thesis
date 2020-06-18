@@ -34,9 +34,10 @@ def get_ticket_counts(sw: SnowflakeWrapper, breakdowns: Union[list, None] = None
     return sw.fetch_df(sql)
 
 
-def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True, merge: bool = True) -> DataFrame:
+def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True, max_days: int = 10) -> DataFrame:
     resolution_date = f"{convert_date('i.FIELDS:resolutiondate')}"
     where_resolution = f"{resolution_date} >= {interval.fromDate()} AND {resolution_date} < {interval.toDate()}" if resolved else ""
+    max_duration = f" AVG_DAYS <= {min(30, max_days)} " if max_days > 1 else " AVG_HOUR < 10 "
     sql = (
         f'SELECT TICKET_KEY, '
         f'       STATUS, '
@@ -70,10 +71,12 @@ def get_tickets(sw: SnowflakeWrapper, interval: Interval, resolved: bool = True,
         f'            (SELECT DISTINCT KEY FROM CHANGELOGS WHERE DATECREATED >= {interval.fromDate()} AND DATECREATED < {interval.toDate()}) '
         f'          AND {where_resolution}'
         f'      GROUP BY 1, 2, 3, 4) '
-        f'WHERE AVG_HOUR > 2.5 AND AVG_HOUR <= 10 '  # fixme: Add an option for more than > 1 day, this is just a single business day (~8h)
+        f'WHERE '
+        f'      AVG_HOUR > 2 '
+        f'      AND {max_duration} '
         f'ORDER BY 1; '
     )
-    print(sql)
+    # print(sql)
     df = sw.fetch_df(sql)
     df["AVG_HOUR"] = df["AVG_HOUR"].map(lambda x: np.nan if x is None else float(x))
     df["AVG_DAYS"] = df["AVG_DAYS"].map(lambda x: np.nan if x is None else float(x))

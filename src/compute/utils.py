@@ -44,6 +44,9 @@ class Interval:
         else:
             raise RuntimeError(f"Invalid interval given: {self}")
 
+    def pretty_str(self):
+        return f"from {self.strdate(self.__fromDate, escape=False)} to {self.strdate(self.__toDate, escape=False)}"
+
     @staticmethod
     def strdate(d: date, escape=True) -> str:
         if escape:

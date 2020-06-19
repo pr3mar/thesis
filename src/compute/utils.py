@@ -132,10 +132,24 @@ statuses_of_interest = [
 ]
 
 
+def get_statuses() -> list:
+    file_statuses = open(f"{config.data_root}/statuses/merged.json")
+    status_map = json.load(file_statuses)
+    return status_map.keys()
+
+
 def map_statuses(statuses: pd.Series) -> pd.Series:
     file_statuses = open(f"{config.data_root}/statuses/all.json")
     status_map = json.load(file_statuses)
     return statuses.map(status_map)
+
+
+def expand_statuses(status: str) -> list:
+    file_statuses = open(f"{config.data_root}/statuses/merged.json")
+    status_map = json.load(file_statuses)
+    if status in status_map:
+        return status_map[status]
+    raise Exception(f"Invalid status? {status}")
 
 
 if __name__ == '__main__':

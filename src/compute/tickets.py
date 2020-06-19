@@ -11,6 +11,14 @@ from src.config import data_root
 from src.db.utils import SnowflakeWrapper
 
 
+def get_ticket_priorities(sw: SnowflakeWrapper) -> list:
+    return sw.fetch_df('SELECT DISTINCT i.FIELDS:priority: name::string "IssuePriority" FROM ISSUES i;')["IssuePriority"].to_list()
+
+
+def get_ticket_types(sw: SnowflakeWrapper) -> list:
+    return sw.fetch_df('SELECT DISTINCT i.FIELDS:issuetype: name::string "IssueType" FROM ISSUES i;')["IssueType"].to_list()
+
+
 def get_ticket_counts(sw: SnowflakeWrapper, breakdowns: Union[list, None] = None) -> DataFrame:
     if breakdowns is None:
         breakdowns = ["issueType", "issuePriority", "resolved"]
@@ -103,6 +111,8 @@ def get_tickets_by_status(sw: SnowflakeWrapper, interval: Interval, use_cached: 
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
-        interval = Interval(date(2019, 10, 1), date(2020, 1, 1))
+        # interval = Interval(date(2019, 10, 1), date(2020, 1, 1))
         # data = get_tickets(sw, interval)
-        data = get_ticket_counts(sw, breakdowns=["issuePriority", "resolved"])
+        # data = get_ticket_counts(sw, breakdowns=["issuePriority", "resolved"])
+        priorities = get_ticket_priorities(sw)
+        types = get_ticket_types(sw)

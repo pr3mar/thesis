@@ -238,7 +238,6 @@ def tickets_assigned_in_interval(sw: SnowflakeWrapper, developer_id: str, interv
     for i in range((interval.toDate(raw=True) - interval.fromDate(raw=True)).days + 1):
         day = interval.fromDate(raw=True) + timedelta(days=i)
         sql_date = Interval.strdate(day)
-        print(sql_date)
         days.append(
             f" SELECT "
             f"   DISTINCT KEY "
@@ -254,7 +253,7 @@ def tickets_assigned_in_interval(sw: SnowflakeWrapper, developer_id: str, interv
             f"   ) "
         )
     sql += " UNION ALL ".join(days) + ") GROUP BY 1 ORDER BY 2, 1;"
-    print(sql)
+    # print(sql)
     return sw.fetch_df(sql)
 
 

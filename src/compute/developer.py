@@ -263,6 +263,36 @@ def tickets_assigned_in_interval(sw: SnowflakeWrapper, developer_id: str, interv
     return sw.fetch_df(sql)
 
 
+def tickets_assigned_per_day(sw: SnowflakeWrapper, developer_id: str, interval: Interval) -> pd.DataFrame:
+    sql = "SELECT " \
+          "     DAY_ASSIGNED, "\
+          "     KEY " \
+          "FROM ( "
+    days = []
+    for i in range((interval.toDate(raw=True) - interval.fromDate(raw=True)).days + 1):
+        day = interval.fromDate(raw=True) + timedelta(days=i)
+        sql_date = Interval.strdate(day)
+        days.append(
+            f" SELECT "
+            f"   TO_DATE({sql_date}) AS DAY_ASSIGNED,"
+            f"   KEY "
+            f" FROM TIMELINES "
+            f" WHERE "
+            f"   ASSIGNEE IN ('{developer_id}') "
+            f"   AND ( "
+            f"     {sql_date} BETWEEN DATEFROM AND DATETO "
+            f"     OR ( "
+            f"       DATEDIFF('day', {sql_date}, DATEFROM) = 0 "
+            f"       AND DATEDIFF('day', {sql_date}, DATETO) > 1 "
+            f"     ) "
+            f"   ) "
+            f" GROUP BY 1, 2"
+        )
+    sql += " UNION ALL ".join(days) + ") GROUP BY 1, 2 ORDER BY 1;"
+    # print(sql)
+    return sw.fetch_df(sql)
+
+
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
@@ -275,6 +305,7 @@ if __name__ == '__main__':
         # avg_dev = get_avg_developer(sw, interval, include_nans=False)
         # avg_dev_nan = get_avg_developer(sw, include_nans=True)
         # assigned_interval = Interval(date(2019, 10, 1), date(2019, 11, 6))
-        assigned_interval = Interval(date(2019, 10, 1), date(2019, 10, 10))
-        assigned = tickets_assigned_in_interval(sw, 'marko.prelevikj', assigned_interval)
+        assigned_interval = Interval(date(2019, 10, 1), date(2020, 1, 1))
+        # assigned = tickets_assigned_in_interval(sw, 'marko.prelevikj', assigned_interval)
+        assigned_per_day = tickets_assigned_per_day(sw, 'marko.prelevikj', assigned_interval)
         # data = get_developers(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)), break_by=[], user_filters={})

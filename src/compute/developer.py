@@ -233,7 +233,13 @@ def get_avg_developer(sw: SnowflakeWrapper, interval: Interval, include_nans: bo
 
 
 def tickets_assigned_in_interval(sw: SnowflakeWrapper, developer_id: str, interval: Interval) -> pd.DataFrame:
-    sql = "SELECT KEY, SUM(1) DAYS_ASSIGNED FROM ("
+    sql = "SELECT " \
+          "     i.KEY, " \
+          "     i.FIELDS:priority:name::string IssuePriority, " \
+          "     i.FIELDS:issuetype:name::string IssueType, " \
+          "     i.FIELDS:status: name::string status, " \
+          "     SUM(1) DAYS_ASSIGNED " \
+          "FROM ( "
     days = []
     for i in range((interval.toDate(raw=True) - interval.fromDate(raw=True)).days + 1):
         day = interval.fromDate(raw=True) + timedelta(days=i)
@@ -252,7 +258,7 @@ def tickets_assigned_in_interval(sw: SnowflakeWrapper, developer_id: str, interv
             f"     ) "
             f"   ) "
         )
-    sql += " UNION ALL ".join(days) + ") GROUP BY 1 ORDER BY 2, 1;"
+    sql += " UNION ALL ".join(days) + ") t INNER JOIN ISSUES i ON t.KEY = i.KEY GROUP BY 1, 2, 3, 4 ORDER BY 5, 1;"
     # print(sql)
     return sw.fetch_df(sql)
 
@@ -269,6 +275,6 @@ if __name__ == '__main__':
         # avg_dev = get_avg_developer(sw, interval, include_nans=False)
         # avg_dev_nan = get_avg_developer(sw, include_nans=True)
         # assigned_interval = Interval(date(2019, 10, 1), date(2019, 11, 6))
-        # assigned_interval = Interval(date(2019, 10, 1), date(2019, 10, 10))
-        # assigned = tickets_assigned_in_interval(sw, 'marko.prelevikj', assigned_interval)
-        data = get_developers(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)), break_by=[], user_filters={})
+        assigned_interval = Interval(date(2019, 10, 1), date(2019, 10, 10))
+        assigned = tickets_assigned_in_interval(sw, 'marko.prelevikj', assigned_interval)
+        # data = get_developers(sw, Interval(date(2019, 10, 1), date(2020, 1, 1)), break_by=[], user_filters={})

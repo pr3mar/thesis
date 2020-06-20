@@ -47,7 +47,7 @@ for (type in issueTypes) {
   }
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Changelog.Count), binwidth = 5, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Changelog count") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +

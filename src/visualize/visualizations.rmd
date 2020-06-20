@@ -186,7 +186,7 @@ for (type in issueTypes) {
   data <- resolvedIssues[resolvedIssues$Issue.Type == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Watch.Count), binwidth = 1, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("People watching") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -206,7 +206,7 @@ for (type in priorityTypes) {
   data <- resolvedIssues[resolvedIssues$Priority == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Watch.Count), binwidth = 1, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("People watching") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -227,7 +227,7 @@ for (type in issueTypes) {
   data <- resolvedIssues[resolvedIssues$Issue.Type == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Comments.Count), binwidth = 5, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Comments count") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -247,7 +247,7 @@ for (type in priorityTypes) {
   data <- resolvedIssues[resolvedIssues$Priority == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Comments.Count), binwidth = 5, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Comments count") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -269,7 +269,7 @@ for (type in issueTypes) {
   data <- resolvedIssues[resolvedIssues$Issue.Type == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Changelog.Count), binwidth = 10, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Changelog count") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -289,7 +289,7 @@ for (type in priorityTypes) {
   data <- resolvedIssues[resolvedIssues$Priority == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Changelog.Count), binwidth = 10, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Changelog count") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -312,7 +312,7 @@ for (type in issueTypes) {
   data <- resolvedIssues[resolvedIssues$Issue.Type == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Days.to.resolve), binwidth = 25, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Days to resolve") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -333,7 +333,7 @@ for (type in priorityTypes) {
   data <- resolvedIssues[resolvedIssues$Priority == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Days.to.resolve), binwidth = 25, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Days to resolve") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -359,7 +359,7 @@ for (type in issueTypes) {
   data <- unresolvedIssues[unresolvedIssues$Issue.Type == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Watch.Count), binwidth = 1, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("People watching") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -379,7 +379,7 @@ for (type in priorityTypes) {
   data <- unresolvedIssues[unresolvedIssues$Priority == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Watch.Count), binwidth = 1, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("People watching") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -400,7 +400,7 @@ for (type in issueTypes) {
   data <- unresolvedIssues[unresolvedIssues$Issue.Type == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Comments.Count), binwidth = 5, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Comments count") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -420,7 +420,7 @@ for (type in priorityTypes) {
   data <- unresolvedIssues[unresolvedIssues$Priority == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Comments.Count), binwidth = 5, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Comments count") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -442,7 +442,7 @@ for (type in issueTypes) {
   data <- unresolvedIssues[unresolvedIssues$Issue.Type == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Changelog.Count), binwidth = 10, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Changelog count") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -462,7 +462,7 @@ for (type in priorityTypes) {
   data <- unresolvedIssues[unresolvedIssues$Priority == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Changelog.Count), binwidth = 10, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Changelog count") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -485,7 +485,7 @@ for (type in issueTypes) {
   data <- unresolvedIssues[unresolvedIssues$Issue.Type == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Days.to.date), binwidth = 50, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Days to date") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +
@@ -506,7 +506,7 @@ for (type in priorityTypes) {
   data <- unresolvedIssues[unresolvedIssues$Priority == type,]
   plots[[type]] <- ggplot(data) +
     geom_histogram(aes(x = Days.to.date), binwidth = 50, color="black", fill="red") +
-    # scale_x_continuous(breaks = seq(0, 35, 1), labels = seq(0, 35, 1)) +
+    # scale_x_continuous(breaks = seq(0, 35, 1), breakdown_labels = seq(0, 35, 1)) +
     ylab("Issue count") +
     xlab("Days to date") +
     ggtitle(paste0(type, ", (", nrow(data), ")")) +

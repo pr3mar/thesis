@@ -13,26 +13,26 @@ Improvement (Sub-task)
 Epic
 Bug (Sub-task)
 Bug
------------------------------------- LABELS: 
--- activation_request
--- PMO_tracking
+------------------------------------ LABELS:
 update_ami
 ui_changes
--- ts_feedback
+pmm_check
 tag_change
--- sumologic
 staging_issue
 devtest
 autotested
+config_changes
+client
+-- activation_request
+-- PMO_tracking
+-- sumologic
+-- ts_feedback
 -- public-metrics-dimensions
-pmm_check
 -- managed
 -- incident_report_improvements
 -- feeds_upgrades
 -- experimentation
 -- dco
-config_changes
-client
 ----- GROUPED LABELS
 ----
 -- video

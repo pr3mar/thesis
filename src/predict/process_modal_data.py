@@ -76,7 +76,7 @@ def preprocess_ticket_data(fdir: str, input_name: str, output_name: str, drop: U
 
     # NOTE: we calculate the mean of the following values because they are the duplicated in the provided raw data
     # with this change we get 1 row == 1 ticket, thus the lower number of rows in the output
-    # Additionally, we are filtering out rows which are associated with a low number of labels or components,
+    # Additionally, we are filtering out rows which are associated with a low number of breakdown_labels or components,
     # as they are insignificant and cause noise in the data.
     mean_cols = ["NUMBEROFCOMPONENTS", "NUMBEROFLABELS", "NUMBEROFCOMMENTS", "NUMBEROFLINKEDISSUES", "DEGREEOFCYCLING", "DAYSINDEVELOPMENT"]
     agg_cols = {col: ('mean' if col in mean_cols else 'min') for col in list(data)}

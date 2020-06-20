@@ -38,7 +38,7 @@ def get_ticket_counts(sw: SnowflakeWrapper, breakdowns: Union[list, None] = None
         f"    ISSUES i "
         f"GROUP BY {group_by} "
         f"ORDER BY {len(dimensions) + 1}, {group_by} DESC; ")
-    print(sql)
+    # print(sql)
     return sw.fetch_df(sql)
 
 
@@ -114,5 +114,6 @@ if __name__ == '__main__':
         # interval = Interval(date(2019, 10, 1), date(2020, 1, 1))
         # data = get_tickets(sw, interval)
         # data = get_ticket_counts(sw, breakdowns=["issuePriority", "resolved"])
-        priorities = get_ticket_priorities(sw)
-        types = get_ticket_types(sw)
+        data = get_ticket_counts(sw)
+        # priorities = get_ticket_priorities(sw)
+        # types = get_ticket_types(sw)

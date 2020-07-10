@@ -159,16 +159,17 @@ if __name__ == '__main__':
         (SVR(C=1.0, epsilon=0.2), 'SVM')
     ]
     atts = [
-        ('hours', 'encoded_model_data_development_filtered_hours_all.csv', "HOURSINDEVELOPMENT"),
-        ('hours-real', 'encoded_model_data_development_filtered_hours_all_real-data.csv', "HOURSINDEVELOPMENT"),
-        ('hours-1-quarter', 'encoded_model_data_development_filtered_hours_1-quarter.csv', "HOURSINDEVELOPMENT"),
-        ('hours-1-quarter-real', 'encoded_model_data_development_filtered_hours_1-quarter_real-data.csv', "HOURSINDEVELOPMENT"),
-        ('hours-1-month', 'encoded_model_data_development_filtered_hours_1-month.csv', "HOURSINDEVELOPMENT"),
-        ('hours-1-month-real', 'encoded_model_data_development_filtered_hours_1-month_real-data.csv', "HOURSINDEVELOPMENT"),
-        ('hours-10-days', 'encoded_model_data_development_filtered_hours_10-days.csv', "HOURSINDEVELOPMENT"),
-        ('hours-10-days-real', 'encoded_model_data_development_filtered_hours_10-days_real-data.csv', "HOURSINDEVELOPMENT"),
-        ('hours-1-day', 'encoded_model_data_development_filtered_hours_1-day.csv', "HOURSINDEVELOPMENT"),
-        ('hours-1-day-real', 'encoded_model_data_development_filtered_hours_1-day_real-data.csv', "HOURSINDEVELOPMENT"),
+        # ('hours', 'encoded_model_data_development_filtered_hours_all.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-real', 'encoded_model_data_development_filtered_hours_all_real-data.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-1-quarter', 'encoded_model_data_development_filtered_hours_1-quarter.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-1-quarter-real', 'encoded_model_data_development_filtered_hours_1-quarter_real-data.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-1-month', 'encoded_model_data_development_filtered_hours_1-month.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-1-month-real', 'encoded_model_data_development_filtered_hours_1-month_real-data.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-10-days', 'encoded_model_data_development_filtered_hours_10-days.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-10-days-real', 'encoded_model_data_development_filtered_hours_10-days_real-data.csv', "HOURSINDEVELOPMENT"),
+        ('sum-hours-10-days-real', 'encoded_model_data_development_filtered_sum_hours_10-days_real-data.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-1-day', 'encoded_model_data_development_filtered_hours_1-day.csv', "HOURSINDEVELOPMENT"),
+        # ('hours-1-day-real', 'encoded_model_data_development_filtered_hours_1-day_real-data.csv', "HOURSINDEVELOPMENT"),
     ]
     print("RMSE & MAE & R2 \\\\")
     data_descriptions = {}

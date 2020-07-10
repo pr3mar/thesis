@@ -42,7 +42,6 @@ def build_issue_timelines(sw: SnowflakeWrapper, interval: Interval, keys: Union[
                 changed_status = True
             if last_change > date_created:
                 raise Exception("WAIT A SEC")
-            # BUGGY AF :(
             if changed_status and changed_assignee:  # doesn't work if there are 2+ changes in a small delta time
                 timeline.append({
                     "status": status_from,

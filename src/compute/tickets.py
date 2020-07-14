@@ -19,13 +19,45 @@ def get_ticket_types(sw: SnowflakeWrapper) -> list:
     return sw.fetch_df('SELECT DISTINCT i.FIELDS:issuetype: name::string "IssueType" FROM ISSUES i;')["IssueType"].to_list()
 
 
+def get_unresolved_ticket_counts(
+    sw: SnowflakeWrapper,
+    interval: Interval,
+    all_unresolved_until: bool = False,  # disregards the interval.fromDate()
+    breakdowns: Union[list, None] = None,
+) -> DataFrame:
+    if breakdowns is None:
+        breakdowns = ["issueType", "issuePriority"]
+    breakedown = {
+        "issueType": "fields:issuetype:name::string issueType",
+        "issuePriority": "fields:priority:name::string issuePriority",
+    }
+    dimensions = [breakedown[by] for by in breakdowns]
+    date_from = "" if all_unresolved_until else f"AND DateCreated >= TO_DATE({interval.fromDate()})"
+    sql = (
+        f" SELECT KEY, "
+        f"    {','.join(dimensions)}, "
+        f"        convert_timezone('UTC', to_timestamp_tz(FIELDS:created::string, "
+        f'                                                \'YYYY-MM-DD"T"HH24:MI:SS.FF TZHTZM\')) DateCreated, '
+        f"        DATEDIFF('day', DateCreated, {interval.toDate()})                             daysUnresolved "
+        f" FROM ISSUES "
+        f" WHERE "
+        f"   FIELDS:resolution IS NULL "
+        f"   AND FIELDS:status: name NOT IN ('Done', 'Cancelled', 'Live', 'Reverted') "
+        f"   {date_from} " 
+        f"   AND DateCreated < TO_DATE({interval.toDate()})" 
+        f" ORDER BY {len(dimensions) + 3}; ")
+    # print(sql)
+    return sw.fetch_df(sql)
+
+
 def get_ticket_counts(sw: SnowflakeWrapper, breakdowns: Union[list, None] = None) -> DataFrame:
     if breakdowns is None:
         breakdowns = ["issueType", "issuePriority", "resolved"]
     breakedown = {
         "issueType": "i.fields:issuetype:name::string issueType",
         "issuePriority": "i.fields:priority:name::string issuePriority",
-        "resolved": "IFF(i.fields:resolutiondate IS NULL, 'No', 'Yes') Resolved"
+        # "resolved": "IFF(i.fields:resolutiondate IS NULL, 'No', 'Yes') Resolved"
+        "resolved": "IFF(i.FIELDS:resolution IS NULL AND i.FIELDS:status:name NOT IN ('Done', 'Cancelled', 'Live', 'Reverted'), 'No', 'Yes') Resolved"
     }
     dimensions = [breakedown[by] for by in breakdowns]
     group_by = ','.join([str(i + 1) for i, _ in enumerate(dimensions)])
@@ -111,9 +143,10 @@ def get_tickets_by_status(sw: SnowflakeWrapper, interval: Interval, use_cached: 
 if __name__ == '__main__':
     with SnowflakeWrapper.create_snowflake_connection() as connection:
         sw = SnowflakeWrapper(connection)
-        # interval = Interval(date(2019, 10, 1), date(2020, 1, 1))
+        interval = Interval(date(2019, 10, 1), date(2020, 1, 1))
         # data = get_tickets(sw, interval)
         # data = get_ticket_counts(sw, breakdowns=["issuePriority", "resolved"])
-        data = get_ticket_counts(sw)
+        # data = get_ticket_counts(sw)
         # priorities = get_ticket_priorities(sw)
         # types = get_ticket_types(sw)
+        data = get_unresolved_ticket_counts(sw, interval, all_unresolved_until=True, breakdowns=["issuePriority", "issueType"])

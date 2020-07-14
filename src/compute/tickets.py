@@ -30,6 +30,7 @@ def get_unresolved_ticket_counts(
     breakedown = {
         "issueType": "fields:issuetype:name::string issueType",
         "issuePriority": "fields:priority:name::string issuePriority",
+        "status": "FIELDS:status:name::string status",
     }
     dimensions = [breakedown[by] for by in breakdowns]
     date_from = "" if all_unresolved_until else f"AND DateCreated >= TO_DATE({interval.fromDate()})"
@@ -42,7 +43,7 @@ def get_unresolved_ticket_counts(
         f" FROM ISSUES "
         f" WHERE "
         f"   FIELDS:resolution IS NULL "
-        f"   AND FIELDS:status: name NOT IN ('Done', 'Cancelled', 'Live', 'Reverted') "
+        f"   AND FIELDS:status:name::string NOT IN ('Done', 'Cancelled', 'Live', 'Reverted') "
         f"   {date_from} " 
         f"   AND DateCreated < TO_DATE({interval.toDate()})" 
         f" ORDER BY {len(dimensions) + 3}; ")

@@ -1,4 +1,4 @@
-video,update_ami,ui_changes,tag_change,staging_issue,qa,pmm_check,maintainers,devtest,devops_label,config_changes,client,autotested,testilda,services: compiler,review,releng,production,precisionMarketing,pnp,other: other,distribution,devops,baking,analytics,ISSUETYPE,ISSUEPRIORITY,NUMBEROFCOMPONENTS,NUMBEROFLABELS,NUMBEROFLINKEDISSUES,HOURSINDEVELOPMENT
+video,update_ami,ui_changes,tag_change,staging_issue,qa,pmm_check,maintainers,devtest,devops_label,config_changes,client,autotested,testilda,services: compiler,review,releng,production,precisionMarketing,pnp,other: other,distribution,devops,baking,analytics,TICKETTYPE,TICKETPRIORITY,NUMBEROFCOMPONENTS,NUMBEROFLABELS,NUMBEROFLINKEDTICKETS,HOURSINDEVELOPMENT
 0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,1,1,1,0,45
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,2,0,156
 0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,1,2,1,0,7
